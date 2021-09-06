@@ -1,21 +1,21 @@
 # Member Introduction page
-Zipbob : 김주희, 김지현, 정다슬, 박건욱, 최현수, 송재현
+## :dizzy: Zipbob : 김주희, 김지현, 정다슬, 박건욱, 최현수, 송재현
+---------
+### :star: About 김주희
 
-About 김주희
-
-Introduction
-
-```
+####  :raising_hand: Introduction
 
 ```
 
-E-mail - alicelikesbab@gmail.com
+```
 
-github - https://github.com/ginttone
+:love_letter: E-mail - alicelikesbab@gmail.com
+
+:link: github - https://github.com/ginttone
 
 
 
-Skills
+#### :hammer: Skills
 
 * git , SQLite3  
 
@@ -27,21 +27,21 @@ Skills
 * Git, Pycharm , Goorm 
 
 
+---------
+### :star: About 김지현
 
-About 김지현
-
-Introduction
-
-```
+####  :raising_hand: Introduction
 
 ```
 
-E-mail - hyunii605@google.com 
+```
 
-github - https://github.com/fonslucens   
+:love_letter: E-mail - hyunii605@google.com 
+
+:link: github - https://github.com/fonslucens   
 
 
-skills
+#### :hammer: Skills
 
 * git , SQLite3  
 
@@ -54,22 +54,22 @@ skills
 * Git, Pycharm , Goorm
 
 
+---------
+### :star: About 정다슬
 
-About 정다슬
-
-Introduction
-
-```
+#### :raising_hand: Introduction
 
 ```
 
-E-mail - jds88guy@gmail.com 
+```
 
-github - https://github.com/Ethan-Jeong
+:love_letter: E-mail - jds88guy@gmail.com 
+
+:link: github - https://github.com/Ethan-Jeong
 
 
 
-skills
+#### :hammer: Skills
 
 * git , SQLite3  
 
@@ -82,21 +82,21 @@ skills
 * Git, Pycharm , Goorm
 
  
+---------
+### :star: About 박건욱
 
-About 박건욱
-
-Introduction
-
-```
+#### :raising_hand: Introduction
 
 ```
 
-E-mail - pkpk4480@gmail.com 
+```
 
-github - https://github.com/sxzcad
+:love_letter: E-mail - pkpk4480@gmail.com 
+
+:link: github - https://github.com/sxzcad
 
 
-Skills
+####  :hammer: Skills
 
 * git , SQLite3  
 * Html5, CSS , JSON ,Ajax, Django 
@@ -105,21 +105,21 @@ Skills
 * Git, Pycharm , Goorm
 
 
+---------
+### :star: About 최현수
 
-About 최현수
-
-Introduction
-
-```
+####  :raising_hand: Introduction
 
 ```
 
-E-mail - hakdjhakdj@gmail.com 
+```
 
-github - https://github.com/hakdj
+:love_letter: E-mail - hakdjhakdj@gmail.com 
+
+:link: github - https://github.com/hakdj
 
 
-Skills   
+#### :hammer: Skills   
 
 * git , Mysql  
 * Html5, CSS , JSON ,Ajax, Django 
@@ -128,21 +128,21 @@ Skills
 * Git, Pycharm ,Anaconda, Python anywhere
 
 
+---------
+### :star: About 송재현
 
-About 송재현
-
-Introduction
-
-```
+####  :raising_hand: Introduction
 
 ```
 
-E-mail -
+```
 
-github - https://github.com/Songgplant
+:love_letter: E-mail -
+
+:link: github - https://github.com/Songgplant
 
 
-Skills 
+#### :hammer: Skills 
 
 * git , Mysql  
 * Html5, CSS , JSON ,Ajax, Django  
