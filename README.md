@@ -12,7 +12,7 @@
 
 [Multicampus](https://www.multicampus.com) 빅데이터 기반 지능형 서비스 개발 수료(10/8 예정)
 
-[Members Introduction]()
+[Members Introduction](https://github.com/ginttone/Zipbob/blob/master/member.md)
 
 
 ### Duty & Work-processing
