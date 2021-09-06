@@ -9,7 +9,10 @@
 다양한 식품 구매처를 알려주어 기존에 편향되어있어 잊혀진 우리농가를 살린다.
 ```
 ### Duty
-PM 김주희
-Web frontend 김지현
-Web backend 정다슬 , 박건욱
-Machine Learning 송재현 , 최현수
+PM [김주희](https://github.com/ginttone) `->` to Web frontend
+
+[김지현](https://github.com/fonslucens) `->` to Web frontend 
+
+[정다슬](https://github.com/Ethan-Jeong) , [박건욱](https://github.com/sxzcad)`->` to Web backend
+
+[최현수](https://github.com/hakdj) , [송재현](https://github.com/Songgplant)`->`to Machine Learning
