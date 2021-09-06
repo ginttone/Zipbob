@@ -1,3 +1,6 @@
+# Member Introduction page
+Zipbob : 김주희, 김지현, 정다슬, 박건욱, 최현수, 송재현
+
 About 김주희
 
 Introduction
@@ -6,7 +9,7 @@ Introduction
 
 ```
 
-E-mail add - alicelikesbab@gmail.com
+E-mail - alicelikesbab@gmail.com
 
 github - https://github.com/ginttone
 
@@ -33,10 +36,9 @@ Introduction
 
 ```
 
-E-mail add -
+E-mail - hyunii605@google.com 
 
-github -https://github.com/fonslucens   
-
+github - https://github.com/fonslucens   
 
 
 skills
@@ -61,9 +63,9 @@ Introduction
 
 ```
 
-E-mail add -
+E-mail - jds88guy@gmail.com 
 
-github 
+github - https://github.com/Ethan-Jeong
 
 
 
@@ -89,10 +91,9 @@ Introduction
 
 ```
 
-E-mail add -
+E-mail - pkpk4480@gmail.com 
 
-github 
-
+github - https://github.com/sxzcad
 
 
 Skills
@@ -113,10 +114,9 @@ Introduction
 
 ```
 
-E-mail add -
+E-mail - hakdjhakdj@gmail.com 
 
-github 
-
+github - https://github.com/hakdj
 
 
 Skills   
@@ -137,10 +137,9 @@ Introduction
 
 ```
 
-E-mail add -
+E-mail -
 
-github 
-
+github - https://github.com/Songgplant
 
 
 Skills 
@@ -150,3 +149,6 @@ Skills
 * BeautifulSoup , Schedule, Requests, Selenium, time  
 * sklearn , tensorflow, matplotlib, nltk  
 * Git, Pycharm ,Anaconda, Python anywhere
+
+
+[home](https://github.com/ginttone/Zipbob)
