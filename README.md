@@ -12,7 +12,14 @@
 
 [Multicampus](https://www.multicampus.com) 빅데이터 기반 지능형 서비스 개발 수료(10/8 예정)
 
-[Members](https://github.com/ginttone/Zipbob)
+|                                          | DevOps        | Web                             | Scrapping                                                | Machine-Learning                       | Collaboration & Tool                    |
+| ---------------------------------------- | ------------- | ------------------------------- | -------------------------------------------------------- | -------------------------------------- | --------------------------------------- |
+| [김주희](https://github.com/ginttone)    | git , SQLite3 | Html5, CSS , JSON ,Ajax, Django | BeautifulSoup , Schedule, Requests, pool, Selenium, time | sklearn , tensorflow, matplotlib, nltk | Git, Pycharm , Goorm                    |
+| [김지현](https://github.com/fonslucens)  | git , SQLite3 | Html5, CSS , JSON ,Ajax, Django | BeautifulSoup , Schedule, Requests, pool, Selenium, time | sklearn , tensorflow, matplotlib, nltk | Git, Pycharm , Goorm                    |
+| [정다슬](https://github.com/Ethan-Jeong) | git , SQLite3 | Html5, CSS , JSON ,Ajax, Django | BeautifulSoup , Schedule, Requests, Selenium, time       | sklearn , tensorflow, matplotlib, nltk | Git, Pycharm , Goorm                    |
+| [박건욱](https://github.com/sxzcad)      | git , SQLite3 | Html5, CSS , JSON ,Ajax, Django | BeautifulSoup , Schedule, Requests, Selenium, time       | sklearn , tensorflow, matplotlib, nltk | Git, Pycharm , Goorm                    |
+| [최현수](https://github.com/hakdj)       | git , Mysql   | Html5, CSS , JSON ,Ajax, Django | BeautifulSoup , Schedule, Requests, Selenium, time       | sklearn , tensorflow, matplotlib, nltk | Git, Pycharm ,Anaconda, Python anywhere |
+| [송재현](https://github.com/Songgplant)  | git , Mysql   | Html5, CSS , JSON ,Ajax, Django | BeautifulSoup , Schedule, Requests, Selenium, time       | sklearn , tensorflow, matplotlib, nltk | Git, Pycharm ,Anaconda, Python anywhere |
 
 ### Duty & Work-processing
 김주희 `->` [PM](https://github.com/ginttone/Zipbob)
