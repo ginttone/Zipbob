@@ -6,6 +6,7 @@
 ####  :raising_hand: Introduction
 
 ```
+안녕하세요 멀티캠퍼스 주관 '기업요구사항 기반의 문제해결 프로젝트'의 PM을 맡게 된 김주희 입니다. 
 
 ```
 
@@ -15,16 +16,13 @@
 
 
 
-#### :hammer: Skills
+#### :hammer: Used skills in The final project.
 
-* git , SQLite3  
+* SQLite3
 
-* Html5, CSS , JSON ,Ajax, Django 
+* Html5, CSS , JSON ,Ajax, Django , Pandas , Numpy
 
-* BeautifulSoup , Schedule, Requests, pool, Selenium, time  
-
-* sklearn , tensorflow, matplotlib, nltk  
-* Git, Pycharm , Goorm 
+* Git, Pycharm , Colab ,Jupyter 
 
 
 ---------
@@ -41,17 +39,13 @@
 :link: github - https://github.com/fonslucens   
 
 
-#### :hammer: Skills
+#### :hammer:  Used skills in The final project.
 
-* git , SQLite3  
+* SQLite3
 
-* Html5, CSS , JSON ,Ajax, Django 
+* Html5, CSS , JSON , Ajax, Django, Pandas , Numpy 
 
-* BeautifulSoup , Schedule, Requests, pool, Selenium, time  
-
-* sklearn , tensorflow, matplotlib, nltk  
-
-* Git, Pycharm , Goorm
+* Git, Pycharm , Colab ,Jupyter 
 
 
 ---------
@@ -69,17 +63,13 @@
 
 
 
-#### :hammer: Skills
+#### :hammer:  Used skills in The final project.
 
-* git , SQLite3  
+* SQLite3  
 
-* Html5, CSS , JSON ,Ajax, Django  
+* BeautifulSoup , Schedule, Requests, Selenium, time , Pandas , Numpy
 
-* BeautifulSoup , Schedule, Requests, Selenium, time  
-
-* sklearn , tensorflow, matplotlib, nltk  
-
-* Git, Pycharm , Goorm
+* Git, Pycharm , Colab ,Jupyter 
 
  
 ---------
@@ -96,13 +86,10 @@
 :link: github - https://github.com/sxzcad
 
 
-####  :hammer: Skills
+####  :hammer:  Used skills in The final project.
 
-* git , SQLite3  
-* Html5, CSS , JSON ,Ajax, Django 
-* BeautifulSoup , Schedule, Requests, Selenium, time  
-* sklearn , tensorflow, matplotlib, nltk  
-* Git, Pycharm , Goorm
+* BeautifulSoup , Schedule, Requests, Selenium, time , Pandas , Numpy 
+* Git, Pycharm , Colab ,Jupyter 
 
 
 ---------
@@ -119,13 +106,11 @@
 :link: github - https://github.com/hakdj
 
 
-#### :hammer: Skills   
+#### :hammer:  Used skills in The final project.  
 
 * git , Mysql  
-* Html5, CSS , JSON ,Ajax, Django 
-* BeautifulSoup , Schedule, Requests, Selenium, time  
-* sklearn , tensorflow, matplotlib, nltk  
-* Git, Pycharm ,Anaconda, Python anywhere
+* sklearn , tensorflow, matplotlib, nltk , Pandas , Numpy
+* Git, Pycharm ,Colab ,Jupyter 
 
 
 ---------
@@ -142,13 +127,11 @@
 :link: github - https://github.com/Songgplant
 
 
-#### :hammer: Skills 
+#### :hammer:  Used skills in The final project.
 
-* git , Mysql  
-* Html5, CSS , JSON ,Ajax, Django  
-* BeautifulSoup , Schedule, Requests, Selenium, time  
-* sklearn , tensorflow, matplotlib, nltk  
-* Git, Pycharm ,Anaconda, Python anywhere
+* SQLite3 
+* sklearn , tensorflow, matplotlib, nltk , Pandas , Numpy 
+* Git, Pycharm , Colab , jupyter 
 
 
 [home](https://github.com/ginttone/Zipbob)
