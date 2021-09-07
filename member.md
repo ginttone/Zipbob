@@ -119,10 +119,11 @@
 ####  :raising_hand: Introduction
 
 ```
+데이터 EDA, 가공/분석, 머신러닝 알고리즘 파트를 맡아 공부 중입니다.
 
 ```
 
-:love_letter: E-mail -
+:love_letter: E-mail - wogus0523@gmail.com
 
 :link: github - https://github.com/Songgplant
 
