@@ -16,6 +16,21 @@
 
 
 ### :computer: Duty & Work-processing
+
+| 개발환경         | 개발도구                                               |
+| ---------------- | ------------------------------------------------------ |
+| 개발언어         | Python, SQLite3                                        |
+| 통합 개발 환경   | Pycharm , Jupyter Notebook, Colab                      |
+| 분석 라이브러리  | Pandas, Numpy, Sklearn , Tensorflow                    |
+| 웹스크레핑       | Selenium, Beautifulsoup , time, Pool , Schedule        |
+| 시각화           | Matplotlib                                             |
+| 웹서버           | Django                                                 |
+| 웹 클라이언트    | Html5, Js, Ajax, CSS                                   |
+| 시스템 운영 환경 | Goorm                                                  |
+| 데이터 베이스    | DB browser in Pycharm                                  |
+| 협업 도구        | Github, Zoom, Google drive, Gather, Mindmup, ERD cloud |
+
+
 김주희 `->` [PM](https://github.com/ginttone/Zipbob)
 
 김지현 `->` to [Web frontend](https://github.com/ginttone/Zipbob/tree/master/home)
