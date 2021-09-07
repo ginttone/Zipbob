@@ -1,6 +1,6 @@
 # Member Introduction page
 ## :dizzy: Zipbob : 김주희, 김지현, 정다슬, 박건욱, 최현수, 송재현
----------
+
 ### :star: About 김주희
 
 ####  :raising_hand: Introduction
