@@ -17,19 +17,19 @@
 
 ### :computer: Duty & Work-processing
 
-| 개발환경         | 개발도구                                               |
-| ---------------- | ------------------------------------------------------ |
-| 개발언어         | Python, SQLite3                                        |
-| 통합 개발 환경   | Pycharm , Jupyter Notebook, Colab                      |
-| 분석 라이브러리  | Pandas, Numpy, Sklearn , Tensorflow                    |
-| 웹스크레핑       | Selenium, Beautifulsoup , time, Pool , Schedule        |
-| 시각화           | Matplotlib                                             |
-| 웹서버           | Django                                                 |
-| 웹 클라이언트    | Html5, Js, Ajax, CSS                                   |
-| 시스템 운영 환경 | Goorm                                                  |
-| 데이터 베이스    | DB browser in Pycharm                                  |
-| 협업 도구        | Github, Zoom, Google drive, Gather, Mindmup, ERD cloud |
+![화면 캡처 2021-09-07 100036](https://user-images.githubusercontent.com/83646543/132269426-78a5033b-d066-4ad8-9124-d803d4bb61b4.jpg)
 
+| 개발환경        | 개발도구                                                     |
+| --------------- | ------------------------------------------------------------ |
+| 개발언어        | Python, SQLite3                                              |
+| 통합 개발 환경  | Pycharm 3.6 , Jupyter Notebook 1.0.0, Colab                  |
+| 분석 라이브러리 | Pandas, Numpy, Sklearn , Tensorflow                          |
+| 웹크롤링        | Selenium 3.141.0 , Beautifulsoup 3.4.3 , Schadule, time, Pool |
+| 시각화          | Matplotlib 3.4.3                                             |
+| 웹서버          | Django 3.2.7                                                 |
+| 웹 클라이언트   | Html5, Js, Ajax, CSS                                         |
+| 데이터 베이스   | DB browser in Pycharm                                        |
+| 협업 도구       | Github, Zoom, Google drive, Gather, Mindmup, ERD cloud ,Moqups |
 
 김주희 `->` [PM](https://github.com/ginttone/Zipbob)
 
