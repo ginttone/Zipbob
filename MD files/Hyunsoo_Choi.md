@@ -4,6 +4,7 @@
 
 ```
 머신러닝/딮러닝 파트를 맡아 공부 중입니다. 잘부탁드립니다.
+시계열 학습중
 ```
 
 :love_letter: E-mail - hakdjhakdj@gmail.com 
