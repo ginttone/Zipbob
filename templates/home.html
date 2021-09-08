@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
@@ -16,12 +22,13 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
+    <a href="#home" class="w3-bar-item w3-button">Zipbob</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#menu" class="w3-bar-item w3-button">Menu</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="#login" class="w3-bar-item w3-button">Login</a>
+      <a href="#thisweek" class="w3-bar-item w3-button">This week</a>
+      <a href="#nextweek" class="w3-bar-item w3-button">Next week</a>
+      <a href="#recipe" class="w3-bar-item w3-button">recipe</a>
     </div>
   </div>
 </div>
@@ -38,25 +45,79 @@ h1, h2, h3, h4, h5, h6 {
 <div class="w3-content" style="max-width:1100px">
 
   <!-- About Section -->
-  <div class="w3-row w3-padding-64" id="about">
+  <div class="w3-row w3-padding-64" id="login">
     <div class="w3-col m6 w3-padding-large w3-hide-small">
-     <img src="/w3images/tablesetting2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+     <img src="../home/image/test01.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
     </div>
 
     <div class="w3-col m6 w3-padding-large">
-      <h1 class="w3-center">About Catering</h1><br>
-      <h5 class="w3-center">Tradition since 1889</h5>
+      <h1 class="w3-center">Zipbob</h1><br>
+      <h5 class="w3-center">농수산물 유통 가격정보를 이용한 요리 추천 및 농가 상생 프로젝트</h5>
       <p class="w3-large">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
-      <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">농수산물 가격정보를 비교하여 건강한 밥상을 차릴 수 있도록 한다.
+재료의 유통가격에 따른 동향을 제공한다. 합리적인 상품의 구매처 정보를 제공한다.
+일반 레시피 서비스와 프리미엄 레시피 서비스의 차별화를 두어 색다른 고객 만족을 준다.
+다양한 식품 구매처를 알려주어 기존에 편향되어있어 잊혀진 우리농가를 살린다. </p>
     </div>
   </div>
 
   <hr>
 
-  <!-- Menu Section -->
-  <div class="w3-row w3-padding-64" id="menu">
+  <!-- This week Section -->
+  <div class="w3-row w3-padding-16 w3-center" id="thisweek">
+    <h1 class="w3-center">This week</h1><br>
+
+    <div class="w3-quarter">
+    <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+    <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
+      <h3>Let Me Tell You About This Steak</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
+      <h3>Cherries, interrupted</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <p>What else?</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
+      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Next week Section -->
+  <div class="w3-container w3-padding-64" id="nextweek">
+    <h1>Next week</h1><br>
+    <button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Next week</button>
+      <div id="Demo1" class="w3-hide">
+        <div class="w3-container">
+          <p> 표 삽입 </p>
+        </div>
+      </div>
+  </div>
+<script>
+// Accordions
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+  <!-- Recipe Section -->
+  <div class="w3-row w3-padding-64" id="recipe">
     <div class="w3-col l6 w3-padding-large">
-      <h1 class="w3-center">Our Menu</h1><br>
+      <h1 class="w3-center">Recipe</h1><br>
       <h4>Bread Basket</h4>
       <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
 
@@ -69,19 +130,55 @@ h1, h2, h3, h4, h5, h6 {
       <h4>Scrambled eggs</h4>
       <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
 
-      <h4>Blueberry Pancakes</h4>
+      <h4>Blueberry Pancakes </h4>
       <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
     </div>
 
     <div class="w3-col l6 w3-padding-large">
-      <img src="/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+      <img src="/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="thisweek" style="width:100%">
     </div>
   </div>
-
   <hr>
 
+
+
+<!--  https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_parallax&stacked=h -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    </div>
+  </div>
+  <hr>
+
+
+
+  <!-- 구매처 -->
+  <div class="w3-row w3-padding-64">
+  <div class="w3-col l6 w3-padding-large">
+    <h1>Find store</h1>
+    <p><a href="#">Find store</a></p>
+    <p><a href="#">Find store</a></p>
+    <p><a href="#">Find store</a></p>
+    <p><a href="#">Find store</a></p>
+    <p><a href="#">Find store</a></p>
+  </div>
+  <hr>
+
+
   <!-- Contact Section -->
-  <div class="w3-container w3-padding-64" id="contact">
+  <div class="w3-container w3-padding-64" id="contect">
     <h1>Contact</h1><br>
     <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
     <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
@@ -93,6 +190,16 @@ h1, h2, h3, h4, h5, h6 {
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
       <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
     </form>
+  </div>
+
+  <!-- Banner ection -->
+  <hr>
+  <h1 class="w3-container w3-padding-64">Banner</h1>
+  <div class="w3-container w3-padding-16">
+    <a class="w3-button w3-grey w3-section">Banner</a>
+    <a class="w3-button w3-grey w3-section">Banner</a>
+    <a class="w3-button w3-grey w3-section">Banner</a>
+    <a class="w3-button w3-grey w3-section">Banner</a>
   </div>
 
 <!-- End page content -->
