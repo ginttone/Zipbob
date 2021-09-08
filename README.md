@@ -1,6 +1,6 @@
-# :office: Final project
-## :rice: Tean_name [ Zipbob ]
-### :green_apple: Main Topic [농수산물 유통 가격정보를 이용한 요리추천 및 농가상생 프로젝트]
+ :office: Final project
+# :rice: Tean_name [ Zipbob ]
+## :green_apple: Main Topic [농수산물 유통 가격정보를 이용한 요리추천 및 농가상생 프로젝트]
 ### :chart_with_upwards_trend: Outline 
 ```
 농수산물 가격정보를 비교하여 건강한 밥상을 차릴 수 있도록 한다.
@@ -23,7 +23,7 @@
 최현수 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Hyunsoo_Choi.md) <br>
 송재현 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Jaehyeon_Song.md) <br>
 
-### :computer: Duty & Work-processing
+### :computer: Work-processing
 
 ![화면 캡처 2021-09-08 095732](https://user-images.githubusercontent.com/83646543/132428660-dd3a284a-ad9e-43f4-937d-3df1e0e01102.jpg)
 
@@ -39,7 +39,7 @@
 | 데이터 베이스   | DB browser in Pycharm                                        |
 | 협업 도구       | Github, Zoom, Google drive, Gather, Mindmup, ERD cloud ,Moqups |
 
-### How to use
+### :+1: Work Introduction
 
 [Web frontend](https://github.com/ginttone/Zipbob/tree/master/home)
 
