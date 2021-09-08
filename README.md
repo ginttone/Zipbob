@@ -1,6 +1,6 @@
 # :office: Final project
 ## :rice: Tean_name [ Zipbob ]
-### :green_apple: Main Topic [ 농수산물 유통 가격정보를 이용한 요리 추천 및 농가 상생 프로젝트 ]
+### :green_apple: Main Topic [농수산물 유통 가격정보를 이용한 요리추천 및 농가상생 프로젝트]
 ### :chart_with_upwards_trend: Outline 
 ```
 농수산물 가격정보를 비교하여 건강한 밥상을 차릴 수 있도록 한다.
@@ -10,16 +10,18 @@
 ```
 ### :information_desk_person: Members Introduction
 
+:mortar_board: Education
+
 [Multicampus](https://www.multicampus.com) 빅데이터 기반 지능형 서비스 개발 수료(10/8 예정)
 
-[Members Introduction](https://github.com/ginttone/Zipbob/blob/master/member.md)
+:dizzy: Members 
 
-김주희 -> 페이지로 이동
-김지현 -> 페이지로 이동
-정다슬 -> 페이지로 이동
-박건욱 -> 페이지로 이동
-최현수 -> 페이지로 이동
-송재현 -> 페이지로 이동
+김주희 -> [Move to page]() <br>
+김지현 -> [Move to page]() <br>
+정다슬 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Daseul_Jeong.md) <br>
+박건욱 -> [Move to page]() <br>
+최현수 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Hyunsoo_Choi.md) <br>
+송재현 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Jaehyeon_Song.md) <br>
 
 ### :computer: Duty & Work-processing
 
