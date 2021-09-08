@@ -1,4 +1,4 @@
- :office: Final project
+<Final project>
 # :rice: Tean_name [ Zipbob ]
 ## :green_apple: Main Topic [농수산물 유통 가격정보를 이용한 요리추천 및 농가상생 프로젝트]
 ### :chart_with_upwards_trend: Outline 
