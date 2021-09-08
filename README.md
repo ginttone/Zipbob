@@ -23,7 +23,7 @@
 
 ### :computer: Duty & Work-processing
 
-![화면 캡처 2021-09-07 175844](https://user-images.githubusercontent.com/83646543/132319199-1033f385-b5b7-4b40-acdd-2a501e8a0bc4.jpg)
+![화면 캡처 2021-09-08 095732](https://user-images.githubusercontent.com/83646543/132428660-dd3a284a-ad9e-43f4-937d-3df1e0e01102.jpg)
 
 | 개발환경        | 개발도구                                                     |
 | --------------- | ------------------------------------------------------------ |
