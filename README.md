@@ -14,6 +14,12 @@
 
 [Members Introduction](https://github.com/ginttone/Zipbob/blob/master/member.md)
 
+김주희 -> 페이지로 이동
+김지현 -> 페이지로 이동
+정다슬 -> 페이지로 이동
+박건욱 -> 페이지로 이동
+최현수 -> 페이지로 이동
+송재현 -> 페이지로 이동
 
 ### :computer: Duty & Work-processing
 
@@ -31,10 +37,14 @@
 | 데이터 베이스   | DB browser in Pycharm                                        |
 | 협업 도구       | Github, Zoom, Google drive, Gather, Mindmup, ERD cloud ,Moqups |
 
-김주희 `->` [PM](https://github.com/ginttone/Zipbob)
+### How to use
 
-김지현 `->` to [Web frontend](https://github.com/ginttone/Zipbob/tree/master/home)
+[Web frontend](https://github.com/ginttone/Zipbob/tree/master/home)
 
-정다슬 , 박건욱 `->` to [Web backend](https://github.com/ginttone/Zipbob/tree/master/templates) and [Scrapping](https://github.com/ginttone/Zipbob/tree/master/Crawling)
+[Web backend](https://github.com/ginttone/Zipbob/tree/master/templates) 
 
-최현수 , 송재현 `->`to [Machine Learning](https://github.com/ginttone/Zipbob/tree/master/ML)
+[Scrapping](https://github.com/ginttone/Zipbob/tree/master/Crawling)
+
+[DB]()
+
+[Machine Learning](https://github.com/ginttone/Zipbob/tree/master/ML)
