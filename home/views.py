@@ -4,3 +4,7 @@ from django.shortcuts import render
 def home(request):
     result={}
     return render(request, 'home.html', context=result)
+
+def premium(request):
+    result={}
+    return render(request, 'premium.html', context=result)
