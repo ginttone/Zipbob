@@ -51,35 +51,135 @@ body, html {
     min-height: 400px;
   }
 }
+
+/* navibar */
+.add:hover{
+  background: rgba(255, 0, 0, 0);
+}
+
+/* accodian (login) */
+  input[id*="signin"]{display:none;}
+    input[id*="signin"]+label{
+    diplay: block;
+    padding: 20px;
+    border:2px solid rgba(255, 99, 71, 0);
+    border-bottom:0;
+    color: rgb(120, 120, 120);
+    font-weight:900;
+    background: rgba(255, 99, 71, 0);
+    cursor:pointer;
+    position: relative;
+  }
+  input[id*="signin"]+label em {
+    position: absolute;
+    top:50%
+    right:10px;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+    display:inline-block;
+    background:url('/static/image/beans.png')0 0 no-repeat;
+  }
+  input[id*="signin"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#ebf8ff;
+    font-size:11px;
+    }
+  input[id*="signin"]+ label + div p{
+  display: inline-block;
+  padding : 20px;
+  }
+
+  input[id*="signin"]:checked + label + div{
+  max-height:100px
+  }
+
+  input[id*="signin"]:checked + label em{
+  background-position: 0 -30px;
+  }
+
+/* accodian (nextweek,recipe) */
+  input[id*="answer"]{display:none;}
+    input[id*="answer"]+label{
+    diplay: block;
+    padding: 20px;
+    border:2px solid hsla(9, 100%, 64%, 0.5);
+    border-bottom:0;
+    color:  hsla(9, 50%, 64%, 0.5);
+    font-weight:900;
+    background: hsla(9, 50%, 64%, 0.5);
+    cursor:pointer;
+    position: relative;
+  }
+  input[id*="answer"]+label em {
+    position: absolute;
+    top:50%
+    right:10px;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+    display:inline-block;
+    background:url('/static/image/beans.png')0 0 no-repeat;
+  }
+  input[id*="answer"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#ebf8ff;
+    font-size:11px;
+    }
+  input[id*="answer"]+ label + div p{
+  display: inline-block;
+  padding : 20px;
+  }
+
+  input[id*="answer"]:checked + label + div{
+  max-height:100px
+  }
+
+  input[id*="answer"]:checked + label em{
+  background-position: 0 -30px;
+  }
 </style>
 <body>
 
 <!-- 큰창 카테고리 네비바 Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-none w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="#home"  class="w3-bar-item w3-button w3-hover-none ">HOME</a>
+    <div class="add">
+    <a href="#home"  class="add w3-bar-item w3-button ">HOME</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-envelope"></i> Contact</a>
     <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right"> Recipe</a>
     <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right"> NEXTweek</a>
     <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right"> THISweek</a>
-    <a href="#signin" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-user"></i> SignIn</a>
 
-    </a>
+    <div class="accordian w3-bar-item w3-button" >
+      <input type="checkbox" id="signin_1">
+      <label for="signin_1">SignIn1<em></em></label>
+      <div><p>로그인할수 있게</p></div>
+    </div>
+
+   </div>
   </div>
 
   <!-- 작은창 카테고리 네비바 Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#signin" class="w3-bar-item w3-button" onclick="toggleFunction()">SignIn</a>
+    <div class="accordian" >
+      <input type="checkbox" id="signin_2">
+      <label for="signin_2">SignIn<em></em></label>
+      <div><p>로그인할수 있게</p></div>
+    </div>
     <a href="#thisweek" class="w3-bar-item w3-button" onclick="toggleFunction()">THISweek</a>
     <a href="#nextweek" class="w3-bar-item w3-button" onclick="toggleFunction()">NEXTweek</a>
     <a href="#recipe" class="w3-bar-item w3-button" onclick="toggleFunction()">Recipe</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
 </div>
-
 
   <!-- 홈화면 사진 여러장 웰컴글과 함께 -->
   <div class="bgimg-1 w3-display-container w3-center">
@@ -127,20 +227,24 @@ body, html {
         1<br></p>
 
   <!--다음주 전망 표 슬라이드-->
-
+<div class="accordian">
+    <input type="checkbox" id="answer01">
+    <label for="answer01">모든레시피<em></em></label>
+    <div><p>표로 페이지네이션해서 보여질 부분</p></div>
+  </div>
 
   <!-- 추천레시피 이름-->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">사진</span>
+    <span class="w3-xxlarge w3-text-white w3-wide">추천레시피</span>
   </div>
 </div>
 
 
   <!-- 추천레시피 팝업 Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+<div class="w3-content w3-container w3-padding-64" id="recipe">
+  <h3 class="w3-center">추천레시피에대한 간단 소개</h3>
+  <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
@@ -177,20 +281,25 @@ body, html {
     <div class="w3-col m3">
       <img src="/static/image/rs4.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+
   </div>
 </div>
 
   <!-- 추천레시피 이미지 누르면 요리페이지 모달창  뜨게-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+<div id="modal01" class="w3-modal" style="background-color:rgba(255, 100, 0, 0.2);" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-display-topright" style="background-color:rgba(255, 0, 0, 0.2);" title="Close Modal Image"><i class="fa fa-remove"></i></span>
   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
     <img id="img01" class="w3-image">
     <p id="caption" class="w3-opacity w3-large"></p>
   </div>
 </div>
 
-<!-- 모든레시피 슬라이드 페이지네이션-->
+<!-- 모든레시피 아코디언 메뉴 페이지네이션-->
+  <div class="accordian">
+    <input type="checkbox" id="answer02">
+    <label for="answer02">더 많은 레시피<em></em></label>
+    <div><p>다르게 보여지나 확인 </p></div>
+  </div>
 
 
 <!-- 연락망 부분 -->
@@ -200,62 +309,29 @@ body, html {
   </div>
 </div>
 
-<!--연락 db부분 -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WHERE I WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
-
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
-      </div>
-      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- 베너자리 -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+<!-- 연락부분 -->
+<footer class="w3-topleft w3-black w3-row w3-padding-small w3-opacity w3-hover-opacity-off">
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a href="https://github.com/ginttone/Zipbob" title="주소로 이동" target="_blank" class="w3-hover-text-white"><i class="fa fa-github w3-hover-opacity"></i> Zipbob </a>
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+
+    <p style="color:Gray;">
+      Zipbob Link<br>
+      Zipbob Link<br>
+      <br><br></p>
+
+  <div class="w3-bottomleft" style="color:Lightgray;">Service center 1234-5678 Weekdays 09:00~18:00  (Breaktime 12:00~13:00)</div>
 </footer>
 
 <script>
-// Modal Image Gallery
+// Modal Image Gallery(choose recipe)
 function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+
 
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
