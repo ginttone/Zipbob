@@ -41,6 +41,8 @@ for row in searchs:
     driver = webdriver.Chrome('chromedriver.exe')
     url = 'https://www.youtube.com/c/paikscuisine/search?query=' + search
 
+    print(url)
+
     driver.get(url)
 
     contents = driver.find_elements_by_css_selector('#video-title > yt-formatted-string')
@@ -52,27 +54,31 @@ for row in searchs:
 
     body = driver.find_element_by_tag_name("body")
 
-    while True:
+    skip = 0
+    search_cnt = 0
 
-        search_cnt = 0
+    while True:
 
         for content in contents:
 
             title = content.text
 
-            print( search ,'/ ', title )
             if search in title:
                 search_cnt += 1
-                # print(title)
-
-        print(len(contents) , search_cnt)
 
         if len(contents) > search_cnt:
+
+            if search_cnt == 0:
+                skip = 0
+            else:
+                skip = 1
             break
         else:
             if max_page != 0 and max_page == len(contents):
                 print('끝' , max_page)
                 break
+            elif search_cnt == 0:
+                skip = 1
             else:
                 max_page = len(contents)
 
@@ -93,93 +99,95 @@ for row in searchs:
 
                 contents = driver.find_elements_by_css_selector('#video-title > yt-formatted-string')  # #video-title > yt-formatted-string
 
+    if skip != 0:
 
-    for content in contents:
+        for content in contents:
 
-        title = content.text
-        content.click()
-        time.sleep(3)
+            title = content.text
+            con_elem = content
+            driver.execute_script("arguments[0].click();", con_elem)
+            time.sleep(3)
 
-        driver.find_element_by_css_selector('#more > yt-formatted-string').click()
-        time.sleep(1)
-        recipe = driver.find_elements_by_css_selector('div#description > yt-formatted-string > span.style-scope.yt-formatted-string')
+            driver.find_element_by_css_selector('#more > yt-formatted-string').click()
+            time.sleep(1)
+            recipe = driver.find_elements_by_css_selector('div#description > yt-formatted-string > span.style-scope.yt-formatted-string')
 
-        recipe_row = list()
+            recipe_row = list()
 
-        for row in recipe:
+            for row in recipe:
 
-            if len(row.text) > 4:
+                if len(row.text) > 4:
 
-                method = row.text
+                    method = row.text
 
-                if '[재료]' in method:
-                    start = method.find('[재료]')
+                    if '[재료]' in method:
+                        start = method.find('[재료]')
+                    else:
+                        start = method.find(' 재료 ') -2
+
+                    if '[만드는 법]' in method:
+                        mid = method.find('[만드는 법]')
+                    else:
+                        mid = method.find(' 만드는 법 ') -2
+
+                    if '[Ingredients]' in method:
+                        end  = method.find('[Ingredients]') -1
+                    else:
+                        end = method.find(' Ingredients ') -2
+
+                    ingredients = method[start:mid].replace('\n\n\n\n','').replace('\n',' ').replace(',',' ')
+                    method = method[mid:end].replace('\n\n\n\n','').replace('\n',' ').replace(',',' ')
+
+                    recipe_row.append(search+'_'+str(cnt))
+                    recipe_row.append(title)
+                    recipe_row.append(ingredients)
+                    recipe_row.append(method)
+
+            elem = driver.find_element_by_tag_name("body")
+            last_height = driver.execute_script("return document.body.scrollHeight")
+
+            max = 0
+            print('댓글 스크롤 시작')
+            while True:
+
+                elem.send_keys(Keys.PAGE_DOWN)
+                elem.send_keys(Keys.PAGE_DOWN)
+                elem.send_keys(Keys.PAGE_DOWN)
+                elem.send_keys(Keys.PAGE_DOWN)
+                elem.send_keys(Keys.PAGE_DOWN)
+
+                time.sleep(2)
+
+                comments = driver.find_elements_by_css_selector('div > #content-text')
+                comments_len = len(comments)
+
+                if max == comments_len and max != 0 :
+                    print('댓글 스크롤 종료')
+                    break
                 else:
-                    start = method.find(' 재료 ') -2
+                    max = comments_len
 
-                if '[만드는 법]' in method:
-                    mid = method.find('[만드는 법]')
-                else:
-                    mid = method.find(' 만드는 법 ') -2
+            comment_list_list = list()
 
-                if '[Ingredients]' in method:
-                    end  = method.find('[Ingredients]') -1
-                else:
-                    end = method.find(' Ingredients ') -2
+            for comment in comments:
 
-                ingredients = method[start:mid].replace('\n\n\n\n','').replace('\n',' ').replace(',',' ')
-                method = method[mid:end].replace('\n\n\n\n','').replace('\n',' ').replace(',',' ')
+                comment_list = list()
+                cmt = comment.text.replace('\n',' ').replace(',','')
 
-                recipe_row.append(search+'_'+str(cnt))
-                recipe_row.append(title)
-                recipe_row.append(ingredients)
-                recipe_row.append(method)
+                if len(cmt) > 8:
+                    comment_list.append(search + '_' + str(cnt))
+                    comment_list.append(cmt)
+                    comment_list_list.append(comment_list)
 
-        elem = driver.find_element_by_tag_name("body")
-        last_height = driver.execute_script("return document.body.scrollHeight")
+                    cur.execute('insert into recipe_comment_youtube (menu_key,comment) values(?,?)', (comment_list[0],comment_list[1]))
+                    con.commit()
 
-        max = 0
-        print('댓글 스크롤 시작')
-        while True:
+            cnt += 1
 
-            elem.send_keys(Keys.PAGE_DOWN)
-            elem.send_keys(Keys.PAGE_DOWN)
-            elem.send_keys(Keys.PAGE_DOWN)
-            elem.send_keys(Keys.PAGE_DOWN)
-            elem.send_keys(Keys.PAGE_DOWN)
+            cur.execute('insert into recipe_info_youtube (menu_key,title,ingredients,method) values(?,?,?,?)',(recipe_row[0],recipe_row[1],recipe_row[2],recipe_row[3]))
+            con.commit()
 
-            time.sleep(2)
-
-            comments = driver.find_elements_by_css_selector('div > #content-text')
-            comments_len = len(comments)
-
-            if max == comments_len and max != 0 :
-                print('댓글 스크롤 종료')
-                break
-            else:
-                max = comments_len
-
-        comment_list_list = list()
-
-        for comment in comments:
-
-            comment_list = list()
-            cmt = comment.text.replace('\n',' ').replace(',','')
-
-            if len(cmt) > 8:
-                comment_list.append(search + '_' + str(cnt))
-                comment_list.append(cmt)
-                comment_list_list.append(comment_list)
-
-                cur.execute('insert into recipe_comment_youtube (menu_key,comment) values(?,?)', (comment_list[0],comment_list[1]))
-                con.commit()
-
-        cnt += 1
-
-        cur.execute('insert into recipe_info_youtube (menu_key,title,ingredients,method) values(?,?,?,?)',(recipe_row[0],recipe_row[1],recipe_row[2],recipe_row[3]))
-        con.commit()
-
-        driver.back()
-        time.sleep(3)
+            driver.back()
+            time.sleep(5)
 
 driver.quit()
