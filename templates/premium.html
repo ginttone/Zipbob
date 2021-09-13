@@ -1,107 +1,388 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>premium page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-body {font-family: "Times New Roman", Georgia, Serif;}
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display";
-  letter-spacing: 5px;
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Times New Roman', serif;}
+
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
 }
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  display: none
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/static/image/contact-bg.png");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/static/image/hero01.png");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+/* navibar */
+.add:hover{
+  background: rgba(255, 0, 0, 0);
+}
+
+/* accodian (login) */
+  input[id*="signin"]{display:none;}
+    input[id*="signin"]+label{
+    diplay: block;
+    padding: 20px;
+    border:2px solid rgba(255, 99, 71, 0);
+    border-bottom:0;
+    color: rgb(120, 120, 120);
+    font-weight:900;
+    background: rgba(255, 99, 71, 0);
+    cursor:pointer;
+    position: relative;
+  }
+  input[id*="signin"]+label em {
+    position: absolute;
+    top:50%
+    right:10px;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+    display:inline-block;
+    background:url('/static/image/beans.png')0 0 no-repeat;
+  }
+  input[id*="signin"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#ebf8ff;
+    font-size:11px;
+    }
+  input[id*="signin"]+ label + div p{
+  display: inline-block;
+  padding : 20px;
+  }
+
+  input[id*="signin"]:checked + label + div{
+  max-height:100px
+  }
+
+  input[id*="signin"]:checked + label em{
+  background-position: 0 -30px;
+  }
+
+/* accodian (nextweek,recipe) */
+  input[id*="answer"]{display:none;}
+    input[id*="answer"]+label{
+    diplay: block;
+    padding: 20px;
+    border:2px solid hsla(9, 100%, 64%, 0.5);
+    border-bottom:0;
+    color:  hsla(9, 50%, 64%, 0.5);
+    font-weight:900;
+    background: hsla(9, 50%, 64%, 0.5);
+    cursor:pointer;
+    position: relative;
+  }
+  input[id*="answer"]+label em {
+    position: absolute;
+    top:50%
+    right:10px;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+    display:inline-block;
+    background:url('/static/image/beans.png')0 0 no-repeat;
+  }
+  input[id*="answer"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#ebf8ff;
+    font-size:11px;
+    }
+  input[id*="answer"]+ label + div p{
+  display: inline-block;
+  padding : 20px;
+  }
+
+  input[id*="answer"]:checked + label + div{
+  max-height:100px
+  }
+
+  input[id*="answer"]:checked + label em{
+  background-position: 0 -30px;
+  }
 </style>
 <body>
 
-<!-- Navbar (sit on top) -->
+<!-- 큰창 카테고리 네비바 Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#menu" class="w3-bar-item w3-button">Menu</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="add">
+    <a href="#home"  class="add w3-bar-item w3-button ">HOME</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-envelope"></i> Contact</a>
+    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right"> Recipe</a>
+    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right"> NEXTweek</a>
+    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right"> THISweek</a>
+
+    <div class="accordian w3-bar-item w3-button" >
+      <input type="checkbox" id="signin_1">
+      <label for="signin_1">SignIn1<em></em></label>
+      <div><p>로그인할수 있게</p></div>
     </div>
+
+   </div>
+  </div>
+
+  <!-- 작은창 카테고리 네비바 Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <div class="accordian" >
+      <input type="checkbox" id="signin_2">
+      <label for="signin_2">SignIn<em></em></label>
+      <div><p>로그인할수 있게</p></div>
+    </div>
+    <a href="#thisweek" class="w3-bar-item w3-button" onclick="toggleFunction()">THISweek</a>
+    <a href="#nextweek" class="w3-bar-item w3-button" onclick="toggleFunction()">NEXTweek</a>
+    <a href="#recipe" class="w3-bar-item w3-button" onclick="toggleFunction()">Recipe</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
 </div>
 
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  <img class="w3-image" src="/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
-  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
-    <h1 class="w3-xxlarge">Le Catering</h1>
-  </div>
-</header>
-
-<!-- Page content -->
-<div class="w3-content" style="max-width:1100px">
-
-  <!-- About Section -->
-  <div class="w3-row w3-padding-64" id="about">
-    <div class="w3-col m6 w3-padding-large w3-hide-small">
-     <img src="/w3images/tablesetting2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+  <!-- 홈화면 사진 여러장 웰컴글과 함께 -->
+  <div class="bgimg-1 w3-display-container w3-center">
+    <img src="/static/image/hero01.png" style="width:100%">
+    <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
+      <h3>Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</h3>
     </div>
-
-    <div class="w3-col m6 w3-padding-large">
-      <h1 class="w3-center">About Catering</h1><br>
-      <h5 class="w3-center">Tradition since 1889</h5>
-      <p class="w3-large">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
-      <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="bgimg-1 w3-display-container w3-center">
+    <img src="/static/image/hero02.png" style="width:100%">
+    <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
+      <h3>Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</h3>
     </div>
   </div>
 
-  <hr>
 
-  <!-- Menu Section -->
-  <div class="w3-row w3-padding-64" id="menu">
-    <div class="w3-col l6 w3-padding-large">
-      <h1 class="w3-center">Our Menu</h1><br>
-      <h4>Bread Basket</h4>
-      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
 
-      <h4>Honey Almond Granola with Fruits</h4>
-      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
+  <!-- 이번주 동향 -->
 
-      <h4>Belgian Waffle</h4>
-      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
-
-      <h4>Scrambled eggs</h4>
-      <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
-
-      <h4>Blueberry Pancakes</h4>
-      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
-    </div>
-
-    <div class="w3-col l6 w3-padding-large">
-      <img src="/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
-    </div>
+<div class="w3-row w3-center w3-amber w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">상승1</span><br>
+    <p>Dandelion cucumber earthnut pea peanut soko zucchini</p>
   </div>
-
-  <hr>
-
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-64" id="contact">
-    <h1>Contact</h1><br>
-    <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
-    <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
-    <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
-      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
-    </form>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">상승2</span><br>
+    <p>Dandelion cucumber earthnut pea peanut soko zucchini</p>
   </div>
-
-<!-- End page content -->
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">하락1</span><br>
+    <p>설명글 위치</p>
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">하락2</span><br>
+    Meetings
+  </div>
 </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-32">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- 다음주 전망-->
+<div class="w3-content w3-container w3-padding-64" id="nextweek">
+  <h3 class="w3-center">간단소개</h3>
+  <p class="w3-center"><em>I love photography</em></p>
+  <p>1<br>
+        1<br>
+        1<br></p>
+
+  <!--다음주 전망 표 슬라이드-->
+<div class="accordian">
+    <input type="checkbox" id="answer01">
+    <label for="answer01">모든레시피<em></em></label>
+    <div><p>표로 페이지네이션해서 보여질 부분</p></div>
+  </div>
+
+  <!-- 추천레시피 이름-->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">추천레시피</span>
+  </div>
+</div>
+
+
+  <!-- 추천레시피 팝업 Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="recipe">
+  <h3 class="w3-center">추천레시피에대한 간단 소개</h3>
+  <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="/static/image/apple.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/static/image/gulbi.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/static/image/test04.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/static/image/rs1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="/static/image/rs2.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/static/image/rs3.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/static/image/rs5.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/static/image/rs4.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+    </div>
+
+  </div>
+</div>
+
+  <!-- 추천레시피 이미지 누르면 요리페이지 모달창  뜨게-->
+<div id="modal01" class="w3-modal" style="background-color:rgba(255, 100, 0, 0.2);" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-display-topright" style="background-color:rgba(255, 0, 0, 0.2);" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- 모든레시피 아코디언 메뉴 페이지네이션-->
+  <div class="accordian">
+    <input type="checkbox" id="answer02">
+    <label for="answer02">더 많은 레시피<em></em></label>
+    <div><p>다르게 보여지나 확인 </p></div>
+  </div>
+
+
+<!-- 연락망 부분 -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- 연락부분 -->
+<footer class="w3-topleft w3-black w3-row w3-padding-small w3-opacity w3-hover-opacity-off">
+  <div class="w3-xlarge w3-section">
+    <a href="https://github.com/ginttone/Zipbob" title="주소로 이동" target="_blank" class="w3-hover-text-white"><i class="fa fa-github w3-hover-opacity"></i> Zipbob </a>
+  </div>
+
+    <p style="color:Gray;">
+      Zipbob Link<br>
+      Zipbob Link<br>
+      <br><br></p>
+
+  <div class="w3-bottomleft" style="color:Lightgray;">Service center 1234-5678 Weekdays 09:00~18:00  (Breaktime 12:00~13:00)</div>
 </footer>
+
+<script>
+// Modal Image Gallery(choose recipe)
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" ;
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("bgimg-1");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
+}
+
+</script>
+
+  <script type="text/javascript">
+        $('.slider').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3500,
+            arrows: false,
+            fade: true,
+            cssEase: 'linear'
+        });
+
+    </script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
+<html xmlns="http://www.w3.org/1999/html">
+<title>Zipbob</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,8 +17,58 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 5px;
 }
 </style>
-<body>
+<style>
+body {
+  background-image: url('./static/image/summer3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
+/* accodian (login) */
+  input[id*="login"]{display:none;}
+    input[id*="login"]+label{
+    display: block;
+    padding: 20px;
+    border:2px solid rgba(255, 99, 71, 0);
+    border-bottom:0;
+    color: rgb(120, 120, 120);
+    font-weight:900;
+    background: rgba(255, 99, 71, 0);
+    cursor:pointer;
+    position: relative;
+  }
+  input[id*="login"]+label em {
+    position: absolute;
+    top:50%
+    right:10px;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+    display:inline-block;
+    background:url('/static/image/beans.png')0 0 no-repeat;
+  }
+  input[id*="login"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#ebf8ff;
+    font-size:11px;
+    }
+  input[id*="login"]+ label + div p{
+  display: inline-block;
+  padding : 20px;
+  }
+  input[id*="login"]:checked + label + div{
+  max-height:100px
+  }
+  input[id*="login"]:checked + label em{
+  background-position: 0 -30px;
+  }
+
+
+
+</style>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
@@ -45,9 +95,134 @@ h1, h2, h3, h4, h5, h6 {
 <div class="w3-content" style="max-width:1100px">
 
   <!-- About Section -->
-  <div class="w3-row w3-padding-64" id="login">
+  <div class="accordian w3-bar-item w3-button" id="login">
+
+           <form action="/day02/insert" >
+           <table border="1" width="300" align="center">
+             <tr>
+               <td>이름</td>
+               <td><input type="text" name="name"></input></td>
+             </tr>
+             <tr>
+               <td>연락처</td>
+               <td><input type="text" name="num"></input></td>
+             </tr>
+             <tr>
+              <td>이메일</td>
+              <td><input type="text" name="addr"></input></td>
+             </tr>
+             <tr>
+              <td>비밀번호</td>
+              <td><input type="text" name="pwd"></input></td>
+             </tr>
+             <tr>
+               <td colspan="3" align="center"><input type="submit" name="전송"></input></td>
+             </tr>
+           </table>
+          </form>
+  </div>
+
+
+<!--    <input type="checkbox" id="popup">-->
+<!--    <label for="popup">view</label>-->
+<!--    <div>-->
+<!--      <div>-->
+<!--        <label for="popup"></label>-->
+<!--      </div>-->
+<!--      <label for="popup"></label>-->
+<!--    </div>-->
+<!--    <style>-->
+<!--    input[id*="popup"] {-->
+<!--        display:none;-->
+<!--    }-->
+<!--    input[id*="popup"] + label {-->
+<!--        display:inline-block;-->
+<!--        padding:20px;-->
+<!--        background:#ffcd41;-->
+<!--        color:#fff;-->
+<!--    }-->
+<!--    input[id*="popup"] + label + div {-->
+<!--        position:fixed;-->
+<!--        top:0;-->
+<!--        left:0;-->
+<!--        width:100%;-->
+<!--        height:100%;-->
+<!--        z-index:100;-->
+<!--    }-->
+<!--    input[id*="popup"] + label + div > div {-->
+<!--        position:absoluate;-->
+<!--        top:50%;-->
+<!--        left:50%;-->
+<!--        transform:translate(-50%,-50%);-->
+<!--        width:500%;-->
+<!--        height:300%;-->
+<!--        z-index:2;-->
+<!--    }-->
+<!--    input[id*="popup"] + label + div > div > label {-->
+<!--        position:absoluate;-->
+<!--        top:0%;-->
+<!--        right:0%;-->
+<!--        transform:translate(40%,-40%);-->
+<!--        background:#dd5347;-->
+<!--        border-radius:100%;-->
+<!--        padding:20px-->
+<!--        z-index:1;-->
+<!--    }-->
+<!--    input[id*="popup"] + label + div > label {-->
+<!--        position:absoluate;-->
+<!--        top:0;-->
+<!--        left:0;-->
+<!--        width:100%;-->
+<!--        height:100%;-->
+<!--        background:rgba(0,0,0,.9);-->
+<!--        z-index:1;-->
+<!--    }-->
+<!--    </style>-->
+<!--    </input>-->
+
+
+<!--      &lt;!&ndash; login &ndash;&gt;-->
+<!--    <div class="label_content">-->
+<!--      <input type="checkbox" id="login">-->
+<!--      <label for="login">Login</label>-->
+<!--      <div class="content">-->
+<!--        <label for="login">Close</label>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <style>-->
+<!--    .label_content {-->
+<!--        position:absolute;-->
+<!--        top:50%;-->
+<!--        left:50%;-->
+<!--        transform:translate(-50%,-50%);-->
+<!--    }-->
+<!--    .label_content input {}-->
+<!--    .label_content input + label {}-->
+<!--    .label_content input + label + div {-->
+<!--        display:none;-->
+<!--        width:300px;-->
+<!--        height:300px;-->
+<!--        background:#f5f5f5;-->
+<!--        border:3px solid #eee;-->
+<!--        position:absolute;-->
+<!--        top:50%;-->
+<!--        left:50%;-->
+<!--        transform:translate(-50%,-50%);-->
+<!--    }-->
+<!--    .label_content input:checked + label + div {display:block;}-->
+<!--    .label_content input + label + div label {-->
+<!--        position:absolute;-->
+<!--        bottom:0;-->
+<!--        left:50%;-->
+<!--        transform:translate(-50%,-50%);-->
+<!--        background:#333;-->
+<!--        color:#fff;-->
+<!--        padding:20px;-->
+<!--    }-->
+<!--    </style>-->
+
     <div class="w3-col m6 w3-padding-large w3-hide-small">
-     <img src="../home/image/test01.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+     <img src="../static/image/test01.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
     </div>
 
     <div class="w3-col m6 w3-padding-large">
@@ -63,30 +238,34 @@ h1, h2, h3, h4, h5, h6 {
 
   <hr>
 
+
+
   <!-- This week Section -->
   <div class="w3-row w3-padding-16 w3-center" id="thisweek">
     <h1 class="w3-center">This week</h1><br>
-
     <div class="w3-quarter">
-    <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-    <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <img src="../static/image/pa.jpg" alt="item01" style="width:70%">
+    <h3>상승&#128314; &#128316; &#128070; &#128077; &#11014;</h3>
+      <p>전주 : 원</p>
+      <p>금주 : 원</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="../static/image/potato.jpg" alt="item02" style="width:70%">
+      <h3>상승</h3>
+      <p>전주 : 원</p>
+      <p>금주 : 원</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
+      <img src="../static/image/gulbi.jpg" alt="item03" style="width:70%">
+      <h3>하락&#128315; &#128317; &#128071; &#128078; &#11015;</h3>
+      <p>전주 : 원</p>
+      <p>금주 : 원</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="../static/image/apple.jpg" alt="item04" style="width:70%">
+      <h3>하락</h3>
+      <p>전주 : 원</p>
+      <p>금주 : 원</p>
     </div>
   </div>
 
@@ -99,9 +278,76 @@ h1, h2, h3, h4, h5, h6 {
       <div id="Demo1" class="w3-hide">
         <div class="w3-container">
           <p> 표 삽입 </p>
+          <head>
+          <style>
+          table {
+            border-collapse: collapse;
+            width: 80%;
+          }
+          table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+          th, td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+          }
+          tr:nth-child(1) {
+            background-color: #D6EEEE;
+          }
+          </style>
+          </head>
+          <body>
+
+          <h2> 다음주 전망 </h2>
+          <table>
+            <tr>
+              <th>품목</th>
+              <th>단위</th>
+              <th>이번주</th>
+              <th>다음주</th>
+              <th>등락률</th>
+            </tr>
+            <tr>
+              <td>밤고구마</td>
+              <td>500g</td>
+              <td>4480원</td>
+              <td>4368원</td>
+              <td>&#128317;2.5%</td>
+            </tr>
+            <tr>
+              <td>달걀</td>
+              <td>15구</td>
+              <td>12000원</td>
+              <td>12600원</td>
+              <td>&#128314;5%</td>
+            </tr>
+            <tr>
+              <td>전복</td>
+              <td>1kg</td>
+              <td>40000원</td>
+              <td>42800원</td>
+              <td>&#128314;7%</td>
+            </tr>
+          </table>
+          <hr>
+          <img src="../static/image/graph.png" alt="item04" style="width:50%">
+
+          </body>
+
+
+
         </div>
       </div>
   </div>
+
+
+
+
+
+
 <script>
 // Accordions
 function myAccFunc(id) {
@@ -143,21 +389,33 @@ function myAccFunc(id) {
 
 
 <!--  https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_parallax&stacked=h -->
-  <div class="w3-row-padding w3-center">
+
+<!--test01-->
+<button type="button" class="btn_open">팝업 열기</button>
+  <div id="mask"></div>
+  <div class="popup_box">
+    <div class="popup_cont">
+      팝업 내용
+    </div>
+    <div class="popup_close">
+      <button type="button" class="btn_close">팝업 닫기</button>
+    </div>
+  </div>
+<!-- test02 -->
+  <div class="w3-row-padding w3-center" id="layer">
     <div class="w3-col m3">
-      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      <img src="../static/image/dakgalbi.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Recipe01">
+      <a href="#" class="close">닫기</a>
+    </div>
+    <div class="w3-col m3">
+      <img src="../static/image/mille-feuille.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Recipe02">
+    </div>
+    <div class="w3-col m3">
+      <img src="../static/image/pasta.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Recipe03">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <img src="../static/image/tteokbokki.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Recipe04">
     </div>
   </div>
   <hr>
@@ -165,7 +423,7 @@ function myAccFunc(id) {
 
 
   <!-- 구매처 -->
-  <div class="w3-row w3-padding-64">
+  <div class="w3-container w3-padding-64">
   <div class="w3-col l6 w3-padding-large">
     <h1>Find store</h1>
     <p><a href="#">Find store</a></p>
@@ -174,33 +432,51 @@ function myAccFunc(id) {
     <p><a href="#">Find store</a></p>
     <p><a href="#">Find store</a></p>
   </div>
+  </div>
   <hr>
 
 
+  <!-- Banner ection -->
+  <div class="w3-container w3-padding-64">
+  <div class="w3-col l6 w3-padding-large">
+    <h1>Banner</h1>
+    <a class="w3-button" style="background-color:#87C6C8; padding:7px" href="https://www.kamis.or.kr/">
+      <img src="./static/image/at.png" style="width:150px;height:50px;">
+    </a>
+    <a class="w3-button" style="background-color:#87C6C8; padding:7px" href="https://front.homeplus.co.kr/">
+      <img src="./static/image/homeplus.jpg" style="width:150px;height:50px;">
+    </a>
+    <a class="w3-button" style="background-color:#87C6C8; padding:7px" href="https://www.coupang.com">
+      <img src="./static/image/coupang.jpg" style="width:150px;height:50px;">
+    </a>
+    <a class="w3-button" style="background-color:#87C6C8; padding:7px" href="https://www.lottesuper.co.kr">
+      <img src="./static/image/lotte.png" style="width:150px;height:50px;">
+    </a>
+    <a class="w3-button w3-grey w3-section">Banner</a>
+    <a class="w3-button w3-grey w3-section">Banner</a>
+  </div>
+  </div>
+
+
+ <hr>
   <!-- Contact Section -->
   <div class="w3-container w3-padding-64" id="contect">
+    <div class="w3-col l6 w3-padding-large">
     <h1>Contact</h1><br>
     <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
     <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
     <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
-    <form action="/action_page.php" target="_blank">
+<!--    <form action="/action_page.php" target="_blank">-->
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
-      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+<!--      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>-->
+<!--      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>-->
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
       <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
     </form>
+    </div>
   </div>
 
-  <!-- Banner ection -->
-  <hr>
-  <h1 class="w3-container w3-padding-64">Banner</h1>
-  <div class="w3-container w3-padding-16">
-    <a class="w3-button w3-grey w3-section">Banner</a>
-    <a class="w3-button w3-grey w3-section">Banner</a>
-    <a class="w3-button w3-grey w3-section">Banner</a>
-    <a class="w3-button w3-grey w3-section">Banner</a>
-  </div>
+
 
 <!-- End page content -->
 </div>
