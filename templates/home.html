@@ -25,47 +25,16 @@ body {
   background-size: cover;
 }
 
-/* accodian (login) */
-  input[id*="login"]{display:none;}
-    input[id*="login"]+label{
-    display: block;
-    padding: 20px;
-    border:2px solid rgba(255, 99, 71, 0);
-    border-bottom:0;
-    color: rgb(120, 120, 120);
-    font-weight:900;
-    background: rgba(255, 99, 71, 0);
-    cursor:pointer;
-    position: relative;
-  }
-  input[id*="login"]+label em {
-    position: absolute;
-    top:50%
-    right:10px;
-    width:30px;
-    height:30px;
-    margin-top:-15px;
-    display:inline-block;
-    background:url('/static/image/beans.png')0 0 no-repeat;
-  }
-  input[id*="login"]+label+ div {
-    max-height:0;
-    transition: all.35s;
-    overflow:hidden;
-    background:#ebf8ff;
-    font-size:11px;
-    }
-  input[id*="login"]+ label + div p{
-  display: inline-block;
-  padding : 20px;
-  }
-  input[id*="login"]:checked + label + div{
-  max-height:100px
-  }
-  input[id*="login"]:checked + label em{
-  background-position: 0 -30px;
-  }
-
+/* 로그인 login */
+  .popup { position:absolute; left: 50%; top: 50%; z-index: 5; transform: translate(-50%, -50%);
+  width: 500px; height: 500px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: #fff; border-radius: 5px; text-align: right;
+  padding: 20px; box-sizing: border-box; opacity: 0; transition: all 0.5s;}
+  .popup a{ color: grey; text-decoration: none;}
+  .popup: target { opacity: 1;}
+  .popup: target + dim{ opacity: 1; z-index: 2;}
+  .dim {position: absolute; left: 0; top: 0; z-index: -1; width: 100%;
+  height: 100%; background: rgba(0,0,0,0.6); opacity: 0; transition: all 0.5s;}
 
 /* PC 문의하기 버튼 스타일 */
 .floBanPc2 {
@@ -109,7 +78,7 @@ body {
 					$("#banner img:nth-child(3)").addClass("firstImg");
 					$("#banner").append(appendImg);
 					if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
-			} f
+			}
 
 			/****** 왼쪽버튼 클릭시 ******/
 			$("#left").click(function(){
@@ -143,9 +112,10 @@ body {
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
     <a href="#home" class="w3-bar-item w3-button">Zipbob</a>
+    <a href="#login" class="w3-bar-item w3-button">Login</a>
+
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#login" class="w3-bar-item w3-button">Login</a>
       <a href="#thisweek" class="w3-bar-item w3-button">This week</a>
       <a href="#nextweek" class="w3-bar-item w3-button">Next week</a>
       <a href="#recipe" class="w3-bar-item w3-button">recipe</a>
@@ -172,32 +142,38 @@ body {
 <div class="w3-content" style="max-width:1100px">
 
   <!-- About Section -->
-      <div class="accordian w3-bar-item w3-button" id="login">
-         <form action="/day02/insert" >
-         <table border="1" width="300" align="center">
-           <tr>
-             <td>이름</td>
-             <td><input type="text" name="name"></input></td>
-           </tr>
-           <tr>
-             <td>연락처</td>
-             <td><input type="text" name="num"></input></td>
-           </tr>
-           <tr>
-            <td>이메일</td>
-            <td><input type="text" name="addr"></input></td>
-           </tr>
-           <tr>
-            <td>비밀번호</td>
-            <td><input type="text" name="pwd"></input></td>
-           </tr>
-           <tr>
-             <td colspan="3" align="center"><input type="submit" name="전송"></input></td>
-           </tr>
-         </table>
-        </form>
-      </div>
+<!--      <div class="accordian w3-bar-item w3-button" id="login">-->
+<!--         <form action="/day02/insert" >-->
+<!--         <table border="1" width="300" align="center">-->
+<!--           <tr>-->
+<!--             <td>이름</td>-->
+<!--             <td><input type="text" name="name"></input></td>-->
+<!--           </tr>-->
+<!--           <tr>-->
+<!--             <td>연락처</td>-->
+<!--             <td><input type="text" name="num"></input></td>-->
+<!--           </tr>-->
+<!--           <tr>-->
+<!--            <td>이메일</td>-->
+<!--            <td><input type="text" name="addr"></input></td>-->
+<!--           </tr>-->
+<!--           <tr>-->
+<!--            <td>비밀번호</td>-->
+<!--            <td><input type="text" name="pwd"></input></td>-->
+<!--           </tr>-->
+<!--           <tr>-->
+<!--             <td colspan="3" align="center"><input type="submit" name="전송"></input></td>-->
+<!--           </tr>-->
+<!--         </table>-->
+<!--        </form>-->
+<!--      </div>-->
 
+<!-- 로그인 -->
+
+  <div class="popup" id="login">
+    <a href="#login">닫기</a>
+  </div>
+  <div class="dim"></div>
 
 <!--    <input type="checkbox" id="popup">-->
 <!--    <label for="popup">view</label>-->
