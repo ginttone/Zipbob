@@ -182,6 +182,7 @@ body, html {
 </div>
 
   <!-- 홈화면 사진 여러장 웰컴글과 함께 -->
+<div id="home">
   <div class="bgimg-1 w3-display-container w3-center">
     <img src="/static/image/hero01.png" style="width:100%">
     <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
@@ -194,7 +195,7 @@ body, html {
       <h3>Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</h3>
     </div>
   </div>
-
+</div>
   <!-- 이번주 동향 띄-->
 <div class="bgimg-3 w3-display-container w3-opacity-min" id="thisweek">
   <div class="w3-display-middle">
@@ -229,7 +230,7 @@ body, html {
 </div>
 
   <!-- 다음주 전망 띄-->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="nextweek">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">다음주 전망</span>
   </div>
@@ -238,20 +239,20 @@ body, html {
 
   <!-- 다음주 전망-->
 
-<div class="w3-content w3-container w3-padding-64" id="nextweek">
-  <h3 class="w3-center"> 다음주 전망 그래프</h3>
+<div class="w3-content w3-container w3-padding-64" >
+  <h3 class="w3-center">다음주 전망 그래프</h3>
   <p class="w3-center"><em>I love photography</em></p>
 </div>
 
   <!--다음주 전망 표 슬라이드-->
 <div class="accordian">
     <input type="checkbox" id="answer01">
-    <label for="answer01"><em>다음주 전망 표</em></label>
+    <label for="answer01">다음주 전망 표<em></em></label>
     <div><p>표 보여질 부분</p></div>
   </div>
 
   <!-- 추천레시피 이름-->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
+<div class="bgimg-2 w3-display-container w3-opacity-min" id="recipe">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide">추천레시피</span>
   </div>
@@ -259,7 +260,7 @@ body, html {
 
 
   <!-- 추천레시피 팝업 Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="recipe">
+<div class="w3-content w3-container w3-padding-64" >
   <h3 class="w3-center">추천레시피에대한 간단 소개</h3>
   <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>
 
@@ -335,7 +336,7 @@ body, html {
 </div>
 
 <!-- 연락부분 -->
-<footer class="w3-topleft w3-black w3-row w3-padding-small w3-opacity w3-hover-opacity-off">
+<footer class="w3-topleft w3-black w3-row w3-padding-small w3-opacity w3-hover-opacity-off" id="contact">
   <div class="w3-xlarge w3-section">
     <a href="https://github.com/ginttone/Zipbob" title="주소로 이동" target="_blank" class="w3-hover-text-white"><i class="fa fa-github w3-hover-opacity"></i> Zipbob </a>
   </div>
