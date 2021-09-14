@@ -27,6 +27,7 @@ body, html {
 /* First image (Logo. Full height) */
 .bgimg-1 {
   display: none
+   min-height: 600px;
 }
 
 /* Second image (Portfolio) */
@@ -136,7 +137,7 @@ body, html {
   }
 
   input[id*="answer"]:checked + label + div{
-  max-height:100px
+  max-height:400px
   }
 
   input[id*="answer"]:checked + label em{
@@ -184,15 +185,15 @@ body, html {
   <!-- 홈화면 사진 여러장 웰컴글과 함께 -->
 <div id="home">
   <div class="bgimg-1 w3-display-container w3-center">
-    <img src="/static/image/hero01.png" style="width:100%">
+    <img src="/static/image/peach.jpg" style="width:100%">
     <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
-      <h3>Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</h3>
+      <h3>웰컴 글</h3>
     </div>
   </div>
   <div class="bgimg-1 w3-display-container w3-center">
-    <img src="/static/image/hero02.png" style="width:100%">
+    <img src="/static/image/peach.jpg" style="width:100%">
     <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
-      <h3>Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</h3>
+      <h3>여기에는 간단한 소개가 들어갈 것</h3>
     </div>
   </div>
 </div>
@@ -242,13 +243,14 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" >
   <h3 class="w3-center">다음주 전망 그래프</h3>
   <p class="w3-center"><em>I love photography</em></p>
+  <img src="/static/image/graph1.png" style="width:100%">
 </div>
 
   <!--다음주 전망 표 슬라이드-->
 <div class="accordian">
     <input type="checkbox" id="answer01">
     <label for="answer01">다음주 전망 표<em></em></label>
-    <div><p>표 보여질 부분</p></div>
+    <div><p><img src="/static/image/graph2.png" style="width:100%"></p></div>
   </div>
 
   <!-- 추천레시피 이름-->
@@ -267,15 +269,15 @@ body, html {
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="/static/image/apple.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      <img src="/static/image/rs1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
     </div>
 
     <div class="w3-col m3">
-      <img src="/static/image/gulbi.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <img src="/static/image/rs1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
     </div>
 
     <div class="w3-col m3">
-      <img src="/static/image/test04.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      <img src="/static/image/rs1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
     </div>
 
     <div class="w3-col m3">
