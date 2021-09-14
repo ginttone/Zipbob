@@ -3,10 +3,10 @@
 ## :green_apple: Main Topic [농수산물 유통 가격정보를 이용한 요리추천 및 농가상생 프로젝트]
 ### :chart_with_upwards_trend: Outline 
 ```
-농수산물 가격정보를 비교하여 건강한 밥상을 차릴 수 있도록 한다.
-재료의 유통가격에 따른 동향을 제공한다. 합리적인 상품의 구매처 정보를 제공한다. 
-일반 레시피 서비스와 프리미엄 레시피 서비스의 차별화를 두어 색다른 고객 만족을 준다.
-다양한 식품 구매처를 알려주어 기존에 편향되어있어 잊혀진 우리농가를 살린다.
+농수산물 가격정보를 비교하여 합리적인 가격의 밥상을 차릴 수 있도록 한다.
+재료의 유통가격에 따른 동향을 제공한다.  
+합리적인 가격으로 재료를 구매할 수 있게 해주고, 
+그에 맞는 레시피를 제공함으로써 어떤 요리를 할지에 대한 길잡이를 제공한다 . 
 ```
 ### :information_desk_person: Members Introduction
 
@@ -16,10 +16,10 @@
 
 :dizzy: Members 
 
-김주희 -> [Move to page]() <br>
-김지현 -> [Move to page]() <br>
+김주희 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Juhee_Kim.md) <br>
+김지현 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Jihyun_Kim.md) <br>
 정다슬 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Daseul_Jeong.md) <br>
-박건욱 -> [Move to page]() <br>
+박건욱 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Gunuk_Park.md) <br>
 최현수 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Hyunsoo_Choi.md) <br>
 송재현 -> [Move to page](https://github.com/ginttone/Zipbob/blob/master/MD%20files/Jaehyeon_Song.md) <br>
 

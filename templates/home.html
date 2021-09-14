@@ -67,8 +67,78 @@ body {
   }
 
 
+/* PC 문의하기 버튼 스타일 */
+.floBanPc2 {
+  position: fixed;
+  top: 700px; /* 윗쪽 끝에서부터의 거리 */
+  right: 45%;
+  margin-right: -683px; /* 가운데를 기준으로 오른쪽 거리 */
+  z-index: 99;
+}
 
 </style>
+
+<!-- 슬라이드 배너 -->
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+	<style>
+		body {overflow: hidden; margin: 0; padding:0; }
+		#layout {position: relative; maring: auto; width: 960px; height:50px; display: flex; flex-warp: wrap; align-items: center; }
+		#layout b {width: 10px; position: relative; z-index: 1; cursor: pointer;  }
+		#banner  { position:relative; z-index:0; width:960px; height:50px;overflow:hidden; margin:auto; }
+		#banner img {position: absolute; width: 150px; height: 50px; }
+		#banner img:nth-child(1) { left:-160px; z-index:2; }
+		#banner img:nth-child(2) { left:0px; }
+		#banner img:nth-child(3) { left:160px; }
+		#banner img:nth-child(4) { left:320px; }
+		#banner img:last-child { left:480px; }
+	</style>
+
+	<script>
+	$(document).ready(function(){
+			var i=$("#banner img:first-child").attr('src').substr(-5,1);
+			/****** 처음부터 자동 *****/
+			var rolling=setInterval(frame, 1500);
+			function frame() {
+
+					$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
+					i++;
+					if( i==5) {i=1}
+					var appendImg="<img src='images/roll_img_"+i+".jpg'>";
+					$("#banner img:nth-child(3)").addClass("firstImg");
+					$("#banner").append(appendImg);
+					if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
+			} f
+
+			/****** 왼쪽버튼 클릭시 ******/
+			$("#left").click(function(){
+				clearInterval();
+				$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
+				i++;
+				if( i==5) {i=1}
+				var appendImg="<img src='images/roll_img_"+i+".jpg'>";
+				$("#banner img:nth-child(3)").addClass("firstImg");
+				$("#banner").append(appendImg);
+				if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
+			});
+
+			/****** 오른쪽버튼 클릭시 ******/
+			$("#right").click(function(){
+				$("#banner img").removeClass("firstImg").animate({left:'+=160px'});
+				i=i-1;
+				if( i==0) {i=4}
+				var prependImg="<img src='images/roll_img_"+i+".jpg'>";
+				$("#banner img:nth-child(2)").addClass("firstImg");
+				$("#banner").prepend(prependImg);
+				if( $("#banner img:last-child").position().left>=640 ) {  $("#banner img:last-child").remove()  }
+			});
+	});
+	</script>
+</head>
+
+
+
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
@@ -83,6 +153,13 @@ body {
   </div>
 </div>
 
+<!-- PC 문의하기 버튼 -->
+<div class="floBanPc2 hidden-md hidden-sm hidden-xs">
+  <a href="tel:전화번호">
+    <a href="javascript:;" class="menu-btn">플로팅</a>
+  </a>
+</div>
+
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
   <img class="w3-image" src="/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
@@ -95,32 +172,31 @@ body {
 <div class="w3-content" style="max-width:1100px">
 
   <!-- About Section -->
-  <div class="accordian w3-bar-item w3-button" id="login">
-
-           <form action="/day02/insert" >
-           <table border="1" width="300" align="center">
-             <tr>
-               <td>이름</td>
-               <td><input type="text" name="name"></input></td>
-             </tr>
-             <tr>
-               <td>연락처</td>
-               <td><input type="text" name="num"></input></td>
-             </tr>
-             <tr>
-              <td>이메일</td>
-              <td><input type="text" name="addr"></input></td>
-             </tr>
-             <tr>
-              <td>비밀번호</td>
-              <td><input type="text" name="pwd"></input></td>
-             </tr>
-             <tr>
-               <td colspan="3" align="center"><input type="submit" name="전송"></input></td>
-             </tr>
-           </table>
-          </form>
-  </div>
+      <div class="accordian w3-bar-item w3-button" id="login">
+         <form action="/day02/insert" >
+         <table border="1" width="300" align="center">
+           <tr>
+             <td>이름</td>
+             <td><input type="text" name="name"></input></td>
+           </tr>
+           <tr>
+             <td>연락처</td>
+             <td><input type="text" name="num"></input></td>
+           </tr>
+           <tr>
+            <td>이메일</td>
+            <td><input type="text" name="addr"></input></td>
+           </tr>
+           <tr>
+            <td>비밀번호</td>
+            <td><input type="text" name="pwd"></input></td>
+           </tr>
+           <tr>
+             <td colspan="3" align="center"><input type="submit" name="전송"></input></td>
+           </tr>
+         </table>
+        </form>
+      </div>
 
 
 <!--    <input type="checkbox" id="popup">-->
@@ -227,12 +303,12 @@ body {
 
     <div class="w3-col m6 w3-padding-large">
       <h1 class="w3-center">Zipbob</h1><br>
-      <h5 class="w3-center">농수산물 유통 가격정보를 이용한 요리 추천 및 농가 상생 프로젝트</h5>
-      <p class="w3-large">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
-      <p class="w3-large w3-text-grey w3-hide-medium">농수산물 가격정보를 비교하여 건강한 밥상을 차릴 수 있도록 한다.
-재료의 유통가격에 따른 동향을 제공한다. 합리적인 상품의 구매처 정보를 제공한다.
-일반 레시피 서비스와 프리미엄 레시피 서비스의 차별화를 두어 색다른 고객 만족을 준다.
-다양한 식품 구매처를 알려주어 기존에 편향되어있어 잊혀진 우리농가를 살린다. </p>
+      <h4 class="w3-center">농수산물 유통 가격정보를 이용한 요리 추천 및 농가 상생 프로젝트</h4>
+      <p class="w3-large"> 농수산물 가격정보를 비교하여 건강한 밥상을 차릴 수 있도록 한다.</p>
+      <p class="w3-large"> 재료의 유통가격에 따른 동향을 제공한다. 합리적인 상품의 구매처 정보를 제공한다.</p>
+      <p class="w3-large"> 일반 레시피 서비스와 프리미엄 레시피 서비스의 차별화를 두어 색다른 고객 만족을 준다.</p>
+      <p class="w3-large"> 다양한 식품 구매처를 알려주어 기존에 편향되어있어 잊혀진 우리농가를 살린다. <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium"> </p>
     </div>
   </div>
 
@@ -300,6 +376,8 @@ body {
           </style>
           </head>
           <body>
+
+
 
           <h2> 다음주 전망 </h2>
           <table>
@@ -391,17 +469,17 @@ function myAccFunc(id) {
 <!--  https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_parallax&stacked=h -->
 
 <!--test01-->
-<button type="button" class="btn_open">팝업 열기</button>
-  <div id="mask"></div>
-  <div class="popup_box">
-    <div class="popup_cont">
-      팝업 내용
-    </div>
-    <div class="popup_close">
-      <button type="button" class="btn_close">팝업 닫기</button>
-    </div>
-  </div>
-<!-- test02 -->
+<!--<button type="button" class="btn_open">팝업 열기</button>-->
+<!--  <div id="mask"></div>-->
+<!--  <div class="popup_box">-->
+<!--    <div class="popup_cont">-->
+<!--      팝업 내용-->
+<!--    </div>-->
+<!--    <div class="popup_close">-->
+<!--      <button type="button" class="btn_close">팝업 닫기</button>-->
+<!--    </div>-->
+<!--  </div>-->
+
   <div class="w3-row-padding w3-center" id="layer">
     <div class="w3-col m3">
       <img src="../static/image/dakgalbi.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Recipe01">
@@ -456,6 +534,25 @@ function myAccFunc(id) {
     <a class="w3-button w3-grey w3-section">Banner</a>
   </div>
   </div>
+
+
+
+<!-- 슬라이드 배너 -->
+	<div id="layout">
+	<b id="left">&lt;</b>
+	<div id="banner">
+      <a class="w3-button" style="background-color:#87C6C8; padding:7px" href="https://www.lottesuper.co.kr">
+        <img src="./static/image/lotte.png" style="width:150px;height:50px;">
+      </a>
+      <img src="./static/image/at.png" width="150" height="50">
+      <img src="./static/image/homeplus.jpg" width="150" height="50" class="firstImg">
+      <img src="./static/image/coupang.jp" width="150" height="50">
+      <img src="./static/image/lotte.png" width="150" height="50">
+      <img src="./static/image/at.png" width="150" height="50">
+	</div>
+	<b id="right">&gt;</b>
+	</div>
+
 
 
  <hr>
