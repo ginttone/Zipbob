@@ -10,6 +10,9 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
@@ -26,6 +29,9 @@ body {
 }
 
 /* 로그인 login */
+  .bnt { display: block; width: 200px; height: 50px; background: #4ac4f3:
+  text-decoration: none; text-align: center; line-height: 50px; color: #fff;
+  border-radius: 50px;}
   .popup { position:absolute; left: 50%; top: 50%; z-index: 5; transform: translate(-50%, -50%);
   width: 500px; height: 500px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: #fff; border-radius: 5px; text-align: right;
@@ -33,7 +39,7 @@ body {
   .popup a{ color: grey; text-decoration: none;}
   .popup: target { opacity: 1;}
   .popup: target + dim{ opacity: 1; z-index: 2;}
-  .dim {position: absolute; left: 0; top: 0; z-index: -1; width: 100%;
+  .dim {position: fixed; left: 0; top: 0; z-index: -1; width: 100%;
   height: 100%; background: rgba(0,0,0,0.6); opacity: 0; transition: all 0.5s;}
 
 /* PC 문의하기 버튼 스타일 */
@@ -104,6 +110,11 @@ body {
 			});
 	});
 	</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      });
+    </script>
 </head>
 
 
@@ -112,13 +123,14 @@ body {
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
     <a href="#home" class="w3-bar-item w3-button">Zipbob</a>
-    <a href="#login" class="w3-bar-item w3-button">Login</a>
 
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
+      <a href="#login" class="w3-bar-item w3-button">Login</a>
       <a href="#thisweek" class="w3-bar-item w3-button">This week</a>
       <a href="#nextweek" class="w3-bar-item w3-button">Next week</a>
-      <a href="#recipe" class="w3-bar-item w3-button">recipe</a>
+      <a href="#recipe" class="w3-bar-item w3-button">Recipe</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
     </div>
   </div>
 </div>
@@ -169,11 +181,36 @@ body {
 <!--      </div>-->
 
 <!-- 로그인 -->
-
+<!--  <a href="#login" class="btn">팝업</a>-->
   <div class="popup" id="login">
+    <h2>Login</h2>
+    <table class="type1">
+      <caption>
+        <details>
+          <summary>Login</summary>
+          <div>아이디, 비밀번호, 회원가입</div>
+        </details>
+      </caption>
+    <colgroup>
+      <col style="width: 11px">
+    </colgroup>
+      <tbody>
+      <tr>
+        <th><label for="txt1">아이디</label></th>
+        <td><input type="text" id="txt1" placeholder="아이디를 입력해주세요."></td>
+      </tr>
+      <tr>
+        <th><label for="txt2">비밀번호</label></th>
+        <td><input type="text" id="txt2" placeholder="비밀번호를 입력해주세요."></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="join">
+      <a href="#join">회원가입</a>
+    </div>
     <a href="#login">닫기</a>
-  </div>
   <div class="dim"></div>
+  </div>
 
 <!--    <input type="checkbox" id="popup">-->
 <!--    <label for="popup">view</label>-->
@@ -387,7 +424,7 @@ body {
             </tr>
           </table>
           <hr>
-          <img src="../static/image/graph.png" alt="item04" style="width:50%">
+          <img src="../static/image/graph2.png" alt="item04" style="width:50%">
 
           </body>
 
@@ -533,10 +570,11 @@ function myAccFunc(id) {
 
  <hr>
   <!-- Contact Section -->
-  <div class="w3-container w3-padding-64" id="contect">
+  <div class="w3-container w3-padding-64" id="contact">
     <div class="w3-col l6 w3-padding-large">
     <h1>Contact</h1><br>
-    <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+      <a href="https://github.com/ginttone/Zipbob" title="주소로 이동" target="_blank" class="w3-hover-text-white"><i class="fa fa-github w3-hover-opacity"></i> Zipbob </a>
+    <p>궁금하신 점이 있다면 메모로 남겨주세요.</p>
     <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
     <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
 <!--    <form action="/action_page.php" target="_blank">-->
@@ -545,6 +583,9 @@ function myAccFunc(id) {
 <!--      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>-->
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
       <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+      <p>서울특별시 서초구 서초동 123-12</p>
+      <p>고객센터 1234-5678</p>
+      <p>평일 09-18시</p>
     </form>
     </div>
   </div>
