@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home', views.home),
     path('', views.home),
-    path('premium', views.premium)
+    path('premium', views.premium),
+    path('frame_test', views.frame_test)
 ]
