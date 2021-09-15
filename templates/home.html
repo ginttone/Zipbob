@@ -17,59 +17,6 @@
 <link rel="stylesheet" href="/static/css1/accodian.css">
 <link rel="stylesheet" href="/static/css1/home.css">
 
-<!-- 슬라이드 배너 -->
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-	<script>
-	$(document).ready(function(){
-			var i=$("#banner img:first-child").attr('src').substr(-5,1);
-			/****** 처음부터 자동 *****/
-			var rolling=setInterval(frame, 1500);
-			function frame() {
-
-					$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
-					i++;
-					if( i==5) {i=1}
-					var appendImg="<img src='images/roll_img_"+i+".jpg'>";
-					$("#banner img:nth-child(3)").addClass("firstImg");
-					$("#banner").append(appendImg);
-					if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
-			}
-
-			/****** 왼쪽버튼 클릭시 ******/
-			$("#left").click(function(){
-				clearInterval();
-				$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
-				i++;
-				if( i==5) {i=1}
-				var appendImg="<img src='images/roll_img_"+i+".jpg'>";
-				$("#banner img:nth-child(3)").addClass("firstImg");
-				$("#banner").append(appendImg);
-				if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
-			});
-
-			/****** 오른쪽버튼 클릭시 ******/
-			$("#right").click(function(){
-				$("#banner img").removeClass("firstImg").animate({left:'+=160px'});
-				i=i-1;
-				if( i==0) {i=4}
-				var prependImg="<img src='images/roll_img_"+i+".jpg'>";
-				$("#banner img:nth-child(2)").addClass("firstImg");
-				$("#banner").prepend(prependImg);
-				if( $("#banner img:last-child").position().left>=640 ) {  $("#banner img:last-child").remove()  }
-			});
-	});
-	</script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-      $(document).ready(function(){
-      });
-    </script>
-</head>
-
-
-
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
@@ -417,8 +364,6 @@ function carousel() {
     </div>
   </div>
 
-
-
 <!-- End page content -->
 </div>
 
@@ -426,6 +371,58 @@ function carousel() {
 <footer class="w3-center w3-light-grey w3-padding-32">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
+
+<!-- 슬라이드 배너 -->
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+			var i=$("#banner img:first-child").attr('src').substr(-5,1);
+			/****** 처음부터 자동 *****/
+			var rolling=setInterval(frame, 1500);
+			function frame() {
+
+					$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
+					i++;
+					if( i==5) {i=1}
+					var appendImg="<img src='images/roll_img_"+i+".jpg'>";
+					$("#banner img:nth-child(3)").addClass("firstImg");
+					$("#banner").append(appendImg);
+					if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
+			}
+
+			/****** 왼쪽버튼 클릭시 ******/
+			$("#left").click(function(){
+				clearInterval();
+				$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
+				i++;
+				if( i==5) {i=1}
+				var appendImg="<img src='images/roll_img_"+i+".jpg'>";
+				$("#banner img:nth-child(3)").addClass("firstImg");
+				$("#banner").append(appendImg);
+				if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
+			});
+
+			/****** 오른쪽버튼 클릭시 ******/
+			$("#right").click(function(){
+				$("#banner img").removeClass("firstImg").animate({left:'+=160px'});
+				i=i-1;
+				if( i==0) {i=4}
+				var prependImg="<img src='images/roll_img_"+i+".jpg'>";
+				$("#banner img:nth-child(2)").addClass("firstImg");
+				$("#banner").prepend(prependImg);
+				if( $("#banner img:last-child").position().left>=640 ) {  $("#banner img:last-child").remove()  }
+			});
+	});
+	</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      });
+    </script>
+</head>
+
 
 </body>
 </html>
