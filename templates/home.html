@@ -12,41 +12,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" type="text/css" href="css/default.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<style>
-body {font-family: "Times New Roman", Georgia, Serif;}
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display";
-  letter-spacing: 5px;
-}
-</style>
-<style>
-body {
-  background-image: url('./static/image/summer3.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+<link rel="stylesheet" type="text/css" href="css/accodian.css">
 
-
-</style>
+<link rel="stylesheet" href="/static/css1/accodian.css">
+<link rel="stylesheet" href="/static/css1/home.css">
 
 <!-- 슬라이드 배너 -->
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-	<style>
-		body {overflow: hidden; margin: 0; padding:0; }
-		#layout {position: relative; maring: auto; width: 960px; height:50px; display: flex; flex-warp: wrap; align-items: center; }
-		#layout b {width: 10px; position: relative; z-index: 1; cursor: pointer;  }
-		#banner  { position:relative; z-index:0; width:960px; height:50px;overflow:hidden; margin:auto; }
-		#banner img {position: absolute; width: 150px; height: 50px; }
-		#banner img:nth-child(1) { left:-160px; z-index:2; }
-		#banner img:nth-child(2) { left:0px; }
-		#banner img:nth-child(3) { left:160px; }
-		#banner img:nth-child(4) { left:320px; }
-		#banner img:last-child { left:480px; }
-	</style>
 
 	<script>
 	$(document).ready(function(){
@@ -99,16 +72,24 @@ body {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
     <a href="#home" class="w3-bar-item w3-button">Zipbob</a>
 
     <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#login" class="w3-bar-item w3-button">Login</a>
+    <div class="add">
       <a href="#thisweek" class="w3-bar-item w3-button">This week</a>
       <a href="#nextweek" class="w3-bar-item w3-button">Next week</a>
       <a href="#recipe" class="w3-bar-item w3-button">Recipe</a>
       <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+
+      <div class="accordian w3-bar-item w3-button" >
+        <input type="checkbox" id="signin_1">
+        <label for="signin_1">SignIn1<em></em></label>
+      <div><p>로그인할수 있게</p></div>
+    </div>
     </div>
   </div>
 </div>
@@ -131,133 +112,6 @@ body {
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px">
 
-  <!-- About Section -->
-<!--      <div class="accordian w3-bar-item w3-button" id="login">-->
-<!--         <form action="/day02/insert" >-->
-<!--         <table border="1" width="300" align="center">-->
-<!--           <tr>-->
-<!--             <td>이름</td>-->
-<!--             <td><input type="text" name="name"></input></td>-->
-<!--           </tr>-->
-<!--           <tr>-->
-<!--             <td>연락처</td>-->
-<!--             <td><input type="text" name="num"></input></td>-->
-<!--           </tr>-->
-<!--           <tr>-->
-<!--            <td>이메일</td>-->
-<!--            <td><input type="text" name="addr"></input></td>-->
-<!--           </tr>-->
-<!--           <tr>-->
-<!--            <td>비밀번호</td>-->
-<!--            <td><input type="text" name="pwd"></input></td>-->
-<!--           </tr>-->
-<!--           <tr>-->
-<!--             <td colspan="3" align="center"><input type="submit" name="전송"></input></td>-->
-<!--           </tr>-->
-<!--         </table>-->
-<!--        </form>-->
-<!--      </div>-->
-
-<!-- 로그인 -->
-
-
-<!--    <input type="checkbox" id="popup">-->
-<!--    <label for="popup">view</label>-->
-<!--    <div>-->
-<!--      <div>-->
-<!--        <label for="popup"></label>-->
-<!--      </div>-->
-<!--      <label for="popup"></label>-->
-<!--    </div>-->
-<!--    <style>-->
-<!--    input[id*="popup"] {-->
-<!--        display:none;-->
-<!--    }-->
-<!--    input[id*="popup"] + label {-->
-<!--        display:inline-block;-->
-<!--        padding:20px;-->
-<!--        background:#ffcd41;-->
-<!--        color:#fff;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div {-->
-<!--        position:fixed;-->
-<!--        top:0;-->
-<!--        left:0;-->
-<!--        width:100%;-->
-<!--        height:100%;-->
-<!--        z-index:100;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div > div {-->
-<!--        position:absoluate;-->
-<!--        top:50%;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--        width:500%;-->
-<!--        height:300%;-->
-<!--        z-index:2;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div > div > label {-->
-<!--        position:absoluate;-->
-<!--        top:0%;-->
-<!--        right:0%;-->
-<!--        transform:translate(40%,-40%);-->
-<!--        background:#dd5347;-->
-<!--        border-radius:100%;-->
-<!--        padding:20px-->
-<!--        z-index:1;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div > label {-->
-<!--        position:absoluate;-->
-<!--        top:0;-->
-<!--        left:0;-->
-<!--        width:100%;-->
-<!--        height:100%;-->
-<!--        background:rgba(0,0,0,.9);-->
-<!--        z-index:1;-->
-<!--    }-->
-<!--    </style>-->
-<!--    </input>-->
-
-
-<!--      &lt;!&ndash; login &ndash;&gt;-->
-<!--    <div class="label_content">-->
-<!--      <input type="checkbox" id="login">-->
-<!--      <label for="login">Login</label>-->
-<!--      <div class="content">-->
-<!--        <label for="login">Close</label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <style>-->
-<!--    .label_content {-->
-<!--        position:absolute;-->
-<!--        top:50%;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--    }-->
-<!--    .label_content input {}-->
-<!--    .label_content input + label {}-->
-<!--    .label_content input + label + div {-->
-<!--        display:none;-->
-<!--        width:300px;-->
-<!--        height:300px;-->
-<!--        background:#f5f5f5;-->
-<!--        border:3px solid #eee;-->
-<!--        position:absolute;-->
-<!--        top:50%;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--    }-->
-<!--    .label_content input:checked + label + div {display:block;}-->
-<!--    .label_content input + label + div label {-->
-<!--        position:absolute;-->
-<!--        bottom:0;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--        background:#333;-->
-<!--        color:#fff;-->
-<!--        padding:20px;-->
-<!--    }-->
-<!--    </style>-->
 
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <img src="../static/image/test01.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
@@ -316,31 +170,8 @@ body {
       <div id="Demo1" class="w3-hide">
         <div class="w3-container">
           <p> 표 삽입 </p>
-          <head>
-          <style>
-          table {
-            border-collapse: collapse;
-            width: 80%;
-          }
-          table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-          }
-          th, td {
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 5px;
-            padding-right: 5px;
-          }
-          tr:nth-child(1) {
-            background-color: #D6EEEE;
-          }
-          </style>
-          </head>
+
           <body>
-
-
-
           <h2> 다음주 전망 </h2>
           <table>
             <tr>
@@ -398,6 +229,53 @@ function myAccFunc(id) {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+// Modal Image Gallery(choose recipe)
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" ;
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("bgimg-1");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
+}
+
 </script>
 
   <!-- Recipe Section -->
