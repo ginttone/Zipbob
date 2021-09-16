@@ -16,26 +16,59 @@
 
 <link rel="stylesheet" href="/static/css1/accodian.css">
 <link rel="stylesheet" href="/static/css1/home.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+
+body {
+  background-image: url('./static/image/summer3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
     <a href="#home" class="w3-bar-item w3-button">Zipbob</a>
-
-    <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="add">
-      <a href="#thisweek" class="w3-bar-item w3-button">This week</a>
-      <a href="#nextweek" class="w3-bar-item w3-button">Next week</a>
-      <a href="#recipe" class="w3-bar-item w3-button">Recipe</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-envelope"></i> Contact</a>
+    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right"> Recipe</a>
+    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right"> NEXTweek</a>
+    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right"> THISweek</a>
 
-      <div class="accordian w3-bar-item w3-button" >
+      <div class="w3-bar-item w3-button" >
         <input type="checkbox" id="signin_1">
-        <label for="signin_1">SignIn1<em></em></label>
-      <div><p>로그인할수 있게</p></div>
+        <label for="signin_1">Sign In<em></em></label>
+      <div>
+        <colgroup>
+          <col style="width: 11px">
+        </colgroup>
+          <tbody>
+          <tr>
+            <th><label for="txt1">ID</label></th>
+            <td><input type="text" id="txt1" placeholder="아이디를 입력해주세요."></td>
+          </tr>
+          <br>
+          <tr>
+            <th><label for="txt2">PWD</label></th>
+            <td><input type="text" id="txt2" placeholder="비밀번호를 입력해주세요."></td>
+          </tr>
+          </tbody>
+        <div class="join">
+          <a href="#join">회원가입</a>
+        </div>
+        <a href="#login">닫기</a>
+      <div class="dim"></div>
+      </div>
+      </div>
     </div>
     </div>
   </div>
