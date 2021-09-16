@@ -10,145 +10,66 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/accodian.css">
+
+<link rel="stylesheet" href="/static/css1/accodian.css">
+<link rel="stylesheet" href="/static/css1/home.css">
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display";
   letter-spacing: 5px;
 }
-</style>
-<style>
+
 body {
   background-image: url('./static/image/summer3.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-
-/* accodian (login) */
-  input[id*="login"]{display:none;}
-    input[id*="login"]+label{
-    display: block;
-    padding: 20px;
-    border:2px solid rgba(255, 99, 71, 0);
-    border-bottom:0;
-    color: rgb(120, 120, 120);
-    font-weight:900;
-    background: rgba(255, 99, 71, 0);
-    cursor:pointer;
-    position: relative;
-  }
-  input[id*="login"]+label em {
-    position: absolute;
-    top:50%
-    right:10px;
-    width:30px;
-    height:30px;
-    margin-top:-15px;
-    display:inline-block;
-    background:url('/static/image/beans.png')0 0 no-repeat;
-  }
-  input[id*="login"]+label+ div {
-    max-height:0;
-    transition: all.35s;
-    overflow:hidden;
-    background:#ebf8ff;
-    font-size:11px;
-    }
-  input[id*="login"]+ label + div p{
-  display: inline-block;
-  padding : 20px;
-  }
-  input[id*="login"]:checked + label + div{
-  max-height:100px
-  }
-  input[id*="login"]:checked + label em{
-  background-position: 0 -30px;
-  }
-
-
-/* PC 문의하기 버튼 스타일 */
-.floBanPc2 {
-  position: fixed;
-  top: 700px; /* 윗쪽 끝에서부터의 거리 */
-  right: 45%;
-  margin-right: -683px; /* 가운데를 기준으로 오른쪽 거리 */
-  z-index: 99;
-}
-
 </style>
-
-<!-- 슬라이드 배너 -->
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-	<style>
-		body {overflow: hidden; margin: 0; padding:0; }
-		#layout {position: relative; maring: auto; width: 960px; height:50px; display: flex; flex-warp: wrap; align-items: center; }
-		#layout b {width: 10px; position: relative; z-index: 1; cursor: pointer;  }
-		#banner  { position:relative; z-index:0; width:960px; height:50px;overflow:hidden; margin:auto; }
-		#banner img {position: absolute; width: 150px; height: 50px; }
-		#banner img:nth-child(1) { left:-160px; z-index:2; }
-		#banner img:nth-child(2) { left:0px; }
-		#banner img:nth-child(3) { left:160px; }
-		#banner img:nth-child(4) { left:320px; }
-		#banner img:last-child { left:480px; }
-	</style>
-
-	<script>
-	$(document).ready(function(){
-			var i=$("#banner img:first-child").attr('src').substr(-5,1);
-			/****** 처음부터 자동 *****/
-			var rolling=setInterval(frame, 1500);
-			function frame() {
-
-					$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
-					i++;
-					if( i==5) {i=1}
-					var appendImg="<img src='images/roll_img_"+i+".jpg'>";
-					$("#banner img:nth-child(3)").addClass("firstImg");
-					$("#banner").append(appendImg);
-					if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
-			} f
-
-			/****** 왼쪽버튼 클릭시 ******/
-			$("#left").click(function(){
-				clearInterval();
-				$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
-				i++;
-				if( i==5) {i=1}
-				var appendImg="<img src='images/roll_img_"+i+".jpg'>";
-				$("#banner img:nth-child(3)").addClass("firstImg");
-				$("#banner").append(appendImg);
-				if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
-			});
-
-			/****** 오른쪽버튼 클릭시 ******/
-			$("#right").click(function(){
-				$("#banner img").removeClass("firstImg").animate({left:'+=160px'});
-				i=i-1;
-				if( i==0) {i=4}
-				var prependImg="<img src='images/roll_img_"+i+".jpg'>";
-				$("#banner img:nth-child(2)").addClass("firstImg");
-				$("#banner").prepend(prependImg);
-				if( $("#banner img:last-child").position().left>=640 ) {  $("#banner img:last-child").remove()  }
-			});
-	});
-	</script>
-</head>
-
-
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
     <a href="#home" class="w3-bar-item w3-button">Zipbob</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#login" class="w3-bar-item w3-button">Login</a>
-      <a href="#thisweek" class="w3-bar-item w3-button">This week</a>
-      <a href="#nextweek" class="w3-bar-item w3-button">Next week</a>
-      <a href="#recipe" class="w3-bar-item w3-button">recipe</a>
+    <div class="add">
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-envelope"></i> Contact</a>
+    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right"> Recipe</a>
+    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right"> NEXTweek</a>
+    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right"> THISweek</a>
+
+      <div class="w3-bar-item w3-button" >
+        <input type="checkbox" id="signin_1">
+        <label for="signin_1">Sign In<em></em></label>
+      <div>
+        <colgroup>
+          <col style="width: 11px">
+        </colgroup>
+          <tbody>
+          <tr>
+            <th><label for="txt1">ID</label></th>
+            <td><input type="text" id="txt1" placeholder="아이디를 입력해주세요."></td>
+          </tr>
+          <br>
+          <tr>
+            <th><label for="txt2">PWD</label></th>
+            <td><input type="text" id="txt2" placeholder="비밀번호를 입력해주세요."></td>
+          </tr>
+          </tbody>
+        <div class="join">
+          <a href="#join">회원가입</a>
+        </div>
+        <a href="#login">닫기</a>
+      <div class="dim"></div>
+      </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -171,131 +92,6 @@ body {
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px">
 
-  <!-- About Section -->
-      <div class="accordian w3-bar-item w3-button" id="login">
-         <form action="/day02/insert" >
-         <table border="1" width="300" align="center">
-           <tr>
-             <td>이름</td>
-             <td><input type="text" name="name"></input></td>
-           </tr>
-           <tr>
-             <td>연락처</td>
-             <td><input type="text" name="num"></input></td>
-           </tr>
-           <tr>
-            <td>이메일</td>
-            <td><input type="text" name="addr"></input></td>
-           </tr>
-           <tr>
-            <td>비밀번호</td>
-            <td><input type="text" name="pwd"></input></td>
-           </tr>
-           <tr>
-             <td colspan="3" align="center"><input type="submit" name="전송"></input></td>
-           </tr>
-         </table>
-        </form>
-      </div>
-
-
-<!--    <input type="checkbox" id="popup">-->
-<!--    <label for="popup">view</label>-->
-<!--    <div>-->
-<!--      <div>-->
-<!--        <label for="popup"></label>-->
-<!--      </div>-->
-<!--      <label for="popup"></label>-->
-<!--    </div>-->
-<!--    <style>-->
-<!--    input[id*="popup"] {-->
-<!--        display:none;-->
-<!--    }-->
-<!--    input[id*="popup"] + label {-->
-<!--        display:inline-block;-->
-<!--        padding:20px;-->
-<!--        background:#ffcd41;-->
-<!--        color:#fff;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div {-->
-<!--        position:fixed;-->
-<!--        top:0;-->
-<!--        left:0;-->
-<!--        width:100%;-->
-<!--        height:100%;-->
-<!--        z-index:100;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div > div {-->
-<!--        position:absoluate;-->
-<!--        top:50%;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--        width:500%;-->
-<!--        height:300%;-->
-<!--        z-index:2;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div > div > label {-->
-<!--        position:absoluate;-->
-<!--        top:0%;-->
-<!--        right:0%;-->
-<!--        transform:translate(40%,-40%);-->
-<!--        background:#dd5347;-->
-<!--        border-radius:100%;-->
-<!--        padding:20px-->
-<!--        z-index:1;-->
-<!--    }-->
-<!--    input[id*="popup"] + label + div > label {-->
-<!--        position:absoluate;-->
-<!--        top:0;-->
-<!--        left:0;-->
-<!--        width:100%;-->
-<!--        height:100%;-->
-<!--        background:rgba(0,0,0,.9);-->
-<!--        z-index:1;-->
-<!--    }-->
-<!--    </style>-->
-<!--    </input>-->
-
-
-<!--      &lt;!&ndash; login &ndash;&gt;-->
-<!--    <div class="label_content">-->
-<!--      <input type="checkbox" id="login">-->
-<!--      <label for="login">Login</label>-->
-<!--      <div class="content">-->
-<!--        <label for="login">Close</label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <style>-->
-<!--    .label_content {-->
-<!--        position:absolute;-->
-<!--        top:50%;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--    }-->
-<!--    .label_content input {}-->
-<!--    .label_content input + label {}-->
-<!--    .label_content input + label + div {-->
-<!--        display:none;-->
-<!--        width:300px;-->
-<!--        height:300px;-->
-<!--        background:#f5f5f5;-->
-<!--        border:3px solid #eee;-->
-<!--        position:absolute;-->
-<!--        top:50%;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--    }-->
-<!--    .label_content input:checked + label + div {display:block;}-->
-<!--    .label_content input + label + div label {-->
-<!--        position:absolute;-->
-<!--        bottom:0;-->
-<!--        left:50%;-->
-<!--        transform:translate(-50%,-50%);-->
-<!--        background:#333;-->
-<!--        color:#fff;-->
-<!--        padding:20px;-->
-<!--    }-->
-<!--    </style>-->
 
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <img src="../static/image/test01.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
@@ -354,31 +150,8 @@ body {
       <div id="Demo1" class="w3-hide">
         <div class="w3-container">
           <p> 표 삽입 </p>
-          <head>
-          <style>
-          table {
-            border-collapse: collapse;
-            width: 80%;
-          }
-          table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-          }
-          th, td {
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 5px;
-            padding-right: 5px;
-          }
-          tr:nth-child(1) {
-            background-color: #D6EEEE;
-          }
-          </style>
-          </head>
+
           <body>
-
-
-
           <h2> 다음주 전망 </h2>
           <table>
             <tr>
@@ -411,7 +184,7 @@ body {
             </tr>
           </table>
           <hr>
-          <img src="../static/image/graph.png" alt="item04" style="width:50%">
+          <img src="../static/image/graph2.png" alt="item04" style="width:50%">
 
           </body>
 
@@ -436,6 +209,53 @@ function myAccFunc(id) {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+// Modal Image Gallery(choose recipe)
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" ;
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("bgimg-1");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
+}
+
 </script>
 
   <!-- Recipe Section -->
@@ -557,10 +377,11 @@ function myAccFunc(id) {
 
  <hr>
   <!-- Contact Section -->
-  <div class="w3-container w3-padding-64" id="contect">
+  <div class="w3-container w3-padding-64" id="contact">
     <div class="w3-col l6 w3-padding-large">
     <h1>Contact</h1><br>
-    <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+      <a href="https://github.com/ginttone/Zipbob" title="주소로 이동" target="_blank" class="w3-hover-text-white"><i class="fa fa-github w3-hover-opacity"></i> Zipbob </a>
+    <p>궁금하신 점이 있다면 메모로 남겨주세요.</p>
     <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
     <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
 <!--    <form action="/action_page.php" target="_blank">-->
@@ -569,11 +390,12 @@ function myAccFunc(id) {
 <!--      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>-->
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
       <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+      <p>서울특별시 서초구 서초동 123-12</p>
+      <p>고객센터 1234-5678</p>
+      <p>평일 09-18시</p>
     </form>
     </div>
   </div>
-
-
 
 <!-- End page content -->
 </div>
@@ -582,6 +404,58 @@ function myAccFunc(id) {
 <footer class="w3-center w3-light-grey w3-padding-32">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
+
+<!-- 슬라이드 배너 -->
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+			var i=$("#banner img:first-child").attr('src').substr(-5,1);
+			/****** 처음부터 자동 *****/
+			var rolling=setInterval(frame, 1500);
+			function frame() {
+
+					$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
+					i++;
+					if( i==5) {i=1}
+					var appendImg="<img src='images/roll_img_"+i+".jpg'>";
+					$("#banner img:nth-child(3)").addClass("firstImg");
+					$("#banner").append(appendImg);
+					if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
+			}
+
+			/****** 왼쪽버튼 클릭시 ******/
+			$("#left").click(function(){
+				clearInterval();
+				$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
+				i++;
+				if( i==5) {i=1}
+				var appendImg="<img src='images/roll_img_"+i+".jpg'>";
+				$("#banner img:nth-child(3)").addClass("firstImg");
+				$("#banner").append(appendImg);
+				if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
+			});
+
+			/****** 오른쪽버튼 클릭시 ******/
+			$("#right").click(function(){
+				$("#banner img").removeClass("firstImg").animate({left:'+=160px'});
+				i=i-1;
+				if( i==0) {i=4}
+				var prependImg="<img src='images/roll_img_"+i+".jpg'>";
+				$("#banner img:nth-child(2)").addClass("firstImg");
+				$("#banner").prepend(prependImg);
+				if( $("#banner img:last-child").position().left>=640 ) {  $("#banner img:last-child").remove()  }
+			});
+	});
+	</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      });
+    </script>
+</head>
+
 
 </body>
 </html>

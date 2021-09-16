@@ -8,3 +8,7 @@ def home(request):
 def premium(request):
     result={}
     return render(request, 'premium.html', context=result)
+
+def frame_test(request):
+    result={}
+    return render(request, 'frame_test.html', context=result)
