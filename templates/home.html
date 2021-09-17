@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" type="text/css" href="css/accodian.css">
 
-<link rel="stylesheet" href="/static/css1/accodian.css">
+
 <link rel="stylesheet" href="/static/css1/home.css">
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
@@ -30,8 +30,69 @@ body {
   background-size: cover;
 }
 
+/* signin */
+.add:hover{
+  background: rgba(255, 0, 0, 0);
+}
 
+/* accodian (login) */
+  input[id*="signin"]{display:none;}
+    input[id*="signin"]+label{
+    diplay: block;
+    display-position: center;
+    padding: 10px;
+    border:2px solid rgba(255, 99, 71, 0);
+    border-bottom:0;
+    color: rgb(120, 120, 120);
+    font-weight:900;
+    background: rgba(255, 99, 71, 0);
+    cursor:pointer;
+    position: relative;
+  }
+  input[id*="signin"]+label em {
+    position: absolute;
+    top:50%
+    right:10px;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+    display:inline-block;
+    background:url('/static/image/beans.png')0 0 no-repeat;
+  }
+  input[id*="signin"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#ebf8ff;
+    font-size: 13px;
+    }
+  input[id*="signin"]+ label + div p{
+  display: inline-block;
+  padding : 10px;
+  }
 
+  input[id*="signin"]:checked + label + div{
+  max-height: 200px
+  }
+
+  input[id*="signin"]:checked + label em{
+  background-position: 0 -30px;
+  }
+
+/* 회원가입 */
+  body { padding:40px; background: #f5f7fb}
+  .bnt { display: block; width: 200px; height: 50px; background: #4ac4f3:
+  text-decoration: none; text-align: center; line-height: 50px; color: black;
+  border-radius: 50px;}
+  .popup { position: absolute; left: 50%; top: 50%; z-index: 5; transform: translate(-50%, -20%);
+  width: 550px; height: 900px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: #fff; border-radius: 5px; text-align: right;
+  padding: 20px; box-sizing: border-box; opacity: 0; transition: all 0.5s;}
+  .popup a { color: grey; text-decoration: none;}
+  .popup:target { opacity: 1;}
+  .popup:target + .dim{ opacity: 1; z-index: 2;}
+  .dim {position: fixed; left: 0; top: 0; z-index: -1; width: 100%;
+  height: 100%; background: rgba(0,0,0,0.6); opacity: 0; transition: all 0.5s;}
 
 </style>
 
@@ -66,11 +127,262 @@ body {
             <td><input type="text" id="txt2" placeholder="비밀번호를 입력해주세요."></td>
           </tr>
           </tbody>
-        <div class="join">
-          <a href="#join">회원가입</a>
-        </div>
-        <a href="#login">닫기</a>
-      <div class="dim"></div>
+
+          <a href="#pop1" class="bnt">회원가입</a>
+            <div class="popup" id="pop1">
+              <br><br><br><br><br><br><br>
+              <a href="#a">닫기</a>
+              <form name="write_form_member" method="post">
+                 <table width="940" style="padding:5px 0 5px 0; ">
+                   <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+                   <br>
+                   <tr>
+                     <th> 이름</th>
+                     <td><input type="text" name="mbname"></td>
+                   </tr>
+                   <tr>
+                     <th>주민등록번호</th>
+                     <td><input type="text" name="jumin_1"> -
+                     <input type="password" name="jumin_2"></td>
+                   </tr>
+                   <tr>
+                     <th>아이디</th>
+                     <td>
+                     <input type="text" name="cursor:pointer">
+                     </td>
+                   </tr>
+                   <tr>
+                     <th>비밀번호</th>
+                     <td><input type="password" name="mbpw"> 영문/숫자포함 6자 이상</td>
+                   </tr>
+                   <tr>
+                     <th>비밀번호 확인</th>
+                     <td><input type="password" name="mbpw_re"></td>
+                   </tr>
+                   <tr>
+                      <th>비밀번호 힌트/답변</th>
+                      <td><select name='pwhint' size='1' class='select'>
+                      <option value=''>선택하세요</option>
+                      <option value='30'>졸업한 초등학교 이름은?</option>
+                      <option value='31'>제일 친한 친구의 핸드폰 번호는?</option>
+                      <option value='32'>아버지 성함은?</option>
+                      <option value='33'>어머니 성함은?</option>
+                      <option value='34'>어릴 적 내 별명은?</option>
+                      <option value='35'>가장 아끼는 물건은?</option>
+                      <option value='36'>좋아하는 동물은?</option>
+                      <option value='37'>좋아하는 색깔은?</option>
+                      <option value='38'>좋아하는 음식은?</option>
+                    </select>
+                    </tr>
+                    <tr>
+                    </td>
+                       <th>답변</th>
+                       <td><input type='text' name='pwhintans'></td>
+                    </tr>
+                    <tr>
+                      <th>이메일</th>
+                      <td>
+                        <input type='text' name="email">@
+                        <input type='text' name="email_dns">
+                          <select name="emailaddr">
+                             <option value="">직접입력</option>
+                             <option value="daum.net">daum.net</option>
+                             <option value="empal.com">empal.com</option>
+                             <option value="gmail.com">gmail.com</option>
+                             <option value="hanmail.net">hanmail.net</option>
+                             <option value="msn.com">msn.com</option>
+                             <option value="naver.com">naver.com</option>
+                             <option value="nate.com">nate.com</option>
+                          </select>
+                        </td>
+                     </tr>
+                    <tr>
+                      <th>핸드폰 번호</th>
+                       <td><input type="text"name="tel_h1"> -
+                           <input type="text" name="tel_h2_1"> -
+                           <input type="text" name="tel_h2_2">
+                       </td>
+                      </tr>
+                     <tr>
+                       <th>직업</th>
+                       <td>
+                       <select name='job' size='1'>
+                             <option value=''>선택하세요</option>
+                             <option value='39'>학생</option>
+                             <option value='40'>컴퓨터/인터넷</option>
+                             <option value='41'>언론</option>
+                             <option value='42'>공무원</option>
+                             <option value='43'>군인</option>
+                             <option value='44'>서비스업</option>
+                             <option value='45'>교육</option>
+                             <option value='46'>금융/증권/보험업</option>
+                             <option value='47'>유통업</option>
+                             <option value='48'>예술</option>
+                             <option value='49'>의료</option>
+                       </select>
+                      </td>
+                    </tr>
+                   <tr>
+                     <th>메일/sns 정보 수신</th>
+                       <td class="s">
+                           <input type="radio" name="chk_mail" checked> 수신
+                           <input type="radio" name="chk_mail" value="4"> 수신거부
+                        </td>
+                     </tr>
+                     <tr>
+                       <th>정보공개여부</th>
+                       <td>
+                       <select name='chk_open' size='0'>
+                             <option value=''>선택하세요</option>
+                             <option value='5'>모두공개</option>
+                             <option value='6'>비공개</option>
+                             <option value='7'>1단계공개</option>
+                             <option value='8'>2단계공개</option>
+                         </select>
+                        </td>
+                       </tr>
+
+                       <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+                       <tr>
+                         <td colspan="2" align="center">
+                           <input type="submit" value="회원가입">
+                           <input type="reset" value="취소">
+                        </td>
+                       </tr>
+                       </table>
+                      </td>
+                      </tr>
+                      </form>
+              <script>
+              $(function(){
+                // 중복확인 & id 유효성검사
+                $("#duplcheck").on("click",function(){
+                    var id = $("#id").val();
+                    if(id == ""){
+                        alert("아이디를 입력해주세요");
+                        return;
+                    }
+                    var regex = /^[a-z][a-z\d]{4,11}$/;
+                    var result = regex.exec(id);
+
+                     if(result != null){
+                         $(".id.regex").html("");
+                    window.open("idDuplCheck.jsp?id="+ id,"","width=500px,height=300px,top=300px,left=200px");
+                     }else{
+                         $(".id.regex").html("영어 소문자,숫자 4-12자리");
+                         $(".id.regex").css("color","red")
+                     }
+                })
+
+            //비밀번호 유효성검사
+                $("#pw").on("input",function(){
+                    var regex = /^[A-Za-z\d]{8,12}$/;
+                    var result = regex.exec($("#pw").val())
+
+                    if(result != null){
+                        $(".pw.regex").html("");
+                    }else{
+                        $(".pw.regex").html("영어대소문자,숫자 8-11자리");
+                        $(".pw.regex").css("color","red")
+                    }
+                });
+
+               //비밀번호 확인
+                   $("#repw").on("keyup",function(){
+                        if($("#pw").val()==$("#repw").val()){
+                           $(".repw.regex").html("비밀번호가 일치합니다");
+                        }else{
+                         $(".repw.regex").html("비밀번호가 일치하지않습니다");
+                        }
+                   })
+
+                //이름 유효성검사
+                    $("#name").on("input",function(){
+                        var regex = /[가-힣]{2,}/;
+                        var result = regex.exec($("#name").val());
+
+                        if(result != null){
+                           $(".name.regex").html("");
+                        }else{
+                            $(".name.regex").html("한글만 입력 가능합니다.");
+                        }
+                    })
+
+                //전화번호 유효성검사
+                    $("#phone").on("input",function(){
+                         var regex = /^01\d\d{3,4}\d{4}$/;
+                         var result = regex.exec($("#phone").val());
+
+                        if(result != null){
+                           $(".phone.regex").html("");
+                        }else{
+                            $(".phone.regex").html("올바른 번호가 아닙니다");
+                        }
+                    })
+
+                //email유효성 검사
+                    $("#email").on("input",function(){
+                         var regex = /.+@[a-z]+(\.[a-z]+){1,2}$/;
+                         var result = regex.exec($("#email").val());
+
+                        if(result != null){
+                           $(".email.regex").html("");
+                        }else{
+                            $(".email.regex").html("올바른 이메일이 아닙니다");
+                        }
+                    })
+              //회원가입 버튼 눌렀을 때, 빈칸 있으면 다시 유효성 검사진행
+               $("#signupbtn").on("click",function(){
+                   var id = $("#id").val();
+                   var pw = $("#pw").val();
+                   var name = $("#name").val();
+                   var phone = $("#phone").val();
+                   var email = $("#email").val();
+
+                   var idregex = /^[a-z][a-z\d]{4,11}$/;
+                   var pwregex = /^[A-Za-z\d]{8,12}$/;
+                   var nameregex = /[가-힣]{2,}/;
+                   var phoneregex = /^01\d\d{3,4}\d{4}$/;
+                   var emailregex = /.+@[a-z]+(\.[a-z]+){1,2}$/;
+
+                   var idregex = idregex.exec(id);
+                   if(idregex == null){
+                       alert("아이디양식을 다시 확인해주세요");
+                       return;
+                   }
+                   var pwregex = pwregex.exec(pw);
+                   if(pwregex == null){
+                       alert("비밀번호양식을 다시 확인해주세요");
+                       retrun;
+                   }
+                   var nameregex = nameregex.exec(name);
+                   if(nameregex == null){
+                       alert("이름양식을 다시 확인해주세요");
+                       retrun;
+                   }
+                   var phoneregex = phoneregex.exec(phone);
+                   if(phoneregex == null){
+                       alert("핸드폰번호양식을 다시 확인해주세요");
+                       retrun;
+                   }
+                   var emailregex = emailregex.exec(email);
+                   if(emailregex == null){
+                       alert("이메일양식을 다시 확인해주세요");
+                       retrun;
+                   }
+
+                 //빈칸 없을 때 제출.
+                   $("#signform").submit();
+
+
+               })
+            })
+              </script>
+
+            </div>
+          <div class="dim"></div>
+
+
       </div>
       </div>
     </div>
@@ -458,5 +770,5 @@ function carousel() {
 </head>
 
 
-</body>
+
 </html>
