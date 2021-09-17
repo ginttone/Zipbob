@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" type="text/css" href="css/accodian.css">
 
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <link rel="stylesheet" href="/static/css1/home.css">
 <style>
@@ -137,8 +139,9 @@ body {
                    <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
                    <br>
                    <tr>
-                     <th> 이름</th>
-                     <td><input type="text" name="mbname"></td>
+                     <th>이름</th>
+                     <td><input type="text" name="name" id="name"></td>
+                       <div class="name regex"></div>
                    </tr>
                    <tr>
                      <th>주민등록번호</th>
@@ -148,16 +151,22 @@ body {
                    <tr>
                      <th>아이디</th>
                      <td>
-                     <input type="text" name="cursor:pointer">
+                     <input type="text" name="id" id="id">
+                         <input type="button" value="중복확인" id="duplcheck" >
+                         <div class="id regex"></div>
                      </td>
                    </tr>
                    <tr>
                      <th>비밀번호</th>
-                     <td><input type="password" name="mbpw"> 영문/숫자포함 6자 이상</td>
+                     <td>
+                     <input type="password" name="pw" id="pw">
+                     <br>영어대소문자,숫자 8자 이상</td>
+                       <div class="pw regex"></div>
                    </tr>
                    <tr>
                      <th>비밀번호 확인</th>
-                     <td><input type="password" name="mbpw_re"></td>
+                     <td><input type="password" id="repw"></td>
+                       <div class="repw regex"></div>
                    </tr>
                    <tr>
                       <th>비밀번호 힌트/답변</th>
@@ -182,7 +191,7 @@ body {
                     <tr>
                       <th>이메일</th>
                       <td>
-                        <input type='text' name="email">@
+                        <input type='text' name="email" id="email">@
                         <input type='text' name="email_dns">
                           <select name="emailaddr">
                              <option value="">직접입력</option>
@@ -195,12 +204,14 @@ body {
                              <option value="nate.com">nate.com</option>
                           </select>
                         </td>
+                        <div class="email regex"></div>
                      </tr>
                     <tr>
                       <th>핸드폰 번호</th>
-                       <td><input type="text"name="tel_h1"> -
-                           <input type="text" name="tel_h2_1"> -
-                           <input type="text" name="tel_h2_2">
+                       <td><input type="text"name="tel" id="phone1"> -
+                           <input type="text" name="tel_1" id="phone2"> -
+                           <input type="text" name="tel_2" id="phone3">
+                           <div class="phone regex"></div>
                        </td>
                       </tr>
                      <tr>
@@ -246,7 +257,6 @@ body {
                        <tr>
                          <td colspan="2" align="center">
                            <input type="submit" value="회원가입">
-                           <input type="reset" value="취소">
                         </td>
                        </tr>
                        </table>
@@ -282,7 +292,7 @@ body {
                     if(result != null){
                         $(".pw.regex").html("");
                     }else{
-                        $(".pw.regex").html("영어대소문자,숫자 8-11자리");
+                        $(".pw.regex").html("영어대소문자,숫자 8자리 이상");
                         $(".pw.regex").css("color","red")
                     }
                 });
