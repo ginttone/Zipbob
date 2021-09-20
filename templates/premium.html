@@ -7,38 +7,86 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/static/css/plate.css">
-<link rel="stylesheet" href="/static/css/style.css">
-<link rel="stylesheet" href="/static/css/accodian.css">
 
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Times New Roman', serif;}
+
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  display: none
+   min-height: 600px;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/static/image/contact-bg.png");
+  min-height: 200px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/static/image/hero01.png");
+  min-height: 200px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+
+</style>
 <body>
 
 <!-- 큰창 카테고리 네비바 Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+  <div class="w3-bar " id="myNavbar">
+    <a class="w3-bar-item w3-hover-opacity w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <div class="add">
-    <a href="#home"  class="add w3-bar-item w3-button ">HOME</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-envelope"></i> Contact</a>
-    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right"> Recipe</a>
-    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right"> NEXTweek</a>
-    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right"> THISweek</a>
 
-    <div class="accordian w3-bar-item w3-button" >
-      <input type="checkbox" id="signin_1">
-      <label for="signin_1">SignIn1<em></em></label>
-      <div><p>로그인할수 있게</p></div>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity "><i class="fa fa-envelope"></i> Contact</a>
+    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity"> Recipe</a>
+    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity"> NEXTweek</a>
+    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity "> THISweek</a>
+    <a href="#home"  class="w3-bar-item w3-button w3-right w3-hover-opacity ">HOME</a>
+
+    <div class="w3-section w3-hide-smallw3-hover-opacity " style="width:15%">
+      <button onclick="myFunction2('signin_1')" class="w3-button w3-block">
+      SignIn1</button>
+      <div id="signin_1" class="w3-hide w3-container">
+        <p>여기에</p>
+      </div>
     </div>
 
-   </div>
   </div>
-
+</div>
   <!-- 작은창 카테고리 네비바 Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <div class="accordian" >
+    <div class="accordian w3-bar-item w3-button " onclick="toggleFunction()" >
       <input type="checkbox" id="signin_2">
-      <label for="signin_2">SignIn<em></em></label>
+      <label for="signin_2">SignIn</label>
       <div><p>로그인할수 있게</p></div>
     </div>
     <a href="#thisweek" class="w3-bar-item w3-button" onclick="toggleFunction()">THISweek</a>
@@ -51,13 +99,13 @@
   <!-- 홈화면 사진 여러장 웰컴글과 함께 -->
 <div id="home">
   <div class="bgimg-1 w3-display-container w3-center">
-    <img src="/static/image/peach.jpg" style="width:100%">
+    <img src="/static/image/hero01.png" style="width:100%">
     <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
       <h3>웰컴 글</h3>
     </div>
   </div>
   <div class="bgimg-1 w3-display-container w3-center">
-    <img src="/static/image/peach.jpg" style="width:100%">
+    <img src="/static/image/hero02.png" style="width:100%">
     <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
       <h3>여기에는 간단한 소개가 들어갈 것</h3>
     </div>
@@ -67,34 +115,56 @@
   <!-- 이번주 동향 띄-->
 <div class="bgimg-3 w3-display-container w3-opacity-min" id="thisweek">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">이번주 동향</span>
+     <span class="w3-xxlarge w3-text-white w3-wide">THIS week</span>
   </div>
 </div>
 
   <!-- 이번주 동향 소개-->
 <div class="w3-content w3-container w3-padding-64" >
-  <h3 class="w3-center">이번주동향 간단소개</h3>
-  <p class="w3-center"><em>I love photography</em></p>
+  <h3 class="w3-center">Trend this week</h3>
+  <p class="w3-center"><em>You can see the rise and fall in the price of agricultural and fishery products today. </em></p>
 </div>
 
   <!-- 이번주 동향 -->
 <div class="w3-row w3-center w3-amber w3-padding-64">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">상승1</span><br>
-    <p>Dandelion cucumber earthnut pea peanut soko zucchini</p>
+  <div class="w3-row-padding w3-margin-top">
+
+  <div class="w3-cell">
+    <div class="w3-card">
+      <img src="/static/image/d1.jpg" style="width:100%">
+      <div class="w3-container">
+        <h5>상승1</h5>
+      </div>
+    </div>
   </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">상승2</span><br>
-    <p>Dandelion cucumber earthnut pea peanut soko zucchini</p>
+
+  <div class="w3-cell">
+    <div class="w3-card">
+      <img src="/static/image/beans.png" style="width:100%">
+      <div class="w3-container">
+        <h5>상승2</h5>
+      </div>
+    </div>
   </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">하락1</span><br>
-    <p>설명글 위치</p>
+
+  <div class="w3-cell">
+    <div class="w3-card">
+      <img src="/static/image/d1.jpg" style="width:100%">
+      <div class="w3-container">
+        <h5>하락1</h5>
+      </div>
+    </div>
   </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">하락2</span><br>
-    Meetings
+
+    <div class="w3-cell">
+    <div class="w3-card">
+      <img src="/static/image/d1.jpg" style="width:100%">
+      <div class="w3-container">
+        <h5>하락2</h5>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 
 
@@ -113,17 +183,17 @@
   <img src="/static/image/graph1.png" style="width:100%">
 </div>
 
-  <!--다음주 전망 표 슬라이드-->
-<div class="accordian">
-    <input type="checkbox" id="answer01">
-    <label for="answer01">다음주 전망 표<em></em></label>
-    <div><p><img src="/static/image/graph2.png" style="width:100%"></p></div>
-  </div>
+  <!--다음주 전망 표 아코디언-->
+<button onclick="myFunction('Demo2')" class="w3-btn w3-block w3-red">
+다음주 전망 표</button>
 
+<div id="Demo2" class="w3-hide w3-container w3-center w3-pale-red">
+  <p>Lorem ipsum...</p>
+</div>
   <!-- 추천레시피 이름-->
 <div class="bgimg-2 w3-display-container w3-opacity-min" id="recipe">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">추천레시피</span>
+    <span class="w3-xxlarge w3-text-white w3-wide">Recipe</span>
   </div>
 </div>
 
@@ -133,23 +203,25 @@
   <h3 class="w3-center">추천레시피에대한 간단 소개</h3>
   <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>
 
-  <div class="w3-row-padding w3-center wrapper">
-      <div class="box">
-            <img src="/static/image/apple.jpg" onclick="onClick(this)" alt="">
-        </div>
-      <div class="box">
-            <img src="/static/image/dakgalbi.jpg" onclick="onClick(this)" alt="">
-        </div>
-      <div class="box">
-            <img src="/static/image/mille-feuille.jpg" onclick="onClick(this)" alt="">
-        </div>
-      <div class="box">
-            <img src="/static/image/special-3.png" onclick="onClick(this)" alt="">
-        </div>
-      <div class="box">
-            <img src="/static/image/mille-feuille.jpg" onclick="onClick(this)" alt="">
-        </div>
-    </div>
+  <div class="w3-container w3-cell">
+  <h3>1위 사과</h3>
+  <img src="/static/image/apple.jpg" class="w3-circle" onclick="onClick(this)" alt="" style="width:200px">
+  </div>
+
+<div class="w3-container w3-cell">
+  <h3>2위 닭</h3>
+  <img src="/static/image/dakgalbi.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">
+</div>
+
+<div class="w3-container w3-cell">
+  <h3>3위 버섯 </h3>
+  <img src="/static/image/mille-feuille.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">
+</div>
+
+<div class="w3-container w3-cell">
+  <h3>4위 사과</h3>
+  <img src="/static/image/pa.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">
+</div>
   </div>
 
 
@@ -163,11 +235,12 @@
 </div>
 
 <!-- 모든레시피 아코디언 메뉴 페이지네이션-->
-  <div class="accordian">
-    <input type="checkbox" id="answer02">
-    <label for="answer02">더 많은 레시피<em></em></label>
-    <div><p>다르게 보여지나 확인 </p></div>
-  </div>
+<button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-red">
+더많은 레시피</button>
+
+<div id="Demo3" class="w3-hide w3-container w3-center w3-pale-red">
+  <p>Centered content as well!</p>
+</div>
 
 <!-- 광고 베너 -->
 <div class="w3-row w3-center w3-amber w3-padding-large">
@@ -246,6 +319,22 @@ function carousel() {
   setTimeout(carousel, 4000);
 }
 
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+function myFunction2(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 </script>
 
   <script type="text/javascript">
