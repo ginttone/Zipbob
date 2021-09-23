@@ -1,6 +1,5 @@
 import sqlite3
 from django.shortcuts import render
-from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
@@ -11,11 +10,12 @@ def premium(request):
     result={}
     return render(request, 'premium.html', context=result)
 
-def frame_test(request):
-    result={}
-    return render(request, 'frame_test.html', context=result)
+# def frame_test(request):
+#     result={}
+#     return render(request, 'frame_test.html', context=result)
 
 
+from django.core.paginator import Paginator
 
 # def list(request):
 #     result = dict()
@@ -31,7 +31,7 @@ def frame_test(request):
 #     return render(request, 'frame_test.html', result)
 
 def list_paginator(request):
-    conn = sqlite3.connect('../db.sqlite3')
+    conn = sqlite3.connect('db.sqlite3')
     conn.row_factory = sqlite3.Row  # for getting columns
     curs = conn.cursor()
     # economics
@@ -45,5 +45,5 @@ def list_paginator(request):
     # request.GET['page']
     page_number = request.GET.get('page', 1)
     result['page_obj'] = paginator.get_page(page_number)
-    return render(request, 'frame_test.html', context=result)
+    return render(request, 'premium.html', context=result)
 
