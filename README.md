@@ -41,12 +41,10 @@
 
 ### :+1: Work Introduction
 
-[Web frontend](https://github.com/ginttone/Zipbob/tree/master/home)
+[Web backend](https://github.com/ginttone/Zipbob/tree/master/home)
 
-[Web backend](https://github.com/ginttone/Zipbob/tree/master/templates) 
+[Web front](https://github.com/ginttone/Zipbob/tree/master/templates) 
 
 [Scrapping](https://github.com/ginttone/Zipbob/tree/master/Crawling)
-
-[DB]()
 
 [Machine Learning](https://github.com/ginttone/Zipbob/tree/master/ML)
