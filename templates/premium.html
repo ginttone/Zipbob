@@ -192,6 +192,20 @@ body, html {
 
 <div id="Demo2" class="w3-hide w3-container w3-center w3-pale-red">
   <p>Lorem ipsum...</p>
+    <table border="1">
+        <!-- header -->
+        <tr>
+            <th>Title</th>
+            <th>Link</th>
+        </tr>
+        <!-- content -->
+        {% for row in erows %}
+        <tr>
+            <td>{{ row.title }}</td>
+            <td>{{ row.href }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
   <!-- 추천레시피 이름-->
 <div class="bgimg-2 w3-display-container w3-opacity-min" id="recipe">
