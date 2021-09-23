@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/static/css/plate.css">
 
-
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: 'Times New Roman', serif;}
 
@@ -55,6 +54,10 @@ body, html {
   }
 }
 
+/* recipe modal Slides */
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
 
 </style>
 <body>
@@ -130,8 +133,8 @@ body, html {
   <div class="w3-row-padding w3-margin-top">
 
   <div class="w3-cell">
-    <div class="w3-card">
-      <img src="/static/image/d1.jpg" style="width:100%">
+    <div  class="w3-card">
+      <img src="/static/image/d1.jpg" style="max-width:200px">
       <div class="w3-container">
         <h5>상승1</h5>
       </div>
@@ -139,8 +142,8 @@ body, html {
   </div>
 
   <div class="w3-cell">
-    <div class="w3-card">
-      <img src="/static/image/beans.png" style="width:100%">
+    <div class="w3-card" >
+      <img src="/static/image/beans.png" style="max-width:200px">
       <div class="w3-container">
         <h5>상승2</h5>
       </div>
@@ -149,7 +152,7 @@ body, html {
 
   <div class="w3-cell">
     <div class="w3-card">
-      <img src="/static/image/d1.jpg" style="width:100%">
+      <img src="/static/image/d1.jpg" style="max-width:200px">
       <div class="w3-container">
         <h5>하락1</h5>
       </div>
@@ -157,8 +160,8 @@ body, html {
   </div>
 
     <div class="w3-cell">
-    <div class="w3-card">
-      <img src="/static/image/d1.jpg" style="width:100%">
+    <div class="w3-card ">
+      <img src="/static/image/d1.jpg" style="max-width:200px">
       <div class="w3-container">
         <h5>하락2</h5>
       </div>
@@ -200,62 +203,166 @@ body, html {
 
   <!-- 추천레시피 팝업 Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" >
-  <h3 class="w3-center">추천레시피에대한 간단 소개</h3>
-  <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>
+<!--  <h3 class="w3-center">추천레시피에대한 간단 소개</h3>-->
+<!--  <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>-->
 
-  <div class="w3-container w3-cell">
-  <h3>1위 사과</h3>
-  <img src="/static/image/apple.jpg" class="w3-circle" onclick="onClick(this)" alt="" style="width:200px">
-  </div>
+<!--  <div class="w3-container w3-cell">-->
+<!--  <h3>1위 사과</h3>-->
+<!--  <img src="/static/image/apple.jpg" class="w3-circle" onclick="onClick(this)" alt="" style="width:200px">-->
+<!--  </div>-->
 
-<div class="w3-container w3-cell">
-  <h3>2위 닭</h3>
-  <img src="/static/image/dakgalbi.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">
-</div>
+<!--<div class="w3-container w3-cell">-->
+<!--  <h3>2위 닭</h3>-->
+<!--  <img src="/static/image/dakgalbi.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
+<!--</div>-->
 
-<div class="w3-container w3-cell">
-  <h3>3위 버섯 </h3>
-  <img src="/static/image/mille-feuille.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">
-</div>
+<!--<div class="w3-container w3-cell">-->
+<!--  <h3>3위 버섯 </h3>-->
+<!--  <img src="/static/image/mille-feuille.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
+<!--</div>-->
 
-<div class="w3-container w3-cell">
-  <h3>4위 사과</h3>
-  <img src="/static/image/pa.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">
-</div>
-  </div>
+<!--<div class="w3-container w3-cell">-->
+<!--  <h3>4위 사과</h3>-->
+<!--  <img src="/static/image/pa.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
+<!--</div>-->
+<!--  </div>-->
 
 
   <!-- 추천레시피 이미지 누르면 요리페이지 모달창  뜨게-->
-<div id="modal01" class="w3-modal" style="background-color:rgba(255, 100, 0, 0.2);" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-display-topright" style="background-color:rgba(255, 0, 0, 0.2);" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
+<!--<div id="modal01" class="w3-modal" style="background-color:rgba(255, 100, 0, 0.2);" onclick="this.style.display='none'">-->
+<!--  <span class="w3-button w3-large w3-display-topright" style="background-color:rgba(255, 0, 0, 0.2);" title="Close Modal Image"><i class="fa fa-remove"></i></span>-->
+<!--  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">-->
+<!--    <img id="img01" class="w3-image">-->
+<!--    <p id="caption" class="w3-opacity w3-large"></p>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="w3-container">
+
+  <h3 class="w3-center">추천레시피에대한 간단 소개</h3>
+  <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>
+
+<div class="w3-row-padding" style="margin:0 -16px">
+  <div class="w3-container w3-cell">
+    <h3>1위 사과</h3>
+    <img src="/static/image/mille-feuille.jpg" style="max-width:200px;cursor:pointer"
+    onclick="openModal();currentDiv(1)" class="w3-circle">
+  </div>
+  <div class="w3-container w3-cell">
+    <h3>1위 사과</h3>
+    <img src="/static/image/dakgalbi.jpg" style="max-width:200px;cursor:pointer"
+    onclick="openModal();currentDiv(2)" class="w3-circle">
+  </div>
+  <div class="w3-container w3-cell">
+    <h3>1위 사과</h3>
+    <img src="/static/image/apple.jpg" style="max-width:200px;cursor:pointer"
+    onclick="openModal();currentDiv(3)" class="w3-circle">
+  </div>
+  <div class="w3-container w3-cell">
+    <h3>1위 사과</h3>
+    <img src="/static/image/apple.jpg" style="max-width:200px;cursor:pointer"
+    onclick="openModal();currentDiv(4)" class="w3-circle">
   </div>
 </div>
 
+<div id="myModal" class="w3-modal w3-red">
+ <span class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright" onclick="closeModal()" style="cursor:pointer">×</span>
+
+  <div class="w3-modal-content">
+    <div class="w3-content w3-text-black" style="max-width:100%">
+     <img class="mySlides" src="/static/image/mille-feuille.jpg" style="width:100%">
+     <img class="mySlides" src="/static/image/dakgalbi.jpg" style="width:100%">
+     <img class="mySlides" src="/static/image/mille-feuille.jpg" style="width:100%">
+     <img class="mySlides" src="/static/image/dakgalbi.jpg" style="width:100%">
+       <div class="w3-row w3-black w3-center">
+        <div class="w3-display-container">
+         <p id="caption"></p>
+         <span class="w3-display-left w3-btn" onclick="plusDivs(-1)">❮</span>
+         <span class="w3-display-right w3-btn" onclick="plusDivs(1)">❯</span>
+        </div>
+
+        <div class="w3-col s4">
+         <img class="demo w3-opacity w3-hover-opacity-off" src="/static/image/mille-feuille.jpg" style="width:100%" onclick="currentDiv(1)" alt="만들기1">
+        </div>
+
+        <div class="w3-col s4">
+         <img class="demo w3-opacity w3-hover-opacity-off" src="/static/image/dakgalbi.jpg" style="width:100%" onclick="currentDiv(2)" alt="만들기2">
+        </div>
+
+        <div class="w3-col s4">
+         <img class="demo w3-opacity w3-hover-opacity-off" src="/static/image/pa.jpg" style="width:100%" onclick="currentDiv(3)" alt="만들기3">
+        </div>
+
+        <div class="w3-col s4">
+         <img class="demo w3-opacity w3-hover-opacity-off" src="/static/image/pa.jpg" style="width:100%" onclick="currentDiv(4)" alt="만들기4">
+        </div>
+
+      </div>
+     </div> <!-- End row -->
+   </div> <!-- End w3-content -->
+  </div> <!-- End modal content -->
+</div> <!-- End modal -->
+
+<div class="w3-content w3-container w3-padding-64" >
+  <h3 class="w3-center">농수산물과 레시피 관계 그래프</h3>
+  <p class="w3-center"><em>I love photography</em></p>
+  <img src="/static/image/graph1.png" style="width:100%">
+</div>
+
 <!-- 모든레시피 아코디언 메뉴 페이지네이션-->
+
 <button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-red">
 더많은 레시피</button>
 
 <div id="Demo3" class="w3-hide w3-container w3-center w3-pale-red">
   <p>Centered content as well!</p>
+  <div class="container">
+
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-red">
+                <th>title</th>
+                <th>ingredients</th>
+                <th>method</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in page_obj %}
+            <tr>
+                <td>{{ row.title }}</td>
+                <td>{{ row.method }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="pagination">
+        <li class="page-item active"><a class="page-link" href="#">Page {{ page_obj.number }} of {{ paginator.num_pages }}</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+    </ul>
+</div>
+
 </div>
 
 <!-- 광고 베너 -->
 <div class="w3-row w3-center w3-amber w3-padding-large">
+
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">베너</span><br>
   </div>
+
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">베너</span><br>
   </div>
+
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">베너</span><br>
   </div>
+
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">베너</span><br>
   </div>
+
 </div>
 
 <!-- 연락부분 -->
@@ -303,7 +410,7 @@ function toggleFunction() {
     }
 }
 
-// Automatic Slideshow - change image every 4 seconds
+// home Automatic Slideshow - change image every 4 seconds
 var myIndex = 0;
 carousel();
 
@@ -335,6 +442,45 @@ function myFunction2(id) {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+// slideshow recipe
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
 </script>
 
   <script type="text/javascript">
