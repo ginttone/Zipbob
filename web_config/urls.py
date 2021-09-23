@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.home),
     path('premium', views.premium),
     path('frame_test', views.frame_test),
+    path('list_paginator', views.frame_test),
 ]

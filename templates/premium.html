@@ -258,12 +258,12 @@ body, html {
 
 <div class="w3-row-padding" style="margin:0 -16px">
   <div class="w3-container w3-cell">
-      { for row in recipe  }
+      {% for row in recipe %}
     <h3>1위 {{row.title}}</h3>
     <img src=".Crawling/img/recipe/{{row.title}}.jpg" style="max-width:200px;cursor:pointer"
     onclick="openModal();currentDiv({{row.num}})" class="w3-circle">
   </div>
-  { end }
+  {% endfor %}
   </div>
 </div>
 
