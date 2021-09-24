@@ -6,7 +6,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/static/css/plate.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2017.css">
+<link rel="stylesheet" href="/static/css/app.css">
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
@@ -14,7 +15,10 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: 'Times New Roman', serif;}
+
+body,h1,h2,h3,h4,h5,h6 {
+    font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
+    }
 
 body, html {
   height: 100%;
@@ -138,7 +142,6 @@ body, html {
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
-
 </style>
 <body>
 
@@ -149,29 +152,37 @@ body, html {
       <i class="fa fa-bars"></i>
     </a>
 
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity "><i class="fa fa-envelope"></i> Contact</a>
-    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity"> Recipe</a>
-    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity"> NEXTweek</a>
-    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-opacity "> THISweek</a>
-    <a href="#home"  class="w3-bar-item w3-button w3-right w3-hover-opacity ">HOME</a>
+    <a href="#home"  class="w3-bar-item w3-hide-small w3-button w3-hover-opacity ">HOME</a>
+    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-hover-opacity "> THISweek</a>
+    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-hover-opacity"> NEXTweek</a>
+    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-hover-opacity"> Recipe</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-opacity "> Contact</a>
 
-    <div class="w3-section w3-hide-smallw3-hover-opacity " style="width:15%">
-      <button onclick="myFunction2('signin_1')" class="w3-button w3-block">
-      SignIn1</button>
-      <div id="signin_1" class="w3-hide w3-container">
-        <p>여기에</p>
+    <div class="w3-bar-item w3-button w3-hide-small w3-hover-opacity w3-right " style="max-width:300px">
+      <button onclick="myFunction2('signin_1')" class="w3-button w3-block">Sign In</button>
+      <div id="signin_1" class="w3-hide w3-container" >
+        <form class="w3-container w3-card-4 "  action="/action_page.php">
+            <p>
+                <label class="w3-text-brown w3-left w3-small"><b>ID</b></label>
+                <input class="w3-input w3-border-0 " name="ID" type="text">
+            </p>
+
+            <p>
+                <label class="w3-text-brown w3-left w3-small"><b> PWD </b></label>
+                <input class="w3-input w3-border-0" name="PWD" type="text">
+            </p>
+
+            <p>
+                <button class="w3-btn w3-brown">Sign In</button>
+            </p>
+        </form>
       </div>
     </div>
-
-  </div>
 </div>
+
   <!-- 작은창 카테고리 네비바 Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <div class="accordian w3-bar-item w3-button " onclick="toggleFunction()" >
-      <input type="checkbox" id="signin_2">
-      <label for="signin_2">SignIn</label>
-      <div><p>로그인할수 있게</p></div>
-    </div>
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
     <a href="#thisweek" class="w3-bar-item w3-button" onclick="toggleFunction()">THISweek</a>
     <a href="#nextweek" class="w3-bar-item w3-button" onclick="toggleFunction()">NEXTweek</a>
     <a href="#recipe" class="w3-bar-item w3-button" onclick="toggleFunction()">Recipe</a>
@@ -182,15 +193,21 @@ body, html {
   <!-- 홈화면 사진 여러장 웰컴글과 함께 -->
 <div id="home">
   <div class="bgimg-1 w3-display-container w3-center">
+    <img src="/static/image/home2.jpg" style="width:100%">
+    <div class="w3-display-right w3-container w3-padding-32 w3-hide-small" style="color:MediumSeaGreen; margin-right:100px">
+      <h3 style="">안녕하세요 집밥입니다</h3>
+    </div>
+  </div>
+  <div class="bgimg-1 w3-display-container w3-center">
     <img src="/static/image/hero01.png" style="width:100%">
-    <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
-      <h3>웰컴 글</h3>
+    <div class="w3-display-right w3-container w3-padding-32 w3-hide-small" style="color:rgb(48, 66, 127);margin-right:100px">
+      <h3>저희 집밥은 여러분의 행복한 식사를 책임집니다</h3>
     </div>
   </div>
   <div class="bgimg-1 w3-display-container w3-center">
     <img src="/static/image/hero02.png" style="width:100%">
-    <div class="w3-display-right w3-container w3-text-gray w3-padding-32 w3-hide-small">
-      <h3>여기에는 간단한 소개가 들어갈 것</h3>
+    <div class="w3-display-right w3-container w3-padding-32 w3-hide-small" style="margin-right:100px">
+      <h3>화이팅</h3>
     </div>
   </div>
 </div>

@@ -1,3 +1,59 @@
+/* accodian (login) */
+  input[id*="signin"]{display:none;}
+    input[id*="signin"]+label{
+        diplay: block;
+        padding: 10px;
+        border:1px solid rgb(255,255,255,1);
+        border-bottom:0;
+        color:#000000;
+        font-weight:900;
+        background: rgb(0,0,0,0);
+        cursor:pointer;
+  }
+  input[id*="signin"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:rgb(255,255,255,0.2);
+    font-size:11px;
+    }
+  input[id*="signin"]+ label + div p{
+  display: inline-block;
+  padding : 20px;
+  }
+
+  input[id*="signin"]:checked + label + div{
+  max-height:100px
+  }
+
+/* nextweek,recipe */
+  input[id*="answer"]{display:none;}
+    input[id*="answer"]+label{
+    diplay: block;
+    padding: 10px;
+    border:2px solid #FF8000;
+    border-bottom:10;
+    color:  hsla(0, 0, 0, 0);
+    font-weight:1000;
+    background: hsla(0, 0, 0, 0);
+    cursor:pointer;
+  }
+  input[id*="answer"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#FFFFFF;
+    font-size:11px;
+    }
+  input[id*="answer"]+ label + div p{
+  display: inline-block;
+  padding : 20px;
+  }
+
+  input[id*="answer"]:checked + label + div{
+  max-height:400px
+  }
+
 
 <!--  <div class="w3-row-padding w3-center wrapper">-->
 <!--      <div class="box">-->

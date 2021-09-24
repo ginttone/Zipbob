@@ -8,7 +8,7 @@ import pandas as pd
 url = 'https://www.10000recipe.com'
 url_list = []
 
-for i in range(1, 3):
+for i in range(1, 2):
     make_url = f'https://www.10000recipe.com/recipe/list.html?order=reco&page={i}'
     data = requests.get(make_url)
 
@@ -34,13 +34,12 @@ for page in url_list:
 
     for recipe1 in recipes:
         recipe = recipe1.find('div', class_="media-body").text.strip()
-        recipe_img = recipe1.find('img')["src"]
-        if recipe_img != AttributeError:
-
-        else:
-            pass
-        recipe_list.append([recipe, recipe_img])
+        # recipe_img = recipe1.find('img')["src"]
+        recipe_list.append([recipe])
 
     all_recipes.append([imgs, ids, title, ingredients, recipe_list])
 
 print(all_recipes)
+
+
+to_excel()

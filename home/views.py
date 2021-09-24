@@ -7,6 +7,10 @@ def home(request):
     result={}
     return render(request, 'home.html', context=result)
 
+def index(request):
+    result={}
+    return render(request, 'index.html', context=result)
+
 def premium(request):
     result = dict()
     conn = sqlite3.connect('db.sqlite3')
