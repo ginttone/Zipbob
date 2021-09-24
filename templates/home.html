@@ -16,6 +16,7 @@
 
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script>
 
 <link rel="stylesheet" href="/static/css1/home.css">
 <style>
@@ -403,7 +404,6 @@ body {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  <img class="w3-image" src="/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large w3-opacity">
     <h1 class="w3-xxlarge">Le Catering</h1>
   </div>
@@ -723,10 +723,39 @@ function carousel() {
 </footer>
 
 <!-- 플로팅 -->
-<div style="POSITION: fixed; MARGIN-LEFT: 590px; TOP: 650px; LEFT: 50%;z-index:9999;">
+<div style="POSITION: fixed; MARGIN-LEFT: 590px; TOP: 650px; LEFT: 60%; z-index:9999;">
       <a href="javascript:;" class="menu-btn">플로팅</a>
   </div>
 </div>
+
+
+<!-- Mobile 카카오톡 상담 버튼 -->
+<div class="floBanMob1 hidden-lg">
+    <a href="카카오톡 채널 주소" target="_blank">
+        <img src="./static/image/chatbot.ico" width="70px" height="70px">
+    </a>
+</div>
+
+<!--&lt;!&ndash; 플로팅 배너 버튼 HTML 표시 &ndash;&gt; &lt;!&ndash; PC 카카오톡 상담 버튼 &ndash;&gt;-->
+<!--<div class="floBanPc1 hidden-md hidden-sm hidden-xs">-->
+<!--    <a href="카카오톡 채널 주소" target="_blank">-->
+<!--        <img src="배너 이미지 주소" width="76px" height="76px">-->
+<!--    </a>-->
+<!--</div>-->
+<!--&lt;!&ndash; PC 전화상담 버튼 &ndash;&gt;-->
+<!--<div class="floBanPc2 hidden-md hidden-sm hidden-xs">-->
+<!--    <a href="tel:전화번호">-->
+<!--        <img src="배너 이미지 주소" width="76px" height="76px">-->
+<!--    </a>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Mobile 전화상담 버튼 &ndash;&gt;-->
+<!--<div class="floBanMob2 hidden-lg">-->
+<!--    <a href="tel:전화번호">-->
+<!--        <img src="배너 이미지 주소" width="50px" height="50px">-->
+<!--    </a>-->
+<!--</div>-->
+
 
 <!-- 슬라이드 배너 -->
 <head>
@@ -779,6 +808,24 @@ function carousel() {
     </script>
 </head>
 
+<style>
+/* PC 배너1 스타일 */
+.floBanPc1 {
+  position: fixed;
+  top: 128px; /* 윗쪽 끝에서부터의 거리 */
+  right: 0;
+  z-index: 99;
+}
+
+
+/* PC 카카오톡 상담 버튼 스타일 */ .floBanPc1 {  position: fixed;  top: 128px; /* 윗쪽 끝에서부터의 거리 */  right: 50%;  margin-right: -683px; /* 가운데를 기준으로 오른쪽 거리 */  z-index: 99; }
+/* PC 전화상담 버튼 스타일 */ .floBanPc2 {  position: fixed;  top: 204px; /* 윗쪽 끝에서부터의 거리 */  right: 50%;  margin-right: -683px; /* 가운데를 기준으로 오른쪽 거리 */  z-index: 99; }
+/* Mobile 카카오톡 상담 버튼 스타일 */ .floBanMob1 {  position: fixed;  bottom: 90px; /* 아래 끝에서부터의 거리 */  right: 90px; /* 오른쪽 끝에서부터의 거리 */  z-index: 99; }
+/* Mobile 전화상담 버튼 스타일 */ .floBanMob2 {  position: fixed;  bottom: 80px; /* 아래 끝에서부터의 거리 */  right: 15px; /* 오른쪽 끝에서부터의 거리 */  z-index: 99; }
+
+
+
 
 
 </html>
+</style>
