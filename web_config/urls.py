@@ -22,5 +22,5 @@ urlpatterns = [
     path('home', views.home),
     path('', views.home),
     path('premium', views.premium),
-    path('premium/list_paginator', views.list_paginator),
+    path('frame_test', views.frame_test),
 ]

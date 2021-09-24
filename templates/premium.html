@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/static/css/plate.css">
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: 'Times New Roman', serif;}
 
@@ -58,6 +63,81 @@ body, html {
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
+
+/* highcharts 1 */
+
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+/* highcharts 2 */
+#container {
+    height: 400px;
+}
+
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
 
 </style>
 <body>
@@ -183,30 +263,40 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" >
   <h3 class="w3-center">다음주 전망 그래프</h3>
   <p class="w3-center"><em>I love photography</em></p>
-  <img src="/static/image/graph1.png" style="width:100%">
+
+    <div class="highcharts-figure">
+     <div id="container"></div>
+    </div>
 </div>
 
+
   <!--다음주 전망 표 아코디언-->
-<button onclick="myFunction('Demo2')" class="w3-btn w3-block w3-red">
+<button onclick="myFunction('Demo2')" class="w3-btn w3-block ">
 다음주 전망 표</button>
 
-<div id="Demo2" class="w3-hide w3-container w3-center w3-pale-red">
-  <p>Lorem ipsum...</p>
-    <table border="1">
+<div id="Demo2" class="w3-hide w3-container w3-center">
+ <div class="w3-responsive">
+    <table class="w3-table-all">
         <!-- header -->
         <tr>
-            <th>Title</th>
-            <th>Link</th>
+            <th>타이틀</th>
+            <th>이번주</th>
+            <th>다음주</th>
+            <th>등락률</th>
         </tr>
         <!-- content -->
-        {% for row in erows %}
+        {% for row in page_obj %}
         <tr>
             <td>{{ row.title }}</td>
             <td>{{ row.method }}</td>
+<!--            <td>{{ row.다음주 }}</td>-->
+<!--            <td>{{ row.등락률 }}</td>-->
         </tr>
         {% endfor %}
     </table>
+ </div>
 </div>
+
   <!-- 추천레시피 이름-->
 <div class="bgimg-2 w3-display-container w3-opacity-min" id="recipe">
   <div class="w3-display-middle">
@@ -217,40 +307,6 @@ body, html {
 
   <!-- 추천레시피 팝업 Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" >
-<!--  <h3 class="w3-center">추천레시피에대한 간단 소개</h3>-->
-<!--  <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>-->
-
-<!--  <div class="w3-container w3-cell">-->
-<!--  <h3>1위 사과</h3>-->
-<!--  <img src="/static/image/apple.jpg" class="w3-circle" onclick="onClick(this)" alt="" style="width:200px">-->
-<!--  </div>-->
-
-<!--<div class="w3-container w3-cell">-->
-<!--  <h3>2위 닭</h3>-->
-<!--  <img src="/static/image/dakgalbi.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
-<!--</div>-->
-
-<!--<div class="w3-container w3-cell">-->
-<!--  <h3>3위 버섯 </h3>-->
-<!--  <img src="/static/image/mille-feuille.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
-<!--</div>-->
-
-<!--<div class="w3-container w3-cell">-->
-<!--  <h3>4위 사과</h3>-->
-<!--  <img src="/static/image/pa.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
-<!--</div>-->
-<!--  </div>-->
-
-
-  <!-- 추천레시피 이미지 누르면 요리페이지 모달창  뜨게-->
-<!--<div id="modal01" class="w3-modal" style="background-color:rgba(255, 100, 0, 0.2);" onclick="this.style.display='none'">-->
-<!--  <span class="w3-button w3-large w3-display-topright" style="background-color:rgba(255, 0, 0, 0.2);" title="Close Modal Image"><i class="fa fa-remove"></i></span>-->
-<!--  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">-->
-<!--    <img id="img01" class="w3-image">-->
-<!--    <p id="caption" class="w3-opacity w3-large"></p>-->
-<!--  </div>-->
-<!--</div>-->
-
 <div class="w3-container">
 
   <h3 class="w3-center">추천레시피에대한 간단 소개</h3>
@@ -258,12 +314,11 @@ body, html {
 
 <div class="w3-row-padding" style="margin:0 -16px">
   <div class="w3-container w3-cell">
-      {% for row in recipe %}
-    <h3>1위 {{row.title}}</h3>
-    <img src=".Crawling/img/recipe/{{row.title}}.jpg" style="max-width:200px;cursor:pointer"
-    onclick="openModal();currentDiv({{row.num}})" class="w3-circle">
-  </div>
-  {% endfor %}
+    {% for row in recipe %}
+    <h3>{{row.num}} 위 {{row.title}}</h3>
+    <img src=".Crawling/img/recipe/{{row.title}}.jpg" style="max-width:200px;cursor:pointer" onclick="openModal();currentDiv({{row.num}})" class="w3-circle">
+    {% endfor %}
+      </div>
   </div>
 </div>
 
@@ -293,16 +348,26 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" >
   <h3 class="w3-center">농수산물과 레시피 관계 그래프</h3>
   <p class="w3-center"><em>I love photography</em></p>
-  <img src="/static/image/graph1.png" style="width:100%">
+    <div class="highcharts-figure">
+        <div id="container2"></div>
+    </div>
 </div>
 
 <!-- 모든레시피 아코디언 메뉴 페이지네이션-->
 
-<button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-red">
-더많은 레시피</button>
+<button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-text-xxlarge">
+More recipe</button>
 
-<div id="Demo3" class="w3-hide w3-container w3-center w3-pale-red">
-  <p>Centered content as well!</p>
+<div id="Demo3" class="w3-hide w3-container w3-center ">
+
+    <tbody>
+        <tr>
+            <th><label for="txt1">검색</label></th>
+            <td><input type="text" id="txt1" placeholder="찾으시는 레시피를 입력해주세요."></td>
+        </tr>
+    </tbody>
+    <button class="w3-btn w3-ripple w3-yellow">Button</button>
+
   <div class="container">
 
     <table class="w3-table-all">
@@ -467,6 +532,143 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-opacity-off";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+// highcharts1
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Monthly Average Temperature'
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com'
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value + '°';
+                }
+            }
+        },
+        tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            }
+        },
+        series: [{
+            name: 'Tokyo',
+            marker: {
+                symbol: 'square'
+            },
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
+                y: 26.5,
+                marker: {
+                    symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+                }
+            }, 23.3, 18.3, 13.9, 9.6]
+
+        }, {
+            name: 'London',
+            marker: {
+                symbol: 'diamond'
+            },
+            data: [{
+                y: 3.9,
+                marker: {
+                    symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+                }
+            }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+
+// highcharts2
+Highcharts.chart('container2', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'World\'s largest cities per 2017'
+    },
+    subtitle: {
+        text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Population (millions)'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+    },
+    series: [{
+        name: 'Population',
+        data: [
+            ['Shanghai', 24.2],
+            ['Beijing', 20.8],
+            ['Karachi', 14.9],
+            ['Shenzhen', 13.7],
+            ['Guangzhou', 13.1],
+            ['Istanbul', 12.7],
+            ['Mumbai', 12.4],
+            ['Moscow', 12.2],
+            ['São Paulo', 12.0],
+            ['Delhi', 11.7],
+            ['Kinshasa', 11.5],
+            ['Tianjin', 11.2],
+            ['Lahore', 11.1],
+            ['Jakarta', 10.6],
+            ['Dongguan', 10.6],
+            ['Lagos', 10.6],
+            ['Bengaluru', 10.3],
+            ['Seoul', 9.8],
+            ['Foshan', 9.3],
+            ['Tokyo', 9.3]
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+
 
 </script>
 
