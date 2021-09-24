@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veggie</title>
+    <title>Zipbob</title>
     <link rel="stylesheet" href="/static/css/app.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
@@ -27,10 +27,11 @@
 
                         <nav id="main-nav" data-animate="menu-in menu-out">
                             <ul class="main-navigation">
+                                <li><a class="m-anim" href="#signin" data-text="SignIn">Sign In</a></li>
                                 <li><a class="m-active" href="#" data-text="Home">Home</a></li>
-                                <li><a class="m-anim" href="#specials-grid" data-text="Specials">Specials</a></li>
-                                <li><a class="m-anim" href="#about-us" data-text="About">About</a></li>
-                                <li><a class="m-anim" href="#main-menu" data-text="Menu Cart">Menu Cart</a></li>
+                                <li><a class="m-anim" href="#this-week" data-text="Specials">This Week</a></li>
+                                <li><a class="m-anim" href="#next-week" data-text="About">Next Week</a></li>
+                                <li><a class="m-anim" href="#recipe" data-text="Menu Cart">Recipe</a></li>
                                 <li><a class="m-anim" href="#contact-us" data-text="Contact">Contact</a></li>
                             </ul>
                         </nav>
@@ -93,24 +94,24 @@
         </div>
 
     </header>
-
+<!--구현 3가지 간단 설명-->
     <section class="category-icons">
         <div class="container">
             <div class="yellow-content">
                 <div class="icon">
                     <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-vege.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Turnip greens</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="500">Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage.</p>
+                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">This Week</h3>
+                    <p class="scroll-reveal" data-distance="0" data-duration="500">이번주 동향에서는 농수산물 가격의 상승과 하락의 정보를 알려줍니다</p>
                 </div>
                 <div class="icon">
                     <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-coffee.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">beetroot water</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="700">Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek.</p>
+                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Next Week</h3>
+                    <p class="scroll-reveal" data-distance="0" data-duration="700">다음주 전망에서는 농수산물가격의 다음주 예측치를 알려줍니다</p>
                 </div>
                 <div class="icon">
                     <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-sweet.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">get social</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="900">Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama.</p>
+                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Recipe</h3>
+                    <p class="scroll-reveal" data-distance="0" data-duration="900">농수산물중 다음주 예측치가 이번주에 비해 가장 높은 하락율을 보여주는 작물의 관련 추천 레시피을 제공합니다</p>
                 </div>
             </div>
             <!--.yellow-content-->
@@ -118,10 +119,10 @@
         <!--.container-->
     </section>
     <!--.category-icons-->
-
-    <section id="specials-grid" class="month-specials" data-scroll-reveal="enter from the bottom after 0.9s">
+<!--이번주 동향-->
+    <section id="this-week" class="month-specials" data-scroll-reveal="enter from the bottom after 0.9s">
         <div class="container">
-            <h1 class="header-txt">This month specials</h1>
+            <h1 class="header-txt">This week specials</h1>
             <div class="divider">
                 <?xml version="1.0" encoding="utf-8"?>
                 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -188,30 +189,7 @@
                     </div>
                 </div>
                 <!--.special-->
-                <div class="special">
-                    <div class="special-items spec-05">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Tigernut</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Grape silver beet watercress potato tigernut</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">14$</span>
-                    </div>
-                    <div class="special-img img-05">
-                        <img src="/static/assets/img/special-5.png" />
-                    </div>
-                </div>
-                <!--.special-->
-                <div class="special">
-                    <div class="special-items spec-06">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Yarrow sweet</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Gumbo kakadu plum komatsuna black-eyed pea green</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">8$</span>
-                    </div>
-                    <div class="special-img img-06">
-                        <img src="/static/assets/img/special-6.png" />
-                    </div>
-                </div>
-                <!--.special-->
+
             </div>
             <!--.specials-content-->
         </div>
@@ -219,10 +197,11 @@
     </section>
     <!--.month-specials-->
 
-    <section id="about-us" class="about">
+    <section id="next-week" class="about">
+
         <div class="container">
             <div class="about-content">
-                <h1 class="header-txt scroll-reveal">About us</h1>
+                <h1 class="header-txt scroll-reveal">Next week</h1>
                 <div class="divider scroll-reveal">
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -247,10 +226,87 @@
         <!--.container-->
     </section>
     <!--.about-->
-
-    <section id="main-menu" class="menu-cart scroll-reveal">
+<!--추천레시피-->
+    <section id="recipe" class="month-specials" data-scroll-reveal="enter from the bottom after 0.9s">
         <div class="container">
-            <h1 class="header-txt">Menu Cart</h1>
+            <h1 class="header-txt">Special recipes</h1>
+            <div class="divider">
+                <?xml version="1.0" encoding="utf-8"?>
+                <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
+                                </style>
+                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
+                                    717,171.5 "/>
+                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
+                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
+                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
+                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
+                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
+                                </svg>
+            </div>
+            <!--.divider-->
+            <div class="specials-content">
+                <div class="special">
+                    <div class="special-img img-01">
+                        <img src="/static/assets/img/special-1.png" />
+                    </div>
+                    <div class="special-items spec-01">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Greens fava</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Nori grape silver beet broccoli kombu beet greens fava</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">19$</span>
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-img img-02">
+                        <img src="/static/assets/img/special-2.png" />
+                    </div>
+                    <div class="special-items spec-02">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Celery quand</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Celery quandong swiss chard chicory earthnut pea</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">18$</span>
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-img img-03">
+                        <img src="/static/assets/img/special-3.png" />
+                    </div>
+                    <div class="special-items spec-03">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Pea horser</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Kohlrabi radish okra azuki bean corn fava bean mustard</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">7$</span>
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-items spec-04">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Soko radicchio</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Dandelion zucchini burdock yarrow chickpea dandelion</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">25$</span>
+                    </div>
+                    <div class="special-img img-04">
+                        <img src="/static/assets/img/special-4.png" />
+                    </div>
+                </div>
+                <!--.special-->
+
+            </div>
+            <!--.specials-content-->
+        </div>
+        <!--.container-->
+    </section>
+    <!--.month-specials-->
+<!--추천 레시피 리스트-->
+    <section class="menu-cart scroll-reveal">
+        <div class="container">
+            <h1 class="header-txt">Recipe Cart</h1>
             <div class="divider">
                 <?xml version="1.0" encoding="utf-8"?>
                 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
