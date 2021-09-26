@@ -229,13 +229,13 @@ jQuery(document).ready(function($){
 
 const chart = Highcharts.chart('container-chart2', {
     title: {
-        text: 'Chart.update'
+        text: '제목'
     },
     subtitle: {
-        text: 'Plain'
+        text: '설명'
     },
     xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        categories: ['가', '나', '다', '라', '마', '바', '사', '아', '자', '차', '카', '타']
     },
     series: [{
         type: 'column',
