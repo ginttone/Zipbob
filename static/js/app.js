@@ -65,7 +65,7 @@ jQuery(document).ready(function($){
 
 });
 
-// accodian jquery
+//--------- accodian jquery
 // $('.next-week-list').accordion();
     $('.next-week-list-title').click(function(){
         $(this).next().slideToggle().siblings('.next-week-list-table').slideUp();
@@ -224,6 +224,8 @@ jQuery(document).ready(function($){
                 }]
             }
         });
+//----------End highchart js
+
 
 // highchart js2
 
@@ -280,3 +282,4 @@ document.getElementById('polar').addEventListener('click', () => {
         }
     });
 });
+//---------End highchart js2
