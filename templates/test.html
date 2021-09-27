@@ -98,37 +98,123 @@
 	</section>
 <!--End 이번주동향-->
 
-<!--다음주 전망 그래프-->
-	<section id="next-week">
+<!--다음주 전망 차트-->
+	<section id="next-week" class="next-week-chart" style="background:#f5f5f5;">
 		<div class="container">
-			<div class="divider">
+			<div class="">
 				<h1 class="header-txt">NEXT WEEK</h1>
 			</div>
 			<div class="nw-chart">
 				<h2>hight chart</h2>
-			</div>
-		</div>
+			</div><!--nw-chart-->
+		</div><!--container-->
 	</section>
-<!--End 다음주 전망 그래프-->
+<!--End 다음주 전망 차트-->
 
 <!--다음주 전망 테이블-->
-	<section class="next-week" style="">
+	<section class="next-week-table">
 		<div class="container">
-			<div class="divider">
-				<h1 class="header-txt">NEXT WEEK</h1>
+			<div class="">
+				<h1 class="header-txt">WHAT'S NEXT</h1>
 			</div>
-			<div class="nw-chart">
-				<h2>hight chart</h2>
-			</div>
+			<div class="nw-content">
+				<table class="nw-table">
+					<thead>
+						<tr>
+							<th>품목</th>
+                            <th>단위</th>
+                            <th>이전주</th>
+                            <th>다음주</th>
+                            <th>등락률</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>사과</td>
+							<td>g</td>
+							<td>1000</td>
+							<td>1500</td>
+							<td>%</td>
+						</tr>
+					</tbody>
+				</table><!--nw-table-->
+			</div><!--nw-content-->
 		</div>
 	</section>
 <!--End 다음주 전망 테이블-->
 
-<!--추천레시피-->
-	<section id="recipe"></section>
-<!--End 추천레시피-->
+<!--추천레시피 그래프-->
+	<section id="recipe" class="recipe-graph" style="background:#f5f5f5;">
+		<div class="container">
+			<div class="">
+				<h1 class="header-txt">RECIPE</h1>
+			</div>
+			<div class="recipe-gr">
+				<h2>recipe graph</h2>
+			</div>
+		</div><!--container-->
+	</section>
+<!--End 추천레시피 그래프-->
+
+<!--추천레시피 테이블 페이징-->
+	<section class="recipe-pagenation">
+		<div class="container">
+			<div class="recipe-table">
+				<table class="recipe-ta">
+					<thead>
+						<tr>
+							<th>순위</th>
+							<th>품목</th>
+							<th>요리제목</th>
+						</tr>
+					</thead>
+					<tbody>
+<!-- 					{% for row in page_obj %} -->
+            			<tr>
+                			<td>{{ row.순위 }}</td>
+               				<td>{{ row.품목 }}</td>
+							<td>{{ row.요리제목 }}</td>
+            			</tr>
+<!--            			 {% endfor %} -->
+					</tbody>
+				</table><!--recipe-ta-->
+				<ul class="pagenation">
+					<li class="perPage active"><a href="pagelink"></a></li>
+					<li class="perPage"><a href="pagelink"></a></li>
+				</ul>
+			</div><!--recipe-table-->
+		</div><!--container-->
+	</section>
+<!--End 추천레시피 페이징-->
+
 <!--연락-->
 	<foodter id="contact">
+		<div class="container">
+			<div class="footer-title">
+				<h1 class="header-txt">CONTACT</h1>
+			</div>
+			<ul class="contant-info">
+				<li><a href="#"><i class="fab fa-github"></i>Zipbob link</a></li>
+			</ul>
+			<div class="contact-in">
+				<table class="contact-ta">
+					<tbody>
+						<tr>
+							<th><label for="txt1">연락처</label></th>
+							<td><input type="text" id="txt1" placeholder="연락받을 이메일 주소"></td>
+						</tr>
+
+						<tr>
+							<th><label for="txt2">문의사항</label></th>
+							<td><input type="text" id="txt2" placeholder="문의사항"></td>
+						</tr>
+						<tr>
+							<th><button id="con-btn">제출</button></th>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--contact-in-->
+		</div><!--container-->
 	</foodter>
 </body>
 </html>
