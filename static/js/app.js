@@ -71,7 +71,10 @@ jQuery(document).ready(function($){
         $(this).next().slideToggle().siblings('.next-week-list-table').slideUp();
      });
 
-
+//----
+    $('.divider').click(function(){
+        $(this).next().slideToggle().siblings('.tw-content').slideUp();
+     });
 
 /* javascript accodian
         //아코디언
