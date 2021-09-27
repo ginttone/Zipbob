@@ -10,7 +10,7 @@ font-family: 'Noto Serif KR', serif;
 -->
 /*--루트--*/
 
-body{height:100%;margin:0; font-family: 'Merriweather', serif; color:#1b0000;}
+body{height:100%;margin:0; font-family: 'Merriweather', serif;}
 a{text-decoration:none;color:#1b0000;}
 .container{height : 100vh;}
 /*네이바 , 쳇봇*/
@@ -35,18 +35,6 @@ div.con{background-color:none;padding:20px;color:#870000;}
 .con h3{display:flex;justify-content: space-around;}
 .con p{font-size:20px;}
 
-/*--*/
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap');
-
-/*--루트--*/
-
-body{height:100%;margin:0;font-family: 'Merriweather', serif;color:#1b0000;
-background-color:beige;}
-
-a{text-decoration:none;color:#1b0000;}
-
-.container{height : 100vh; background-color:red;}
 
 /*이번주*/
 #this-week{
