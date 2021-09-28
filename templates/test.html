@@ -10,6 +10,7 @@
 <!--하이차트 링크-->
 
 <!--css,js링크-->
+	<link rel="stylesheet" href="static/css/app.css">
 	<link rel="stylesheet" href="/static/css/zipbob.css">
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.min.js"></script>
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.number.min.js"></script>
@@ -19,7 +20,7 @@
 </head>
 
 <body>
-<div>
+<div class="all-container">
 		<div class="chatbot-icon">
 			<i class="fas fa-question-circle"></i>
 		</div><!--chatbot-icon-->
@@ -50,7 +51,7 @@
 
 	<!--콘텐츠 설명 -->
 		<section id="contents">
-			<div class="">
+			<div class="con-explain">
 				<div class="con-container">
 					<div class="con">
 						<i class="fas fa-chart-bar"></i>
@@ -73,76 +74,97 @@
 	<!--End 콘텐츠 설명-->
 
 	<!--이번주동향-->
-		<section id="this-week">
-			<div class="container">
-				<div class="divider">
-					<h1 class="header-txt">THIS WEEK</h1>
-				</div>
-				<div class="tw-content">
-					<div class="tw">
-						<div class="tw-img">img</div>
-						<div class="tw-span">
-							<span class="tw-title">title</span>
-							<span class="tw-tw-price">this-week price</span>
-							<span class="tw-nw-price">next-week price</span>
-							<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-						</div>
-					</div>
-					<div class="tw">
-						<div class="tw-img">img</div>
-						<div class="tw-span">
-							<span class="tw-title">title</span>
-							<span class="tw-tw-price">this-week price</span>
-							<span class="tw-nw-price">next-week price</span>
-							<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-						</div>
-					</div>
-					<div class="tw">
-						<div class="tw-img">img</div>
-						<div class="tw-span">
-							<span class="tw-title">title</span>
-							<span class="tw-tw-price">this-week price</span>
-							<span class="tw-nw-price">next-week price</span>
-							<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-						</div>
-					</div>
-					<div class="tw2">
-						<div class="tw-img">img</div>
-						<div class="tw-span">
-							<span class="tw-title">title</span>
-							<span class="tw-tw-price">this-week price</span>
-							<span class="tw-nw-price">next-week price</span>
-							<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-						</div>
-					</div>
-					<div class="tw2">
-						<div class="tw-img">img</div>
-						<div class="tw-span">
-							<span class="tw-title">title</span>
-							<span class="tw-tw-price">this-week price</span>
-							<span class="tw-nw-price">next-week price</span>
-							<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-						</div>
-					</div>
-					<div class="tw2">
-						<div class="tw-img">img</div>
-						<div class="tw-span">
-							<span class="tw-title">title</span>
-							<span class="tw-tw-price">this-week price</span>
-							<span class="tw-nw-price">next-week price</span>
-							<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-						</div>
-					</div>
-				</div><!--tw-content-->
-			</div><!--container-->
-		</section>
+	<section id="this-week" class="month-specials" data-scroll-reveal="enter from the bottom after 0.9s">
+        <div class="container">
+            <h1 class="header-txt">This week specials</h1>
+
+<!--이번주 동향 -->
+            <div class="specials-content">
+                <div class="special">
+                    <div class="special-img img-01">
+                        <img src="/static/image/apple.jpg" />
+                    </div>
+                    <div class="special-items spec-01">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">1등 사과</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">저번주와 기교해서 상승한 가격</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">19$</span>
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-img img-02">
+                        <img src="/static/assets/img/special-2.png" />
+                    </div>
+                    <div class="special-items spec-02">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Celery quand</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Celery quandong swiss chard chicory earthnut pea</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">18$</span>
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-img img-03">
+                        <img src="/static/assets/img/special-3.png" />
+                    </div>
+                    <div class="special-items spec-03">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Pea horser</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Kohlrabi radish okra azuki bean corn fava bean mustard</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">7$</span>
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-items spec-04">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Soko radicchio</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Dandelion zucchini burdock yarrow chickpea dandelion</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">25$</span>
+                    </div>
+                    <div class="special-img img-04">
+                        <img src="/static/assets/img/special-4.png" />
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-items spec-04">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Soko radicchio</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Dandelion zucchini burdock yarrow chickpea dandelion</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">25$</span>
+                    </div>
+                    <div class="special-img img-04">
+                        <img src="/static/assets/img/special-4.png" />
+                    </div>
+                </div>
+                <!--.special-->
+                <div class="special">
+                    <div class="special-items spec-04">
+                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Soko radicchio</h2>
+                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
+                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Dandelion zucchini burdock yarrow chickpea dandelion</p>
+                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">25$</span>
+                    </div>
+                    <div class="special-img img-04">
+                        <img src="/static/assets/img/special-4.png" />
+                    </div>
+                </div>
+                <!--.special-->
+            </div>
+            <!--.specials-content-->
+        </div>
+        <!--.container-->
+    </section>
+    <!--.month-specials-->
 
 	<!--End 이번주동향-->
 
 	<!--다음주 전망 차트-->
 		<section id="next-week" class="next-week-chart" style="background:#f5f5f5;">
 			<div class="container">
-				<div class="">
+				<div class="divider">
 					<h1 class="header-txt">NEXT WEEK</h1>
 				</div>
 				<div class="nw-chart">
@@ -155,7 +177,7 @@
 	<!--다음주 전망 테이블-->
 		<section class="next-week-table">
 			<div class="container">
-				<div class="">
+				<div class="divider">
 					<h1 class="header-txt">WHAT'S NEXT</h1>
 				</div>
 				<div class="nw-content">
@@ -187,7 +209,7 @@
 	<!--추천레시피 그래프-->
 		<section id="recipe" class="recipe-graph" style="background:#f5f5f5;">
 			<div class="container">
-				<div class="">
+				<div class="divider">
 					<h1 class="header-txt">RECIPE</h1>
 				</div>
 				<div class="recipe-gr">
