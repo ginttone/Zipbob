@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+<!--
+font-family: 'Bonheur Royale', cursive;
+font-family: 'Merriweather', serif;
+-->
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap');
+<!--
+font-family: 'Noto Serif KR', serif;
+-->
+/*--루트--*/
+
+body{height:100%;margin:0; font-family: 'Merriweather', serif;}
+a{text-decoration:none;color:#1b0000;}
+.container{height : 100vh;}
+/*네이바 , 쳇봇*/
+.nav-bar{display:flex;justify-content:space-between;align-item:center;}
+
+.nav-logo{font-size:24px;color:#ff3d00;padding:5px 12px;}
+
+.nav-menu{display:flex;list-style:none;font-size:18px;padding:5px 12px;margin:0;}
+.nav-menu li{padding:5px 12px;}
+.nav-menu li:hover{display:block;width:auto;}
+
+.nav-sign{display:flex;list-style:none;font-size:18px;padding:5px 12px;margin:0;color:#ff3d00;}
+.nav-sign li{padding:5px 12px;}
+
+.chatbot-icon{display:flex;justify-content:flex-end;font-size:70px;color:#ff3d00;top:550px;position:sticky;}
+
+/*-----콘텐츠 설명------*/
+#contents{font-family: 'Noto Serif KR', serif;font-size:20px;background-color:none;padding:40px;}
+.con-container{display:flex;justify-content: space-around;}
+div.con{background-color:none;padding:20px;color:#870000;}
+.con i{font-size:80px;display:flex;justify-content: space-around;}
+.con h3{display:flex;justify-content: space-around;}
+.con p{font-size:20px;}
+
+
+/*이번주*/
+#this-week{
+	margin:0;
+}
+.container{
+	height:100vh;
+	max-widht:100vh;
+}
+.divider{
+	display:flex;
+	justify-content:space-around;
+	height:50px;
+	padding:20px;
+	font-size:24px;
+}
+
+.tw-content{
+	width:900px;
+	height:480px;
+	padding:20px;
+	margin:30px;
+	display:flex;
+}
+.tw{
+	width:300px;
+	height:150px;
+	paddiing:20px;
+	display:flex;
+}
+
+.tw-img{
+	width:150px;
+	height:150px;
+	background-color:pink;
+	padding:10px;
+}
+
+.tw-span{
+	width:150px;
+	height:150px;
+	padding:10px;
+	background-color:yellow;
+}

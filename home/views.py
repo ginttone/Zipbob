@@ -11,6 +11,10 @@ def index(request):
     result={}
     return render(request, 'index.html', context=result)
 
+def test(request):
+    result={}
+    return render(request, 'test.html', context=result)
+
 def premium(request):
     result = dict()
     conn = sqlite3.connect('db.sqlite3')

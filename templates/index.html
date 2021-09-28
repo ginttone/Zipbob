@@ -27,7 +27,7 @@
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <div class="top-menu  scroll-reveal">
+                <div class="top-menu scroll-reveal">
                     <div class="menu">
                         <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
                             <button class="menu-icon dark" type="button" data-toggle="main-nav"></button>
@@ -36,12 +36,12 @@
 
                         <nav id="main-nav" data-animate="menu-in menu-out">
                             <ul class="main-navigation">
-                                <li><a class="m-anim" href="#signin" data-text="SignIn">Sign In</a></li>
                                 <li><a class="m-active" href="#" data-text="Home">Home</a></li>
                                 <li><a class="m-anim" href="#this-week" data-text="Specials">This Week</a></li>
                                 <li><a class="m-anim" href="#next-week" data-text="next-week">Next Week</a></li>
                                 <li><a class="m-anim" href="#recipe" data-text="Menu Cart">Recipe</a></li>
                                 <li><a class="m-anim" href="#contact-us" data-text="Contact">Contact</a></li>
+                                <li><a class="m-anim" href="#signin" data-text="SignIn">Sign In</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -268,9 +268,8 @@
         <!--.container-->
     </section>
 
-
 <!-- 'next-week-list' Accordion-->
-<section class="menu-cart scroll-reveal">
+    <section class="menu-cart scroll-reveal">
     <div class="next-week-list">
         <div class="next-week-list-title">
             <h1 class="header-txt"> What is NEXT </h1>
@@ -293,33 +292,51 @@
         </div>
 <!--백, 데이터 몇개만 뿌릴찌 작업-->
         <div class="next-week-list-table">
-         <table id="next-week-table" >
-            <tr>
-                <td><span>품목</span></td>
-                <td><span>단위</span></td>
-                <td><span>이번주</span></td>
-                <td><span>다음주</span></td>
-                <td><span>등락률</span></td>
-                <td><span>품목</span></td>
-                <td><span>단위</span></td>
-                <td><span>이번주</span></td>
-                <td><span>다음주</span></td>
-                <td><span>등락률</span></td>
-            </tr>
-            <tr>
-                <td><span>{{품목}}</span></td>
-                <td><span>{{단위}}</span></td>
-                <td><span>{{이번주}}</span></td>
-                <td><span>{{다음주}}</span></td>
-                <td><span>{{등락률}}</span></td>
-                <td><span>{{품목2}}</span></td>
-                <td><span>{{단위2}}</span></td>
-                <td><span>{{이번주2}}</span></td>
-                <td><span>{{다음주2}}</span></td>
-                <td><span>{{등락률2}}</span></td>
-            </tr>
-          </table>
+            <div class="next-week-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>품목</th>
+                            <th>단위</th>
+                            <th>이전주</th>
+                            <th>다음주</th>
+                            <th>등락률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caroline Adams</td>
+                            <td>United States</td>
+                            <td>WordPress</td>
+                            <td>WordPress</td>
+                            <td>WordPress</td>
+                        </tr>
+                        <tr>
+                            <td>James Burrows</td>
+                            <td>Scotland</td>
+                            <td>JavaScript API</td>
+                            <td>JavaScript API</td>
+                            <td>WordPress</td>
+                        </tr>
+                        <tr>
+                            <td>Charlotte Pelletier</td>
+                            <td>France</td>
+                            <td>CSS Implementations</td>
+                            <td>CSS Implementations</td>
+                            <td>WordPress</td>
+                        </tr>
+                        <tr>
+                            <td>Benjamin Wilson</td>
+                            <td>South Africa</td>
+                            <td>Hosting</td>
+                            <td>Hosting</td>
+                            <td>WordPress</td>
+                        </tr>
+                    </tbody>
+                 </table>
+            </div>
         </div>
+        <!--End 백, 데이터 몇개만 뿌릴찌 작업-->
     </div>
 </section>
     <!--'next-week-list' End Accordion-->
@@ -419,7 +436,7 @@
                 <div class="tabs-panel is-active" id="panel1">
                     <div class="menu-content">
                         <div class="menu-section">
-                            <table class="추천레시피">
+                            <table>
                                 <tr>
                                     <td><span>SMOKED RICOTTA TERRINE</span></td>
                                     <td><span>$12</span></td>
@@ -713,7 +730,7 @@
         </div>
         <!--.container-->
     </section>
-    <!--.menu-cart-->
+    <!--End 추천 레시피 리스트-->
 
     <a href="#0" class="cd-top">Top</a>
 <!--연락-->

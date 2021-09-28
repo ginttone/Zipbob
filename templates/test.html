@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zipbob</title>
+<!-- 아이콘 링크 -->
+	<script src="https://kit.fontawesome.com/850573ba23.js" crossorigin="anonymous"></script>
+<!--하이차트 링크-->
+
+<!--css,js링크-->
+	<link rel="stylesheet" href="/static/css/zipbob.css">
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.number.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+<div>
+	<div class="chatbot-icon">
+		<i class="fas fa-question-circle"></i>
+	</div><!--chatbot-icon-->
+
+<!--네비바, 챗봇 -->
+<head>
+	<div class="container" >
+		<div class="header-container">
+				<nav class="nav-bar">
+					<div class="nav-logo">
+						<i class="fas fa-receipt"></i>
+						<a href="#">Zipbob</a>
+					</div>
+					<ul class="nav-menu">
+						<li><a href="#this-week" class="" data-title="">This-Week</a></li>
+						<li><a href="#next-week" class="" data-title="">Next-Week</a></li>
+						<li><a href="#recipe" class="" data-title="">Recipe</a></li>
+					</ul>
+					<ul class="nav-sign">
+						<li><a href="#" class="signin">SignIn</a></li>
+						<li><i class="fas fa-bars"></i></li>
+					</ul>
+				</nav><!--nav-bar-->
+		</div><!--header-container-->
+	</div><!--container-->
+</head>
+	<!--End 네비바, 챗봇-->
+
+<!--콘텐츠 설명 -->
+	<section id="contents">
+		<div class="">
+			<div class="con-container">
+				<div class="con">
+					<i class="fas fa-chart-bar"></i>
+					<h3>this-week</h3>
+					<p>농수산물의 이번주 가격에 관한 설명</p>
+				</div>
+				<div class="con">
+					<i class="fas fa-chart-line"></i>
+					<h3>next-week</h3>
+					<p>농수산물의 다음주 가격예측에 관한 설명</p>
+				</div>
+				<div class="con">
+					<i class="fas fa-chart-pie"></i>
+					<h3>recipe</h3>
+					<p>다음주 가격예측된 작물의 관련 추천 레시피</p>
+				</div>
+			</div><!--con-container-->
+		</div><!--container-->
+	</section>
+<!--End 콘텐츠 설명-->
+
+<!--이번주동향-->
+	<section id="this-week">
+		<div class="container">
+			<div class="divider">
+				<h1 class="header-txt">THIS WEEK</h1>
+			</div>
+			<div class="tw-content">
+				<div class="tw">
+					<div class="tw-img">img</div>
+					<div class="tw-span">
+						<span class="tw-title">title</span>
+						<span class="tw-tw-price">this-week price</span>
+						<span class="tw-nw-price">next-week price</span>
+						<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+					</div>
+				</div>
+				<div class="tw">
+					<div class="tw-img">img</div>
+					<div class="tw-span">
+						<span class="tw-title">title</span>
+						<span class="tw-tw-price">this-week price</span>
+						<span class="tw-nw-price">next-week price</span>
+						<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+					</div>
+				</div>
+				<div class="tw">
+					<div class="tw-img">img</div>
+					<div class="tw-span">
+						<span class="tw-title">title</span>
+						<span class="tw-tw-price">this-week price</span>
+						<span class="tw-nw-price">next-week price</span>
+						<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+					</div>
+				</div>
+				<div class="tw2">
+					<div class="tw-img">img</div>
+					<div class="tw-span">
+						<span class="tw-title">title</span>
+						<span class="tw-tw-price">this-week price</span>
+						<span class="tw-nw-price">next-week price</span>
+						<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+					</div>
+				</div>
+				<div class="tw2">
+					<div class="tw-img">img</div>
+					<div class="tw-span">
+						<span class="tw-title">title</span>
+						<span class="tw-tw-price">this-week price</span>
+						<span class="tw-nw-price">next-week price</span>
+						<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+					</div>
+				</div>
+				<div class="tw2">
+					<div class="tw-img">img</div>
+					<div class="tw-span">
+						<span class="tw-title">title</span>
+						<span class="tw-tw-price">this-week price</span>
+						<span class="tw-nw-price">next-week price</span>
+						<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
+					</div>
+				</div>
+			</div><!--tw-content-->
+		</div><!--container-->
+	</section>
+
+<!--End 이번주동향-->
+
+<!--다음주 전망 차트-->
+	<section id="next-week" class="next-week-chart" style="background:#f5f5f5;">
+		<div class="container">
+			<div class="">
+				<h1 class="header-txt">NEXT WEEK</h1>
+			</div>
+			<div class="nw-chart">
+				<h2>hight chart</h2>
+			</div><!--nw-chart-->
+		</div><!--container-->
+	</section>
+<!--End 다음주 전망 차트-->
+
+<!--다음주 전망 테이블-->
+	<section class="next-week-table">
+		<div class="container">
+			<div class="">
+				<h1 class="header-txt">WHAT'S NEXT</h1>
+			</div>
+			<div class="nw-content">
+				<table class="nw-table">
+					<thead>
+						<tr>
+							<th>품목</th>
+                            <th>단위</th>
+                            <th>이전주</th>
+                            <th>다음주</th>
+                            <th>등락률</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>사과</td>
+							<td>g</td>
+							<td>1000</td>
+							<td>1500</td>
+							<td>%</td>
+						</tr>
+					</tbody>
+				</table><!--nw-table-->
+			</div><!--nw-content-->
+		</div>
+	</section>
+<!--End 다음주 전망 테이블-->
+
+<!--추천레시피 그래프-->
+	<section id="recipe" class="recipe-graph" style="background:#f5f5f5;">
+		<div class="container">
+			<div class="">
+				<h1 class="header-txt">RECIPE</h1>
+			</div>
+			<div class="recipe-gr">
+				<h2>recipe graph</h2>
+			</div>
+		</div><!--container-->
+	</section>
+<!--End 추천레시피 그래프-->
+<!--추천레시피 테이블 페이징-->
+	<section class="recipe-pagenation">
+		<div class="container">
+			<div class="recipe-table">
+				<table class="recipe-ta">
+					<thead>
+						<tr>
+							<th>순위</th>
+							<th>품목</th>
+							<th>요리제목</th>
+						</tr>
+					</thead>
+					<tbody>
+<!-- 					{% for row in page_obj %} -->
+            			<tr>
+                			<td>{{ row.순위 }}</td>
+               				<td>{{ row.품목 }}</td>
+							<td>{{ row.요리제목 }}</td>
+            			</tr>
+<!--            			 {% endfor %} -->
+					</tbody>
+				</table><!--recipe-ta-->
+				<ul class="pagenation">
+					<li class="perPage active"><a href="pagelink"></a></li>
+					<li class="perPage"><a href="pagelink"></a></li>
+				</ul>
+			</div><!--recipe-table-->
+		</div><!--container-->
+	</section>
+<!--End 추천레시피 페이징-->
+</div>
+<!--연락-->
+	<foodter id="contact">
+		<div class="container">
+			<div class="footer-title">
+				<h1 class="header-txt">CONTACT</h1>
+			</div>
+			<ul class="contant-info">
+				<li><a href="#"><i class="fab fa-github"></i>Zipbob link</a></li>
+			</ul>
+			<div class="contact-in">
+				<table class="contact-ta">
+					<tbody>
+						<tr>
+							<th><label for="txt1">연락처</label></th>
+							<td><input type="text" id="txt1" placeholder="연락받을 이메일 주소"></td>
+						</tr>
+
+						<tr>
+							<th><label for="txt2">문의사항</label></th>
+							<td><input type="text" id="txt2" placeholder="문의사항"></td>
+						</tr>
+						<tr>
+							<th><button id="con-btn">제출</button></th>
+						</tr>
+					</tbody>
+				</table>
+				<div class="banner">
+					<div class="ban-slide">
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+							<li>10</li>
+						</ul>
+					</div>
+				</div>
+			</div><!--contact-in-->
+		</div><!--container-->
+	</foodter>
+</body>
+</html>
