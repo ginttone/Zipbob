@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="/static/css1/home.css?ver=1">
 
 
+<!-- 챗봇 -->
 <link rel="shortcut icon" type="image/png" href="./static/image/chatbot.ico">
 <link rel="stylesheet" href="https://admin.chatcompose.com/static/all/global/export/css/main.5b1bd1fd.css?after?ver=1" rel="stylesheet">
 <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js?ver=1"></script>
@@ -750,7 +751,7 @@ function carousel() {
                 </svg>
             </a>
             <div class="rsc-container sc-iwsKbI leiiJH" width="350px" height="520px">
-                <div style="padding: 20px; text-align: center; color: rgb(255, 255, 255); max-height: 58px; font-size: 15px; font-weight: 600; box-shadow: grey 0px 2px 8px 0px; background: linear-gradient(to left bottom, rgb(255, 193, 7) 10%, rgba(255, 193, 7, 1));">Zipbob Chatbot
+                <div style="padding: 20px; text-align: center; color: rgb(255, 255, 255); max-height: 58px; font-size: 15px; font-weight: 600; box-shadow: grey 0px 2px 8px 0px; background: linear-gradient(to left bottom, rgb(255, 193, 7) 10%, rgba(255, 193, 7, 1));">ChatCompose Chatbot
                     <div style="cursor: pointer; position: absolute; top: 11px; right: 28px; text-shadow: none;">
 
                         <div class="dropdown-menu-chatbot" tabindex="0">
@@ -838,75 +839,12 @@ function carousel() {
                 </div>
     </div>
 </div>
+<script>
+    document.getElementById('chatboat' ).setAttribute('ChatCompose Chatbot','Zipbob Chatbot' );
+</script>
 
 
 
-
-<!-- 플로팅 -->
-<div style="POSITION: fixed; MARGIN-LEFT: 590px; TOP: 650px; LEFT: 60%; z-index:9999;">
-      <a href="javascript:;" class="menu-btn">플로팅</a>
-  </div>
-</div>
-
-
-<!-- Mobile 카카오톡 상담 버튼 -->
-<div class="floBanMob1 hidden-lg">
-    <a href="#chat1" class="bot" target="_blank">
-        <img src="./static/image/chatbot.ico" width="70px" height="70px">
-    </a>
-    </div>
-    <div class="chatbot" id="chat1">
-      <br><br><br><br><br><br><br>
-      <a href="#a">닫기</a>
-      <form name="write_form_member" method="post">
-         <table width="940" style="padding:5px 0 5px 0; ">
-           <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
-           <br>
-           <tr>
-             <th>질문</th>
-             <td><input type="text" name="question" id="question"></td>
-               <div class="question regex"></div>
-           </tr>
-         </table>
-      </form>
-    </div>
-
-<style>
-/* 카카오톡 모바일 상담 */
-  body { padding:40px; background: #f5f7fb}
-  .bot { display: block; width: 200px; height: 50px; background: #4ac4f3:
-  text-decoration: none; text-align: center; line-height: 50px; color: black;
-  border-radius: 50px;}
-  .chatbot { position: absolute; left: 85%; top: 50%; z-index: 5; transform: translate(-50%, -20%);
-  width: 550px; height: 900px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: #fff; border-radius: 5px; text-align: right;
-  padding: 20px; box-sizing: border-box; opacity: 0; transition: all 0.5s;}
-  .chatbot a { color: grey; text-decoration: none;}
-  .chatbot:target { opacity: 1;}
-  .chatbot:target + .dim{ opacity: 1; z-index: 2;}
-  .dim {position: fixed; left: 0; top: 0; z-index: -1; width: 100%;
-  height: 100%; background: rgba(0,0,0,0.6); opacity: 0; transition: all 0.5s;}
-</style>
-
-<!--&lt;!&ndash; 플로팅 배너 버튼 HTML 표시 &ndash;&gt; &lt;!&ndash; PC 카카오톡 상담 버튼 &ndash;&gt;-->
-<!--<div class="floBanPc1 hidden-md hidden-sm hidden-xs">-->
-<!--    <a href="카카오톡 채널 주소" target="_blank">-->
-<!--        <img src="배너 이미지 주소" width="76px" height="76px">-->
-<!--    </a>-->
-<!--</div>-->
-<!--&lt;!&ndash; PC 전화상담 버튼 &ndash;&gt;-->
-<!--<div class="floBanPc2 hidden-md hidden-sm hidden-xs">-->
-<!--    <a href="tel:전화번호">-->
-<!--        <img src="배너 이미지 주소" width="76px" height="76px">-->
-<!--    </a>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Mobile 전화상담 버튼 &ndash;&gt;-->
-<!--<div class="floBanMob2 hidden-lg">-->
-<!--    <a href="tel:전화번호">-->
-<!--        <img src="배너 이미지 주소" width="50px" height="50px">-->
-<!--    </a>-->
-<!--</div>-->
 
 
 <!-- 슬라이드 배너 -->
@@ -960,22 +898,5 @@ function carousel() {
     </script>
 </head>
 
-<style>
-/* PC 배너1 스타일 */
-.floBanPc1 {
-  position: fixed;
-  top: 128px; /* 윗쪽 끝에서부터의 거리 */
-  right: 0;
-  z-index: 99;
-}
 
-
-/* PC 카카오톡 상담 버튼 스타일 */ .floBanPc1 {  position: fixed;  top: 128px; /* 윗쪽 끝에서부터의 거리 */  right: 50%;  margin-right: -683px; /* 가운데를 기준으로 오른쪽 거리 */  z-index: 99; }
-/* PC 전화상담 버튼 스타일 */ .floBanPc2 {  position: fixed;  top: 204px; /* 윗쪽 끝에서부터의 거리 */  right: 50%;  margin-right: -683px; /* 가운데를 기준으로 오른쪽 거리 */  z-index: 99; }
-/* Mobile 카카오톡 상담 버튼 스타일 */ .floBanMob1 {  position: fixed;  bottom: 90px; /* 아래 끝에서부터의 거리 */  right: 90px; /* 오른쪽 끝에서부터의 거리 */  z-index: 99; }
-/* Mobile 전화상담 버튼 스타일 */ .floBanMob2 {  position: fixed;  bottom: 80px; /* 아래 끝에서부터의 거리 */  right: 15px; /* 오른쪽 끝에서부터의 거리 */  z-index: 99; }
-
-
-
-</style>
 </html>
