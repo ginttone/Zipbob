@@ -8,13 +8,22 @@
 <!-- 아이콘 링크 -->
 	<script src="https://kit.fontawesome.com/850573ba23.js" crossorigin="anonymous"></script>
 <!--하이차트 링크-->
-
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/series-label.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://code.highcharts.com/themes/high-contrast-light.js"></script>
 <!--css,js링크-->
 	<link rel="stylesheet" href="/static/css/zipbob.css">
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.min.js"></script>
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.number.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--등락률 테이블 솔트-->
+	<script src='tablesort.number.js'></script>
+	<script src='tablesort.date.js'></script>
+	<script>new Tablesort(document.getElementById('table-id'));</script>
 
 </head>
 
@@ -49,7 +58,7 @@
 		<!--End 네비바, 챗봇-->
 
 	<!--콘텐츠 설명 -->
-		<section id="contents">
+	<section id="contents">
 			<div class="con-explain">
 				<div class="con-container">
 					<div class="con">
@@ -73,77 +82,34 @@
 	<!--End 콘텐츠 설명-->
 
 	<!--이번주동향-->
-		<section id="this-week">
-			<div class="container">
-				<div class="divider">
-					<h1 class="header-txt">THIS WEEK</h1>
+	<section id="this-week">
+		<div class="container" style="width:100%;height:80vh;">
+			<div class="divider">
+				<h1 class="header-txt">THIS WEEK</h1>
 			</div>
-
-				<div class="container2">
-					<div class="tw-content">
-						<div class="tw">
-							<div class="tw-imgs">
-								<img src="#" class="tw-img"></div>
-							<div class="tw-span">
-								<span class="tw-title">title</span>
-								<span class="tw-tw-price">this-week price</span>
-								<span class="tw-nw-price">next-week price</span>
-								<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-							</div>
-						</div>
-						<div class="tw">
-							<div class="tw-img">img</div>
-							<div class="tw-span">
-								<span class="tw-title">title</span>
-								<span class="tw-tw-price">this-week price</span>
-								<span class="tw-nw-price">next-week price</span>
-								<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-							</div>
-						</div>
-						<div class="tw">
-							<div class="tw-img">img</div>
-							<div class="tw-span">
-								<span class="tw-title">title</span>
-								<span class="tw-tw-price">this-week price</span>
-								<span class="tw-nw-price">next-week price</span>
-								<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-							</div>
-						</div>
-						<div class="tw">
-							<div class="tw-img">img</div>
-							<div class="tw-span">
-								<span class="tw-title">title</span>
-								<span class="tw-tw-price">this-week price</span>
-								<span class="tw-nw-price">next-week price</span>
-								<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-							</div>
-						</div>
-						<div class="tw">
-							<div class="tw-img">img</div>
-							<div class="tw-span">
-								<span class="tw-title">title</span>
-								<span class="tw-tw-price">this-week price</span>
-								<span class="tw-nw-price">next-week price</span>
-								<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-							</div>
-						</div>
-						<div class="tw">
-							<div class="tw-img">img</div>
-							<div class="tw-span">
-								<span class="tw-title">title</span>
-								<span class="tw-tw-price">this-week price</span>
-								<span class="tw-nw-price">next-week price</span>
-								<span class="tw-good"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></span>
-							</div>
-						</div>
-				</div><!--tw-content-->
-			</div>
-		</div><!--container-->
+			<div class="content" id="circle">
+				<div class="reci">
+					<h1>Top 1 <i class="fas fa-arrow-up"></i></h1>
+					<img src="/static/image/apple.jpg" class="round" width="200" height="200">
+				</div>
+				<div class="reci">
+					<h1>Top 2 <i class="fas fa-arrow-up"></i></h1>
+					<img src="/static/image/apple.jpg" class="round" width="200" height="200">
+				</div>
+				<div class="reci">
+					<h1>Top 3 <i class="fas fa-arrow-down"></i></h1>
+					<img src="/static/image/apple.jpg" class="round" width="200" height="200">
+				</div>
+				<div class="reci">
+					<h1>Top 4 <i class="fas fa-arrow-down"></i></h1>
+					<img src="/static/image/apple.jpg" class="round" width="200" height="200">
+				</div>
+		</div>
 	</section>
 
 	<!--End 이번주동향-->
 
-	<!--다음주 전망 차트-->
+	<!--다음주 가격 차트-->
 		<section id="next-week" class="next-week-chart" style="background:#f5f5f5;">
 			<div class="container">
 				<div class="divider">
@@ -151,10 +117,14 @@
 				</div>
 				<div class="nw-chart">
 					<h2>hight chart</h2>
+					<figure class="highcharts-figure">
+						<div id="hi_container1"></div>
+						<p class="highcharts-description">설명</p>
+					</figure>
 				</div><!--nw-chart-->
 			</div><!--container-->
 		</section>
-	<!--End 다음주 전망 차트-->
+	<!--End 다음주 가격 차트-->
 
 	<!--다음주 전망 테이블-->
 		<section class="next-week-table">
@@ -163,26 +133,89 @@
 					<h1 class="header-txt">WHAT'S NEXT</h1>
 				</div>
 				<div class="nw-content">
-					<table class="nw-table">
+					<table id="my-table">
 						<thead>
 							<tr>
-								<th>품목</th>
-								<th>단위</th>
-								<th>이전주</th>
-								<th>다음주</th>
-								<th>등락률</th>
+								<th>Item</th>
+								<th>/g</th>
+								<th>Before</th>
+								<th>After</th>
+								<th>Leverage</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>사과</td>
-								<td>g</td>
+								<td>감자</td>
+								<td>1</td>
 								<td>1000</td>
 								<td>1500</td>
-								<td>%</td>
+								<td>22</td>
+							</tr>
+							<tr>
+								<td>고구마</td>
+								<td>2</td>
+								<td>1100</td>
+								<td>1600</td>
+								<td>13</td>
+							</tr>
+							<tr>
+								<td>양파</td>
+								<td>3</td>
+								<td>1600</td>
+								<td>800</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>파</td>
+								<td>4</td>
+								<td>1883</td>
+								<td>2000</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>귀리</td>
+								<td>5</td>
+								<td>4139</td>
+								<td>5000</td>
+								<td>27</td>
+							</tr>
+							<tr>
+								<td>양배추</td>
+								<td>6</td>
+								<td>6000</td>
+								<td>6500</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>김</td>
+								<td>7</td>
+								<td>800</td>
+								<td>500</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>당근</td>
+								<td>8</td>
+								<td>183</td>
+								<td>200</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>오이</td>
+								<td>9</td>
+								<td>7382</td>
+								<td>23330</td>
+								<td>29</td>
+							</tr>
+							<tr>
+								<td>호박</td>
+								<td>10</td>
+								<td>4168</td>
+								<td>5000</td>
+								<td>3</td>
 							</tr>
 						</tbody>
-					</table><!--nw-table-->
+					</table><!--my-table-->
 				</div><!--nw-content-->
 			</div>
 		</section>
@@ -276,5 +309,130 @@
 			</div><!--contact-in-->
 		</div><!--container-->
 	</foodter>
+
+<script>
+<!--하이차트 다음주가격-->
+var colors = Highcharts.getOptions().colors;
+
+Highcharts.chart('hi_container1', {
+    chart: {
+        type: 'spline'
+    },
+
+    legend: {
+        symbolWidth: 40
+    },
+
+    title: {
+        text: '다음주 예측 그래프'
+    },
+
+    subtitle: {
+        text: '농수산물의 주단위 가격변동 추이'
+    },
+
+    yAxis: {
+        title: {
+            text: '세로축 금액입니다.'
+        },
+        accessibility: {
+            description: '세로축 금액입니다.내용'
+        }
+    },
+
+    xAxis: {
+        title: {
+            text: '가로축 기간입니다.'
+        },
+        accessibility: {
+            description: '가로축 기간입니다.내용'
+        },
+        categories: ['1주', '2주', '3주', '이번주', '다음1주', '다음2주']
+    },
+
+    tooltip: {
+        valueSuffix: '%'
+    },
+
+    plotOptions: {
+        series: {
+            point: {
+                events: {
+                    click: function () {
+                        window.location.href = this.series.options.website;
+                    }
+                }
+            },
+            cursor: 'pointer'
+        }
+    },
+
+    series: [
+        {
+            name: 'NVDA',
+            data: [34.8, 43.0, 51.2, 41.4, 64.9, 72.4],
+            color: colors[2],
+            accessibility: {
+                description: 'This is the most used screen reader in 2019'
+            }
+        }, {
+            name: 'JAWS',
+            data: [69.6, 63.7, 63.9, 43.7, 66.0, 61.7],
+            dashStyle: 'ShortDashDot',
+            color: colors[0]
+        }, {
+            name: 'VoiceOver',
+            data: [20.2, 30.7, 36.8, 30.9, 39.6, 47.1],
+            dashStyle: 'ShortDot',
+            color: colors[1]
+        }, {
+            name: 'Narrator',
+            data: [null, null, null, null, 21.4, 30.3],
+            dashStyle: 'Dash',
+            color: colors[9]
+        }, {
+            name: 'ZoomText/Fusion',
+            data: [6.1, 6.8, 5.3, 27.5, 6.0, 5.5],
+            dashStyle: 'ShortDot',
+            color: colors[5]
+        }, {
+            name: 'Other',
+            data: [42.6, 51.5, 54.2, 45.8, 20.2, 15.4],
+            dashStyle: 'ShortDash',
+            color: colors[3]
+        }
+    ],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 550
+            },
+            chartOptions: {
+                chart: {
+                    spacingLeft: 3,
+                    spacingRight: 3
+                },
+                legend: {
+                    itemWidth: 150
+                },
+                xAxis: {
+                    categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
+                    title: ''
+                },
+                yAxis: {
+                    visible: false
+                }
+            }
+        }]
+    }
+});
+
+<!--하이차트2 추천확률-->
+
+<!--등락률 테이블 솔트-->
+new Tablesort(document.getElementById('my-table'));
+
+</script>
 </body>
 </html>

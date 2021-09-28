@@ -1,3 +1,4 @@
+//-------------------
 /* accodian (login) */
   input[id*="signin"]{display:none;}
     input[id*="signin"]+label{
@@ -102,3 +103,4 @@
     .box:hover{
         transform: scale(1.1);
     }
+-----------------------------//
