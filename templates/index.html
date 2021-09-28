@@ -1,835 +1,625 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zipbob</title>
-
-    <link rel="stylesheet" href="static/css/app.css">
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
-    <script src="https://unpkg.com/scrollreveal@4.0.0-beta.6"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zipbob</title>
 <!-- 아이콘 링크 -->
 	<script src="https://kit.fontawesome.com/850573ba23.js" crossorigin="anonymous"></script>
-<!-- highchart   -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script src="https://code.highcharts.com/themes/high-contrast-light.js"></script>
-<!-- End highchart   -->
+<!--하이차트 링크-->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/series-label.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://code.highcharts.com/themes/high-contrast-light.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<!--css,js링크-->
+	<link rel="stylesheet" href="/static/css/zipbob.css">
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.number.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--등락률 테이블 솔트-->
+	<script src='tablesort.number.js'></script>
+	<script src='tablesort.date.js'></script>
+	<script>new Tablesort(document.getElementById('table-id'));</script>
+
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="top-menu scroll-reveal">
-                    <div class="menu">
-                        <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
-                            <button class="menu-icon dark" type="button" data-toggle="main-nav"></button>
-                            <div class="title-bar-title">Menu</div>
-                        </div>
 
-                        <nav id="main-nav" data-animate="menu-in menu-out">
-                            <ul class="main-navigation">
-                                <li><a class="m-active" href="#" data-text="Home">Home</a></li>
-                                <li><a class="m-anim" href="#this-week" data-text="Specials">This Week</a></li>
-                                <li><a class="m-anim" href="#next-week" data-text="next-week">Next Week</a></li>
-                                <li><a class="m-anim" href="#recipe" data-text="Menu Cart">Recipe</a></li>
-                                <li><a class="m-anim" href="#contact-us" data-text="Contact">Contact</a></li>
-                                <li><a class="m-anim" href="#signin" data-text="SignIn">Sign In</a></li>
-                            </ul>
+<!--챗봇 아이콘-->
+	<div class="chatbot-icon">
+		<i class="fas fa-question-circle"></i>
+	</div>
+	<!--End 챗봇아이콘-->
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="a-slide slide1">
-                <div class="container">
-                    <div class="bottom-section scroll-reveal" data-origin="right" data-distance="20%">
-                        <h1 class="header-txt">Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</h1>
-                        <div class="divider">
-                            <?xml version="1.0" encoding="utf-8"?>
-                            <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                </style>
-                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                                    717,171.5 "/>
-                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                </svg>
-                        </div>
-                        <!--.divider-->
-
-                    </div>
-                    <!--.bottom-section-->
-                </div>
-            </div>
-            <div class="a-slide slide2">
-                <div class="container">
-                    <div class="bottom-section">
-                        <h1 class="header-txt">Dandelion cucumber earthnut pea peanut soko zucchini</h1>
-                        <div class="divider">
-                            <?xml version="1.0" encoding="utf-8"?>
-                            <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                </style>
-                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                                    717,171.5 "/>
-                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                </svg>
-                        </div>
-                        <!--.divider-->
-                    </div>
-                    <!--.bottom-section-->
-                </div>
-            </div>
-        </div>
-
-    </header>
-<!--구현 3가지 간단 설명-->
-    <section class="category-icons">
-        <div class="container">
-            <div class="yellow-content">
-                <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-vege.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">This Week</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="500">이번주 동향에서는 농수산물 가격의 상승과 하락의 정보를 알려줍니다</p>
-                </div>
-                <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-coffee.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Next Week</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="700">다음주 전망에서는 농수산물가격의 다음주 예측치를 알려줍니다</p>
-                </div>
-                <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-sweet.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Recipe</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="900">농수산물중 다음주 예측치가 이번주에 비해 가장 높은 하락율을 보여주는 작물의 관련 추천 레시피을 제공합니다</p>
-                </div>
-            </div>
-            <!--.yellow-content-->
-        </div>
-        <!--.container-->
-    </section>
-    <!--.category-icons-->
-
-<!--이번주 동향-->
-    <section id="this-week" class="month-specials" data-scroll-reveal="enter from the bottom after 0.9s">
-        <div class="container">
-            <h1 class="header-txt">This week specials</h1>
-            <div class="divider">
-                <?xml version="1.0" encoding="utf-8"?>
-                <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                </style>
-                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                                    717,171.5 "/>
-                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                </svg>
-            </div>
-            <!--.divider-->
-
-<!--이번주 동향 -->
-            <div class="specials-content">
-                <div class="special">
-                    <div class="special-img img-01">
-                        <img src="/static/image/apple.jpg" />
-                    </div>
-                    <div class="special-items spec-01">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">1등 사과</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">저번주와 기교해서 상승한 가격</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">19$</span>
-                    </div>
-                </div>
-                <!--.special-->
-                <div class="special">
-                    <div class="special-img img-02">
-                        <img src="/static/assets/img/special-2.png" />
-                    </div>
-                    <div class="special-items spec-02">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Celery quand</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Celery quandong swiss chard chicory earthnut pea</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">18$</span>
-                    </div>
-                </div>
-                <!--.special-->
-                <div class="special">
-                    <div class="special-img img-03">
-                        <img src="/static/assets/img/special-3.png" />
-                    </div>
-                    <div class="special-items spec-03">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Pea horser</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Kohlrabi radish okra azuki bean corn fava bean mustard</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">7$</span>
-                    </div>
-                </div>
-                <!--.special-->
-                <div class="special">
-                    <div class="special-items spec-04">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Soko radicchio</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Dandelion zucchini burdock yarrow chickpea dandelion</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">25$</span>
-                    </div>
-                    <div class="special-img img-04">
-                        <img src="/static/assets/img/special-4.png" />
-                    </div>
-                </div>
-                <!--.special-->
-                <div class="special">
-                    <div class="special-items spec-04">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Soko radicchio</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Dandelion zucchini burdock yarrow chickpea dandelion</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">25$</span>
-                    </div>
-                    <div class="special-img img-04">
-                        <img src="/static/assets/img/special-4.png" />
-                    </div>
-                </div>
-                <!--.special-->
-                <div class="special">
-                    <div class="special-items spec-04">
-                        <h2 class="scroll-reveal" data-origin="top" data-distance="20%">Soko radicchio</h2>
-                        <span class="line scroll-reveal" data-origin="top" data-distance="20%"></span>
-                        <p class="scroll-reveal" data-origin="bottom" data-distance="30%">Dandelion zucchini burdock yarrow chickpea dandelion</p>
-                        <span class="scroll-reveal" data-origin="bottom" data-distance="60%">25$</span>
-                    </div>
-                    <div class="special-img img-04">
-                        <img src="/static/assets/img/special-4.png" />
-                    </div>
-                </div>
-                <!--.special-->
+<!--네비바 -->
+	<header>
+		<div class="container" id="navi">
+			<div class="header-container">
+					<nav class="nav-bar">
+						<div class="nav-logo">
+							<i class="fas fa-receipt"></i>
+							<a href="#">Zipbob</a>
+						</div>
+						<ul class="nav-menu">
+							<li><a href="#this-week" class="" data-title="">This-Week</a></li>
+							<li><a href="#next-week" class="" data-title="">Next-Week</a></li>
+							<li><a href="#recipe" class="" data-title="">Recipe</a></li>
+						</ul>
+						<ul class="nav-sign">
+							<li><a href="#" class="signin">SignIn</a></li>
+							<li><i class="fas fa-bars"></i></li>
+						</ul>
+					</nav><!--nav-bar-->
+			</div><!--header-container-->
+		</div><!--container-->
+	</header>
+	<!--End 네비바-->
 
 
+<!--콘텐츠 설명 -->
+	<section id="contents">
+		<div class="con-explain">
+			<div class="con-container">
+				<div class="con">
+					<i class="fas fa-chart-bar"></i>
+					<h3>THIS WEEK</h3>
+					<p>농수산물의 이번주 가격에 관한 설명</p>
+				</div>
+				<div class="con">
+					<i class="fas fa-chart-line"></i>
+					<h3>NEXT WEEK</h3>
+					<p>농수산물의 다음주 가격예측에 관한 설명</p>
+				</div>
+				<div class="con">
+					<i class="fas fa-chart-pie"></i>
+					<h3>RECIPE</h3>
+					<p>다음주 가격예측된 작물의 관련 추천 레시피</p>
+				</div>
+			</div><!--con-container-->
+		</div><!--container-->
+	</section>
+	<!--End 콘텐츠 설명-->
 
-            </div>
-            <!--.specials-content-->
-        </div>
-        <!--.container-->
-    </section>
-    <!--.month-specials-->
-
-
-<!--다음주 전망-->
-    <section id="next-week" style="padding:3.125rem 0;background:#eeefef; background-size:90%;background-position:left -6.25rem bottom -9.375rem;height:100%">
-        <div class="container">
-            <div class="">
-                <h1 class="header-txt scroll-reveal">Next week</h1>
-                <div class="divider scroll-reveal">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                </style>
-                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                                    717,171.5 "/>
-                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                </svg>
-                </div>
-                <!--.divider-->
-                <figure class="highcharts-figure">
-                    <div id="container-chart"></div>
-                    <p class="highcharts-description"></p>
-                </figure>
-
-            </div>
-        </div>
-        <!--.container-->
-    </section>
-
-<!-- 'next-week-list' Accordion-->
-    <section class="menu-cart scroll-reveal">
-    <div class="next-week-list">
-        <div class="next-week-list-title">
-            <h1 class="header-txt"> What is NEXT </h1>
-            <div class="divider">
-                <?xml version="1.0" encoding="utf-8"?>
-                <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                    <style type="text/css">
-                        .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                    </style>
-                    <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                        717,171.5 "/>
-                    <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                        1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                    <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                    <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                    <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                    </svg>
-            </div>
-        </div>
-<!--백, 데이터 몇개만 뿌릴찌 작업-->
-        <div class="next-week-list-table">
-            <div class="next-week-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>품목</th>
-                            <th>단위</th>
-                            <th>이전주</th>
-                            <th>다음주</th>
-                            <th>등락률</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Caroline Adams</td>
-                            <td>United States</td>
-                            <td>WordPress</td>
-                            <td>WordPress</td>
-                            <td>WordPress</td>
-                        </tr>
-                        <tr>
-                            <td>James Burrows</td>
-                            <td>Scotland</td>
-                            <td>JavaScript API</td>
-                            <td>JavaScript API</td>
-                            <td>WordPress</td>
-                        </tr>
-                        <tr>
-                            <td>Charlotte Pelletier</td>
-                            <td>France</td>
-                            <td>CSS Implementations</td>
-                            <td>CSS Implementations</td>
-                            <td>WordPress</td>
-                        </tr>
-                        <tr>
-                            <td>Benjamin Wilson</td>
-                            <td>South Africa</td>
-                            <td>Hosting</td>
-                            <td>Hosting</td>
-                            <td>WordPress</td>
-                        </tr>
-                    </tbody>
-                 </table>
-            </div>
-        </div>
-        <!--End 백, 데이터 몇개만 뿌릴찌 작업-->
-    </div>
+<!--이번주동향-->
+	<section id="this-week">
+	<div class="container">
+		<div class="divider">
+			<h1 class="header-txt">THIS WEEK</h1>
+		</div>
+		<div class="divider_th">
+			<div class="content" id="circle">
+				<div class="reci">
+					<h1>Top 1 <i class="fas fa-arrow-up"></i></h1>
+					<img src="/static/image/apple.jpg" class="round" width="300" height="300">
+				</div>
+				<div class="reci">
+					<h1>Top 2 <i class="fas fa-arrow-up"></i></h1>
+					<img src="/static/image/apple.jpg" class="round" width="300" height="300">
+				</div>
+				<div class="reci">
+					<h1>Top 3 <i class="fas fa-arrow-down"></i></h1>
+					<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
+				</div>
+				<div class="reci">
+					<h1>Top 4 <i class="fas fa-arrow-down"></i></h1>
+					<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
+				</div>
+			</div><!--circle-->
+		</div><!--divider_th-->
+	</div>
 </section>
-    <!--'next-week-list' End Accordion-->
+	<!--End 이번주동향-->
+
+<!--다음주 가격 차트-->
+	<section id="next-week" style="background:#f5f5f5;">
+		<div class="container">
+			<div class="divider">
+				<h1 class="header-txt">NEXT WEEK</h1>
+			</div>
+			<div class="divider-nw">
+				<div class="nw-chart">
+					<figure class="highcharts-figure">
+						<div id="hi_container1"></div>
+						<p class="highcharts-description">설명</p>
+					</figure>
+				</div><!--nw-chart-->
+			</div><!--divider-nw-->
+		</div><!--container-->
+	</section>
+	<!--End 다음주 가격 차트-->
+
+<!--다음주 전망 테이블-->
+	<section class="next-week-table">
+		<div class="container">
+			<div class="divider">
+				<h1 class="header-txt">WHAT'S NEXT</h1>
+			</div>
+			<div class="divider_in">
+				<div class="nw-content" id="nw-table">
+					<table id="my-table">
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>/g</th>
+								<th>Before</th>
+								<th>After</th>
+								<th>Leverage</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>감자</td>
+								<td>1</td>
+								<td>1000</td>
+								<td>1500</td>
+								<td>22</td>
+							</tr>
+							<tr>
+								<td>고구마</td>
+								<td>2</td>
+								<td>1100</td>
+								<td>1600</td>
+								<td>13</td>
+							</tr>
+							<tr>
+								<td>양파</td>
+								<td>3</td>
+								<td>1600</td>
+								<td>800</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>파</td>
+								<td>4</td>
+								<td>1883</td>
+								<td>2000</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>귀리</td>
+								<td>5</td>
+								<td>4139</td>
+								<td>5000</td>
+								<td>27</td>
+							</tr>
+							<tr>
+								<td>양배추</td>
+								<td>6</td>
+								<td>6000</td>
+								<td>6500</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>김</td>
+								<td>7</td>
+								<td>800</td>
+								<td>500</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>당근</td>
+								<td>8</td>
+								<td>183</td>
+								<td>200</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>오이</td>
+								<td>9</td>
+								<td>7382</td>
+								<td>23330</td>
+								<td>29</td>
+							</tr>
+							<tr>
+								<td>호박</td>
+								<td>10</td>
+								<td>4168</td>
+								<td>5000</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table><!--my-table-->
+
+					<table id="my-table2">
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>/g</th>
+								<th>Before</th>
+								<th>After</th>
+								<th>Leverage</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>감자</td>
+								<td>1</td>
+								<td>1000</td>
+								<td>1500</td>
+								<td>22</td>
+							</tr>
+							<tr>
+								<td>고구마</td>
+								<td>2</td>
+								<td>1100</td>
+								<td>1600</td>
+								<td>13</td>
+							</tr>
+							<tr>
+								<td>양파</td>
+								<td>3</td>
+								<td>1600</td>
+								<td>800</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>파</td>
+								<td>4</td>
+								<td>1883</td>
+								<td>2000</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>귀리</td>
+								<td>5</td>
+								<td>4139</td>
+								<td>5000</td>
+								<td>27</td>
+							</tr>
+							<tr>
+								<td>양배추</td>
+								<td>6</td>
+								<td>6000</td>
+								<td>6500</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>김</td>
+								<td>7</td>
+								<td>800</td>
+								<td>500</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>당근</td>
+								<td>8</td>
+								<td>183</td>
+								<td>200</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>오이</td>
+								<td>9</td>
+								<td>7382</td>
+								<td>23330</td>
+								<td>29</td>
+							</tr>
+							<tr>
+								<td>호박</td>
+								<td>10</td>
+								<td>4168</td>
+								<td>5000</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table><!--my-table2-->
+				</div><!--nw-table-->
+			</div><!--divider_in-->
+		</div><!--container-->
+	</section>
+	<!--End 다음주 전망 테이블-->
+
+<!--추천레시피-->
+	<section id="recipe" class="recipe-graph" style="background:#f5f5f5;">
+		<div class="container">
+			<div class="divider">
+				<h1 class="header-txt">RECIPE</h1>
+			</div>
+			<div class="divider_re">
+				<div class="content" id="circle2">
+					<div class="reci">
+						<h1>Top 1 <i class="fas fa-arrow-up"></i></h1>
+						<img src="/static/image/apple.jpg" class="round2" width="200" height="200">
+					</div>
+					<div class="reci">
+						<h1>Top 2 <i class="fas fa-arrow-up"></i></h1>
+						<img src="/static/image/apple.jpg" class="round2" width="200" height="200">
+					</div>
+					<div class="reci">
+						<h1>Top 3 <i class="fas fa-arrow-down"></i></h1>
+						<img src="/static/image/apple.jpg" class="round2" width="200" height="200">
+					</div>
+					<div class="reci">
+						<h1>Top 4 <i class="fas fa-arrow-down"></i></h1>
+						<img src="/static/image/apple.jpg" class="round2" width="200" height="200">
+					</div>
+				</div><!--circle-->
+			</div><!--divider_re-->
+		</div><!--container-->
+	</section>
+	<!--추천레시피-->
 
 <!--추천레시피 그래프-->
-    <section id="recipe" style="padding:3.125rem 0;background:#eeefef; background-size:90%;background-position:left -6.25rem bottom -9.375rem;height:100%">
-        <div class="container">
-            <div class="">
-                <h1 class="header-txt scroll-reveal">Recipe</h1>
-                <div class="divider scroll-reveal">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                </style>
-                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                                    717,171.5 "/>
-                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                </svg>
-                </div>
-                <!--.divider-->
-                <p class="scroll-reveal" data-origin="top" data-distance="10%"></p>
+	<section class="recipe-graph">
+		<div class="container">
+			<div class="divider">
+				<h1 class="header-txt">RECIPE</h1>
+			</div>
+			<div class="divider_gr">
+				<div class="recipe-gr">
+					<h2>recipe graph</h2>
+					<figure class="highcharts-figure2">
+						<div id="hi-container2"></div>
+						<p class="highcharts-description2">
+						   추천레시피에들어감
+						</p>
+						<button id="plain">기본</button>
+						<button id="polar">파이차트</button>
+					</figure>
+				</div>
+			</div><!--divider_re-->
+		</div><!--container-->
+	</section>
+	<!--End 추천레시피 그래프-->
 
-                <figure class="highcharts-figure2">
-                    <div id="container-chart2"></div>
-                    <p class="highcharts-description2"></p>
+<!--추천레시피 테이블 페이징-->
+	<section class="recipe-pagenation" id="recipe-page">
+		<div class="container">
+			<div class="divider">
+				<h1 class="header-txt">RECIPE table</h1>
+			</div>
+			<div class="divider_ret">
+				<div class="recipe-table">
+					<table class="recipe-ta">
+						<thead>
+							<tr>
+								<th>순위</th>
+								<th>품목</th>
+								<th>요리제목</th>
+							</tr>
+						</thead>
+						<tbody>
+	<!-- 					{% for row in page_obj %} -->
+							<tr>
+								<td></td><!--{{ row.순위 }}-->
+								<td></td><!--{{ row.품목 }}-->
+								<td></td><!--{{ row.요리제목 }}-->
+							</tr>
+	<!--            			 {% endfor %} -->
+						</tbody>
+					</table><!--recipe-ta-->
 
-                    <button id="plain">기본</button>
-                    <button id="inverted">가로</button>
-                    <button id="polar">세로</button>
-                </figure>
-            </div>
-        </div>
-        <!--.container-->
-    </section>
+					<ul class="pagenation">
+						<li class="perPage active"><a href="pagelink"></a></li>
+						<li class="perPage"><a href="pagelink"></a></li>
+					</ul>
+				</div><!--recipe-table-->
+			</div><!--divider_ret-->
+		</div><!--container-->
+	</section>
+	<!--End 추천레시피 페이징-->
 
-<!--추천레시피 1~4위-->
-    <section class="category-icons">
-        <div class="container">
-            <div class="yellow-content">
-                <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-vege.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">This Week</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="500">이번주 동향에서는 농수산물 가격의 상승과 하락의 정보를 알려줍니다</p>
-                </div>
-                <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-coffee.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Next Week</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="700">다음주 전망에서는 농수산물가격의 다음주 예측치를 알려줍니다</p>
-                </div>
-                <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="/static/assets/icon-sweet.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Recipe</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="900">농수산물중 다음주 예측치가 이번주에 비해 가장 높은 하락율을 보여주는 작물의 관련 추천 레시피을 제공합니다</p>
-                </div>
-            </div>
-            <!--.yellow-content-->
-        </div>
-        <!--.container-->
-    </section>
-    <!--.category-icons-->
-
-<!--추천 레시피 리스트-->
-    <section class="menu-cart scroll-reveal">
-        <div class="container">
-            <h1 class="header-txt">Recipe Cart</h1>
-            <div class="divider">
-                <?xml version="1.0" encoding="utf-8"?>
-                <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                </style>
-                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                                    717,171.5 "/>
-                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                </svg>
-            </div>
-            <!--.divider-->
-            <ul class="menu-navigation" data-tabs data-match-height="true" id="example-tabs">
-                <li class="tabs-title is-active"><a class="m-anim" href="#panel1" aria-selected="true" data-text="Starters">Starters</a></li>
-                <li class="tabs-title"><a class="m-anim" data-tabs-target="panel2" href="#panel2" data-text="Main Dishes">Main Dishes</a></li>
-                <li class="tabs-title"><a class="m-anim" data-tabs-target="panel3" href="#panel3" data-text="Desserts">Desserts</a></li>
-                <li class="tabs-title"><a class="m-anim" data-tabs-target="panel4" href="#panel4" data-text="Drinks">Drinks</a></li>
-            </ul>
-
-            <div class="tabs-content" data-tabs-content="example-tabs">
-                <div class="tabs-panel is-active" id="panel1">
-                    <div class="menu-content">
-                        <div class="menu-section">
-                            <table>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SAMPHIRE FRITTERS WITH FENNEL CEVICHE </span></td>
-                                    <td><span>$19</span></td>
-                                </tr>
-                                <tr>
-                                    <td>fresh samphire, plain flour, cornflower, eggs, fennel</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$13</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$16</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                        <div class="menu-section">
-                            <table>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SAMPHIRE FRITTERS WITH FENNEL CEVICHE </span></td>
-                                    <td><span>$19</span></td>
-                                </tr>
-                                <tr>
-                                    <td>fresh samphire, plain flour, cornflower, eggs, fennel</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$13</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$16</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                    </div>
-                    <!--.menu-content-->
-                </div>
-                <!--#panel1-->
-
-                <div class="tabs-panel" id="panel2">
-                    <div class="menu-content">
-                        <div class="menu-section">
-                            <table>
-                                <tr>
-                                    <td><span>SAMPHIRE FRITTERS WITH FENNEL CEVICHE </span></td>
-                                    <td><span>$19</span></td>
-                                </tr>
-                                <tr>
-                                    <td>fresh samphire, plain flour, cornflower, eggs, fennel</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$13</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$16</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                        <div class="menu-section">
-                            <table>
-                                <tr>
-                                    <td><span>SAMPHIRE FRITTERS WITH FENNEL CEVICHE </span></td>
-                                    <td><span>$19</span></td>
-                                </tr>
-                                <tr>
-                                    <td>fresh samphire, plain flour, cornflower, eggs, fennel</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$13</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$16</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                    </div>
-                    <!--.menu-content-->
-                </div>
-                <!--#panel2-->
-
-                <div class="tabs-panel" id="panel3">
-                    <div class="menu-content">
-                        <div class="menu-section">
-                            <table>
-
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>COURGETTE FLOWERS</span></td>
-                                    <td><span>$16</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                        <div class="menu-section">
-                            <table>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                                <tr>
-                                    <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>FRIED COURGETTE FLOWERS</span></td>
-                                    <td><span>$16</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                    </div>
-                    <!--.menu-content-->
-                </div>
-                <!--#panel3-->
-
-                <div class="tabs-panel" id="panel4">
-                    <div class="menu-content">
-                        <div class="menu-section">
-                            <table>
-                                <tr>
-                                    <td><span>COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                        <div class="menu-section">
-                            <table>
-                                <tr>
-                                    <td><span>COURGETTE FLOWERS</span></td>
-                                    <td><span>$11</span></td>
-                                </tr>
-                                <tr>
-                                    <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                </tr>
-                                <tr>
-                                    <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                    <td><span>$12</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ricotta, shallots, cheddar, capers</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--.menu-section-->
-                    </div>
-                    <!--.menu-content-->
-                </div>
-                <!--#panel4-->
-
-            </div>
-        </div>
-        <!--.container-->
-    </section>
-    <!--End 추천 레시피 리스트-->
-
-    <a href="#0" class="cd-top">Top</a>
 <!--연락-->
-    <footer id="contact-us">
-        <div class="container">
-            <div class="footer-content">
-                <h1 class="header-txt scroll-reveal">Contact</h1>
-                <div class="divider scroll-reveal">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                </style>
-                                <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5
-                                    717,171.5 "/>
-                                <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9
-                                    1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                </svg>
-                </div>
-                <!--.divider-->
-                <div class="contact-info scroll-reveal">
-                    <div class="info-address">
-                        <h3>Zipbob</h3>
-                        <p><a href="https://github.com/ginttone/Zipbob" title="move to address" > Github link : Zipbob </a></p>
-                    </div>
-                    <div class="reservations">
-                        <h3>Multi Campus</h3>
-                        <p>Service center 1234-5678 Weekdays 09:00~18:00  (Breaktime 12:00~13:00)</p>
-                    </div>
-                </div>
+	<foodter id="contact">
+		<div class="container">
+			<div class="footer-title">
+				<h1 class="header-txt">CONTACT</h1>
+			</div>
 
+			<ul class="contant-info">
+				<li><a href="#"><i class="fab fa-github"></i>Zipbob link</a></li>
+			</ul>
 
-                <!--.contact-info-->
-                <div class="contact-form scroll-reveal" data-origin="bottom" data-distance="20%">
-                    <h3>Contact us</h3>
-                    <form>
-                        <input type="text" name="name" placeholder="Name">
-                        <input type="email" name="email" placeholder="Email">
-                        <textarea placeholder="Message"></textarea>
-                        <button class="send-form">Send</button>
-                    </form>
-                </div>
-                <!--.contact-form-->
-                <div class="social-icons scroll-reveal" data-duration="1500">
-                    <div class="">
-                        <h3>배너</h3>
-                      </div>
-                </div>
-                <!--.social-icons-->
-            </div>
+			<div class="contact-in">
+				<table class="contact-ta">
+					<tbody>
+						<tr>
+							<th><label for="txt1">연락처</label></th>
+							<td><input type="text" id="txt1" placeholder="연락받을 이메일 주소"></td>
+						</tr>
 
+						<tr>
+							<th><label for="txt2">문의사항</label></th>
+							<td><input type="text" id="txt2" placeholder="문의사항"></td>
+						</tr>
+						<tr>
+							<th><button id="con-btn">제출</button></th>
+						</tr>
+					</tbody>
+				</table>
+				<div class="banner">
+					<div class="ban-slide">
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+							<li>10</li>
+						</ul>
+					</div>
+				</div>
+			</div><!--contact-in-->
+		</div><!--container-->
+	</foodter>
+<script>
+<!--하이차트 다음주가격-->
+var colors = Highcharts.getOptions().colors;
 
-            <!--.footer-content-->
-            <p class="copy-info">Copyright 2017 © by Anna Dadej</p>
-        </div>
-        <!--.container-->
-    </footer>
+Highcharts.chart('hi_container1', {
+    chart: {
+        type: 'spline'
+    },
 
-    <div id="preloader">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+    legend: {
+        symbolWidth: 40
+    },
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.2/what-input.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"></script>
-    <script src="/static/js/app.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    title: {
+        text: '다음주 예측 그래프'
+    },
 
+    subtitle: {
+        text: '농수산물의 주단위 가격변동 추이'
+    },
 
-   <script type="text/javascript">
-    $('.slider').slick({
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3500,
-        arrows: false,
-        fade: true,
-        cssEase: 'linear'
+    yAxis: {
+        title: {
+            text: '세로축 금액입니다.'
+        },
+        accessibility: {
+            description: '세로축 금액입니다.내용'
+        }
+    },
+
+    xAxis: {
+        title: {
+            text: '가로축 기간입니다.'
+        },
+        accessibility: {
+            description: '가로축 기간입니다.내용'
+        },
+        categories: ['1주', '2주', '3주', '이번주', '다음1주', '다음2주']
+    },
+
+    tooltip: {
+        valueSuffix: '%'
+    },
+
+    plotOptions: {
+        series: {
+            point: {
+                events: {
+                    click: function () {
+                        window.location.href = this.series.options.website;
+                    }
+                }
+            },
+            cursor: 'pointer'
+        }
+    },
+
+    series: [
+        {
+            name: 'NVDA',
+            data: [34.8, 43.0, 51.2, 41.4, 64.9, 72.4],
+            color: colors[2],
+            accessibility: {
+                description: 'This is the most used screen reader in 2019'
+            }
+        }, {
+            name: 'JAWS',
+            data: [69.6, 63.7, 63.9, 43.7, 66.0, 61.7],
+            dashStyle: 'ShortDashDot',
+            color: colors[0]
+        }, {
+            name: 'VoiceOver',
+            data: [20.2, 30.7, 36.8, 30.9, 39.6, 47.1],
+            dashStyle: 'ShortDot',
+            color: colors[1]
+        }, {
+            name: 'Narrator',
+            data: [null, null, null, null, 21.4, 30.3],
+            dashStyle: 'Dash',
+            color: colors[9]
+        }, {
+            name: 'ZoomText/Fusion',
+            data: [6.1, 6.8, 5.3, 27.5, 6.0, 5.5],
+            dashStyle: 'ShortDot',
+            color: colors[5]
+        }, {
+            name: 'Other',
+            data: [42.6, 51.5, 54.2, 45.8, 20.2, 15.4],
+            dashStyle: 'ShortDash',
+            color: colors[3]
+        }
+    ],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 550
+            },
+            chartOptions: {
+                chart: {
+                    spacingLeft: 3,
+                    spacingRight: 3
+                },
+                legend: {
+                    itemWidth: 150
+                },
+                xAxis: {
+                    categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
+                    title: ''
+                },
+                yAxis: {
+                    visible: false
+                }
+            }
+        }]
+    }
+});
+
+<!--하이차트2 레시피확률-->
+const chart = Highcharts.chart('hi-container2', {
+    title: {
+        text: '추천레시피 단어'
+    },
+    subtitle: {
+        text: '긍정 단어빈도수 조사'
+    },
+    xAxis: {
+        categories: ['가', '나', '다','라', '마' ,'바' ,'사', '아', '자', '차', '카','타']
+    },
+    series: [{
+        type: 'column',
+        colorByPoint: true,
+        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+        showInLegend: false
+    }]
+});
+
+document.getElementById('plain').addEventListener('click', () => {
+    chart.update({
+        chart: {
+            inverted: false,
+            polar: false
+        },
+        subtitle: {
+            text: '기본'
+        }
     });
-    </script>
+});
 
-    <script>
-        $(window).on('load', function() {
-            $("#preloader").fadeOut();
-        });
-    </script>
+document.getElementById('polar').addEventListener('click', () => {
+    chart.update({
+        chart: {
+            inverted: false,
+            polar: true
+        },
+        subtitle: {
+            text: '파이차트'
+        }
+    });
+});
 
+
+<!--등락률 테이블 솔트-->
+new Tablesort(document.getElementById('my-table'));
+new Tablesort(document.getElementById('my-table2'));
+
+<!--페이지네이션-->
+
+
+</script>
 </body>
-
 </html>
-

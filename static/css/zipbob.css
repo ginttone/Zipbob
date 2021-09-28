@@ -1,54 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap');
 
-    /*desktop 1024px*/
-    @media screen and (min-width:40em){
-        body{margin:0;font-family: 'Merriweather', serif;
-            margin:0;padding: 0;background: #fefefe;
-            font-weight: 300;line-height: 1.5;color: #3c3c3c;
-            -webkit-font-smoothing: antialiased;;}
-        a{text-decoration:none;color:black;}
-        header{width:auto;height:700px;}
-        section{width:1200;height:700px;}
-        .container{padding-bottom: 1rem;}
-        .divider{display:flex;justify-content:center;align-items: center;margin:50px 0;font-size:25px;}
-        div{margin: 0;padding: 0;}
+/* desktop 1024p, 50em==800px */
+    @media screen and (min-width:50em){
+        body{
+        margin:0;padding: 0;
+        font-family: 'Merriweather', serif;font-weight: 300;
+        background: #fefefe;line-height: 1.5;color:#4e342e;-webkit-font-smoothing: antialiased;
+        }
+        header {
+        height: 100vh;
+        width:100%;
+        background-image: url('/static/image/goodm.jpg');
+        background-repeat : no-repeat;
+        background-size : cover;
+         }
+        a{text-decoration:none;color:#4e342e;}
+        ul{text-decoration:none;}
+        li {text-decoration:none;}
+        section{width:100%;height:880px;}
+        .container{margin:0;padding:0;}
+        .divider{display:flex;justify-content:center;align-items:center;margin:50px;font-size:35px;padding:20px 0;}
+        .divider_in,.divider_re{display:flex;justify-content:space-around;}
         h1 , h2, h3, h4 ,p {font-family:'Noto Serif KR',serif;display-position:center;}
     }
 
-    @media screen and (min-width:40em){
-        .chatbot-icon{display:flex;justify-content:flex-end;font-size:70px;color:#ff3d00;top:500px;margin-right:50px;position:sticky;}
+    @media screen and (min-width:50em){
+        .chatbot-icon{font-size:80px;color:#ff3d00;margin:10px;position:fixed;right:80px; bottom: 80px;}
     }
 
-    @media screen and (min-width:40em){
+    @media screen and (min-width:50em){
+        #navi{ position: fixed;top: 0;width: 100%;}
         .nav-bar{display:flex;justify-content:space-between;align-item:center;}
-        .nav-logo{font-size:24px;color:#ff3d00;padding:6px 12px;}
-        .nav-menu{display:flex;list-style:none;font-size:18px;padding:5px 12px;margin:0;}
-        .nav-menu li {padding:5px 12px;}
-        .nav-menu li a:hover{border:1px solid;padding:6px;border-width: 0 1px 0;
-    }
-        .nav-sign{display:flex;list-style:none;font-size:18px;padding:5px 12px;margin:0;color:#ff3d00;}
+        .nav-logo{font-size:38px;color:#ff3d00;padding:6px 16px;}
+        .nav-menu{display:flex;list-style:none;font-size:26px;padding:5px 12px;margin:0;}
+        .nav-menu li {padding:10px;}
+        .nav-menu li a:hover{border:1px solid;padding:6px 10px;border-width: 2px 0 2px;}
+        .nav-sign{display:flex;list-style:none;font-size:28px;padding:6px 14px;margin:0;color:#ff3d00;}
         .nav-sign li{padding:6px 12px;}
     }
 
-    @media screen and (min-width:40em){
-        #contents{font-family: 'Noto Serif KR', serif;font-size:20px;padding:40px;height:300px;display:flex;justify-content:space-around;align-items:center; background-color:yellow;}
+    @media screen and (min-width:50em){
+        #contents{font-family: 'Noto Serif KR',serif;font-size:20px;padding:50px 0;height:300px;width:100%;
+        display:flex;justify-content:space-around;align-items:center; background-color:#fdd835;}
         .con-container{display:flex;justify-content:space-around;}
-        .con{background-color:none;padding:20px;color:#870000;}
-        .con i{font-size:80px;display:flex;justify-content: space-around;}
-        .con h3{display:flex;justify-content: space-around;}
+        .con{background-color:none;padding:20px 50px;color:#870000;}
+        .con i{font-size:90px;display:flex;justify-content: space-around;}
+        .con h3{font-size:40px;display:flex;justify-content: space-around;}
         .con p{font-size:20px;}
     }
 
-    @media screen and (min-width:40em){
+    @media screen and (min-width:50em){
         .content{height:300px;width:100%;}
         #circle{display:flex;flex-wrap:wrap;justify-content: space-between;padding-bottom:20px;}
-        .round{border-radius:50%;padding:1px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
-        .round:hover{background:#f6c710;opacity:.7}
+        .divider_th{padding:0 50px;margin:80px 0px}
+        .reci{padding:0 50px;}
+        .round{border-radius:30px;padding:1px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
+        .round:hover{background:#ff3d00;opacity:.7}
+        .round1{border-radius: 30px;;padding:1px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
+        .round1:hover{background:#003c8f;opacity:.7}
+
+        #circle2{display:flex;flex-wrap:wrap;justify-content: space-between;padding-bottom:20px;}
+        .round2{border-radius: 25% 10%;;padding:1px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
+        .round2:hover{background:#f6c710;opacity:.7;border-radius: 10% 25%}
+
+    }
+
+ /*레시피 테이블 css*/
+    @media screen and (min-width:40em){
+        .divider_ret{}
+        .recipe-table{height:300px;width:100%}
+
     }
 
 
 /*mobile 320px 480px  @media screen and (max-width:480px){}*/
+    @media screen and (max-width:480px){
+        #contents{font-family: 'Noto Serif KR', serif;font-size:10px;padding:20px 0;height:200px;display:flex;justify-content:space-around;align-items:center;}
+        .con-container{display:flex;justify-content:space-around;flex-wrap:wrap;background-color:yellow;}
+        .con{background-color:none;padding:10px;color:#870000;}
+        .con i{font-size:60px;display:flex;justify-content: space-around;}
+        .con h3{font-size:18px;display:flex;justify-content: space-around;}
+        .con p{font-size:18px;}
+    }
+
+/* 등락률 테이블 1 css */
+#nw-table{margin-right:20px;display:flex;justify-content: space-around;align-items: baseline;}
+
+td,th {	text-align: left;padding: .5rem 1rem;}
+tbody tr:nth-child(odd) {background-color: #ccc;}
+th {background: #444;color: #fff;}
+
+@media screen and (max-width:480px){
+	th:nth-child(2), td:nth-child(2), #my-table2{
+		display:none;
+	}
+}
+/* Sorting. icon */
+th[role=columnheader]:not(.no-sort) {cursor: pointer;}
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: #ccc transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {border-bottom: none;border-width: 4px 4px 0;}
+th[aria-sort]:not(.no-sort):after {	visibility: visible;opacity: 0.4;}
+th[role=columnheader]:not(.no-sort):hover:after {visibility: visible;opacity: 1;}
 
 
 /* 하이차트 다음주가격 css */
@@ -56,7 +123,7 @@
     height: 420px;
 }
 .highcharts-figure, .highcharts-data-table table {
-    min-width: 360px;
+    min-width: 400px;
     max-width: 820px;
     margin: 1em auto;
 }
@@ -88,59 +155,47 @@
     background: #f1f7ff;
 }
 
-
-/* 등락률 테이블 css */
-/* Table styles. */
-td,
-th {
-	text-align: left;
-	padding: .5rem 1rem;
+/* 하이차트 레시피 css */
+#container2 {
+    height: 400px;
 }
 
-tbody tr:nth-child(odd) {
-	background-color: #ccc;
+.highcharts-figure2, .highcharts-data-table2 table {
+    min-width: 320px;
+    max-width: 800px;
+    margin: 1em auto;
 }
 
-th {
-	background: #444;
-	color: #fff;
+.highcharts-data-table2 table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+.highcharts-data-table2 caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table2 th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table2 td, .highcharts-data-table2 th, .highcharts-data-table2 caption {
+    padding: 0.5em;
+}
+.highcharts-data-table2 thead tr, .highcharts-data-table2 tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table2 tr:hover {
+    background: #f1f7ff;
 }
 
-/* Sorting. icon */
-th[role=columnheader]:not(.no-sort) {
-	cursor: pointer;
-}
 
-th[role=columnheader]:not(.no-sort):after {
-	content: '';
-	float: right;
-	margin-top: 7px;
-	border-width: 0 4px 4px;
-	border-style: solid;
-	border-color: #ccc transparent;
-	visibility: hidden;
-	opacity: 0;
-	-ms-user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-
-th[aria-sort=ascending]:not(.no-sort):after {
-	border-bottom: none;
-	border-width: 4px 4px 0;
-}
-
-th[aria-sort]:not(.no-sort):after {
-	visibility: visible;
-	opacity: 0.4;
-}
-
-th[role=columnheader]:not(.no-sort):hover:after {
-	visibility: visible;
-	opacity: 1;
-}
-
+/*페이지네이션 테이블 css*/
 
 
 
