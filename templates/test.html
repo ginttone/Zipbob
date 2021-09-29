@@ -131,6 +131,10 @@
     </section>
     <!--.category-icons-->
 
+
+
+
+
 <!--이번주 동향-->
     <section id="this-week" class="month-specials" data-scroll-reveal="enter from the bottom after 0.9s">
         <div class="container">
@@ -789,6 +793,94 @@
             </div>
 
 
+    <!-- 슬라이드 배너 -->
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+ <style>
+  body {overflow: hidden; margin: 0; padding:0; }
+  #layout {position: absolute; left: 25%; maring: auto; width: 900px; height:50px; display: flex; flex-warp: wrap; align-items: center; }
+  #layout b {width: 15px; position: relative; z-index: 1; cursor: pointer;  }
+  #banner  { position:relative; z-index:0; width:900px; height:50px; overflow:hidden; margin:auto; }
+  #banner img {position: absolute; width: 150px; height: 50px; }
+  #banner img:nth-child(1) { left:-180px; z-index:2; }
+  #banner img:nth-child(2) { left:0px; }
+  #banner img:nth-child(3) { left:180px; }
+  #banner img:nth-child(4) { left:360px; }
+  #banner img:nth-child(5) { left:540px; }
+  #banner img:last-child { left:900px; }
+ </style>
+
+ <script>
+ $(document).ready(function(){
+   var i=$("#banner img:first-child").attr('src').substr(-5,1);
+   /****** 처음부터 자동 *****/
+   var rolling=setInterval(frame, 2500);
+   function frame() {
+
+     $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+     i++;
+     if( i==7) {i=1}
+     var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+     $("#banner img:nth-child(2)").addClass("firstImg");
+     $("#banner").append(appendImg);
+     if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+   }
+
+   /****** 왼쪽버튼 클릭시 ******/
+   $("#left").click(function(){
+    clearInterval();
+    $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+    i++;
+    if( i==7) {i=1}
+    var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+    $("#banner img:nth-child(2)").addClass("firstImg");
+    $("#banner").append(appendImg);
+    if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+   });
+
+   /****** 오른쪽버튼 클릭시 ******/
+   $("#right").click(function(){
+    $("#banner img").removeClass("firstImg").animate({left:'+=180px'});
+    i=i-1;
+    if( i==0) {i=7}
+    var prependImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+    $("#banner img:nth-child(2)").addClass("firstImg");
+    $("#banner").prepend(prependImg);
+    if( $("#banner img:last-child").position().left>=900 ) {  $("#banner img:last-child").remove()  }
+   });
+ });
+ </script>
+</head>
+
+ <div id="layout">
+ <b id="left">&lt;</b>
+ <div id="banner">
+     <a class="w3-button" href="">
+         <img src="./static/image/roll_img_6.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="http://www.ssg.com">
+         <img src="./static/image/roll_img_1.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.homeplus.co.kr">
+         <img src="./static/image/roll_img_2.jpg" width="150" height="50" class="firstImg">
+     </a>
+     <a class="w3-button" href="https://www.coupang.com">
+         <img src="./static/image/roll_img_3.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.lottesuper.co.kr">
+         <img src="./static/image/roll_img_4.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.gsfresh.com">
+         <img src="./static/image/roll_img_5.jpg" width="150" height="50">
+     </a>
+ </div>
+ <b id="right">&gt;</b>
+ </div>
+<!-- 배너 끝! -->
+
+
+
             <!--.footer-content-->
             <p class="copy-info">Copyright 2017 © by Anna Dadej</p>
         </div>
@@ -829,7 +921,151 @@
         });
     </script>
 
+
+
+
+
+
+<!--  배너2  -->
+<head>
+
+ <style>
+*{margin:0;padding:0; color:#666}
+img{border:0 none; vertical-align:top;}
+li{list-style:none;}
+
+.bannerArea{width:512px; padding:10px 50px 10px 90px; border:1px solid #000; margin:30px auto; position:relative;}
+
+.bannerArea .banner{width:320px; height:68px; overflow:hidden; }
+.bannerArea .banner ul:after{display:block; clear:both; content:"";}
+.bannerArea .banner ul{width:5000px; *zoom:1;}
+.bannerArea .banner ul li{width:160px; float:left; position: relative;}
+
+.bannerArea .btns a{position:absolute; top:30px;}
+.bannerArea .prev{left:15px;}
+.bannerArea .next{right:15px;}
+p {text-align: center;}
+</style>
+
+<script>
+ar wrap = $(".banner");
+var banner = $(".banner ul");
+var slideList = $(".banner ul li");
+var totalNum = slideList.size();
+var listWidth = slideList.outerWidth();
+var prevBtn = $(".prev");
+var nextBtn = $(".next");
+var playBtn = $(".play");
+var stopBtn = $(".stop");
+var cnt = 0;
+var viewNum = 3;
+var interval = 3000;
+var copyItem = $(".banner ul li:lt(" + viewNum + ")").clone(); //창수씨 소스 참조 ㅎㅎ
+wrap.css({"width" : slideList.width() * viewNum})
+var timer;
+
+var slider = {
+
+  init : function ( set ) {
+    prevBtn.each(function () {
+      $(this).click(function () {
+        slider.prevMove();
+        stopTimer();
+        return false;
+      });
+    });
+
+    nextBtn.each(function () {
+      $(this).click( function () {
+        slider.nextMove();
+        stopTimer();
+        return false;
+      });
+    });
+
+    if (set == "auto") {
+     startTimer()
+    } else {
+      stopTimer();
+    }
+  },
+  prevMove : function () {
+    banner.append(copyItem);
+    if ( cnt == 0) {
+      cnt = totalNum;
+      banner.css("margin-left", -listWidth * cnt )
+    }
+    cnt--;
+    banner.stop().animate({"margin-left" : -listWidth * cnt },"fast");
+  },
+  nextMove : function () {
+    banner.append(copyItem);
+    if ( cnt == totalNum) {
+      cnt = 0;
+      banner.css("margin-left", cnt)
+    }
+    cnt++;
+    banner.stop().animate({"margin-left" : -listWidth * cnt },"fast");
+  }
+}
+
+function startTimer () {
+   clearInterval(timer)
+    timer = setInterval(function () { slider.nextMove() }, interval);
+    playBtn.css({"color": "red"});
+    stopBtn.css({"color": "#666"})
+    console.log("start");
+}
+
+function stopTimer() {
+  clearInterval(timer);
+  playBtn.css({"color": "#666"})
+  stopBtn.css({"color": "red"})
+  console.log("stop");
+}
+
+$(document).ready(function () {
+   slider.init("auto");
+   playBtn.on("click" , function () {startTimer()})
+   stopBtn.on("click" , function () {stopTimer()})
+  })
+</script>
+<div class="bannerArea">
+  <div class="banner">
+    <ul>
+      <li><a href="#"><img href="http://www.ssg.com" src="/static/image/roll_img_6.jpg" alt="직업능력지식포럼 HRD-Net" /></a></li>
+      <li><a href="#"><img src="http://hcs1105.com/wp/wp-content/themes/hcs1105/images/worknet.gif" alt="WORKNET" /></a></li>
+      <li><a href="#"><img src="http://hcs1105.com/wp/wp-content/themes/hcs1105/images/labor.gif" alt="고용노동부 - Ministry of Employment and Labor" /></a></li>
+      <li><a href="#"><img src="http://hcs1105.com/wp/wp-content/themes/hcs1105/images/hrdsk.gif" alt="한국산업인력공단 - HUMAN RESOURCES DEVELOPMENT SERVICE OF KOREA" /></a></li>
+      <li><a href="#"><img src="http://hcs1105.com/wp/wp-content/themes/hcs1105/images/nipa.gif" alt="NIPA 정보통신산업진흥원 - Nation IT Industry Promotion Agency" /></a></li>
+    </ul>
+  </div>
+         <a class="w3-button" href="">
+         <img src="./static/image/roll_img_6.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="http://www.ssg.com">
+         <img src="./static/image/roll_img_1.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.homeplus.co.kr">
+         <img src="./static/image/roll_img_2.jpg" width="150" height="50" class="firstImg">
+     </a>
+     <a class="w3-button" href="https://www.coupang.com">
+         <img src="./static/image/roll_img_3.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.lottesuper.co.kr">
+         <img src="./static/image/roll_img_4.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.gsfresh.com">
+         <img src="./static/image/roll_img_5.jpg" width="150" height="50">
+     </a>
+  <div class="btns">
+    <a href="#" class="prev">이전 버튼</a>
+    <a href="#" class="next">다음 버튼</a>
+  </div>
+</div>
+<p>
+  <a href="#none" class="play">재생</a> &nbsp;
+   <a href="#none" class="stop">정지</a>
+</p>
 </body>
-
 </html>
-
