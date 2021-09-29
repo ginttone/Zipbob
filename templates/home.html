@@ -23,13 +23,13 @@
 
 <!-- 챗봇 -->
 <link rel="shortcut icon" type="image/png" href="./static/image/chatbot.ico">
-<link rel="stylesheet" href="https://admin.chatcompose.com/static/all/global/export/css/main.5b1bd1fd.css?after?ver=1" rel="stylesheet">
-<script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js?ver=1"></script>
-<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-986753472&amp;l=dataLayer&amp;cx=c?ver=1"></script>
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js?ver=1"></script>
-<script async="" type="text/javascript" src="https://admin.chatcompose.com/static/all/global/export/js/main.a7059cb5.js?ver=1" user="adminchat-korea" lang="KO"></script>
+<link rel="stylesheet" href="https://admin.chatcompose.com/static/all/global/export/css/main.5b1bd1fd.css" rel="stylesheet">
+<script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-986753472&amp;l=dataLayer&amp;cx=c"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" type="text/javascript" src="https://admin.chatcompose.com/static/all/global/export/js/main.a7059cb5.js" user="adminchat-korea" lang="KO"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-124562226-1"></script>
-<script async="" type="text/javascript" src="https://admin.chatcompose.com/static/all/global/export/js/main.a7059cb5.js?ver=1" user="adminchat-korea" lang="KO"></script>
+<script async="" type="text/javascript" src="https://admin.chatcompose.com/static/all/global/export/js/main.a7059cb5.js" user="adminchat-korea" lang="KO"></script>
 
 
 <style>
@@ -689,21 +689,92 @@ function carousel() {
 
 
 <!-- 슬라이드 배너 -->
-	<div id="layout">
-	<b id="left">&lt;</b>
-	<div id="banner">
-      <a class="w3-button" style="background-color:#87C6C8; padding:7px" href="https://www.lottesuper.co.kr">
-        <img src="./static/image/lotte.png" style="width:150px;height:50px;">
-      </a>
 
-      <img src="/static/image/at.png" width="150" height="50">
-      <img src="/static/image/homeplus.jpg" width="150" height="50" class="firstImg">
-      <img src="/static/image/coupang.jp" width="150" height="50">
-      <img src="/static/image/lotte.png" width="150" height="50">
-      <img src="/static/image/at.png" width="150" height="50">
-	</div>
-	<b id="right">&gt;</b>
-	</div>
+<!--  배너  -->
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+ <style>
+  body {overflow: hidden; margin: 0; padding:0; }
+  #layout {position: absolute; left: 25%; maring: auto; width: 900px; height:50px; display: flex; flex-warp: wrap; align-items: center; }
+  #layout b {width: 15px; position: relative; z-index: 1; cursor: pointer;  }
+  #banner  { position:relative; z-index:0; width:900px; height:50px; overflow:hidden; margin:auto; }
+  #banner img {position: absolute; width: 150px; height: 50px; }
+  #banner img:nth-child(1) { left:-180px; z-index:2; }
+  #banner img:nth-child(2) { left:0px; }
+  #banner img:nth-child(3) { left:180px; }
+  #banner img:nth-child(4) { left:360px; }
+  #banner img:nth-child(5) { left:540px; }
+  #banner img:last-child { left:900px; }
+ </style>
+
+ <script>
+ $(document).ready(function(){
+   var i=$("#banner img:first-child").attr('src').substr(-5,1);
+   /****** 처음부터 자동 *****/
+   var rolling=setInterval(frame, 2500);
+   function frame() {
+
+     $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+     i++;
+     if( i==7) {i=1}
+     var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+     $("#banner img:nth-child(2)").addClass("firstImg");
+     $("#banner").append(appendImg);
+     if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+   }
+
+   /****** 왼쪽버튼 클릭시 ******/
+   $("#left").click(function(){
+    clearInterval();
+    $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+    i++;
+    if( i==7) {i=1}
+    var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+    $("#banner img:nth-child(2)").addClass("firstImg");
+    $("#banner").append(appendImg);
+    if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+   });
+
+   /****** 오른쪽버튼 클릭시 ******/
+   $("#right").click(function(){
+    $("#banner img").removeClass("firstImg").animate({left:'+=180px'});
+    i=i-1;
+    if( i==0) {i=7}
+    var prependImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+    $("#banner img:nth-child(2)").addClass("firstImg");
+    $("#banner").prepend(prependImg);
+    if( $("#banner img:last-child").position().left>=900 ) {  $("#banner img:last-child").remove()  }
+   });
+ });
+ </script>
+</head>
+
+ <div id="layout">
+ <b id="left">&lt;</b>
+ <div id="banner">
+     <a class="w3-button" href="">
+         <img src="./static/image/roll_img_6.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="http://www.ssg.com" >
+         <img src="./static/image/roll_img_1.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.homeplus.co.kr">
+         <img src="./static/image/roll_img_2.jpg" width="150" height="50" class="firstImg">
+     </a>
+     <a class="w3-button" href="https://www.coupang.com">
+         <img src="./static/image/roll_img_3.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.lottesuper.co.kr">
+         <img src="./static/image/roll_img_4.jpg" width="150" height="50">
+     </a>
+     <a class="w3-button" href="https://www.gsfresh.com">
+         <img src="./static/image/roll_img_5.jpg" width="150" height="50">
+     </a>
+ </div>
+ <b id="right">&gt;</b>
+ </div>
+
 
 
 
@@ -807,7 +878,7 @@ function carousel() {
                     <div class="rsc-ts-image-container sc-htoDjs vmYlS">
                         <img class="rsc-ts-image sc-gzVnrw kGLqMY" src="data:image/png;base64,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" alt="avatar">
                     </div>
-                    <div class="rsc-ts-bubble sc-bZQynM oebvm" style="max-width: 60%;">이 사이트의 챗봇입니다. 몇 가지 질문에 답변하고 서비스를 설명해 드릴 수 있습니다.</div>
+                    <div class="rsc-ts-bubble sc-bZQynM oebvm" style="max-width: 60%;">Zipbob의 챗봇입니다. 질문에 답변하고 서비스를 설명해 드릴 수 있습니다.</div>
                 </div>
                     <div class="rsc-ts sc-dnqmqq efROPc">
                         <div class="rsc-ts-image-container sc-htoDjs vmYlS"></div>
@@ -839,59 +910,80 @@ function carousel() {
     </div>
 </div>
 
-
-
-
-<!-- 슬라이드 배너 -->
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.smooch.io/frame.5.3.9.css" type="text/css">
+    <script src="https://cdn.smooch.io/frame.5.3.9.min.js" async="" crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://cdn.smooch.io/af0d632d4d034580539a.js"></script>
+    <title></title>
+</head>
+<body>
+<div id="mount">
+    <div class="widget-md">
+        <div id="container" class="button-display appear">
+            <div id="wrapper" class="branding-color-dark accent-color-dark link-color-dark">
+                <div id="header" class="header-wrapper" style="background-color: rgb(47, 49, 50);">
+                    <div class="header-icon">
+                        <img class="business-icon" src="https://www.logitech.com/assets/65984/4/sunco.png">
+                    </div>
+                    <div class="header-content">
+                        <div class="header-title">Logitech 세일즈 도움말입니다</div>
+                    </div>
+                    <div class="close-handle close-hidden brand-dark">
+                        <svg class="close-icon" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <g id="icons" stroke="none" fill="none">
+                                <g id="icon/close" fill="#FFFFFF">
+                                    <path d="M6.707 5.293L12 10.585l5.293-5.292a1 1 0 011.414 1.414L13.415 12l5.292 5.293a1 1 0 01-1.414 1.414L12 13.415l-5.293 5.292a1 1 0 11-1.414-1.414L10.585 12 5.293 6.707a1 1 0 011.414-1.414z" id="icon"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="notification-container"></div>
+                <div class="connection-error-container connection-error-container--hide" style="position: fixed; width: 350px;">
+                    <div class="banner-container banner-container--hide banner-container--hide--delay success">
+                        <div class="banner-text-container">다시 접속되었습니다!</div>
+                        <button class="banner-button-retry" style="display: none;">
+                            <img src="https://cdn.smooch.io/ba2aad27d1207754c75f1e9126b46638.svg" alt="retry">
+                        </button>
+                    </div>
+                </div>
+                <div class="conversation-list-transition"></div>
+                <div id="conversation" class="">
+                    <div class="intro-pane"></div>
+                    <div class="messages-container" style="max-height: calc(100% - 42px);">
+                        <div class="messages"></div>
+                        <div class="logo" style="padding-bottom: 14px;">
+                            <a href="https://smooch.io/live-web-chat/?utm_source=widget" rel="noopener noreferrer" target="_blank">
+                                <img class="image" src="https://cdn.smooch.io/e5d197ac1e9be52724cbeb314a164f77.png" srcset="https://cdn.smooch.io/e5d197ac1e9be52724cbeb314a164f77.png 1x, https://cdn.smooch.io/00d6d1b1a0bca084bda253617d762bea.png 2x" alt="Zendesk Sunshine" style="padding-bottom: 3px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="footer-transition">
+                    <div style="flex: 0 1 40px;">
+                        <label class="image-upload" style="transition: opacity 0.3s ease-out 0s;">
+                            <img class="upload-icon" src="https://cdn.smooch.io/298092b120dcfb1fc5a5540bbe5bea57.svg">
+                        </label>
+                    </div>
+                    <form action="#">
+                        <div class="input-container text-input-container footer-transition">
+                            <textarea rows="1" class="input message-input footer-transition single-line" title="보내기" placeholder="메시지를 입력합니다...">
+                            </textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="messenger-button-icon">
+            <img alt="Smooch Messenger Button" src="https://www.logitech.com/assets/65984/3/sunco.png">
+        </div>
+    </div>
+</div>
 
-	<script>
-	$(document).ready(function(){
-			var i=$("#banner img:first-child").attr('src').substr(-5,1);
-			/****** 처음부터 자동 *****/
-			var rolling=setInterval(frame, 1500);
-			function frame() {
+</body>
 
-					$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
-					i++;
-					if( i==5) {i=1}
-					var appendImg="<img src='images/roll_img_"+i+".jpg'>";
-					$("#banner img:nth-child(3)").addClass("firstImg");
-					$("#banner").append(appendImg);
-					if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
-			}
-
-			/****** 왼쪽버튼 클릭시 ******/
-			$("#left").click(function(){
-				clearInterval();
-				$("#banner img").removeClass("firstImg").animate({left:'-=160px'});
-				i++;
-				if( i==5) {i=1}
-				var appendImg="<img src='images/roll_img_"+i+".jpg'>";
-				$("#banner img:nth-child(3)").addClass("firstImg");
-				$("#banner").append(appendImg);
-				if( $("#banner img:first-child").position().left<=-320 ) {  $("#banner img:first-child").remove()  }
-			});
-
-			/****** 오른쪽버튼 클릭시 ******/
-			$("#right").click(function(){
-				$("#banner img").removeClass("firstImg").animate({left:'+=160px'});
-				i=i-1;
-				if( i==0) {i=4}
-				var prependImg="<img src='images/roll_img_"+i+".jpg'>";
-				$("#banner img:nth-child(2)").addClass("firstImg");
-				$("#banner").prepend(prependImg);
-				if( $("#banner img:last-child").position().left>=640 ) {  $("#banner img:last-child").remove()  }
-			});
-	});
-	</script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-      $(document).ready(function(){
-      });
-    </script>
 </head>
 
 
 </html>
+
