@@ -1,6 +1,3 @@
-//<!--lightbox-form js-->
-
-
 //<!--gallery js-->
 var img = document.querySelectorAll('.gallery img'),
 	lightbox= document.querySelector('#lightbox-overlay'),
@@ -26,3 +23,18 @@ lightbox.addEventListener('click',function(){
     this.classList.remove('visible');
 });
 
+
+/* sign form */
+    function signupToggle(){
+        var container = document.querySelector('.container');
+        container.classList.toggle('active');
+        var popup = document.querySelector('.signup-form');
+        popup.classList.toggle('active');
+    }
+
+    function loginToggle(){
+        var container = document.querySelector('.container');
+        container.classList.toggle('active');
+        var popup = document.querySelector('.login-form');
+        popup.classList.toggle('active');
+    }

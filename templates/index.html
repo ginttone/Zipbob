@@ -36,102 +36,120 @@
 	</div>
 	<!--End 챗봇아이콘-->
 
-<!--네비바 -->
-	<header>
-		<div class="container" id="navi">
-			<div class="header-container">
-					<nav class="nav-bar">
-						<div class="nav-logo">
-							<i class="fas fa-receipt"></i>
-							<a href="#">Zipbob</a>
-						</div>
-						<ul class="nav-menu">
-							<li><a href="#this-week">This-Week</a></li>
-							<li><a href="#next-week">Next-Week</a></li>
-							<li><a href="#recipe">Recipe</a></li>
-						</ul>
-						<ul class="nav-sign">
-							<li>
-								<a href="#signin" class="signin">SignIn</a>
-							</li>
-							<li>
-								<i class="fas fa-bars"></i>
-							</li>
-						</ul>
-					</nav><!--nav-bar-->
+<!--네비바 ,로그인, 회원가입-->
+	<div class="containerf">
+        <header>
+            <nav>
+                <div class="nav-logo">
+                   <h1>
+					   <a href="#">Zipbob</a>
+				   </h1>
+                </div>
+                <div class="nav-menu">
+                    <ul >
+                        <li><a href="#this-week">This Week</a></li>
+                        <li><a href="#next-week">Next Week</a></li>
+                        <li><a href="#next-table">Next Table</a></li>
+                        <li><a href="#recipe">Recipe</a></li>
+                        <li><a href="#all-recipe">All Recipe</a></li>
+                    </ul>
+                </div>
+                <div class="nav-sign">
+                    <ul>
+                        <li onclick="signupToggle()">Join Us</li>
+                        <li onclick="loginToggle()">Log In</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div><!--containerf-->
 
-				<div id="lightbox-form">
-					<div class="div-signform" width="300px" height="300px">
-						<h1>회원가입</h1>
-					</div>
-				</div><!--lightbox-form-->
-
-			</div><!--header-container-->
-		</div><!--container-->
-	</header>
-	<!--End 네비바-->
-
-
+    <div class="signup-form">
+        <div class="form">
+            <div class="close" onclick="signupToggle()">&times;</div>
+            <div class="text">
+                <h1>Register form</h1>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email ID">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm password">
+                <input type="submit" value="Register" style="font-size:1rem;font-family: 'Merriweather';">
+            </form>
+        </div>
+    </div><!--joinus-->
+    <div class="login-form">
+        <div class="form">
+            <div class="close" onclick="loginToggle()">&times;</div>
+            <div class="text">
+                <h1>LogIn</h1>
+            </div>
+            <form action="#">
+                <input type="email" placeholder="Email ID">
+                <input type="password" placeholder="password">
+                <input type="submit" value="Login" style="font-size:1rem;font-family: 'Merriweather';">
+            </form>
+        </div>
+    </div><!--login-->
 
 <!--콘텐츠 설명 -->
-	<section id="contents">
+	<div id="contents">
 		<div class="con-explain">
-			<div class="con-container">
-				<div class="con">
-					<i class="fas fa-chart-bar"></i>
-					<h3>THIS WEEK</h3>
-					<p>농수산물의 이번주 가격에 관한 설명</p>
-				</div>
-				<div class="con">
-					<i class="fas fa-chart-line"></i>
-					<h3>NEXT WEEK</h3>
-					<p>농수산물의 다음주 가격예측에 관한 설명</p>
-				</div>
-				<div class="con">
-					<i class="fas fa-chart-pie"></i>
-					<h3>RECIPE</h3>
-					<p>다음주 가격예측된 작물의 관련 추천 레시피</p>
-				</div>
-			</div><!--con-container-->
-		</div><!--container-->
-	</section>
+			<div class="con">
+				<i class="fas fa-chart-bar"></i>
+				<h2>THIS WEEK</h2>
+				<p>농수산물의 이번주 가격에 관한 설명 더많이 쓰면 어떻게되니?</p>
+			</div>
+			<div class="con">
+				<i class="fas fa-chart-line"></i>
+				<h2>NEXT WEEK</h2>
+				<p>농수산물의 다음주 가격예측에 관한 설명</p>
+			</div>
+			<div class="con">
+				<i class="fas fa-chart-pie"></i>
+				<h2>RECIPE</h2>
+				<p>다음주 가격예측된 작물의 관련 추천 레시피</p>
+			</div>
+		</div><!--con-explain-->
+	</div>
 	<!--End 콘텐츠 설명-->
 
-<!--이번주동향-->
-	<section id="this-week">
-	<div class="container">
-		<div class="divider">
-			<h1 class="header-txt">THIS WEEK</h1>
+	<!--이번주동향-->
+		<div class="tw-box" >
+			<div id="this-week" >
+				<div class="divider">
+					<h1>THIS WEEK</h1>
+				</div>
+				<div class="divider_th">
+					<div class="content" id="circle">
+						<div class="reci" style="font-family: 'Merriweather', serif;">
+							<h1>Top 1 <i class="fas fa-arrow-up"></i></h1>
+							<img src="/static/image/apple.jpg" class="round" width="300" height="300">
+						</div>
+						<div class="reci" style="font-family: 'Merriweather', serif;">
+							<h1 >Top 2 <i class="fas fa-arrow-up"></i></h1>
+							<img src="/static/image/apple.jpg" class="round" width="300" height="300">
+						</div>
+						<div class="reci" style="font-family: 'Merriweather', serif;">
+							<h1>Top 3 <i class="fas fa-arrow-down"></i></h1>
+							<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
+						</div>
+						<div class="reci" style="font-family: 'Merriweather', serif;">
+							<h1>Top 4 <i class="fas fa-arrow-down"></i></h1>
+							<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
+						</div>
+					</div><!--circle-->
+				</div><!--divider_th-->
+			</div>
 		</div>
-		<div class="divider_th">
-			<div class="content" id="circle">
-				<div class="reci">
-					<h1>Top 1 <i class="fas fa-arrow-up"></i></h1>
-					<img src="/static/image/apple.jpg" class="round" width="300" height="300">
-				</div>
-				<div class="reci">
-					<h1>Top 2 <i class="fas fa-arrow-up"></i></h1>
-					<img src="/static/image/apple.jpg" class="round" width="300" height="300">
-				</div>
-				<div class="reci">
-					<h1>Top 3 <i class="fas fa-arrow-down"></i></h1>
-					<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
-				</div>
-				<div class="reci">
-					<h1>Top 4 <i class="fas fa-arrow-down"></i></h1>
-					<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
-				</div>
-			</div><!--circle-->
-		</div><!--divider_th-->
-	</div>
-</section>
+
 	<!--End 이번주동향-->
 
 <!--다음주 가격 차트-->
-	<section id="next-week" style="background:#f5f5f5;">
-		<div class="container">
+		<div class="nw-box" id="next-week">
 			<div class="divider">
-				<h1 class="header-txt">NEXT WEEK</h1>
+				<h1>NEXT WEEK</h1>
 			</div>
 			<div class="divider-nw">
 				<div class="nw-chart">
@@ -141,15 +159,14 @@
 					</figure>
 				</div><!--nw-chart-->
 			</div><!--divider-nw-->
-		</div><!--container-->
-	</section>
+		</div><!--nw-box-->
 	<!--End 다음주 가격 차트-->
 
 <!--다음주 전망 테이블-->
-	<section class="next-week-table">
+	<div class="next-week-table">
 		<div class="container">
 			<div class="divider">
-				<h1 class="header-txt">WHAT'S NEXT</h1>
+				<h1>WHAT'S NEXT</h1>
 			</div>
 			<div class="divider_in">
 				<div class="nw-content" id="nw-table">
@@ -323,14 +340,14 @@
 				</div><!--nw-table-->
 			</div><!--divider_in-->
 		</div><!--container-->
-	</section>
+	</div>
 	<!--End 다음주 전망 테이블-->
 
 <!--추천레시피-->
-	<section id="recipe" class="recipe-graph" style="background:#f5f5f5;">
+	<div id="recipe">
 		<div class="container">
 			<div class="divider">
-				<h1 class="header-txt">RECIPE</h1>
+				<h1>RECIPE</h1>
 			</div>
 			<div class="divider_re">
 				<div class="content" id="circle2">
@@ -353,11 +370,11 @@
 				</div><!--circle-->
 			</div><!--divider_re-->
 		</div><!--container-->
-	</section>
+	</div>
 	<!--추천레시피-->
 
 <!--추천레시피 그래프-->
-	<section class="recipe-graph">
+	<div class="recipe-graph">
 		<div class="container">
 			<div class="divider">
 				<h1 class="header-txt">Graph</h1>
@@ -375,11 +392,11 @@
 				</div>
 			</div><!--divider_re-->
 		</div><!--container-->
-	</section>
+	</div>
 	<!--End 추천레시피 그래프-->
 
 <!--추천레시피 테이블 페이징-->
-	<section class="recipe-pagenation" id="recipe-page">
+	<div class="recipe-pagenation" id="recipe-page">
 		<div class="container">
 			<div class="divider">
 				<h1 class="header-txt">RECIPE table</h1>
@@ -412,14 +429,13 @@
 				</div><!--recipe-table-->
 			</div><!--divider_ret-->
 		</div><!--container-->
-	</section>
+	</div>
 	<!--End 추천레시피 페이징-->
 
 <!--연락-->
 	<foodter id="contact-foot">
-		<div class="container-foot">
-
-			<div class="divider-title">
+		<div class="foot">
+			<div class="divder-ban">
 				<div class="footer-title">
 					<h2 class="footer-txt">CONTACT</h2>
 				</div>
@@ -431,7 +447,7 @@
 					<a href="#">Zipbob</a>
 				</div>
 
-				<div class="contact-in">
+				<div class="footer-contact">
 					<table class="contact-ta">
 						<tbody>
 							<tr>
@@ -451,45 +467,45 @@
 				</div><!--divider-info-->
 			</div><!--divider-info-->
 
-                <div class="divider-ban">
-                    <div class="banner">
-                        <div class="ban-slide">
-							  <ul class="gallery">
-									<li>
-										<a href="#" alt="Gallery image">
-											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-										</a>
-									</li>
-									<li>
-										<a href="#" alt="Gallery image">
-											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-										</a>
-									</li>
-									<li>
-										<a href="#" alt="Gallery image">
-											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-										</a>
-									</li>
-									<li>
-										<a href="#" alt="Gallery image">
-											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-										</a>
-									</li>
-								</ul>
-                        </div><!--ban-slide-->
-
-						<div id="lightbox-overlay">
-							<img src="a" alt="Lightbox image" title="Click_anywhere to close" id="lightbox-image"/>
-						</div><!--lightbox-->
-
-                    </div>
-                </div><!--divider-ban-->
-			</div><!--contact-in-->
-		</div><!--container-->
+			<div class="divider-ban" style="overflow:hidden;">
+				<div class="ban-slide">
+					<div class="ban">
+						<img src="/static/image/pupang.jpg">
+					</div>
+					<div class="ban">
+						<img src="/static/image/osfreshnull.jpg">
+					</div>
+					<div class="ban">
+						<img src="/static/image/lotdaefress.jpg">
+					</div>
+					<div class="ban">
+						<img src="/static/image/homeminus.jpg">
+					</div>
+					<div class="ban">
+						<img src="/static/image/gsscom.jpg">
+					</div><
+				</div><!--ban-slide-->
+			</div><!--divider-ban-->
+		</div>
 	</foodter>
 
 <script>
-<!--하이차트 다음주가격-->
+/* sign form */
+    function signupToggle(){
+        var containerf = document.querySelector('.containerf');
+        containerf.classList.toggle('active');
+        var popup = document.querySelector('.signup-form');
+        popup.classList.toggle('active');
+    }
+
+    function loginToggle(){
+        var containerf = document.querySelector('.containerf');
+        containerf.classList.toggle('active');
+        var popup = document.querySelector('.login-form');
+        popup.classList.toggle('active');
+    }
+
+/* 하이차트 다음주가격예측 */
 var colors = Highcharts.getOptions().colors;
 
 Highcharts.chart('hi_container1', {
@@ -606,7 +622,7 @@ Highcharts.chart('hi_container1', {
     }
 });
 
-<!--하이차트2 레시피확률-->
+/* 하이차트2 레시피 추천 */
 const chart = Highcharts.chart('hi-container2', {
     title: {
         text: '추천레시피 단어'
@@ -650,11 +666,9 @@ document.getElementById('polar').addEventListener('click', () => {
 });
 
 
-<!--등락률 테이블 솔트-->
+/* 다음주 등락률 테이블 솔트 */
 new Tablesort(document.getElementById('my-table'));
 new Tablesort(document.getElementById('my-table2'));
-
-<!--페이지네이션-->
 
 
 </script>
