@@ -1,100 +1,88 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--    <meta name="viewport" content="width=device-widthm, initial-scale=1.0">-->
-<!--    <title>Title</title>-->
-<!--    <link rel="stylesheet" href="/static/css/plate.css">-->
-
-<!--</head>-->
-<!--<body>-->
-<!--    <div class="wrapper">-->
-<!--        <div class="box">-->
-<!--            <img src="/static/image/apple.jpg" alt="">-->
-<!--        </div>-->
-<!--        <div class="box">-->
-<!--            <img src="/static/image/apple.jpg" alt="">-->
-<!--        </div>-->
-<!--        <div class="box">-->
-<!--            <img src="/static/image/apple.jpg" alt="">-->
-<!--        </div>-->
-<!--        <div class="box">-->
-<!--            <img src="/static/image/apple.jpg" alt="">-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</body>-->
-<!--</html>-->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!--    <link rel="stylesheet" href="style.css">-->
+
 </head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<style>
+*{box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;}
+.gallery{margin:0;padding:0;list-style:none;}
+.gallery li{float:left;width:48%;margin:1%;}
+    .gallery li img{transition:opacity .3s ease-in-out;}
+        .gallery li img:hover{opacity:.75;}
+
+#lightbox-overlay{
+    opacity:0; /* 이거 바뀌는건 visible이 들어오면 바뀜 */
+    pointer-events:none; /*링크 있으면 링크가 작동하지 않아,링크가 없어도 밑의 링크를 막지 않도록 */
+    position:fixed; /* 전체 화면 기준으로 채우고 고정되어 있다 */
+    width:100%; /* 높이 넓이다씀 */
+    height:100%;
+    top:0; /* 전제화면 기준으로 왼쪽 상단부터 (높이 넓이다씀) */
+    left:0;
+    background-color:rgba(29,31,33,.95);/* 약간 검윽색의 살짝 투명하게*/
+    transition:opacity .3s ease-in;}
+    #lightbox-overlay.visible{
+        opacity:1;
+        pointer-events:auto; /* 링크 이벤트 오토로 줌 */}
+
+</style>
 <body>
-  <div class="container">
+    <div class="gallery-container">
+          <ul class="gallery">
+                <li>
+                    <a href="#" alt="Gallery image">
+                        <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="Gallery image">
+                        <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="Gallery image">
+                        <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="Gallery image">
+                        <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+                    </a>
+                </li>
+            </ul>
+    </div>
 
-    <table class="table table-striped">
-        <thead>
-            <tr class="w3-red">
-                <th>title</th>
-                <th>ingredients</th>
-                <th>method</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in page_obj %}
-            <tr>
-                <td>{{ row.title }}</td>
-                <td>{{ row.method }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+	<div id="lightbox-overlay">
+		<img src="" alt="Lightbox image" title="Click_anywhere to close" id="lightbox-image"/>
+	</div><!--lightbox-->
 
-    <ul class="pagination">
-        <li class="page-item active"><a class="page-link" href="#">Page {{ page_obj.number }} of {{ paginator.num_pages }}</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-    </ul>
-</div>
+<script>
+var img = document.querySelectorAll('.gallery img'),
+	lightbox= document.querySelector('#lightbox-overlay'),
+	lightboxImg= lightbox.querySelector('img');
+
+	console.log(img);
+
+for(var i = 0; i < img.length ; i++){
+    img[i].addEventListener('click',function(){
+        var imgNewSrc = this.getAttribute('data-lightbox');
+        console.log(imgNewSrc);
+        lightboxImg.setAttribute('src',imgNewSrc);
+        lightbox.classList.add('visible');
+    });
+}
+lightbox.addEventListener('click',function(){
+    this.classList.remove('visible');
+});
+
+</script>
+
 </body>
 </html>
-
-<!--  <h3 class="w3-center">추천레시피에대한 간단 소개</h3>-->
-<!--  <p class="w3-center"><em>간단설명<br> Click on the images to make them bigger</em></p><br>-->
-
-<!--  <div class="w3-container w3-cell">-->
-<!--  <h3>1위 사과</h3>-->
-<!--  <img src="/static/image/apple.jpg" class="w3-circle" onclick="onClick(this)" alt="" style="width:200px">-->
-<!--  </div>-->
-
-<!--<div class="w3-container w3-cell">-->
-<!--  <h3>2위 닭</h3>-->
-<!--  <img src="/static/image/dakgalbi.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
-<!--</div>-->
-
-<!--<div class="w3-container w3-cell">-->
-<!--  <h3>3위 버섯 </h3>-->
-<!--  <img src="/static/image/mille-feuille.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
-<!--</div>-->
-
-<!--<div class="w3-container w3-cell">-->
-<!--  <h3>4위 사과</h3>-->
-<!--  <img src="/static/image/pa.jpg" class="w3-circle"  onclick="onClick(this)" alt="" style="width:200px">-->
-<!--</div>-->
-<!--  </div>-->
-
-
-  <!-- 추천레시피 이미지 누르면 요리페이지 모달창  뜨게-->
-<!--<div id="modal01" class="w3-modal" style="background-color:rgba(255, 100, 0, 0.2);" onclick="this.style.display='none'">-->
-<!--  <span class="w3-button w3-large w3-display-topright" style="background-color:rgba(255, 0, 0, 0.2);" title="Close Modal Image"><i class="fa fa-remove"></i></span>-->
-<!--  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">-->
-<!--    <img id="img01" class="w3-image">-->
-<!--    <p id="caption" class="w3-opacity w3-large"></p>-->
-<!--  </div>-->
-<!--</div>-->

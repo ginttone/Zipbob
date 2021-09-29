@@ -51,10 +51,21 @@
 							<li><a href="#recipe">Recipe</a></li>
 						</ul>
 						<ul class="nav-sign">
-							<li><a href="#signin" class="signin">SignIn</a></li>
-							<li><i class="fas fa-bars"></i></li>
+							<li>
+								<a href="#signin" class="signin">SignIn</a>
+							</li>
+							<li>
+								<i class="fas fa-bars"></i>
+							</li>
 						</ul>
 					</nav><!--nav-bar-->
+
+				<div id="lightbox-form">
+					<div class="div-signform" width="300px" height="300px">
+						<h1>회원가입</h1>
+					</div>
+				</div><!--lightbox-form-->
+
 			</div><!--header-container-->
 		</div><!--container-->
 	</header>
@@ -439,31 +450,43 @@
 					</table>
 				</div><!--divider-info-->
 			</div><!--divider-info-->
+
                 <div class="divider-ban">
                     <div class="banner">
                         <div class="ban-slide">
-                            <ul class="ban">
-                                <li>
-									<a href="#" alt="ban-img">
-										<img src="/static/image/coupang.jpg" data-lightbox="" alt="ban-img">
-									</a>
-								</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                            </ul>
+							  <ul class="gallery">
+									<li>
+										<a href="#" alt="Gallery image">
+											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+										</a>
+									</li>
+									<li>
+										<a href="#" alt="Gallery image">
+											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+										</a>
+									</li>
+									<li>
+										<a href="#" alt="Gallery image">
+											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+										</a>
+									</li>
+									<li>
+										<a href="#" alt="Gallery image">
+											<img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
+										</a>
+									</li>
+								</ul>
+                        </div><!--ban-slide-->
 
-                        </div>
+						<div id="lightbox-overlay">
+							<img src="a" alt="Lightbox image" title="Click_anywhere to close" id="lightbox-image"/>
+						</div><!--lightbox-->
+
                     </div>
                 </div><!--divider-ban-->
 			</div><!--contact-in-->
 		</div><!--container-->
 	</foodter>
-
-<script src="script.js"></script>
-<!--ban-slide js-->
-
 
 <script>
 <!--하이차트 다음주가격-->
