@@ -46,12 +46,12 @@
 							<a href="#">Zipbob</a>
 						</div>
 						<ul class="nav-menu">
-							<li><a href="#this-week" class="" data-title="">This-Week</a></li>
-							<li><a href="#next-week" class="" data-title="">Next-Week</a></li>
-							<li><a href="#recipe" class="" data-title="">Recipe</a></li>
+							<li><a href="#this-week">This-Week</a></li>
+							<li><a href="#next-week">Next-Week</a></li>
+							<li><a href="#recipe">Recipe</a></li>
 						</ul>
 						<ul class="nav-sign">
-							<li><a href="#" class="signin">SignIn</a></li>
+							<li><a href="#signin" class="signin">SignIn</a></li>
 							<li><i class="fas fa-bars"></i></li>
 						</ul>
 					</nav><!--nav-bar-->
@@ -59,6 +59,7 @@
 		</div><!--container-->
 	</header>
 	<!--End 네비바-->
+
 
 
 <!--콘텐츠 설명 -->
@@ -404,53 +405,66 @@
 	<!--End 추천레시피 페이징-->
 
 <!--연락-->
-	<foodter id="contact">
-		<div class="container">
-			<div class="divider">
+	<foodter id="contact-foot">
+		<div class="container-foot">
+
+			<div class="divider-title">
 				<div class="footer-title">
-					<h2 class="header-txt">CONTACT</h2>
+					<h2 class="footer-txt">CONTACT</h2>
 				</div>
 			</div>
-			<ul class="contant-info">
-				<li><a href="#"><i class="fab fa-github"></i>Zipbob link</a></li>
-			</ul>
 
-			<div class="contact-in">
-				<table class="contact-ta">
-					<tbody>
-						<tr>
-							<th><label for="txt1">연락처</label></th>
-							<td><input type="text" id="txt1" placeholder="연락받을 이메일 주소"></td>
-						</tr>
-
-						<tr>
-							<th><label for="txt2">문의사항</label></th>
-							<td><input type="text" id="txt2" placeholder="문의사항"></td>
-						</tr>
-						<tr>
-							<th><button id="con-btn">제출</button></th>
-						</tr>
-					</tbody>
-				</table>
-				<div class="banner">
-					<div class="ban-slide">
-						<ul>
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-							<li>4</li>
-							<li>5</li>
-							<li>6</li>
-							<li>7</li>
-							<li>8</li>
-							<li>9</li>
-							<li>10</li>
-						</ul>
-					</div>
+			<div class="divider-info">
+				<div class="footer-logo">
+					<i class="fab fa-github"></i>
+					<a href="#">Zipbob</a>
 				</div>
+
+				<div class="contact-in">
+					<table class="contact-ta">
+						<tbody>
+							<tr>
+								<th><label for="txt1">연락처</label></th>
+								<td><input type="text" id="txt1" placeholder="연락받을 이메일 주소"></td>
+							</tr>
+
+							<tr>
+								<th><label for="txt2">문의사항</label></th>
+								<td><input type="text" id="txt2" placeholder="문의사항"></td>
+							</tr>
+							<tr>
+								<th><button id="con-btn">제출</button></th>
+							</tr>
+						</tbody>
+					</table>
+				</div><!--divider-info-->
+			</div><!--divider-info-->
+                <div class="divider-ban">
+                    <div class="banner">
+                        <div class="ban-slide">
+                            <ul class="ban">
+                                <li>
+									<a href="#" alt="ban-img">
+										<img src="/static/image/coupang.jpg" data-lightbox="" alt="ban-img">
+									</a>
+								</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div><!--divider-ban-->
 			</div><!--contact-in-->
 		</div><!--container-->
 	</foodter>
+
+<script src="script.js"></script>
+<!--ban-slide js-->
+
+
 <script>
 <!--하이차트 다음주가격-->
 var colors = Highcharts.getOptions().colors;

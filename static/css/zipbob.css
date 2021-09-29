@@ -34,8 +34,8 @@
         .nav-menu{display:flex;list-style:none;font-size:26px;padding:5px 12px;margin:0;}
         .nav-menu li {padding:10px;}
         .nav-menu li a:hover{border:1px solid;padding:6px 10px;border-width: 2px 0 2px;}
-        .nav-sign{display:flex;list-style:none;font-size:28px;padding:6px 14px;margin:0;color:#ff3d00;}
-        .nav-sign li{padding:6px 12px;}
+        .nav-sign{display:flex;list-style:none;font-size:28px;padding:6px 14px;margin:0;}
+        .nav-sign li{padding:6px 12px;color:#ff3d00;}
     }
 
     @media screen and (min-width:50em){
@@ -63,14 +63,34 @@
         .round2{border-radius: 25% 10%;;padding:1px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
         .round2:hover{background:#f6c710;opacity:.7;border-radius: 10% 25%}
     }
+/* 추천 레시피 모달 */
 
- /*레시피 테이블 css*/
+
+
+
+/*레시피 테이블 css*/
     @media screen and (min-width:40em){
         .divider_ret{}
         .recipe-table{height:300px;width:100%}
 
     }
 /* footer */
+    @media screen and (min-width:40em){
+        #contact-foot, .footer-txt{margin:0;padding: 0;font-family: 'Merriweather', serif;font-weight: 300;
+        line-height: 1.5;color:#4e342e;-webkit-font-smoothing: antialiased;}
+        .container-foot{background:#f9a825;}
+        .divider-title{display:flex;justify-content:center;align-items:center;font-size:35px;padding:40px 0;}
+        .divider-info,.ban{display:flex;justify-content:space-between;}
+        .divider-info{padding:10px 0 50px;}
+
+        .footer-logo{font-size:38px;color:#ff3d00;height:100px;padding:6px 16pxposition:static;}
+        .footer-logo i,.footer-logo a{position:relative;top:5px 10px;}
+        .contact-in{height:100px;padding:6px 16px;margin-right:80px;}
+
+        .divider-ban{background:#260e04;}
+        .ban li{position:static;width:100px;hight:100px;padding:10px 40px;}
+    }
+
 
 /*mobile 320px 480px  @media screen and (max-width:480px){}*/
     @media screen and (max-width:480px){
