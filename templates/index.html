@@ -38,10 +38,14 @@
     <script scr="/static/js/responses.js"></script>
     <script scr="/static/js/chat.js"></script>
     <!-- 챗봇 끝끝   -->
-
 </head>
 
 <body>
+<!--홈 아이콘-->
+	<div class="chatbot-icon">
+		<a href="#"><i class="fas fa-home"></i></a>
+	</div>
+	<!--End 홈 아이콘-->
 
 <!--챗봇 아이콘-->
 <!--	<div class="chatbot-icon">-->
@@ -260,6 +264,7 @@
   }
 }
 </style>
+
 <script>
 var coll = document.getElementsByClassName('collapsible');
 
@@ -440,7 +445,7 @@ function getBotResponse(input) {
     </div><!--login-->
 
 <!--콘텐츠 설명 -->
-	<div id="contents">
+	<div class="contents-full" id="contents">
 		<div class="con-explain">
 			<div class="con">
 				<i class="fas fa-chart-bar"></i>
@@ -462,31 +467,41 @@ function getBotResponse(input) {
 	<!--End 콘텐츠 설명-->
 
 <!--이번주동향-->
-		<div class="tw-box" >
-			<div class="container" id="this-week" >
+		<div class="tw-box"  id="this-week" >
+			<div class="container">
 				<div class="divider">
 					<h1>THIS WEEK</h1>
 				</div>
-				<div class="divider_th">
-					<div class="content" id="circle">
-						<div class="reci" style="font-family: 'Merriweather', serif;">
-							<h1>Top 1 <i class="fas fa-arrow-up"></i></h1>
-							<img src="/static/image/apple.jpg" class="round" width="300" height="300">
-						</div>
-						<div class="reci" style="font-family: 'Merriweather', serif;">
-							<h1 >Top 2 <i class="fas fa-arrow-up"></i></h1>
-							<img src="/static/image/apple.jpg" class="round" width="300" height="300">
-						</div>
-						<div class="reci" style="font-family: 'Merriweather', serif;">
-							<h1>Top 3 <i class="fas fa-arrow-down"></i></h1>
-							<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
-						</div>
-						<div class="reci" style="font-family: 'Merriweather', serif;">
-							<h1>Top 4 <i class="fas fa-arrow-down"></i></h1>
-							<img src="/static/image/apple.jpg" class="round1" width="300" height="300">
-						</div>
-					</div><!--circle-->
-				</div><!--divider_th-->
+                <div class="divider-b">
+                    <div class="divider_th">
+                        <div class="content" id="circle">
+                            <div class="reci">
+                                <h1>Top 1</h1>
+                                <img src="/static/image/apple.jpg" class="round" width="300" height="300">
+                                <p>이번주가격{{}}</p>
+                                <p>상승률<i class="fas fa-arrow-up"></i></p>
+                            </div>
+                            <div class="reci">
+                                <h1 >Top 2 </h1>
+                                <img src="/static/image/apple.jpg" class="round" width="300" height="300">
+                                <p>이번주가격{{}}</p>
+                                <p>상승률<i class="fas fa-arrow-up"></i></p>
+                            </div>
+                            <div class="reci">
+                                <h1>Top 3 </h1>
+                                <img src="/static/image/apple.jpg" class="round1" width="300" height="300">
+                                <p>이번주가격{{}}</p>
+                                <p>상승률<i class="fas fa-arrow-up"></i></p>
+                            </div>
+                            <div class="reci">
+                                <h1>Top 4 </h1>
+                                <img src="/static/image/apple.jpg" class="round1" width="300" height="300">
+                                <p>이번주가격{{}}</p>
+                                <p>상승률<i class="fas fa-arrow-up"></i></p>
+                            </div>
+                        </div><!--circle-->
+                    </div><!--divider_th-->
+                </div><!--divider_b-->
 			</div>
 		</div>
 
@@ -494,18 +509,21 @@ function getBotResponse(input) {
 
 <!--다음주 가격 차트-->
 		<div class="nw-box" id="next-week">
-			<div class="divider">
-				<h1>NEXT WEEK</h1>
-			</div>
-			<div class="divider-nw">
-				<div class="nw-chart">
-					<figure class="highcharts-figure">
-						<div id="hi_container1"></div>
-						<p class="highcharts-description">설명</p>
-					</figure>
-				</div><!--nw-chart-->
-			</div><!--divider-nw-->
-		</div><!--nw-box-->
+            <div class="container">
+                <div class="divider">
+                    <h1>NEXT WEEK</h1>
+                </div>
+                <div class="divider-nw">
+                    <div class="nw-chart">
+                        <figure class="highcharts-figure">
+                            <div id="hi_container1"></div>
+                            <p class="highcharts-description">설명</p>
+                        </figure>
+                    </div><!--nw-chart-->
+                </div><!--divider-nw-->
+            </div><!--container-->
+        </div><!--nw-box-->
+
 	<!--End 다음주 가격 차트-->
 
 <!--다음주 전망 테이블-->
@@ -697,7 +715,7 @@ function getBotResponse(input) {
 			</div>
 			<div class="divider_re" >
                 <div class="recipe-body" style="max-width:500px;max-height:300px;">
-                    <div class="mySlides" data-recipy style="width:100%;">
+                    <div class="mySlides" style="width:100%;">
 						<img src="/static/image/apple.jpg" style="width:100%">
 						<p>1위 추천레시피</p>
                     </div>
@@ -750,7 +768,7 @@ function getBotResponse(input) {
 		<div class="accordion">
 			<h1 class="question">All Recipe</h1>
 			<div class="answer">
-				<input  type="text" placeholder="검색어를 입력하세요">
+				<input type="text" placeholder="검색어를 입력하세요">
 				<input type="submit" value="click">
 				<div class="search-des">
 					<p>검색한 내용들이 나올수 있도록 </p>
@@ -763,22 +781,26 @@ function getBotResponse(input) {
 
 <!--연락-->
 <div class="contact-us">
-	<div class="container">
-		<div class="divider">
-			<h1>연락</h1>
-		</div>
-		<div class="divider-ban " style="overflow:hidden;">
-			<div class="ban-slide">
-				<div class="slide">
-				<img src="/static/image/pupang.jpg">
-				<img src="/static/image/pupang.jpg">
-				<img src="/static/image/pupang.jpg">
-				<img src="/static/image/pupang.jpg">
-				<img src="/static/image/pupang.jpg">
-				</div>
-			</div><!--ban-slide-->
-		</div><!--divider-ban-->
-	</div>
+    <div class="divider">
+        <h1>연락</h1>
+    </div>
+    <div class="divider-info">
+        <div class="list">
+            <h1>집밥</h1>
+            <p>고객센터</p>
+        </div>
+    </div>
+</div>
+
+<!--베너-->
+<div class="divider-ban">
+    <div class="slide">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+    </div>
 </div>
 
 <script>
