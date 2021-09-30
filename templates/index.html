@@ -27,16 +27,359 @@
 	<script src='tablesort.date.js'></script>
 	<script>new Tablesort(document.getElementById('table-id'));</script>
 
+
+    <!--  챗봇  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="/static/css/chat.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script scr="/static/js/responses.js"></script>
+    <script scr="/static/js/chat.js"></script>
+    <!-- 챗봇 끝끝   -->
+
 </head>
 
 <body>
 
 <!--챗봇 아이콘-->
-	<div class="chatbot-icon">
-		<a href="#"><i class="fas fa-home"></i></a>
-	</div>
+<!--	<div class="chatbot-icon">-->
+<!--		<a href="#"><i class="fas fa-home"></i></a>-->
+<!--	</div>-->
 	<!--End 챗봇아이콘-->
+        <div class="chat-bar">
+            <button id="chat-button" type="button" class="collapsible">Chat bot!
+                <i id="chat-icon" style= "color: #fff;" class="fa fa-fw fa-comments-o"></i>
+            </button>
 
+            <div class="content">
+                <div class="full-chat-block">
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            </div>
+
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="엔터(Enter) 키를 눌러 메시지를 보내세요">
+                                    <p></p>
+                                </div>
+
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                                </div>
+                            </div>
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<style>
+/* 챗봇 */
+.chat-bar {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  box-shadow: 0 8 16px 0 rgba(0, 0, 0.2);
+}
+
+.collapsible {
+  background-color: rgb(244, 81, 30);
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 150px;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  border-radius: 10px 10px 0px 0px;
+  border: 3px solid #fff;
+  border-bottom: none;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.full-chat-block{
+  width: 350px;
+  background: #fff;
+  text-align: center;
+  overflow: auto;
+  height: max-content;
+  transition: max-height 0.2s ease-out;
+}
+
+.outer-container {
+  min-height: 500px;
+  bottom: 0%;
+  position: relative;
+}
+
+.chat-container{
+  max-height: 500px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  scroll-behavior: smooth;
+  hyphens: auto;
+}
+
+.chat-container::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-bar-input-block {
+  display: flex;
+  float: left;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px 0px 10px 10px;
+}
+
+.chat-bar-icons {
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 25%;
+  float: right;
+  font-size: 20px;
+}
+
+#chat-icon:hover {
+  opacity: 7;
+  cursor: pointer;
+}
+
+/*말풍선*/
+#userInput {
+  width: 75%;
+}
+
+.input-box {
+  float: left;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #000;
+  background-color: #fff;
+  outline: none;
+}
+
+.userText {
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: right;
+  clear: both;
+}
+
+.userText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background-color: #f4511e;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-right-radius: 2px;
+  max-width: 80%;
+  margin-right: 10px;
+  animation: floatup .5s forwards;
+}
+
+.botText {
+  color: #000;
+  font-family: Helvetica;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: left;
+}
+
+.botText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-left-radius: 2px;
+  max-width: 80%;
+  margin-left: 10px;
+  animation: floatup .5s forwards
+}
+
+@keyframes floatup {
+  from {
+    transform: translateY(14px);
+    opacity: .0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .full-chat-block {
+    width: 100%;
+    border-radius: 0px;
+  }
+  .chat-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+  .collapsible {
+    width: 100%;
+    border: 0px;
+    border-top: 3px solid #fff;
+    border-radius: 0px;
+  }
+}
+</style>
+<script>
+var coll = document.getElementsByClassName('collapsible');
+
+// 챗봇 클릭하면 떠오르게.
+for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+}
+
+// 챗봇 시작할 때 시간 받아서 출력.
+function getTime() {
+    let today = new Date();
+    hours = today.getHours();
+    minutes = today.getMinutes();
+
+    if (hours < 10) {
+        hours = "0" + hours //e.g. 7시의 경우 07시로 표시
+    }
+
+    if (minutes < 10) {
+        minutes = "0" + minutes
+    }
+
+    let time = hours + ":" + minutes;
+    return time;
+}
+
+// 시작 메시지
+function firstBotMessage(){
+    let firstMessage = "안녕하세요! Zipbob입니다."
+    document.getElementById("botStarterMessage").innerHTML = "<p class='botText'><span>" + firstMessage + '</span></p>';
+
+    let time = getTime();
+
+    $('#chat-timestamp').append(time);
+    document.getElementById("userInput").scrollIntoView(false);
+}
+
+firstBotMessage();
+
+function getHardResponse(userText) {
+    let botResponse = getBotResponse(userText);
+    let botHTML = '<p class="botText"><span>' + botResponse + '</span></p>';
+    $ ("#chatbox").append(botHTML);
+
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+}
+
+//응답 얻기
+function getResponse() {
+    let userText = $("#textInput").val();
+
+    if(userText == "") {
+        userText = "오늘도 코딩 열심히!";
+    }
+
+    let userHTML = '<p class="userText"><span>' + userText + '</span></p>';
+
+    $("#textInput").val("");
+    $("#chatbox").append(userHTML);
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+    setTimeout (() => {
+        getHardResponse(userText);
+    }, 1000)
+}
+
+function buttonSendText(sampleText) {
+    let userHTML = '<p class="botText"><span>' + sampleText + '</span></p>';
+
+    $("#textInput").val("");
+    $("#chatbox").append(userHTML);
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+}
+
+//비행기 아이콘 누르면 메시지 전달
+function sendButton() {
+    getResponse();
+}
+
+//하트 버튼 누르기
+function heartButton() {
+    buttonSendText("Heart clicked!")
+}
+
+//enter 키 눌러 메시지 보내기
+$("#textInput").keypress(function(e) {
+    if (e.which == 13) {
+        getResponse();
+    }
+})
+
+
+
+function getBotResponse(input) {
+    //간단한 응답
+    if (input == "안녕") {
+        console.log("만나서 반가워요");
+        return "만나서 반가워요!";
+    } else if (input == "잘 있어") {
+        console.log("즐거웠어요. 다음에 만나요!");
+        return "즐거웠어요. 다음에 만나요!";
+    } else if (input == "모각코") {
+        console.log("오늘도 즐겁게 공부해봐요. 파이팅!");
+        return "오늘도 즐겁게 공부해봐요. 파이팅!";
+    } else if (input == "날씨") {
+        console.log("요즘 너무 덥죠?");
+        return "요즘 너무 덥죠?";
+    } else {
+        console.log("잘 이해하지 못했어요. 다른 이야기를 해볼까요?");
+        return "잘 이해하지 못했어요. 다른 이야기를 해볼까요?";
+    }
+}
+</script>
 <!--네비바 ,로그인, 회원가입-->
 	<div class="containerf">
         <header>
