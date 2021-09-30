@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Zipbob</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/accodian.css">
+
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script>
+
+<link rel="stylesheet" href="/static/css1/home.css?ver=1">
+
+
+<!--  챗봇  -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./static/css/Chat.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- 챗봇 끝끝   -->
+
+</head>
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+
+
+body {
+  background-image: url('./static/image/summer3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* signin */
+.add:hover{
+  background: rgba(255, 0, 0, 0);
+}
+
+/* accodian (login) */
+  input[id*="signin"]{display:none;}
+    input[id*="signin"]+label{
+    diplay: block;
+    display-position: center;
+    padding: 10px;
+    border:2px solid rgba(255, 99, 71, 0);
+    border-bottom:0;
+    color: rgb(120, 120, 120);
+    font-weight:900;
+    background: rgba(255, 99, 71, 0);
+    cursor:pointer;
+    position: relative;
+  }
+  input[id*="signin"]+label em {
+    position: absolute;
+    top:50%
+    right:10px;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+    display:inline-block;
+    background:url('/static/image/beans.png')0 0 no-repeat;
+  }
+  input[id*="signin"]+label+ div {
+    max-height:0;
+    transition: all.35s;
+    overflow:hidden;
+    background:#ebf8ff;
+    font-size: 13px;
+    }
+  input[id*="signin"]+ label + div p{
+  display: inline-block;
+  padding : 10px;
+  }
+
+  input[id*="signin"]:checked + label + div{
+  max-height: 200px
+  }
+
+  input[id*="signin"]:checked + label em{
+  background-position: 0 -30px;
+  }
+
+/* 회원가입 */
+  body { padding:40px; background: #f5f7fb}
+  .bnt { display: block; width: 200px; height: 50px; background: #4ac4f3:
+  text-decoration: none; text-align: center; line-height: 50px; color: black;
+  border-radius: 50px;}
+  .popup { position: absolute; left: 50%; top: 50%; z-index: 5; transform: translate(-50%, -20%);
+  width: 550px; height: 900px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: #fff; border-radius: 5px; text-align: right;
+  padding: 20px; box-sizing: border-box; opacity: 0; transition: all 0.5s;}
+  .popup a { color: grey; text-decoration: none;}
+  .popup:target { opacity: 1;}
+  .popup:target + .dim{ opacity: 1; z-index: 2;}
+  .dim {position: fixed; left: 0; top: 0; z-index: -1; width: 100%;
+  height: 100%; background: rgba(0,0,0,0.6); opacity: 0; transition: all 0.5s;}
+
+
+/* 챗봇 */
+.chat-bar {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  box-shadow: 0 8 16px 0 rgba(0, 0, 0.2);
+}
+
+.collapsible {
+  background-color: rgb(82, 151, 255);
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 350px;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  border-radius: 10px 10px 0px 0px;
+  border: 3px solid #fff;
+  border-bottom: none;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.full-chat-block{
+  width: 350px;
+  background: #fff;
+  text-align: center;
+  overflow: auto;
+  height: max-content;
+  transition: max-height 0.2s ease-out;
+}
+
+.outer-container {
+  min-height: 500px;
+  bottom: 0%;
+  position: relative;
+}
+
+.chat-container{
+  max-height: 500px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  scroll-behavior: smooth;
+  hyphens: auto;
+}
+
+.chat-container::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-bar-input-block {
+  display: flex;
+  float: left;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px 0px 10px 10px;
+}
+
+.chat-bar-icons {
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 25%;
+  float: right;
+  font-size: 20px;
+}
+
+#chat-icon:hover {
+  opacity: 7;
+  cursor: pointer;
+}
+
+/*말풍선*/
+#userInput {
+  width: 75%;
+}
+
+.input-box {
+  float: left;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+  outline: none;
+}
+
+.userText {
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: right;
+  clear: both;
+}
+
+.userText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background-color: #5ca6fa;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-right-radius: 2px;
+  max-width: 80%;
+  margin-right: 10px;
+  animation: floatup .5s forwards;
+}
+
+.botText {
+  color: #000;
+  font-family: Helvetica;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: left;
+}
+
+.botText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-left-radius: 2px;
+  max-width: 80%;
+  margin-left: 10px;
+  animation: floatup .5s forwards
+}
+
+@keyframes floatup {
+  from {
+    transform: translateY(14px);
+    opacity: .0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .full-chat-block {
+    width: 100%;
+    border-radius: 0px;
+  }
+  .chat-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+  .collapsible {
+    width: 100%;
+    border: 0px;
+    border-top: 3px solid #fff;
+    border-radius: 0px;
+  }
+}
+</style>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">Zipbob</a>
+    <div class="add">
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-envelope"></i> Contact</a>
+    <a href="#recipe" class="w3-bar-item w3-button w3-hide-small w3-right"> Recipe</a>
+    <a href="#nextweek" class="w3-bar-item w3-button w3-hide-small w3-right"> NEXTweek</a>
+    <a href="#thisweek" class="w3-bar-item w3-button w3-hide-small w3-right"> THISweek</a>
+
+      <div class="w3-bar-item w3-button" >
+        <input type="checkbox" id="signin_1">
+        <label for="signin_1">Sign In<em></em></label>
+      <div>
+        <colgroup>
+          <col style="width: 11px">
+        </colgroup>
+          <tbody>
+          <tr>
+            <th><label for="txt1">ID</label></th>
+            <td><input type="text" id="txt1" placeholder="아이디를 입력해주세요."></td>
+          </tr>
+          <br>
+          <tr>
+            <th><label for="txt2">PWD</label></th>
+            <td><input type="text" id="txt2" placeholder="비밀번호를 입력해주세요."></td>
+          </tr>
+          </tbody>
+
+          <a href="#pop1" class="bnt">회원가입</a>
+            <div class="popup" id="pop1">
+              <br><br><br><br><br><br><br>
+              <a href="#a">닫기</a>
+              <form name="write_form_member" method="post">
+                 <table width="940" style="padding:5px 0 5px 0; ">
+                   <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+                   <br>
+                   <tr>
+                     <th>이름</th>
+                     <td><input type="text" name="name" id="name"></td>
+                       <div class="name regex"></div>
+                   </tr>
+                   <tr>
+                     <th>주민등록번호</th>
+                     <td><input type="text" name="jumin_1"> -
+                     <input type="password" name="jumin_2"></td>
+                   </tr>
+                   <tr>
+                     <th>아이디</th>
+                     <td>
+                     <input type="text" name="id" id="id">
+                         <input type="button" value="중복확인" id="duplcheck" >
+                         <div class="id regex"></div>
+                     </td>
+                   </tr>
+                   <tr>
+                     <th>비밀번호</th>
+                     <td>
+                     <input type="password" name="pw" id="pw">
+                     <br>영어대소문자,숫자 8자 이상</td>
+                       <div class="pw regex"></div>
+                   </tr>
+                   <tr>
+                     <th>비밀번호 확인</th>
+                     <td><input type="password" id="repw"></td>
+                       <div class="repw regex"></div>
+                   </tr>
+                   <tr>
+                      <th>비밀번호 힌트/답변</th>
+                      <td><select name='pwhint' size='1' class='select'>
+                      <option value=''>선택하세요</option>
+                      <option value='30'>졸업한 초등학교 이름은?</option>
+                      <option value='31'>제일 친한 친구의 핸드폰 번호는?</option>
+                      <option value='32'>아버지 성함은?</option>
+                      <option value='33'>어머니 성함은?</option>
+                      <option value='34'>어릴 적 내 별명은?</option>
+                      <option value='35'>가장 아끼는 물건은?</option>
+                      <option value='36'>좋아하는 동물은?</option>
+                      <option value='37'>좋아하는 색깔은?</option>
+                      <option value='38'>좋아하는 음식은?</option>
+                    </select>
+                    </tr>
+                    <tr>
+                    </td>
+                       <th>답변</th>
+                       <td><input type='text' name='pwhintans'></td>
+                    </tr>
+                    <tr>
+                      <th>이메일</th>
+                      <td>
+                        <input type='text' name="email" id="email">@
+                        <input type='text' name="email_dns">
+                          <select name="emailaddr">
+                             <option value="">직접입력</option>
+                             <option value="daum.net">daum.net</option>
+                             <option value="empal.com">empal.com</option>
+                             <option value="gmail.com">gmail.com</option>
+                             <option value="hanmail.net">hanmail.net</option>
+                             <option value="msn.com">msn.com</option>
+                             <option value="naver.com">naver.com</option>
+                             <option value="nate.com">nate.com</option>
+                          </select>
+                        </td>
+                        <div class="email regex"></div>
+                     </tr>
+                    <tr>
+                      <th>핸드폰 번호</th>
+                       <td><input type="text"name="tel" id="phone1"> -
+                           <input type="text" name="tel_1" id="phone2"> -
+                           <input type="text" name="tel_2" id="phone3">
+                           <div class="phone regex"></div>
+                       </td>
+                      </tr>
+                     <tr>
+                       <th>직업</th>
+                       <td>
+                       <select name='job' size='1'>
+                             <option value=''>선택하세요</option>
+                             <option value='39'>학생</option>
+                             <option value='40'>컴퓨터/인터넷</option>
+                             <option value='41'>언론</option>
+                             <option value='42'>공무원</option>
+                             <option value='43'>군인</option>
+                             <option value='44'>서비스업</option>
+                             <option value='45'>교육</option>
+                             <option value='46'>금융/증권/보험업</option>
+                             <option value='47'>유통업</option>
+                             <option value='48'>예술</option>
+                             <option value='49'>의료</option>
+                       </select>
+                      </td>
+                    </tr>
+                   <tr>
+                     <th>메일/sns 정보 수신</th>
+                       <td class="s">
+                           <input type="radio" name="chk_mail" checked> 수신
+                           <input type="radio" name="chk_mail" value="4"> 수신거부
+                        </td>
+                     </tr>
+                     <tr>
+                       <th>정보공개여부</th>
+                       <td>
+                       <select name='chk_open' size='0'>
+                             <option value=''>선택하세요</option>
+                             <option value='5'>모두공개</option>
+                             <option value='6'>비공개</option>
+                             <option value='7'>1단계공개</option>
+                             <option value='8'>2단계공개</option>
+                         </select>
+                        </td>
+                       </tr>
+
+                       <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+                       <tr>
+                         <td colspan="2" align="center">
+                           <input type="submit" value="회원가입">
+                        </td>
+                       </tr>
+                       </table>
+                      </td>
+                      </tr>
+                      </form>
+              <script>
+              $(function(){
+                // 중복확인 & id 유효성검사
+                $("#duplcheck").on("click",function(){
+                    var id = $("#id").val();
+                    if(id == ""){
+                        alert("아이디를 입력해주세요");
+                        return;
+                    }
+                    var regex = /^[a-z][a-z\d]{4,11}$/;
+                    var result = regex.exec(id);
+
+                     if(result != null){
+                         $(".id.regex").html("");
+                    window.open("idDuplCheck.jsp?id="+ id,"","width=500px,height=300px,top=300px,left=200px");
+                     }else{
+                         $(".id.regex").html("영어 소문자,숫자 4-12자리");
+                         $(".id.regex").css("color","red")
+                     }
+                })
+
+            //비밀번호 유효성검사
+                $("#pw").on("input",function(){
+                    var regex = /^[A-Za-z\d]{8,12}$/;
+                    var result = regex.exec($("#pw").val())
+
+                    if(result != null){
+                        $(".pw.regex").html("");
+                    }else{
+                        $(".pw.regex").html("영어대소문자,숫자 8자리 이상");
+                        $(".pw.regex").css("color","red")
+                    }
+                });
+
+               //비밀번호 확인
+                   $("#repw").on("keyup",function(){
+                        if($("#pw").val()==$("#repw").val()){
+                           $(".repw.regex").html("비밀번호가 일치합니다");
+                        }else{
+                         $(".repw.regex").html("비밀번호가 일치하지않습니다");
+                        }
+                   })
+
+                //이름 유효성검사
+                    $("#name").on("input",function(){
+                        var regex = /[가-힣]{2,}/;
+                        var result = regex.exec($("#name").val());
+
+                        if(result != null){
+                           $(".name.regex").html("");
+                        }else{
+                            $(".name.regex").html("한글만 입력 가능합니다.");
+                        }
+                    })
+
+                //전화번호 유효성검사
+                    $("#phone").on("input",function(){
+                         var regex = /^01\d\d{3,4}\d{4}$/;
+                         var result = regex.exec($("#phone").val());
+
+                        if(result != null){
+                           $(".phone.regex").html("");
+                        }else{
+                            $(".phone.regex").html("올바른 번호가 아닙니다");
+                        }
+                    })
+
+                //email유효성 검사
+                    $("#email").on("input",function(){
+                         var regex = /.+@[a-z]+(\.[a-z]+){1,2}$/;
+                         var result = regex.exec($("#email").val());
+
+                        if(result != null){
+                           $(".email.regex").html("");
+                        }else{
+                            $(".email.regex").html("올바른 이메일이 아닙니다");
+                        }
+                    })
+              //회원가입 버튼 눌렀을 때, 빈칸 있으면 다시 유효성 검사진행
+               $("#signupbtn").on("click",function(){
+                   var id = $("#id").val();
+                   var pw = $("#pw").val();
+                   var name = $("#name").val();
+                   var phone = $("#phone").val();
+                   var email = $("#email").val();
+
+                   var idregex = /^[a-z][a-z\d]{4,11}$/;
+                   var pwregex = /^[A-Za-z\d]{8,12}$/;
+                   var nameregex = /[가-힣]{2,}/;
+                   var phoneregex = /^01\d\d{3,4}\d{4}$/;
+                   var emailregex = /.+@[a-z]+(\.[a-z]+){1,2}$/;
+
+                   var idregex = idregex.exec(id);
+                   if(idregex == null){
+                       alert("아이디양식을 다시 확인해주세요");
+                       return;
+                   }
+                   var pwregex = pwregex.exec(pw);
+                   if(pwregex == null){
+                       alert("비밀번호양식을 다시 확인해주세요");
+                       retrun;
+                   }
+                   var nameregex = nameregex.exec(name);
+                   if(nameregex == null){
+                       alert("이름양식을 다시 확인해주세요");
+                       retrun;
+                   }
+                   var phoneregex = phoneregex.exec(phone);
+                   if(phoneregex == null){
+                       alert("핸드폰번호양식을 다시 확인해주세요");
+                       retrun;
+                   }
+                   var emailregex = emailregex.exec(email);
+                   if(emailregex == null){
+                       alert("이메일양식을 다시 확인해주세요");
+                       retrun;
+                   }
+
+                 //빈칸 없을 때 제출.
+                   $("#signform").submit();
+
+
+               })
+            })
+              </script>
+
+            </div>
+          <div class="dim"></div>
+
+
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- 챗봇 -->
+<body>
+        <div class="chat-bar">
+            <button id="chat-button" type="button" class="collapsible">Chat bot!
+                <i id="chat-icon" style= "color: #fff;" class="fa fa-fw fa-comments-o"></i>
+            </button>
+
+            <div class="content">
+                <div class="full-chat-block">
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            </div>
+
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="엔터(Enter) 키를 눌러 메시지를 보내세요">
+                                    <p></p>
+                                </div>
+
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                                </div>
+                            </div>
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script scr="./static/js/responses.js"></script>
+<script scr="./static/js/Chat.js"></script>
+</body>
+
+</html>
