@@ -18,6 +18,7 @@
 <!--css,js링크-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="/static/css/zipbob.css">
+	<link rel="stylesheet" href="/static/css/chatbot.css">
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.min.js"></script>
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.number.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -26,38 +27,26 @@
 	<script src='tablesort.number.js'></script>
 	<script src='tablesort.date.js'></script>
 	<script>new Tablesort(document.getElementById('table-id'));</script>
-
-
-    <!--  챗봇  -->
+<!--  챗봇  -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="/static/css/chat.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script scr="/static/js/responses.js"></script>
-    <script scr="/static/js/chat.js"></script>
-    <!-- 챗봇 끝끝   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/static/js/responses.js"></script>
+    <script src="/static/js/chat.js"></script>
+<!-- End 챗봇    -->
 </head>
 
 <body>
-<!--홈 아이콘-->
-	<div class="chatbot-icon">
-		<a href="#"><i class="fas fa-home"></i></a>
-	</div>
-	<!--End 홈 아이콘-->
-
-<!--챗봇 아이콘-->
-<!--	<div class="chatbot-icon">-->
-<!--		<a href="#"><i class="fas fa-home"></i></a>-->
-<!--	</div>-->
-	<!--End 챗봇아이콘-->
-        <div class="chat-bar">
-            <button id="chat-button" type="button" class="collapsible">Chat bot!
-                <i id="chat-icon" style= "color: #fff;" class="fa fa-fw fa-comments-o"></i>
+<!--End 챗봇아이콘-->
+	<div class="chat-bar">
+            <button id="chat-button" type="button" class="collapsible_j">Chat bot!
+                <i style= "color: #fff;" class="fa fa-fw fa-comments-o chat-icon"></i>
             </button>
 
-            <div class="content">
+            <div class="content_j">
                 <div class="full-chat-block">
                     <div class="outer-container">
                         <div class="chat-container">
@@ -74,9 +63,9 @@
                                 </div>
 
                                 <div class="chat-bar-icons">
-                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    <i style="color: crimson;" class="fa fa-fw fa-heart chat-icon"
                                     onclick="heartButton()"></i>
-                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    <i style="color: #333;" class="fa fa-fw fa-send chat-icon"
                                     onclick="sendButton()"></i>
                                 </div>
                             </div>
@@ -88,303 +77,7 @@
                 </div>
             </div>
         </div>
-<style>
-/* 챗봇 */
-.chat-bar {
-  position: fixed;
-  bottom: 0;
-  right: 50px;
-  box-shadow: 0 8 16px 0 rgba(0, 0, 0.2);
-}
 
-.collapsible {
-  background-color: rgb(244, 81, 30);
-  color: #fff;
-  cursor: pointer;
-  padding: 18px;
-  width: 150px;
-  text-align: left;
-  outline: none;
-  font-size: 18px;
-  border-radius: 10px 10px 0px 0px;
-  border: 3px solid #fff;
-  border-bottom: none;
-}
-
-.content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-
-.full-chat-block{
-  width: 350px;
-  background: #fff;
-  text-align: center;
-  overflow: auto;
-  height: max-content;
-  transition: max-height 0.2s ease-out;
-}
-
-.outer-container {
-  min-height: 500px;
-  bottom: 0%;
-  position: relative;
-}
-
-.chat-container{
-  max-height: 500px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  scroll-behavior: smooth;
-  hyphens: auto;
-}
-
-.chat-container::-webkit-scrollbar {
-  display: none;
-}
-
-.chat-bar-input-block {
-  display: flex;
-  float: left;
-  box-sizing: border-box;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  background-color: rgb(235, 235, 235);
-  border-radius: 10px 10px 0px 0px;
-  padding: 10px 0px 10px 10px;
-}
-
-.chat-bar-icons {
-  display: flex;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  width: 25%;
-  float: right;
-  font-size: 20px;
-}
-
-#chat-icon:hover {
-  opacity: 7;
-  cursor: pointer;
-}
-
-/*말풍선*/
-#userInput {
-  width: 75%;
-}
-
-.input-box {
-  float: left;
-  border: none;
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 14px;
-  color: #000;
-  background-color: #fff;
-  outline: none;
-}
-
-.userText {
-  color: #fff;
-  font-family: Helvetica;
-  font-size: 16px;
-  font-weight: normal;
-  text-align: right;
-  clear: both;
-}
-
-.userText span {
-  line-height: 1.5em;
-  display: inline-block;
-  background-color: #f4511e;
-  padding: 10px;
-  border-radius: 8px;
-  border-bottom-right-radius: 2px;
-  max-width: 80%;
-  margin-right: 10px;
-  animation: floatup .5s forwards;
-}
-
-.botText {
-  color: #000;
-  font-family: Helvetica;
-  font-weight: normal;
-  font-size: 16px;
-  text-align: left;
-}
-
-.botText span {
-  line-height: 1.5em;
-  display: inline-block;
-  background-color: #e0e0e0;
-  padding: 10px;
-  border-radius: 8px;
-  border-bottom-left-radius: 2px;
-  max-width: 80%;
-  margin-left: 10px;
-  animation: floatup .5s forwards
-}
-
-@keyframes floatup {
-  from {
-    transform: translateY(14px);
-    opacity: .0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .full-chat-block {
-    width: 100%;
-    border-radius: 0px;
-  }
-  .chat-bar {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-  }
-  .collapsible {
-    width: 100%;
-    border: 0px;
-    border-top: 3px solid #fff;
-    border-radius: 0px;
-  }
-}
-</style>
-
-<script>
-var coll = document.getElementsByClassName('collapsible');
-
-// 챗봇 클릭하면 떠오르게.
-for (let i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-    });
-}
-
-// 챗봇 시작할 때 시간 받아서 출력.
-function getTime() {
-    let today = new Date();
-    hours = today.getHours();
-    minutes = today.getMinutes();
-
-    if (hours < 10) {
-        hours = "0" + hours //e.g. 7시의 경우 07시로 표시
-    }
-
-    if (minutes < 10) {
-        minutes = "0" + minutes
-    }
-
-    let time = hours + ":" + minutes;
-    return time;
-}
-
-// 시작 메시지
-function firstBotMessage(){
-    let firstMessage = "안녕하세요! Zipbob입니다."
-    document.getElementById("botStarterMessage").innerHTML = "<p class='botText'><span>" + firstMessage + '</span></p>';
-
-    let time = getTime();
-
-    $('#chat-timestamp').append(time);
-    document.getElementById("userInput").scrollIntoView(false);
-}
-
-firstBotMessage();
-
-function getHardResponse(userText) {
-    let botResponse = getBotResponse(userText);
-    let botHTML = '<p class="botText"><span>' + botResponse + '</span></p>';
-    $ ("#chatbox").append(botHTML);
-
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}
-
-//응답 얻기
-function getResponse() {
-    let userText = $("#textInput").val();
-
-    if(userText == "") {
-        userText = "오늘도 코딩 열심히!";
-    }
-
-    let userHTML = '<p class="userText"><span>' + userText + '</span></p>';
-
-    $("#textInput").val("");
-    $("#chatbox").append(userHTML);
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
-    setTimeout (() => {
-        getHardResponse(userText);
-    }, 1000)
-}
-
-function buttonSendText(sampleText) {
-    let userHTML = '<p class="botText"><span>' + sampleText + '</span></p>';
-
-    $("#textInput").val("");
-    $("#chatbox").append(userHTML);
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}
-
-//비행기 아이콘 누르면 메시지 전달
-function sendButton() {
-    getResponse();
-}
-
-//하트 버튼 누르기
-function heartButton() {
-    buttonSendText("Heart clicked!")
-}
-
-//enter 키 눌러 메시지 보내기
-$("#textInput").keypress(function(e) {
-    if (e.which == 13) {
-        getResponse();
-    }
-})
-
-
-
-function getBotResponse(input) {
-    //간단한 응답
-    if (input == "안녕") {
-        console.log("만나서 반가워요");
-        return "만나서 반가워요!";
-    } else if (input == "잘 있어") {
-        console.log("즐거웠어요. 다음에 만나요!");
-        return "즐거웠어요. 다음에 만나요!";
-    } else if (input == "모각코") {
-        console.log("오늘도 즐겁게 공부해봐요. 파이팅!");
-        return "오늘도 즐겁게 공부해봐요. 파이팅!";
-    } else if (input == "날씨") {
-        console.log("요즘 너무 덥죠?");
-        return "요즘 너무 덥죠?";
-    } else {
-        console.log("잘 이해하지 못했어요. 다른 이야기를 해볼까요?");
-        return "잘 이해하지 못했어요. 다른 이야기를 해볼까요?";
-    }
-}
-</script>
 <!--네비바 ,로그인, 회원가입-->
 	<div class="containerf">
         <header>
@@ -448,70 +141,65 @@ function getBotResponse(input) {
 			<div class="con">
 				<i class="fas fa-chart-bar"></i>
 				<h2>THIS WEEK</h2>
-				<p>농수산물의 이번주 가격에 </p>
+				<p>농수산물의 이번주 가격 상승과 하락</p>
 			</div>
 			<div class="con">
 				<i class="fas fa-chart-line"></i>
 				<h2>NEXT WEEK</h2>
-				<p>농수산물의 다음주 가격예측에 관한 설명</p>
+				<p>농수산물의 다음주 가격예측</p>
 			</div>
 			<div class="con">
 				<i class="fas fa-chart-pie"></i>
 				<h2>RECIPE</h2>
-				<p>다음주 가격예측된 작물의 관련 추천 레시피</p>
+				<p>예측된 작물의 관련 추천 레시피</p>
 			</div>
 		</div><!--con-explain-->
 	</div>
 	<!--End 콘텐츠 설명-->
 
 <!--이번주동향-->
-		<div class="tw-box"  id="this-week" >
-			<div class="container">
-				<div class="divider">
-					<h1>THIS WEEK</h1>
-				</div>
-                <div class="divider-b">
-                    <div class="divider_th">
-                        <div class="content" id="circle">
-                            <div class="reci">
-                                <h1>Top 1</h1>
-                                <img src="/static/image/apple.jpg" class="round" width="300" height="300">
-                                <p>이번주가격{{}}</p>
-                                <p>상승률<i class="fas fa-arrow-up"></i></p>
-                            </div>
-                            <div class="reci">
-                                <h1 >Top 2 </h1>
-                                <img src="/static/image/apple.jpg" class="round" width="300" height="300">
-                                <p>이번주가격{{}}</p>
-                                <p>상승률<i class="fas fa-arrow-up"></i></p>
-                            </div>
-                            <div class="reci">
-                                <h1>Top 3 </h1>
-                                <img src="/static/image/apple.jpg" class="round1" width="300" height="300">
-                                <p>이번주가격{{}}</p>
-                                <p>상승률<i class="fas fa-arrow-up"></i></p>
-                            </div>
-                            <div class="reci">
-                                <h1>Top 4 </h1>
-                                <img src="/static/image/apple.jpg" class="round1" width="300" height="300">
-                                <p>이번주가격{{}}</p>
-                                <p>상승률<i class="fas fa-arrow-up"></i></p>
-                            </div>
-                        </div><!--circle-->
-                    </div><!--divider_th-->
-                </div><!--divider_b-->
+	<div class="tw-box"  id="this-week" >
+		<div class="container">
+			<div class="divider">
+				<h1>THIS WEEK</h1>
 			</div>
+			<div class="divider_body">
+				<div class="divider_th">
+					<div class="content-th" id="circle">
+						<div class="reci">
+							<h1>Top 1 name</h1>
+							<img src="/static/image/background.jpeg" class="round" width="260" height="260">
+							<h3>이번주 상승가격 num%<i class="fas fa-arrow-up"></i></h3>
+						</div>
+						<div class="reci">
+							<h1>Top 2 name</h1>
+							<img src="/static/image/background.jpeg" class="round" width="260" height="260">
+							<h3>이번주 상승 가격 num%<i class="fas fa-arrow-up"></i></h3>
+						</div>
+						<div class="reci">
+							<h1>Top 3 name </h1>
+							<img src="/static/image/background.jpeg" class="round1" width="260" height="260">
+							<h3>이번주 하락가격 num%<i class="fas fa-arrow-down"></i></h3>
+						</div>
+						<div class="reci">
+							<h1>Top 4 name</h1>
+							<img src="/static/image/background.jpeg" class="round1" width="260" height="260">
+							<h3>이번주 하락가격 num%<i class="fas fa-arrow-down"></i></h3>
+						</div>
+					</div><!--circle-->
+				</div><!--divider_th-->
+			</div><!--divider_b-->
 		</div>
-
+	</div>
 	<!--End 이번주동향-->
 
 <!--다음주 가격 차트-->
-		<div class="nw-box" id="next-week">
+	<div class="nw-box" id="next-week">
             <div class="container">
                 <div class="divider">
                     <h1>NEXT WEEK</h1>
                 </div>
-                <div class="divider-nw">
+                <div class="divider_body">
                     <div class="nw-chart">
                         <figure class="highcharts-figure">
                             <div id="hi_container1"></div>
@@ -530,7 +218,7 @@ function getBotResponse(input) {
 			<div class="divider">
 				<h1>WHAT'S NEXT</h1>
 			</div>
-			<div class="divider_in">
+			<div class="divider_body">
 				<div class="nw-content" id="nw-table">
 					<table id="my-table">
 						<thead>
@@ -550,71 +238,8 @@ function getBotResponse(input) {
 								<td>1500</td>
 								<td>22</td>
 							</tr>
-							<tr>
-								<td>고구마</td>
-								<td>2</td>
-								<td>1100</td>
-								<td>1600</td>
-								<td>13</td>
-							</tr>
-							<tr>
-								<td>양파</td>
-								<td>3</td>
-								<td>1600</td>
-								<td>800</td>
-								<td>3</td>
-							</tr>
-							<tr>
-								<td>파</td>
-								<td>4</td>
-								<td>1883</td>
-								<td>2000</td>
-								<td>25</td>
-							</tr>
-							<tr>
-								<td>귀리</td>
-								<td>5</td>
-								<td>4139</td>
-								<td>5000</td>
-								<td>27</td>
-							</tr>
-							<tr>
-								<td>양배추</td>
-								<td>6</td>
-								<td>6000</td>
-								<td>6500</td>
-								<td>6</td>
-							</tr>
-							<tr>
-								<td>김</td>
-								<td>7</td>
-								<td>800</td>
-								<td>500</td>
-								<td>20</td>
-							</tr>
-							<tr>
-								<td>당근</td>
-								<td>8</td>
-								<td>183</td>
-								<td>200</td>
-								<td>5</td>
-							</tr>
-							<tr>
-								<td>오이</td>
-								<td>9</td>
-								<td>7382</td>
-								<td>23330</td>
-								<td>29</td>
-							</tr>
-							<tr>
-								<td>호박</td>
-								<td>10</td>
-								<td>4168</td>
-								<td>5000</td>
-								<td>3</td>
-							</tr>
 						</tbody>
-					</table><!--my-table-->
+					</table><!--my-table for문돌려야-->
 
 					<table id="my-table2">
 						<thead>
@@ -634,107 +259,43 @@ function getBotResponse(input) {
 								<td>1500</td>
 								<td>22</td>
 							</tr>
-							<tr>
-								<td>고구마</td>
-								<td>2</td>
-								<td>1100</td>
-								<td>1600</td>
-								<td>13</td>
-							</tr>
-							<tr>
-								<td>양파</td>
-								<td>3</td>
-								<td>1600</td>
-								<td>800</td>
-								<td>3</td>
-							</tr>
-							<tr>
-								<td>파</td>
-								<td>4</td>
-								<td>1883</td>
-								<td>2000</td>
-								<td>25</td>
-							</tr>
-							<tr>
-								<td>귀리</td>
-								<td>5</td>
-								<td>4139</td>
-								<td>5000</td>
-								<td>27</td>
-							</tr>
-							<tr>
-								<td>양배추</td>
-								<td>6</td>
-								<td>6000</td>
-								<td>6500</td>
-								<td>6</td>
-							</tr>
-							<tr>
-								<td>김</td>
-								<td>7</td>
-								<td>800</td>
-								<td>500</td>
-								<td>20</td>
-							</tr>
-							<tr>
-								<td>당근</td>
-								<td>8</td>
-								<td>183</td>
-								<td>200</td>
-								<td>5</td>
-							</tr>
-							<tr>
-								<td>오이</td>
-								<td>9</td>
-								<td>7382</td>
-								<td>23330</td>
-								<td>29</td>
-							</tr>
-							<tr>
-								<td>호박</td>
-								<td>10</td>
-								<td>4168</td>
-								<td>5000</td>
-								<td>3</td>
-							</tr>
 						</tbody>
 					</table><!--my-table2-->
 				</div><!--nw-table-->
-			</div><!--divider_in-->
+			</div><!--divider_-->
 		</div><!--container-->
 	</div>
 	<!--End 다음주 전망 테이블-->
 
 <!--추천레시피-->
-	<div class="recomend" id="recipe" >
+	<div class="recommend" id="recipe" >
 		<div class="container">
 			<div class="divider">
 				<h1>RECIPE</h1>
 			</div>
-			<div class="divider_re" >
-                <div class="recipe-body" style="max-width:500px;max-height:300px;">
-                    <div class="mySlides" style="width:100%;">
-						<img src="/static/image/apple.jpg" style="width:100%">
-						<p>1위 추천레시피</p>
-                    </div>
-                     <div class="mySlides" style="width:100%;">
-                         <img src="/static/image/tteokbokki.jpg" style="width:100%">
-                         <p>2위 추천레시피</p>
-                     </div>
-                    <div class="mySlides" style="width:100%;">
-                        <img src="/static/image/apple.jpg" style="width:100%">
-                    	  <p>3위 추천레시피</p>
-                    </div>
-                    <div class="mySlides" style="width:100%;">
-                        <img  src="/static/image/tteokbokki.jpg" style="width:100%">
-                        <p>4위 추천레시피</p>
-                    </div>
-
-                </div>
-            </div><!--divider_re-->
+			<div class="divider_body" >
+					<div class="recipe-circle">
+						<div class="mySlides">
+							<img src="/static/image/apple.jpg" style="width:100%">
+							<h1>1위 추천레시피</h1>
+						</div>
+						<div class="mySlides">
+							<img src="/static/image/tteokbokki.jpg" style="width:100%">
+							<h1>2위 추천레시피</h1>
+						</div>
+						<div class="mySlides">
+							<img src="/static/image/apple.jpg" style="width:100%">
+							<h1>3위 추천레시피</h1>
+						</div>
+						<div class="mySlides">
+							<img  src="/static/image/tteokbokki.jpg" style="width:100%">
+							<h1>4위 추천레시피</h1>
+						</div>
+					</div>
+            </div><!--divider_-->
 		</div><!--container-->
 	</div>
-	<!--추천레시피-->
+	<!--End 추천레시피-->
 
 <!--추천레시피 그래프-->
 	<div class="recipe-graph">
@@ -742,7 +303,7 @@ function getBotResponse(input) {
 			<div class="divider">
 				<h1>Graph</h1>
 			</div>
-			<div class="divider_gr">
+			<div class="divider_body">
 				<div class="recipe-gr">
 					<figure class="highcharts-figure2">
 						<div id="hi-container2"></div>
@@ -753,7 +314,7 @@ function getBotResponse(input) {
 						<button id="polar">파이차트</button>
 					</figure>
 				</div>
-			</div><!--divider_re-->
+			</div><!--divider_-->
 		</div><!--container-->
 	</div>
 	<!--End 추천레시피 그래프-->
@@ -764,23 +325,24 @@ function getBotResponse(input) {
 		 <h1>All Recipe</h1>
 	 </div>
 		<div class="accordion">
-			<h1 class="question">All Recipe</h1>
-			<div class="answer">
+			<div class="question">
 				<input type="text" placeholder="검색어를 입력하세요">
 				<input type="submit" value="click">
+			</div>
+			<div class="answer">
 				<div class="search-des">
-					<p>검색한 내용들이 나올수 있도록 </p>
+					<p>sssssss</p>
 				</div>
 			</div>
 		</div>
  </div>
-	<!--End 추천레시피 검색-->
+<!--End 추천레시피 검색-->
 
 
 <!--연락-->
 <div class="contact-us">
-    <div class="divider">
-        <h1>연락</h1>
+    <div class="divider-us">
+        <h1>Zipbob</h1>
     </div>
     <div class="divider-info">
         <div class="list">
@@ -789,7 +351,7 @@ function getBotResponse(input) {
         </div>
     </div>
 </div>
-
+<!--End 연락-->
 <!--베너-->
 <div class="divider-ban">
     <div class="slide">
@@ -800,212 +362,7 @@ function getBotResponse(input) {
         <img src="/static/image/pupang.jpg">
     </div>
 </div>
-
-<script>
-/* 추천레시피 아코디언 검색*/
-  $('.question').click(function(){
-            $(this).next().slideToggle();
-            $(this).next().siblings('.answer').slideUp();
-         });
-
-/* 추천레시피 */
-var slideIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 2000);
-}
-
-
-/* sign form */
-    function signupToggle(){
-        var containerf = document.querySelector('.containerf');
-        containerf.classList.toggle('active');
-        var popup = document.querySelector('.signup-form');
-        popup.classList.toggle('active');
-    }
-
-    function loginToggle(){
-        var containerf = document.querySelector('.containerf');
-        containerf.classList.toggle('active');
-        var popup = document.querySelector('.login-form');
-        popup.classList.toggle('active');
-    }
-
-/* 하이차트 다음주가격예측 */
-var colors = Highcharts.getOptions().colors;
-
-Highcharts.chart('hi_container1', {
-    chart: {
-        type: 'spline'
-    },
-
-    legend: {
-        symbolWidth: 40
-    },
-
-    title: {
-        text: '다음주 예측 그래프'
-    },
-
-    subtitle: {
-        text: '농수산물의 주단위 가격변동 추이'
-    },
-
-    yAxis: {
-        title: {
-            text: '세로축 금액입니다.'
-        },
-        accessibility: {
-            description: '세로축 금액입니다.내용'
-        }
-    },
-
-    xAxis: {
-        title: {
-            text: '가로축 기간입니다.'
-        },
-        accessibility: {
-            description: '가로축 기간입니다.내용'
-        },
-        categories: ['1주', '2주', '3주', '이번주', '다음1주', '다음2주']
-    },
-
-    tooltip: {
-        valueSuffix: '%'
-    },
-
-    plotOptions: {
-        series: {
-            point: {
-                events: {
-                    click: function () {
-                        window.location.href = this.series.options.website;
-                    }
-                }
-            },
-            cursor: 'pointer'
-        }
-    },
-
-    series: [
-        {
-            name: 'NVDA',
-            data: [34.8, 43.0, 51.2, 41.4, 64.9, 72.4],
-            color: colors[2],
-            accessibility: {
-                description: 'This is the most used screen reader in 2019'
-            }
-        }, {
-            name: 'JAWS',
-            data: [69.6, 63.7, 63.9, 43.7, 66.0, 61.7],
-            dashStyle: 'ShortDashDot',
-            color: colors[0]
-        }, {
-            name: 'VoiceOver',
-            data: [20.2, 30.7, 36.8, 30.9, 39.6, 47.1],
-            dashStyle: 'ShortDot',
-            color: colors[1]
-        }, {
-            name: 'Narrator',
-            data: [null, null, null, null, 21.4, 30.3],
-            dashStyle: 'Dash',
-            color: colors[9]
-        }, {
-            name: 'ZoomText/Fusion',
-            data: [6.1, 6.8, 5.3, 27.5, 6.0, 5.5],
-            dashStyle: 'ShortDot',
-            color: colors[5]
-        }, {
-            name: 'Other',
-            data: [42.6, 51.5, 54.2, 45.8, 20.2, 15.4],
-            dashStyle: 'ShortDash',
-            color: colors[3]
-        }
-    ],
-
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 550
-            },
-            chartOptions: {
-                chart: {
-                    spacingLeft: 3,
-                    spacingRight: 3
-                },
-                legend: {
-                    itemWidth: 150
-                },
-                xAxis: {
-                    categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
-                    title: ''
-                },
-                yAxis: {
-                    visible: false
-                }
-            }
-        }]
-    }
-});
-
-/* 하이차트2 레시피 추천 */
-const chart = Highcharts.chart('hi-container2', {
-    title: {
-        text: '추천레시피 단어'
-    },
-    subtitle: {
-        text: '긍정 단어빈도수 조사'
-    },
-    xAxis: {
-        categories: ['가', '나', '다','라', '마' ,'바' ,'사', '아', '자', '차', '카','타']
-    },
-    series: [{
-        type: 'column',
-        colorByPoint: true,
-        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-        showInLegend: false
-    }]
-});
-
-document.getElementById('plain').addEventListener('click', () => {
-    chart.update({
-        chart: {
-            inverted: false,
-            polar: false
-        },
-        subtitle: {
-            text: '기본'
-        }
-    });
-});
-
-document.getElementById('polar').addEventListener('click', () => {
-    chart.update({
-        chart: {
-            inverted: false,
-            polar: true
-        },
-        subtitle: {
-            text: '파이차트'
-        }
-    });
-});
-
-
-/* 다음주 등락률 테이블 솔트 */
-new Tablesort(document.getElementById('my-table'));
-new Tablesort(document.getElementById('my-table2'));
-
-
-</script>
+<!--End 베너-->
+<script src="/static/js/index.js"></script>
 </body>
 </html>

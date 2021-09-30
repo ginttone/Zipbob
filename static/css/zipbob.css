@@ -1,46 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap');
 
-/* desktop 1024p, 50em==800px */
-
+/* desktop 1024px, 50em=800px */
+@media screen and (min-width:50em) {
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{width:100%;min-height:100vh;background:#ffffff;user-selector:none;}
-    .container{width:100%;min-height:100vh;}
-    h1{display:flex;justify-content:center;font-family: 'Merriweather', serif;font-size: 2em;color:#5f4339;}
-    .divider{display:flex;justify-content:center;align-items:center;margin:20px;font-size:35px;padding:20px 0;}
-    .tw-box,.nw-box,.next-week-table,.recipe-graph, .search-recipe , foodter{height:900px;width:100%;background: #efebe9;}
-    .mySlides {display: none}
-    .answer{display:none;}
-
-/* 추천레시피 부분 */
-
-    .recomend {height:1000px;width:100%;height:1000px;width:100%;background:#efebe9;}
-    .recomend .container {background:#efebe9;}
-    .recomend .container .divider{background:#efebe9;display:flex;justify-content:center;align-items:center;margin:20px;font-size:35px;padding:40px 0;font-family: 'Merriweather', serif;font-size: 2em;color:#5f4339;}
-    .recomend .container .divider_re{background:#efebe9;}
-
-
-/* 모든레시피 검색 */
-   .accordion hi{display:flex;justify-content:center;font-family: 'Merriweather', serif;font-size: 2em;color:#5f4339;align-items:center;margin:50px;font-size:35px;padding:40px 0;}
-   .accordion .answer input{width:100px;}
-   .accordion .answer .search-des{width:800px;height:400;box-shadow: 3px 3px 10px 1px rgba(0,0,0,.2);}
-
-/* 챗봇 */
-
-    .chatbot-icon a{font-size:80px;color:#ff3d00;margin:10px;position:fixed;right:80px; bottom: 100px;}
-
+    body{width:100vw;height:100vh;background:#ffffff;user-selector:none;font-family: 'Merriweather', serif; }
+    .mySlides , .answer{display:none;}
+    .tw-box,.nw-box,.next-week-table,.recommend,.recipe-graph,search-recipe{margin:0px;padding:0px;height:900px;width:100%;background:#fafafa;}
+    .container{width:100vw;height:120vh;}
+    .divider{display:flex;justify-content:center;align-items:center;padding:100px 0px;font-size:1.5em;}
+    .divider_body{width:100vw;height:80vh;display:flex;justify-content:center;}
+    .tw-box,.recommend,.search-recipe{background:#fafafa}
+}
 
 /* 네비바 , 로그인 , 회원가입 */
-
-    .containerf{padding:50px 100px;transition:.5s;}
-    .containerf header{position:absolute;top:0;left:0;width:100%;height:auto;padding:40px 50px;}
-    .containerf header nav{display:flex;justify-content:space-between;align-items:center;}
+@media screen and (min-width:50em) {
+    .containerf{padding:0;transition:.5s;}
+    .containerf header{position:fixed;top:0;left:0;width:100vw;height:auto;padding-top:40px;}
+    .containerf header nav{display:flex;justify-content:space-around;}
     .containerf header nav .nav-logo h1 a{text-decoration:none; font-size:2rem; color:#260e04;font-family: 'Merriweather', serif;letter-spacing:.3rem;}
 
     .containerf header nav .nav-menu ul ,
     .containerf header nav .nav-sign ul {list-style-type:none;}
     .containerf header nav .nav-menu ul li,
-    .containerf header nav .nav-sign ul li{display:inline;padding:12px 18px;margin:0 16px;font-size:1.5rem;font-family: 'Merriweather', serif;font-weight:100;cursor:pointer;word-spacing:.3rem;}
+    .containerf header nav .nav-sign ul li{display:inline;padding-left:8px;margin:0 16px;font-size:1.5rem;font-family: 'Merriweather', serif;font-weight:100;cursor:pointer;word-spacing:.3rem;}
     .containerf header nav .nav-menu ul li a,.containerf header nav .nav-sign ul li a{text-decoration:none;color:#260e04;}
     .containerf header nav .nav-menu ul li:hover{border-radius:10px;box-shadow:3px 3px 10px 1px rgba(0,0,0,.2),-3px -3px 10px 1px rgba(255,255,255,1);}
     .containerf header nav .nav-menu ul li:active{box-shadow:inset 3px 3px 10px 1px rgba(0,0,0,2),inset -3px -3px 10px 1px rgba(255,255,255,1);}
@@ -66,36 +49,71 @@
 
     .containerf.active{filter:blur(20px);transition:.5s;pointer-events:none;}
     .containerf {height:900px;width:100%;background-image: url('/static/image/goodm.jpg');background-repeat : no-repeat;background-size : cover;overflow:hidden;}
+}
+
+/* 콘텐츠 설명 *//*display:flex;justify-content:space-around;*/
+@media screen and (min-width:50em) {
+    .contents-full{padding:50px 0;height:400px;width:100%;background-color:#fdd835;display:flex;justify-content:space-around;align-items:center; }
+    .con-explain{display:flex;justify-content:space-around;background-color:#fdd835;}
+    .con{background-color:none;padding:20px 50px;color:#870000;}
+    .con i, .con h2 , .con p{display:flex;justify-content:space-around;}
+    .con h2 , .con p{padding:5px;font-family:'Noto Serif KR',serif;}
+    .con i{font-size:90px;}
+    .con h2{font-size:40px;}
+    .con p{font-size:20px;}
+}
 
 
-/* 콘텐츠 설명 */
+/* 이번주동향 레시피 사진 */
+@media screen and (min-width:50em) {
+    .divider-b,.divider_th{width:100vw;height:80vh;}
+    .content-th{width:100vw;height:65vh;display:flex;justify-content:space-around;flex-wrap:wrap;}
+    .reci{width:300px;height:250px;}
+    .reci h1{padding:10px 0;margin:10px 0;}
+    .reci h3{padding:20px 0;margin:20px 0;}
+    .round{border-radius:40px;padding:4px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
+    .round:hover{box-shadow:6px 6px 14px 3px rgba(231,0,0,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
+    .round1{border-radius:40px;padding:4px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
+    .round1:hover{box-shadow:6px 6px 14px 3px rgba(26,35,126,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
+}
 
-    #contents{padding:50px 0;height:400px;width:100%;background-color:#fdd835;display:flex;justify-content:space-around;align-items:center; }
-    #contents .con-explain{display:flex;justify-content:space-around;background-color:#fdd835;}
-    #contents .con-explain .con{background-color:none;padding:20px 50px;color:#870000;}
-    #contents .con-explain .con i{font-size:90px;display:flex;justify-content: space-around}
-    #contents .con-explain .con h2{font-size:40px;font-family:'Noto Serif KR', serif;display:flex;justify-content:space-around}
-    #contents .con-explain .con p{font-size:20px;font-family:'Noto Serif KR', serif;}
+/* 다음주 가격 하이차트 */
+@media screen and (min-width:50em){
+    .nw-chart, .recipe-gr{padding:20px;width:70vw;height:70vh;border:2px solid #be9c91;box-shadow:6px 6px 14px 3px rgba(95,67,57,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
 
+    #container {height:420px;}
+    .highcharts-figure, .highcharts-data-table table {min-width: 400px;max-width: 820px;margin: 1em auto;display:inline;}
+    .highcharts-data-table table {
+        font-family:'Noto Serif KR', serif;
+        border-collapse: collapse;
+        border: 1px solid #EBEBEB;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0; font-size: 1.2em; color: #555;
+    }
+    .highcharts-data-table th {
+        font-weight: 600; padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+}
 
-
-/* 이번주, 레시피 사진 */
-
-    .tw-box .divider .divider_th{height:400px;width:100%;padding:40px;margin:20px 0;background:#fefefe;}
-    .content{height:400px;width:100%;margin:20px 0;}
-
-    #circle{display:flex;justify-content: space-around;flex-wrap:wrap;}
-    .reci{padding:0 40px;}
-    .round{border-radius:30px;padding:1px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
-    .round:hover{background:#ff3d00;opacity:.7}
-    .round1{border-radius: 30px;;padding:1px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
-    .round1:hover{background:#003c8f;opacity:.7}
-
-
-/* 등락률 테이블 1 css */
+/* 다음주 전망 등락률 테이블 css */
+@media screen and (min-width:50em){
     .divider_in{display:flex;justify-content:space-around;margin-bottom:20px;}
-    #nw-table{padding:50px 80px;display:flex;justify-content: space-between; align-items: baseline;}
-    #my-table,#my-table2{padding:0 40px;width:100%}
+    .nw-content{padding:50px 80px;display:flex;justify-content: space-between; align-items: baseline;}
+    .nw-content table{padding:30px 40px;width:100%;border:2px solid #be9c91;box-shadow:6px 6px 14px 3px rgba(95,67,57,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
     td,th {text-align:center;padding: .6rem 1rem;font-family:'Noto Serif KR',serif;font-size:20px}
     tbody tr:nth-child(even) {background-color: #be9c91;}
     th {background: #5f4339;color: #fffffb; opacity: 0.8;}
@@ -126,49 +144,17 @@
         th[aria-sort=ascending]:not(.no-sort):after {border-bottom:none;border-width: 8px 8px 0;}
         th[aria-sort]:not(.no-sort):after {	visibility: visible;opacity: 0.4;}
         th[role=columnheader]:not(.no-sort):hover:after {visibility: visible;opacity: 1;}
+}
 
-
-
-/* 하이차트 다음주가격 css */
-
-#container {
-    height: 420px;
-}
-.highcharts-figure, .highcharts-data-table table {
-    min-width: 400px;
-    max-width: 820px;
-    margin: 1em auto;
-}
-.highcharts-data-table table {
-	font-family: Verdana, sans-serif;
-	border-collapse: collapse;
-	border: 1px solid #EBEBEB;
-	margin: 10px auto;
-	text-align: center;
-	width: 100%;
-	max-width: 500px;
-}
-.highcharts-data-table caption {
-    padding: 1em 0;
-    font-size: 1.2em;
-    color: #555;
-}
-.highcharts-data-table th {
-	font-weight: 600;
-    padding: 0.5em;
-}
-.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-    padding: 0.5em;
-}
-.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-    background: #f8f8f8;
-}
-.highcharts-data-table tr:hover {
-    background: #f1f7ff;
+/* 추천레시피 부분 */
+@media screen and (min-width:50em){
+    .recipe-circle{width:1045px;height:600px;background-image:url('/static/image/plate.jpg');box-shadow:6px 6px 14px 3px rgba(190, 156, 145,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
+    .mySlides {width:340px;height:340px;border:1px solid red;overflow:hidden;margin:0 auto;}
+    .mySlides img{width:100%;height:100%;object-fit:cover;}
 }
 
 /* 하이차트 레시피 css */
-
+@media screen and (min-width:50em){
 #container2 {
     height: 400px;
 }
@@ -206,7 +192,19 @@
 .highcharts-data-table2 tr:hover {
     background: #f1f7ff;
 }
+}
 
+/* 모든레시피 검색 */
+   .accordion{width:100vw;height:50vh;}
+   .question{width:400px;height:100px;padding-left:50px;}
+   .question .input{width:400px;height:100px;}
+   .answer{width:60vw;height:40vh;border:3px solid #5f4339;}
+   .search-des{width:800px;height:500px;}
 
+/* 연락 */
+    .contact-us{width:100vw;height:50vh;background: #fdd835; color:#fafafa;}
+    .divider-us{width:100vw;height:100px;}
+    .divider-info{width:100vw;height:300px;}
 
-
+    .divider-ban{width:100vw;height:20vh;background:#260e04;}
+    .divider-ban img{width:200px;height:50px;padding:5px;}
