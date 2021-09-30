@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
+<head>
 <title>Zipbob</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,15 +23,15 @@
 
 
 <!--  챗봇  -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Chatbot</title>
-        <link rel="stylesheet" type="text/css" href="css/Chat.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="./static/css/Chat.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <!-- 챗봇 끝끝   -->
 
-
+</head>
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
@@ -110,11 +111,13 @@ body {
   .dim {position: fixed; left: 0; top: 0; z-index: -1; width: 100%;
   height: 100%; background: rgba(0,0,0,0.6); opacity: 0; transition: all 0.5s;}
 
+
+/* 챗봇 */
 .chat-bar {
   position: fixed;
   bottom: 0;
   right: 50px;
-  box-shadow: 0 8 16px 0 rgba(0, 0, 0.2)
+  box-shadow: 0 8 16px 0 rgba(0, 0, 0.2);
 }
 
 .collapsible {
@@ -610,9 +613,9 @@ body {
 
                                 <div class="chat-bar-icons">
                                     <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
-                                    onclick='heartButton()'></i>
+                                    onclick="heartButton()"></i>
                                     <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
-                                    onclick='sendButton()'></i>
+                                    onclick="sendButton()"></i>
                                 </div>
                             </div>
                             <div id="chat-bar-bottom">
@@ -623,127 +626,10 @@ body {
                 </div>
             </div>
         </div>
-        <script>
-            var coll = document.getElementsByClassName('collapsible');
 
-            // 챗봇 클릭하면 떠오르게.
-            for (let i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    }
-                });
-            }
-
-            // 챗봇 시작할 때 시간 받아서 출력.
-            function getTime() {
-                let today = new Date();
-                hours = today.getHours();
-                minutes = today.getMinutes();
-
-                if (hours < 10) {
-                    hours = "0" + hours //e.g. 7시의 경우 07시로 표시
-                }
-
-                if (minutes < 10) {
-                    minutes = "0" + minutes
-                }
-
-                let time = hours + ":" + minutes;
-                return time;
-            }
-
-            // 시작 메시지
-            function firstBotMessage(){
-                let firstMessage = "안녕하세요!"
-                document.getElementById("botStarterMessage").innerHTML = "<p class='botText'><span>" + firstMessage + '</span></p>';
-
-                let time = getTime();
-
-                $('#chat-timestamp').append(time);
-                document.getElementById("userInput").scrollIntoView(false);
-            }
-
-            firstBotMessage();
-
-            function getHardResponse(userText) {
-                let botResponse = getBotResponse(userText);
-                let botHTML = '<p class="botText"><span>' + botResponse + '</span></p>';
-                $ ("#chatbox").append(botHTML);
-
-                document.getElementById("chat-bar-bottom").scrollIntoView(true);
-            }
-
-            //응답 얻기
-            function getResponse() {
-                let userText = $("#textInput").val();
-
-                if(userText == "") {
-                    userText = "오늘도 코딩 열심히!";
-                }
-
-                let userHTML = '<p class="userText"><span>' + userText + '</span></p>';
-
-                $("#textInput").val("");
-                $("#chatbox").append(userHTML);
-                document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
-                setTimeout (() => {
-                    getHardResponse(userText);
-                }, 1000)
-            }
-
-            function buttonSendText(sampleText) {
-                let userHTML = '<p class="botText"><span>' + sampleText + '</span></p>';
-
-                $("#textInput").val("");
-                $("#chatbox").append(userHTML);
-                document.getElementById("chat-bar-bottom").scrollIntoView(true);
-            }
-
-            //비행기 아이콘 누르면 메시지 전달
-            function sendButton() {
-                getResponse();
-            }
-
-            //하트 버튼 누르기
-            function heartButton() {
-                buttonSendText("Heart clicked!")
-            }
-
-            //enter 키 눌러 메시지 보내기
-            $("#textInput").keypress(function(e) {
-                if (e.which == 13) {
-                    getResponse();
-                }
-            })
-        </script>
-        <script>
-        function getBotResponse(input) {
-        //간단한 응답
-        if (input == "안녕") {
-                console.log("만나서 반가워요");
-                return "만나서 반가워요!";
-            } else if (input == "잘 있어") {
-                console.log("즐거웠어요. 다음에 만나요!");
-                return "즐거웠어요. 다음에 만나요!";
-            } else if (input == "모각코") {
-                console.log("오늘도 즐겁게 공부해봐요. 파이팅!");
-                return "오늘도 즐겁게 공부해봐요. 파이팅!";
-            } else if (input == "날씨") {
-                console.log("요즘 너무 덥죠?");
-                return "요즘 너무 덥죠?";
-            } else {
-                console.log("잘 이해하지 못했어요. 다른 이야기를 해볼까요?");
-                return "잘 이해하지 못했어요. 다른 이야기를 해볼까요?";
-            }
-        }
-        </script>
+<script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script scr="./static/js/responses.js"></script>
+<script scr="./static/js/Chat.js"></script>
 </body>
 
 </html>
