@@ -16,6 +16,7 @@
 	<script src="https://code.highcharts.com/themes/high-contrast-light.js"></script>
 	<script src="https://code.highcharts.com/highcharts-more.js"></script>
 <!--css,js링크-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="/static/css/zipbob.css">
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.min.js"></script>
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17119/tablesort.number.min.js"></script>
@@ -32,7 +33,7 @@
 
 <!--챗봇 아이콘-->
 	<div class="chatbot-icon">
-		<i class="fas fa-question-circle"></i>
+		<a href="#"><i class="fas fa-home"></i></a>
 	</div>
 	<!--End 챗봇아이콘-->
 
@@ -51,7 +52,7 @@
                         <li><a href="#next-week">Next Week</a></li>
                         <li><a href="#next-table">Next Table</a></li>
                         <li><a href="#recipe">Recipe</a></li>
-                        <li><a href="#all-recipe">All Recipe</a></li>
+                        <li><a href="#allRecipe">All Recipe</a></li>
                     </ul>
                 </div>
                 <div class="nav-sign">
@@ -99,7 +100,7 @@
 			<div class="con">
 				<i class="fas fa-chart-bar"></i>
 				<h2>THIS WEEK</h2>
-				<p>농수산물의 이번주 가격에 관한 설명 더많이 쓰면 어떻게되니?</p>
+				<p>농수산물의 이번주 가격에 </p>
 			</div>
 			<div class="con">
 				<i class="fas fa-chart-line"></i>
@@ -115,9 +116,9 @@
 	</div>
 	<!--End 콘텐츠 설명-->
 
-	<!--이번주동향-->
+<!--이번주동향-->
 		<div class="tw-box" >
-			<div id="this-week" >
+			<div class="container" id="this-week" >
 				<div class="divider">
 					<h1>THIS WEEK</h1>
 				</div>
@@ -163,7 +164,7 @@
 	<!--End 다음주 가격 차트-->
 
 <!--다음주 전망 테이블-->
-	<div class="next-week-table">
+	<div class="next-week-table" id="next-table">
 		<div class="container">
 			<div class="divider">
 				<h1>WHAT'S NEXT</h1>
@@ -344,31 +345,32 @@
 	<!--End 다음주 전망 테이블-->
 
 <!--추천레시피-->
-	<div id="recipe">
+	<div class="recomend" id="recipe" >
 		<div class="container">
 			<div class="divider">
 				<h1>RECIPE</h1>
 			</div>
-			<div class="divider_re">
-				<div class="content" id="circle2">
-					<div class="reci">
-						<h1>Top 1 <i class="fas fa-arrow-up"></i></h1>
-						<img src="/static/image/apple.jpg" class="round2" width="300" height="300">
-					</div>
-					<div class="reci">
-						<h1>Top 2 <i class="fas fa-arrow-up"></i></h1>
-						<img src="/static/image/apple.jpg" class="round2" width="300" height="300">
-					</div>
-					<div class="reci">
-						<h1>Top 3 <i class="fas fa-arrow-down"></i></h1>
-						<img src="/static/image/apple.jpg" class="round2" width="300" height="300">
-					</div>
-					<div class="reci">
-						<h1>Top 4 <i class="fas fa-arrow-down"></i></h1>
-						<img src="/static/image/apple.jpg" class="round2" width="300" height="300">
-					</div>
-				</div><!--circle-->
-			</div><!--divider_re-->
+			<div class="divider_re" >
+                <div class="recipe-body" style="max-width:500px;max-height:300px;">
+                    <div class="mySlides" data-recipy style="width:100%;">
+						<img src="/static/image/apple.jpg" style="width:100%">
+						<p>1위 추천레시피</p>
+                    </div>
+                     <div class="mySlides" style="width:100%;">
+                         <img src="/static/image/tteokbokki.jpg" style="width:100%">
+                         <p>2위 추천레시피</p>
+                     </div>
+                    <div class="mySlides" style="width:100%;">
+                        <img src="/static/image/apple.jpg" style="width:100%">
+                    	  <p>3위 추천레시피</p>
+                    </div>
+                    <div class="mySlides" style="width:100%;">
+                        <img  src="/static/image/tteokbokki.jpg" style="width:100%">
+                        <p>4위 추천레시피</p>
+                    </div>
+
+                </div>
+            </div><!--divider_re-->
 		</div><!--container-->
 	</div>
 	<!--추천레시피-->
@@ -377,7 +379,7 @@
 	<div class="recipe-graph">
 		<div class="container">
 			<div class="divider">
-				<h1 class="header-txt">Graph</h1>
+				<h1>Graph</h1>
 			</div>
 			<div class="divider_gr">
 				<div class="recipe-gr">
@@ -395,101 +397,69 @@
 	</div>
 	<!--End 추천레시피 그래프-->
 
-<!--추천레시피 테이블 페이징-->
-	<div class="recipe-pagenation" id="recipe-page">
-		<div class="container">
-			<div class="divider">
-				<h1 class="header-txt">RECIPE table</h1>
+<!--추천레시피 검색 -->
+ <div class="search-recipe" id="allRecipe">
+	 <div class="divider">
+		 <h1>All Recipe</h1>
+	 </div>
+		<div class="accordion">
+			<h1 class="question">All Recipe</h1>
+			<div class="answer">
+				<input  type="text" placeholder="검색어를 입력하세요">
+				<input type="submit" value="click">
+				<div class="search-des">
+					<p>검색한 내용들이 나올수 있도록 </p>
+				</div>
 			</div>
-			<div class="divider_ret">
-				<div class="recipe-table">
-					<table class="recipe-ta">
-						<thead>
-							<tr>
-								<th>순위</th>
-								<th>품목</th>
-								<th>요리제목</th>
-							</tr>
-						</thead>
-						<tbody>
-	<!-- 					{% for row in page_obj %} -->
-							<tr>
-								<td></td><!--{{ row.순위 }}-->
-								<td></td><!--{{ row.품목 }}-->
-								<td></td><!--{{ row.요리제목 }}-->
-							</tr>
-	<!--            			 {% endfor %} -->
-						</tbody>
-					</table><!--recipe-ta-->
+		</div>
+ </div>
+	<!--End 추천레시피 검색-->
 
-					<ul class="pagenation">
-						<li class="perPage active"><a href="pagelink"></a></li>
-						<li class="perPage"><a href="pagelink"></a></li>
-					</ul>
-				</div><!--recipe-table-->
-			</div><!--divider_ret-->
-		</div><!--container-->
-	</div>
-	<!--End 추천레시피 페이징-->
 
 <!--연락-->
-	<foodter id="contact-foot">
-		<div class="foot">
-			<div class="divder-ban">
-				<div class="footer-title">
-					<h2 class="footer-txt">CONTACT</h2>
-				</div>
-			</div>
-
-			<div class="divider-info">
-				<div class="footer-logo">
-					<i class="fab fa-github"></i>
-					<a href="#">Zipbob</a>
-				</div>
-
-				<div class="footer-contact">
-					<table class="contact-ta">
-						<tbody>
-							<tr>
-								<th><label for="txt1">연락처</label></th>
-								<td><input type="text" id="txt1" placeholder="연락받을 이메일 주소"></td>
-							</tr>
-
-							<tr>
-								<th><label for="txt2">문의사항</label></th>
-								<td><input type="text" id="txt2" placeholder="문의사항"></td>
-							</tr>
-							<tr>
-								<th><button id="con-btn">제출</button></th>
-							</tr>
-						</tbody>
-					</table>
-				</div><!--divider-info-->
-			</div><!--divider-info-->
-
-			<div class="divider-ban" style="overflow:hidden;">
-				<div class="ban-slide">
-					<div class="ban">
-						<img src="/static/image/pupang.jpg">
-					</div>
-					<div class="ban">
-						<img src="/static/image/osfreshnull.jpg">
-					</div>
-					<div class="ban">
-						<img src="/static/image/lotdaefress.jpg">
-					</div>
-					<div class="ban">
-						<img src="/static/image/homeminus.jpg">
-					</div>
-					<div class="ban">
-						<img src="/static/image/gsscom.jpg">
-					</div><
-				</div><!--ban-slide-->
-			</div><!--divider-ban-->
+<div class="contact-us">
+	<div class="container">
+		<div class="divider">
+			<h1>연락</h1>
 		</div>
-	</foodter>
+		<div class="divider-ban " style="overflow:hidden;">
+			<div class="ban-slide">
+				<div class="slide">
+				<img src="/static/image/pupang.jpg">
+				<img src="/static/image/pupang.jpg">
+				<img src="/static/image/pupang.jpg">
+				<img src="/static/image/pupang.jpg">
+				<img src="/static/image/pupang.jpg">
+				</div>
+			</div><!--ban-slide-->
+		</div><!--divider-ban-->
+	</div>
+</div>
 
 <script>
+/* 추천레시피 아코디언 검색*/
+  $('.question').click(function(){
+            $(this).next().slideToggle();
+            $(this).next().siblings('.answer').slideUp();
+         });
+
+/* 추천레시피 */
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000);
+}
+
+
 /* sign form */
     function signupToggle(){
         var containerf = document.querySelector('.containerf');

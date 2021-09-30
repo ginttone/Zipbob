@@ -6,151 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<!--    <link rel="stylesheet" href="style.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-</head>
-
+ </head>
 <style>
-.container {height:900px;width:100%;background-image: url('/static/image/goodm.jpg');background-repeat : no-repeat;background-size : cover;overflow:hidden;}
-    }
-body{width:100%;min-height:100vh;background:#fefefe;user-selector:none;
-              background-image: url('/static/image/goodm.jpg');
-              background-repeat: no-repeat;
-              background-attachment: fixed;
-              background-size: cover;
-        }
-img{max-width:100%;height:auto;}
-.gallery{margin:0;padding:0;list-style:none;}
-.gallery li{float:left;width:48%;margin:1%;}
-    .gallery li img{transition:opacity .3s ease-in-out;}
-        .gallery li img:hover{opacity:.75;}
-
-#lightbox-overlay{
-    opacity:0; /* 이거 바뀌는건 visible이 들어오면 바뀜 */
-    pointer-events:none; /*링크 있으면 링크가 작동하지 않아,링크가 없어도 밑의 링크를 막지 않도록 */
-    position:fixed; /* 전체 화면 기준으로 채우고 고정되어 있다 */
-    width:100%; /* 높이 넓이다씀 */
-    height:100%;
-    top:0; /* 전제화면 기준으로 왼쪽 상단부터 (높이 넓이다씀) */
-    left:0;
-    background-color:rgba(255, 65, 0, 0.57);/* 배경화면색 */
-    transition:opacity .3s ease-in;}
-    #lightbox-overlay.visible{
-        opacity:1;
-        pointer-events:auto; /* 링크 이벤트 오토로 줌 */
-        }
+    .answer{display:none;}
 
 </style>
 <body>
-
-    <div class="container">
-        <header>
-            <nav>
-                <div class="nav-logo">
-                   <h1><i class="fas fa-receipt"></i><a href="#">Zipbob</a></h1>
-                </div>
-                <div class="nav-menu">
-                    <ul >
-                        <li><a href="#this-week">This-Week</a></li>
-                        <li><a href="#next-week">Next-Week</a></li>
-                        <li><a href="#next-table">Next-table</a></li>
-                        <li><a href="#recipe">Recipe</a></li>
-                        <li><a href="#all-recipe">All-Recipe</a></li>
-                    </ul>
-                </div>
-                <div class="nav-sign">
-                    <ul>
-                        <li onclick="signupToggle()">JoinUs</li>
-                        <li onclick="loginToggle()">LogIn</li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    </div><!--container-->
-
-    <div class="signup-form">
-        <div class="form">
-            <div class="close" onclick="signupToggle()">&times;</div>
-            <div class="text">
-                <h1>Register form</h1>
-            </div>
-            <form action="#">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email ID">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm password">
-                <input type="submit" value="Register">
-            </form>
-        </div>
-    </div>
-    <div class="login-form">
-        <div class="form">
-            <div class="close" onclick="loginToggle()">&times;</div>
-            <div class="text">
-                <h1>LogIn</h1>
-            </div>
-            <form action="#">
-                <input type="email" placeholder="Email ID">
-                <input type="password" placeholder="password">
-                <input type="submit" value="Login">
-            </form>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="gallery-container">
-              <ul class="gallery">
-                    <li>
-                        <a href="#" alt="Gallery image">
-                            <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" alt="Gallery image">
-                            <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" alt="Gallery image">
-                            <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" alt="Gallery image">
-                            <img src="/static/image/coupang.jpg" data-lightbox="/static/image/apple.jpg" alt="Gallery image">
-                        </a>
-                    </li>
-                </ul>
-        </div>
-
-        <div id="lightbox-overlay">
-            <img src="" alt="Lightbox image" title="Click_anywhere to close" id="lightbox-image"/>
-        </div><!--lightbox-->
-    </div>
-<script>
-
-
-
-/*gallery*/
-var img = document.querySelectorAll('.gallery img'),
-	lightbox= document.querySelector('#lightbox-overlay'),
-	lightboxImg= lightbox.querySelector('img');
-
-	console.log(img);
-
-for(var i = 0; i < img.length ; i++){
-    img[i].addEventListener('click',function(){
-        var imgNewSrc = this.getAttribute('data-lightbox');
-        console.log(imgNewSrc);
-        lightboxImg.setAttribute('src',imgNewSrc);
-        lightbox.classList.add('visible');
-    });
-}
-lightbox.addEventListener('click',function(){
-    this.classList.remove('visible');
-});
-
-</script>
-
+    <div class="search-recipe" id="allRecipe">
+		<div class="accordion">
+                <h1 class="question">All Recipe</h1>
+                <div class="answer">
+                    <input type="password" placeholder="검색어를 입력하세요">
+                    <input type="submit" value="click" style="font-size:1rem;font-family: 'Merriweather';">
+			</div>
+		</div>
+	</div>
+    <script>
+         $('.question').click(function(){
+            $(this).next().slideToggle();
+            $(this).next().siblings('.answer').slideUp();
+         });
+    </script>
 </body>
+
+
 </html>
