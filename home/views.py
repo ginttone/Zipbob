@@ -51,3 +51,4 @@ def frame_test(request):
     result['page_obj'] = paginator.get_page(page_number)
     return render(request, 'frame_test.html', context=result)
 
+
