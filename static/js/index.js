@@ -101,7 +101,7 @@ $("#textInput").keypress(function(e) {
 
 function getBotResponse(input) {
     //간단한 응답
-    if (input 안녕하세요== "안녕하세요") {
+    if (input == "안녕") {
         console.log("만나서 반가워요");
         return "만나서 반가워요!";
     } else if (input == "잘 있어") {
