@@ -24,29 +24,105 @@
 <div class="contact-us">
     <div class="divider-us">
         <i class="fab fa-github"></i>
-        <h1>Zipbob github</h1>
+        <h1>
+            <a href="https://github.com/ginttone/Zipbob" title="주소로 이동" style="position:absolute; left:40px; top: 20px;" target="_blank" class="w3-hover-text-white"><i class="fa fa-github w3-hover-opacity"></i>Zipbob github</a>
+        </h1>
     </div>
     <div class="divider-info">
-        <div class="list">
-            <h1>교육문의<a href="멀캠주소">멀티캠퍼스</a></h1>
-            <p>고객센터</p>
+        <div class="list" style="position:absolute; right:80px; bottom:480px;">
+            <h1>교육문의 <a href="https://www.multicampus.com/">멀티캠퍼스</a></h1>
+            <p>고객센터 1234-5678 평일 09-18시</p>
         </div>
     </div>
 </div>
 <!--End 연락-->
 <!--베너-->
-<div class="divider-ban">
-    <div class="slide">
-        <img src="/static/image/pupang.jpg">
-        <img src="/static/image/pupang.jpg">
-        <img src="/static/image/pupang.jpg">
-        <img src="/static/image/pupang.jpg">
-        <img src="/static/image/pupang.jpg">
-    </div>
-</div>
-    <script>
+<!-- 슬라이드 배너 -->
 
-    </script>
+<!--  배너  -->
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+ <style>
+  body {overflow: hidden; margin: 0; padding:0; }
+  #layout {position: absolute; left: 25%; maring: auto; width: 900px; height:50px; display: flex; flex-warp: wrap; align-items: center; }
+  #layout b {width: 15px; position: relative; z-index: 1; cursor: pointer;  }
+  #banner  { position:relative; z-index:0; width:900px; height:50px; overflow:hidden; margin:auto; }
+  #banner img {position: absolute; width: 150px; height: 50px; }
+  #banner img:nth-child(1) { left:-180px; z-index:2; }
+  #banner img:nth-child(2) { left:0px; }
+  #banner img:nth-child(3) { left:180px; }
+  #banner img:nth-child(4) { left:360px; }
+  #banner img:nth-child(5) { left:540px; }
+  #banner img:last-child { left:900px; }
+ </style>
+
+ <script>
+ $(document).ready(function(){
+   var i=$("#banner img:first-child").attr('src').substr(-5,1);
+   /****** 처음부터 자동 *****/
+   var rolling=setInterval(frame, 2500);
+   function frame() {
+
+     $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+     i++;
+     if( i==7) {i=1}
+     var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+     $("#banner img:nth-child(2)").addClass("firstImg");
+     $("#banner").append(appendImg);
+     if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+   }
+
+   /****** 왼쪽버튼 클릭시 ******/
+   $("#left").click(function(){
+    clearInterval();
+    $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+    i++;
+    if( i==7) {i=1}
+    var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+    $("#banner img:nth-child(2)").addClass("firstImg");
+    $("#banner").append(appendImg);
+    if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+   });
+
+   /****** 오른쪽버튼 클릭시 ******/
+   $("#right").click(function(){
+    $("#banner img").removeClass("firstImg").animate({left:'+=180px'});
+    i=i-1;
+    if( i==0) {i=7}
+    var prependImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+    $("#banner img:nth-child(2)").addClass("firstImg");
+    $("#banner").prepend(prependImg);
+    if( $("#banner img:last-child").position().left>=900 ) {  $("#banner img:last-child").remove()  }
+   });
+ });
+ </script>
+</head>
+
+<div id="layout">
+    <b id="left">&lt;</b>
+    <div id="banner">
+        <a class="w3-button" href="">
+            <img src="./static/image/roll_img_6.jpg" width="150" height="50">
+        </a>
+        <a class="w3-button" href="http://www.ssg.com" >
+            <img src="./static/image/roll_img_1.jpg" width="150" height="50">
+        </a>
+        <a class="w3-button" href="https://www.homeplus.co.kr">
+            <img src="./static/image/roll_img_2.jpg" width="150" height="50" class="firstImg">
+        </a>
+        <a class="w3-button" href="https://www.coupang.com">
+            <img src="./static/image/roll_img_3.jpg" width="150" height="50">
+        </a>
+        <a class="w3-button" href="https://www.lottesuper.co.kr">
+             <img src="./static/image/roll_img_4.jpg" width="150" height="50">
+        </a>
+        <a class="w3-button" href="https://www.gsfresh.com">
+            <img src="./static/image/roll_img_5.jpg" width="150" height="50">
+        </a>
+    </div>
+    <b id="right">&gt;</b>
+</div>
 </body>
 
 
