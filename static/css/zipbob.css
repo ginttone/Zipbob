@@ -48,8 +48,13 @@ p{font-size: 30px;color: #5f4339;margin-top:30px;font-family:'Noto Serif KR', se
     .form form input{width:100%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:20px 16px;margin:20px auto;outline:none;}
     .signup-form.active, .login-form.active{top:50px;transition:.5s;visibility:visible;opacity:1;}
 
-    .head.active{filter:blur(20px);transition:.5s;pointer-events:none;}
-    .head {height:900px;width:100%;background-image: url('/static/image/goodm.jpg');background-repeat : no-repeat;background-size : cover;overflow:hidden;}
+    .form input[id*="reg"]{width:100%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
+    .form input[id*="login"]{width:100%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
+    .form input[id*="75"]{width:75%;height:10%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
+    .form input[id*="24"]{width:23%;height:10%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
+
+    .containerf.active{filter:blur(20px);transition:.5s;pointer-events:none;}
+    .containerf {height:900px;width:100%;background-image: url('/static/image/goodm.jpg');background-repeat : no-repeat;background-size : cover;overflow:hidden;}
 
 /* 콘텐츠 설명 */
 
