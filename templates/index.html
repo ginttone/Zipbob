@@ -1,12 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>frame-test</title>
-
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zipbob</title>
 <!-- 아이콘 링크 -->
 	<script src="https://kit.fontawesome.com/850573ba23.js" crossorigin="anonymous"></script>
 <!--하이차트 링크-->
@@ -18,7 +16,6 @@
 	<script src="https://code.highcharts.com/themes/high-contrast-light.js"></script>
 	<script src="https://code.highcharts.com/highcharts-more.js"></script>
 <!--css,js링크-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="/static/css/zipbob.css">
 	<link rel="stylesheet" href="/static/css/chatbot.css">
@@ -39,13 +36,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/static/js/responses.js"></script>
     <script src="/static/js/chat.js"></script>
-
+<!-- End 챗봇    -->
 </head>
 
 <body>
-    <div class="head">
-        <!--챗봇-->
-        <div class="chat-bar">
+<!--End 챗봇아이콘-->
+	<div class="chat-bar">
             <button id="chat-button" type="button" class="collapsible_j">Chat bot!
                 <i style= "color: #fff;" class="fa fa-fw fa-comments-o chat-icon"></i>
             </button>
@@ -81,405 +77,680 @@
                 </div>
             </div>
         </div>
-        <!--네비바-->
-        <div class="containerf">
-            <header>
-                <nav>
-                    <div class="nav-logo">
-                       <h2>
-                           <a href="#">Zipbob</a>
-                       </h2>
-                    </div>
-                    <div class="nav-menu">
-                        <ul >
-                            <li><a href="#this-week">This Week</a></li>
-                            <li><a href="#next-week">Next Week</a></li>
-                            <li><a href="#next-table">Next Table</a></li>
-                            <li><a href="#recipe">Recipe</a></li>
-                            <li><a href="#allRecipe">All Recipe</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-sign">
-                        <ul>
-                            <li onclick="signupToggle()">Join Us</li>
-                            <li onclick="loginToggle()">Log In</li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-        </div><!--containerf-->
-            <div class="signup-form">
-            <div class="form">
-                <div class="close" onclick="signupToggle()">&times;</div>
-                <div class="text">
-                    <h1>Register form</h1>
-                </div>
-                <form action="#">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email ID">
-                    <input type="password" placeholder="Password">
-                    <input type="password" placeholder="Confirm password">
-                    <input type="submit" value="Register" style="font-size:1rem;font-family: 'Merriweather';">
-                </form>
-            </div>
-        </div><!--joinus-->
-            <div class="login-form">
-            <div class="form">
-                <div class="close" onclick="loginToggle()">&times;</div>
-                <div class="text">
-                    <h1>LogIn</h1>
-                </div>
-                <form action="#">
-                    <input type="email" placeholder="Email ID">
-                    <input type="password" placeholder="password">
-                    <input type="submit" value="Login" style="font-size:1rem;font-family: 'Merriweather';">
-                </form>
-            </div>
-        </div><!--login-->
-    </div>
 
+<!--네비바 ,로그인, 회원가입-->
+	<div class="containerf">
+        <header>
+            <nav>
+                <div class="nav-logo">
+                   <h1>
+					   <a href="#">Zipbob</a>
+				   </h1>
+                </div>
+                <div class="nav-menu">
+                    <ul >
+                        <li><a href="#this-week">This Week</a></li>
+                        <li><a href="#next-week">Next Week</a></li>
+                        <li><a href="#next-table">Next Table</a></li>
+                        <li><a href="#recipe">Recipe</a></li>
+                        <li><a href="#allRecipe">All Recipe</a></li>
+                    </ul>
+                </div>
+                <div class="nav-sign">
+                    <ul>
+                        <li onclick="signupToggle()">Join Us</li>
+                        <li onclick="loginToggle()">Log In</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div><!--containerf-->
 
-    <div class="main">
-        <!--콘텐츠 설명 -->
-        <div class="content1" id="contents">
-            <div class="con-explain">
-                <div class="con">
-                    <i class="fas fa-chart-bar"></i>
-				    <h2>THIS WEEK</h2>
-				    <p>이번 주 농수산 품목 가격 동향(상승&하락)</p>
-                </div>
-                <div class="con">
-                    <i class="fas fa-chart-line"></i>
-				    <h2>NEXT WEEK</h2>
-				    <p>다음 주 농수산물 가격 전망 예측</p>
-                </div>
-                <div class="con">
-                    <i class="fas fa-chart-pie"></i>
-				    <h2>RECIPE</h2>
-				    <p>예측 결과를 반영한 농수산물 활용 추천 레시피</p>
-                </div>
+    <div class="signup-form">
+        <div class="form">
+            <div class="close" onclick="signupToggle()">&times;</div>
+            <div class="text">
+                <h1>Register form</h1>
             </div>
+            <form action="#">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email ID">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm password">
+                <input type="submit" value="Register" style="font-size:1rem;font-family: 'Merriweather';">
+            </form>
         </div>
-        <!--이번주동향 -->
-        <div class="content2" id="this-week">
-            <h1>THis Week</h1>
-            <p>전체 품목 중에서 이번 주 등락률 상위 2위와 하위 2위를 확인합니다.</p>>
-            <div class="divider_body2">
+    </div><!--joinus-->
+    <div class="login-form">
+        <div class="form">
+            <div class="close" onclick="loginToggle()">&times;</div>
+            <div class="text">
+                <h1>LogIn</h1>
+            </div>
+            <form action="#">
+                <input type="email" placeholder="Email ID">
+                <input type="password" placeholder="password">
+                <input type="submit" value="Login" style="font-size:1rem;font-family: 'Merriweather';">
+            </form>
+        </div>
+    </div><!--login-->
+
+<!--콘텐츠 설명 -->
+	<div class="contents-full" id="contents">
+		<div class="con-explain">
+			<div class="con">
+				<i class="fas fa-chart-bar"></i>
+				<h2>THIS WEEK</h2>
+				<p>농수산물의 이번주 가격 상승과 하락</p>
+			</div>
+			<div class="con">
+				<i class="fas fa-chart-line"></i>
+				<h2>NEXT WEEK</h2>
+				<p>농수산물의 다음주 가격예측</p>
+			</div>
+			<div class="con">
+				<i class="fas fa-chart-pie"></i>
+				<h2>RECIPE</h2>
+				<p>예측된 작물의 관련 추천 레시피</p>
+			</div>
+		</div><!--con-explain-->
+	</div>
+	<!--End 콘텐츠 설명-->
+
+<!--이번주동향-->
+	<div class="tw-box"  id="this-week" >
+		<div class="container">
+			<div class="divider">
+				<h1>THIS WEEK</h1>
+			</div>
+			<div class="divider_body">
+				<div class="divider_th">
 					<div class="content-th" id="circle">
 						<div class="reci">
-							<img src="/static/image/background.jpeg" class="round" width="270" height="270">
-							<h1>Rise 1 name</h1>
-                            <p> num % <i class="fas fa-arrow-up"></i></p>
+							<h1>Top 1 name</h1>
+							<img src="/static/image/background.jpeg" class="round" width="260" height="260">
+							<h3>이번주 상승가격 num%<i class="fas fa-arrow-up"></i></h3>
 						</div>
 						<div class="reci">
-							<img src="/static/image/background.jpeg" class="round" width="270" height="270">
-							<h1>Rise 2 name</h1>
-                            <p> num % <i class="fas fa-arrow-up"></i></p>
+							<h1>Top 2 name</h1>
+							<img src="/static/image/background.jpeg" class="round" width="260" height="260">
+							<h3>이번주 상승 가격 num%<i class="fas fa-arrow-up"></i></h3>
 						</div>
 						<div class="reci">
-							<img src="/static/image/background.jpeg" class="round1" width="270" height="270">
-							<h2>Fall 3 name </h2>
-                            <p> num % <i class="fas fa-arrow-down"></i></p>
+							<h1>Top 3 name </h1>
+							<img src="/static/image/background.jpeg" class="round1" width="260" height="260">
+							<h3>이번주 하락가격 num%<i class="fas fa-arrow-down"></i></h3>
 						</div>
 						<div class="reci">
-							<img src="/static/image/background.jpeg" class="round1" width="270" height="270">
-							<h2>Fall 4 name</h2>
-                            <p> num % <i class="fas fa-arrow-down"></i></p>
+							<h1>Top 4 name</h1>
+							<img src="/static/image/background.jpeg" class="round1" width="260" height="260">
+							<h3>이번주 하락가격 num%<i class="fas fa-arrow-down"></i></h3>
 						</div>
-                    </div><!--circle-->
+					</div><!--circle-->
+				</div><!--divider_th-->
 			</div><!--divider_b-->
-        </div>
-        <!--다음주 가격 차트-->
-        <div class="content3" id="next-week">
-            <h1>Next Week</h1>
-            <p>농수산물의 지난주와 이번 주, 예측된 다음 주 가격을 그래프로 확인하세요.</p>
-            <div class="divider_body3">
+		</div>
+	</div>
+	<!--End 이번주동향-->
+
+<!--다음주 가격 차트-->
+	<div class="nw-box" id="next-week">
+            <div class="container">
+                <div class="divider">
+                    <h1>NEXT WEEK</h1>
+                </div>
+                <div class="divider_body">
                     <div class="nw-chart">
                         <figure class="highcharts-figure">
                             <div id="hi_container1"></div>
-                            <p class="highcharts-description"></p>
+                            <p class="highcharts-description">설명</p>
                         </figure>
                     </div><!--nw-chart-->
                 </div><!--divider-nw-->
-        </div>
-        <!--다음주 전망 테이블-->
-        <div class="content2" id="next-table">
-            <h1>WHAT'S NEXT</h1>
-            <p>모든 품목의 단위, 가격, 등락률을 파악할 수 있는 표입니다. </p>
-            <div class="divider_body4">
+            </div><!--container-->
+        </div><!--nw-box-->
+
+	<!--End 다음주 가격 차트-->
+
+<!--다음주 전망 테이블-->
+	<div class="next-week-table" id="next-table">
+		<div class="container">
+			<div class="divider">
+				<h1>WHAT'S NEXT</h1>
+			</div>
+			<div class="divider_body">
 				<div class="nw-content" id="nw-table">
 					<table id="my-table">
 						<thead>
-
 							<tr>
-								<th>품목</th>
-								<th>날짜1</th>
-                                <th>날짜2</th>
-                                <th>날짜3</th>
-                                <th>날짜4</th>
+								<th>Item</th>
+								<th>/g</th>
+								<th>Before</th>
+								<th>After</th>
+								<th>Leverage</th>
 							</tr>
-
 						</thead>
 						<tbody>
 							<tr>
 								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
+								<td>1</td>
+								<td>1000</td>
+								<td>1500</td>
+								<td>22</td>
 							</tr>
-                            <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-
 						</tbody>
 					</table><!--my-table for문돌려야-->
-				</div><!--nw-table-->
-			</div><!--divider_body-->
-        </div>
 
-        <!--추천레시피-->
-        <div class="content3" id="recipe">
-            <h1>Recipe</h1>
-            <p>가격과 레시피의 댓글 분석 결과를 반영하여 농수산물을 활용할 수 있는 레시피를 추천합니다.</p>
-			<div class="divider_body5" >
+					<table id="my-table2">
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>/g</th>
+								<th>Before</th>
+								<th>After</th>
+								<th>Leverage</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>감자</td>
+								<td>1</td>
+								<td>1000</td>
+								<td>1500</td>
+								<td>22</td>
+							</tr>
+						</tbody>
+					</table><!--my-table2-->
+				</div><!--nw-table-->
+			</div><!--divider_-->
+		</div><!--container-->
+	</div>
+	<!--End 다음주 전망 테이블-->
+
+<!--추천레시피-->
+	<div class="recommend" id="recipe" >
+		<div class="container">
+			<div class="divider">
+				<h1>RECIPE</h1>
+			</div>
+			<div class="divider_body" >
 					<div class="recipe-circle">
-                        <div class="mySlides">
-                            <h1> 1 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/apple.jpg" width="100%" height="100%">
-                            </div>
-                        </div>
-                        <div class="mySlides">
-                            <h1> 2 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/potato.jpg" width="100%" height="100%">
-                            </div>
-                         </div>
-                        <div class="mySlides">
-                            <h1> 3 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/lotte.png" width="100%" height="100%">
-                            </div>
-                         </div>
-                        <div class="mySlides">
-                            <h1> 4 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/potato.jpg" width="100%" height="100%">
-                            </div>
-                         </div>
+						<div class="mySlides">
+							<img src="/static/image/apple.jpg" style="width:100%">
+							<h1>1위 추천레시피</h1>
+						</div>
+						<div class="mySlides">
+							<img src="/static/image/tteokbokki.jpg" style="width:100%">
+							<h1>2위 추천레시피</h1>
+						</div>
+						<div class="mySlides">
+							<img src="/static/image/apple.jpg" style="width:100%">
+							<h1>3위 추천레시피</h1>
+						</div>
+						<div class="mySlides">
+							<img  src="/static/image/tteokbokki.jpg" style="width:100%">
+							<h1>4위 추천레시피</h1>
+						</div>
 					</div>
             </div><!--divider_-->
-        </div>
+		</div><!--container-->
+	</div>
+	<!--End 추천레시피-->
 
-        <!--추천레시피 그래프-->
-        <div class="content2" >
-            <h1>Keyword Graph</h1>
-            <p>레시피 추천에 활용된 긍정/부정 단어 키워드 통계를 알아보세요.</p>
-            <div class="divider_body">
+<!--추천레시피 그래프-->
+	<div class="recipe-graph">
+		<div class="container">
+			<div class="divider">
+				<h1>Graph</h1>
+			</div>
+			<div class="divider_body">
 				<div class="recipe-gr">
 					<figure class="highcharts-figure2">
 						<div id="hi-container2"></div>
 						<p class="highcharts-description2">
+						   추천레시피에들어감
 						</p>
 						<button id="plain">기본</button>
 						<button id="polar">파이차트</button>
 					</figure>
 				</div>
 			</div><!--divider_-->
-        </div>
-        <!--추천레시피 검색 -->
-        <div class="content3" id="allRecipe">
-            <h1>All Recipe</h1>
-            <p>모든 농수산물 품목별 레시피를 한눈에 확인할 수 있습니다. 원하는 재료의 레시피를 찾아보세요.</p>
-            <div class="all-content">
-					<table id="my-table2">
-						<thead>
-							<tr>
-								<th>품목</th>
-								<th>날짜1</th>
-                                <th>날짜2</th>
-                                <th>날짜3</th>
-                                <th>날짜4</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                            <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
+		</div><!--container-->
+	</div>
+	<!--End 추천레시피 그래프-->
 
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                            <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
+<!--추천레시피 검색 -->
+ <div class="search-recipe" id="allRecipe">
+	 <div class="divider">
+		 <h1>All Recipe</h1>
+	 </div>
+		<div class="accordion">
+			<div class="question">
+<!--				<input type="text" placeholder="검색어를 입력하세요">-->
+				<input type="submit" value="All Recipe">
+			</div>
+			<div class="answer">
+				<div class="search-des">
 
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
+<!--End 추천레시피 검색-->
 
-						</tbody>
-					</table><!--my-table for문돌려야-->
-				</div><!--nw-table-->
+<!--추천레시피 검색 try-->
+<link rel="stylesheet" href="/static/css/table-sortable.css"/>
+<script src="jquery.slim.min.js"></script>
+<script src="table-sortable.js"></script>
+<input type="text" placeholder="Search in table..." id="searchField">
+<div class="table-sortable">
+	Table will be rendered here
+</div>
+
+<script>
+	var data = [
+		{
+			formCode: 531718,
+			formName:'Investment Form',
+			fullName:'Test User',
+			appointmentDate:'13 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 531790,
+			formName:'Investment Form 2',
+			fullName:'Test User',
+			appointmentDate:'12 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 531334,
+			formName:'Investment Form 3',
+			fullName:'Test User',
+			appointmentDate:'10 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5317,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5318,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5319,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5320,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5321,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5322,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5323,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5324,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5325,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5326,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5327,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5328,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+		{
+			formCode: 5329,
+			formName:'Investment Form 4',
+			fullName:'Test User',
+			appointmentDate:'17 March, 2017',
+			appointmentTime:'1:30PM',
+			phone:'9876543210'
+		},
+	]
+
+	var columns = {
+		'formCode':'Form Code',
+		'formName':'Form Name',
+		'fullName':'Full Name',
+		'appointmentDate':'Appointment Date',
+		'appointmentTime':'Appointment Time',
+		'phone':'Phone'
+	}
+
+	var table = $('#table-sortable').tableSortable({
+		data: data,
+		columns: columns,
+		rowsPerPage: 5,
+		pagination:true
+	});
+
+	$('#changeRows').on('change',function() {
+	  table.up<a href="https://www.jqueryscript.net/time-clock/">date</a>RowsPerPage(parseInt($(this).val(), 10));
+	})
+
+	var table = $('#table-sortable').tableSortable({
+		data: [],
+		columns: columns,
+		rowsPerPage: 10,
+		pagination:true,
+	});
+
+	$.get(/* url */,function(data) {
+		// Push data into existing data
+		table.setData(data,null,true);
+		// or Set new data on table, columns is optional.
+		table.setData(data, columns);
+	})
+
+	var table = $('#table-sortable').tableSortable({
+		...
+		sorting:true,
+		...
+	});
+
+	/* or on specific columns */
+	var table = $('#table-sortable').tableSortable({
+		...
+		sorting: ['column1','column2'],
+		...
+	});
+
+	var table = $('#table-sortable').tableSortable({
+		...
+		responsive: {
+			// It works for 571 - 1100 viewport width; (max-width: 1100px and min-width: 571px);
+			1100: {
+				// Other options
+				columns: {
+					formCode:'Form Code',
+					formName:'Form Name',
+				},
+			},
+			// It works for 0 - 570 viewport width; (max-width: 570px);
+			570: {
+				// Other options
+				columns: {
+					formName:'Form Name',
+				},
+			}
+		},
+		...
+	});
+
+	var table = $('#root').tableSortable({
+		element:'',
+		data: [],
+		columns: {},
+		sorting:true,
+		pagination:true,
+		paginationContainer:null,
+		rowsPerPage: 10,
+		formatCell:null,
+		formatHeader:null,
+		searchField:null,// selector of search field
+		responsive: {},// specify options for different screen sizes
+		totalPages: 0,
+		sortingIcons: {
+			asc:'<span>▼</span>',
+			desc:'<span>▲</span>',
+		},
+		nextText:'<span>Next</span>',
+		prevText:'<span>Prev</span>',
+		tableWillMount: () => {},
+		tableDidMount: () => {},
+		tableWillUpdate: () => {},
+		tableDidUpdate: () => {},
+		tableWillUnmount: () => {},
+		tableDidUnmount: () => {},
+		onPaginationChange:null,
+	})
+
+	// It will update the table, if you have updated options they will be applied.
+	table.refresh();
+
+	// It will distroy and create table from start.
+	table.refresh(true);
+
+	// Destroy the table.
+	table.distroy();
+
+	// Get table data.
+	table.getData();
+
+	// Set new data and columns on table
+	table.setData(data, columns/* optional */);
+
+	// Add data in existing data
+	table.setData(partialData,null,true);
+
+	// Get data on the current page
+	table.getCurrentPageData();
+
+	// Update rows per page dynamically.
+	table.updateRowsPerPage(20);
+</script>
+	<select name="rowsPerPage" id="changeRows">
+		<option value="5">5</option>
+	  	<option value="10" selected>10</option>
+	  	<option value="15">15</option>
+	  	<option value="20">20</option>
+	</select>
+
+					<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+</head>
+
+<div style="overflow-x: auto;">
+  <table>
+    <tr>
+      <th>Menu</th>
+      <th>Ingredients</th>
+      <th>Directions</th>
+    </tr>
+    <tr>
+      <td>김치찌개</td>
+      <td>돼지고기, 김치, 고추가루</td>
+      <td>1.</td>
+    </tr>
+    <tr>
+      <td>차돌된장찌개</td>
+      <td>차돌박이, 다진마늘, 양파, 청양고추, 고추가루, 애호박, 감자, 두부</td>
+      <td>1.</td>
+    </tr>
+    <tr>
+      <td>부대찌개</td>
+      <td>소세지, 햄, 두부, 파, 김치</td>
+      <td>1.</td>
+    </tr>
+  </table>
+</div>
+<!--End 추천레시피 검색 try-->
+				</div>
+			</div>
+		</div>
+ </div>
+
+
+<!--연락-->
+<div class="contact-us">
+    <div class="divider-us">
+		<br>
+        <h1>
+            <a href="https://github.com/ginttone/Zipbob" title="주소로 이동" target="_blank" class="w3-hover-text-white"><i class="fa fa-github w3-hover-opacity"></i>Zipbob github</a>
+        </h1>
+    </div>
+	<br><br><br><br><br><br><br><br><br><br>
+    <div class="divider-info">
+		<div class="list" style="position:absolute; left:80%;">
+            <h1>교육문의 <a href="https://www.multicampus.com/">멀티캠퍼스</a></h1>
+            <p>고객센터 1234-5678 평일 09-18시</p>
         </div>
     </div>
+</div>
+<!--End 연락-->
+<!--베너-->
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<style>
+#layout {position: absolute; left: 25%; maring: auto; width: 900px; height:50px; display: flex; flex-warp: wrap; align-items: center; }
+#layout b {width: 15px; position: relative; z-index: 1; cursor: pointer;  }
+#banner  { position:relative; z-index:0; width:900px; height:50px; overflow:hidden; margin:auto; }
+#banner img {position: absolute; width: 150px; height: 50px; }
+#banner img:nth-child(1) { left:-180px; z-index:2; }
+#banner img:nth-child(2) { left:0px; }
+#banner img:nth-child(3) { left:180px; }
+#banner img:nth-child(4) { left:360px; }
+#banner img:nth-child(5) { left:540px; }
+#banner img:last-child { left:900px; }
+</style>
 
-    <div class="footer">
-        <ul>
-            <li>
-                <i class="fa fa-github w3-hover-opacity"></i>
-                <a href="https://github.com/ginttone/Zipbob" title="깃헙주소로이동" >Zipbob github</a>
-            </li>
-            <li>
-                <h3>교육문의 <a href="https://www.multicampus.com/">멀티캠퍼스</a></h3>
-                <p>고객센터 1234-5678 평일 09-18시</p>
-            </li>
-        </ul>
-        <div class="divider-ban">
-                <br><br>
-            <div id="layout">
-            <b id="left" style="color:white;">&lt;</b>
-            <div id="banner">
-                 <a class="w3-button" href="">
-                     <img src="./static/image/roll_img_6.jpg" width="150" height="50">
-                 </a>
-                 <a class="w3-button" href="http://www.ssg.com" >
-                     <img src="./static/image/roll_img_1.jpg" width="150" height="50">
-                 </a>
-                 <a class="w3-button" href="https://www.homeplus.co.kr">
-                     <img src="./static/image/roll_img_2.jpg" width="150" height="50" class="firstImg">
-                 </a>
-                 <a class="w3-button" href="https://www.coupang.com">
-                     <img src="./static/image/roll_img_3.jpg" width="150" height="50">
-                 </a>
-                 <a class="w3-button" href="https://www.lottesuper.co.kr">
-                     <img src="./static/image/roll_img_4.jpg" width="150" height="50">
-                 </a>
-                 <a class="w3-button" href="https://www.gsfresh.com">
-                     <img src="./static/image/roll_img_5.jpg" width="150" height="50">
-                 </a>
-            </div>
-            <b id="right" style="color:white;">&gt;</b>
-        </div>
-        </div>
-    </div>
-    <script src="/static/js/index.js"></script>
-    <script>
-        $(document).ready(function(){
-        var i=$("#banner img:first-child").attr('src').substr(-5,1);
-        /****** 처음부터 자동 *****/
-        var rolling=setInterval(frame, 2500);
-        function frame() {
+<script>
+$(document).ready(function(){
+var i=$("#banner img:first-child").attr('src').substr(-5,1);
+/****** 처음부터 자동 *****/
+var rolling=setInterval(frame, 2500);
+function frame() {
 
-         $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
-         i++;
-         if( i==7) {i=1}
-         var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
-         $("#banner img:nth-child(2)").addClass("firstImg");
-         $("#banner").append(appendImg);
-         if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
-        }
+ $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+ i++;
+ if( i==7) {i=1}
+ var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+ $("#banner img:nth-child(2)").addClass("firstImg");
+ $("#banner").append(appendImg);
+ if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+}
 
-        /****** 왼쪽버튼 클릭시 ******/
-        $("#left").click(function(){
-        clearInterval();
-        $("#banner img").removeClass("firstImg").animate({left:'-=180px'});
-        i++;
-        if( i==7) {i=1}
-        var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
-        $("#banner img:nth-child(2)").addClass("firstImg");
-        $("#banner").append(appendImg);
-        if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
-        });
+/****** 왼쪽버튼 클릭시 ******/
+$("#left").click(function(){
+clearInterval();
+$("#banner img").removeClass("firstImg").animate({left:'-=180px'});
+i++;
+if( i==7) {i=1}
+var appendImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+$("#banner img:nth-child(2)").addClass("firstImg");
+$("#banner").append(appendImg);
+if( $("#banner img:first-child").position().left<=-200 ) {  $("#banner img:first-child").remove()  }
+});
 
-        /****** 오른쪽버튼 클릭시 ******/
-        $("#right").click(function(){
-        $("#banner img").removeClass("firstImg").animate({left:'+=180px'});
-        i=i-1;
-        if( i==0) {i=7}
-        var prependImg="<img src='./static/image/roll_img_"+i+".jpg'>";
-        $("#banner img:nth-child(2)").addClass("firstImg");
-        $("#banner").prepend(prependImg);
-        if( $("#banner img:last-child").position().left>=900 ) {  $("#banner img:last-child").remove()  }
-        });
-        });
-    </script>
+/****** 오른쪽버튼 클릭시 ******/
+$("#right").click(function(){
+$("#banner img").removeClass("firstImg").animate({left:'+=180px'});
+i=i-1;
+if( i==0) {i=7}
+var prependImg="<img src='./static/image/roll_img_"+i+".jpg'>";
+$("#banner img:nth-child(2)").addClass("firstImg");
+$("#banner").prepend(prependImg);
+if( $("#banner img:last-child").position().left>=900 ) {  $("#banner img:last-child").remove()  }
+});
+});
+</script>
+</head>
+<div class="divider-ban">
+	<br><br>
+<div id="layout">
+<b id="left" style="color:white;">&lt;</b>
+<div id="banner">
+ <a class="w3-button" href="">
+	 <img src="./static/image/roll_img_6.jpg" width="150" height="50">
+ </a>
+ <a class="w3-button" href="http://www.ssg.com" >
+	 <img src="./static/image/roll_img_1.jpg" width="150" height="50">
+ </a>
+ <a class="w3-button" href="https://www.homeplus.co.kr">
+	 <img src="./static/image/roll_img_2.jpg" width="150" height="50" class="firstImg">
+ </a>
+ <a class="w3-button" href="https://www.coupang.com">
+	 <img src="./static/image/roll_img_3.jpg" width="150" height="50">
+ </a>
+ <a class="w3-button" href="https://www.lottesuper.co.kr">
+	 <img src="./static/image/roll_img_4.jpg" width="150" height="50">
+ </a>
+ <a class="w3-button" href="https://www.gsfresh.com">
+	 <img src="./static/image/roll_img_5.jpg" width="150" height="50">
+ </a>
+</div>
+<b id="right" style="color:white;">&gt;</b>
+</div>
+</div>
+<!--End 베너-->
+<script src="/static/js/index.js"></script>
 </body>
 </html>
