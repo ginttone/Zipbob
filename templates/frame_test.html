@@ -10,24 +10,42 @@
 
  </head>
 <style>
-    .answer{display:none;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{width:100vw;height:100vh;background:#ffffff;user-selector:none;}
+    .contact-us{width:100vw;height:50vh;background: #fdd835; color:#fafafa;}
+    .divider-us{width:100vw;height:100px;}
+    .divider-info{width:100vw;height:300px;}
+
+    .divider-ban{width:100vw;height:20vh;background:#260e04;}
+    .divider-ban img{width:200px;height:50px;padding:5px;}
 
 </style>
 <body>
-    <div class="search-recipe" id="allRecipe">
-		<div class="accordion">
-                <h1 class="question">All Recipe</h1>
-                <div class="answer">
-                    <input type="password" placeholder="검색어를 입력하세요">
-                    <input type="submit" value="click" style="font-size:1rem;font-family: 'Merriweather';">
-			</div>
-		</div>
-	</div>
+<div class="contact-us">
+    <div class="divider-us">
+        <i class="fab fa-github"></i>
+        <h1>Zipbob github</h1>
+    </div>
+    <div class="divider-info">
+        <div class="list">
+            <h1>교육문의<a href="멀캠주소">멀티캠퍼스</a></h1>
+            <p>고객센터</p>
+        </div>
+    </div>
+</div>
+<!--End 연락-->
+<!--베너-->
+<div class="divider-ban">
+    <div class="slide">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+        <img src="/static/image/pupang.jpg">
+    </div>
+</div>
     <script>
-         $('.question').click(function(){
-            $(this).next().slideToggle();
-            $(this).next().siblings('.answer').slideUp();
-         });
+
     </script>
 </body>
 
