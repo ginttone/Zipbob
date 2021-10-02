@@ -1,6 +1,14 @@
 import sqlite3
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.http import HttpResponse
+from ip.functions import home_process
+import json
+
+## 챗봇 테스트 ---------------------------------------
+import ML.chatmodel ## 챗봇코드를 넣은 .py파일에 맞게 경로를 지정합니다
+
+from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
@@ -8,7 +16,16 @@ def home(request):
     return render(request, 'home.html', context=result)
 
 def index(request):
-    result={}
+    home_class = home_process()
+
+    this_week = home_class.this_week()
+    recipe_table = home_class.recipe_table()
+    recipe_recommend = home_class.recipe_recommend()
+
+    print(this_week)
+
+    result = {'this_week': this_week, 'recipe_table':recipe_table , 'recipe_recommend' : recipe_recommend}
+
     return render(request, 'index.html', context=result)
 
 def test(request):
@@ -51,4 +68,11 @@ def frame_test(request):
     result['page_obj'] = paginator.get_page(page_number)
     return render(request, 'frame_test.html', context=result)
 
+
+
+def chatbottest(request):
+    a = request.GET['a']
+    result = ML.chatmodel.chat(a)
+    # print("chat함수 성공")
+    return HttpResponse(json.dumps(result), content_type='application/json')
 

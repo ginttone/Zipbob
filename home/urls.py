@@ -27,10 +27,14 @@ urlpatterns = [
     path('premium', views.premium,name='premium'),
     path('frame_test', views.frame_test,name='frame_test'),
 
+    path('chatbottest', views.chatbottest, name="chatbottest"),
+
     path('emailchk', home_process.emailchk, name='emailchk'),
     path('regi_view', home_process.regi_view, name='regi_view'),
     path('login', home_process.login, name='login'),
     path('this_week', home_process.this_week, name='this_week'),
     path('next_week_pred', home_process.next_week_pred, name='next_week_pred'),
+    path('recipe_table', home_process.recipe_table, name='recipe_table'),
+    path('recipe_recommend', home_process.recipe_recommend, name='recipe_recommend'),
 
 ]

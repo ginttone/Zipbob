@@ -39,6 +39,9 @@ df_list = df.values.tolist()
 
 # df_list = [['귀리']]
 
+df_list = [['열무'],['미나리'],['팽이버섯'],['시금치']]
+
+
 try:
 
     for df in df_list:
@@ -127,7 +130,7 @@ try:
 
                         # 이미지 저장 부분
                         try:
-                            urllib.request.urlretrieve(main_img, f'./img/recipe/{title_spt}.jpg')
+                            urllib.request.urlretrieve(main_img, f'../static/image/recipe/{title_spt}.jpg')
                         except HTTPError as e:
                             err = e.read()
                             code = e.getcode()
@@ -188,7 +191,7 @@ try:
 
                             # 이미지 저장 부분
                             try:
-                                urllib.request.urlretrieve(img_src, f'./img/method/{title_spt}_{img_cnt}.jpg')
+                                urllib.request.urlretrieve(img_src, f'../static/image/method/{title_spt}_{img_cnt}.jpg')
                             except urllib.error.URLError as e:
                                 print(e.reason)
                             except HTTPError as e:

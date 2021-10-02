@@ -79,7 +79,7 @@ else:
 
 class home_process:
 
-    global item_4_final , item_4  , item_all
+    global item_4_final , item_4  , item_all , list_4 , item_high, item_low
 
     item_4_final = list()
 
@@ -101,7 +101,8 @@ class home_process:
 
     max_dict = {}
 
-    rate_list = list()
+    high_rate_list = list()
+    low_rate_list = list()
 
 
     for item in item_4_df_list:
@@ -136,23 +137,42 @@ class home_process:
         # print(now ,yesterday )
         if ( price_max_date != price_min_date ) and (  yesterday < price_min_date ) :
 
-            rate = round(100-(price_min/price_max*100))
+            high_rate = round(100-(price_min/price_max*100))
+            low_rate = round(100 - (price_max / price_min  * 100))
             # print(row,price_max,price_max_date)
             # print(row,price_min,price_min_date)
-            final_data = (row,rate)
+            high_final_data = (row,high_rate)
+            low_final_data = (row,low_rate)
             # print(final_data)
-            rate_list.append(final_data)
+            high_rate_list.append(high_final_data)
+            low_rate_list.append(low_final_data)
 
-    rate_list_sort =sorted(rate_list, key=lambda rate: rate[1] ,reverse=True )
+
+    high_rate_list_sort = sorted(high_rate_list, key=lambda rate: rate[1] ,reverse=True )
+    low_rate_list_sort = sorted(low_rate_list, key=lambda rate: rate[1], reverse=True)
 
     # print(rate_list_sort)
 
     items_4 = list()
+    item_high = list()
+    item_low = list()
 
-    for rate_4_item in rate_list_sort:
+    for rate_4_item in high_rate_list_sort:
         items_4.append(rate_4_item[0])
 
         if len(items_4) > 3:
+            break
+
+    for rate_2_high in high_rate_list_sort:
+        item_high.append(rate_2_high[0])
+
+        if len(item_high) > 1:
+            break
+
+    for rate_2_low in low_rate_list_sort:
+        item_low.append(rate_2_low[0])
+
+        if len(item_low) > 1:
             break
 
     item_4_final = items_4
@@ -161,7 +181,7 @@ class home_process:
 
     items_all = list()
 
-    for rate_all_item in rate_list_sort:
+    for rate_all_item in high_rate_list_sort:
         items_all.append(rate_all_item[0])
 
         if len(items_all) > 10:
@@ -242,9 +262,9 @@ class home_process:
         datetime_list_final.insert(0,'품목')
         datetime_list_final.insert(1, '기준')
 
-        print(item_4_final)
+        # print(item_4_final)
 
-        result = { 'item_4': item_4_final , 'th':datetime_list_final ,'tr':data_final }
+        result = { 'item_4': item_4_final , 'th':datetime_list_final ,'tr':data_final , 'high': item_high , 'low' : item_low }
 
         return result;
 
@@ -260,10 +280,6 @@ class home_process:
         return result;
 
     def graph(self):
-        result = []
-        return result;
-
-    def recipe_table(self):
         result = []
         return result;
 
@@ -289,16 +305,16 @@ class home_process:
         email = request.GET['email']
         pwd = request.GET['pwd']
 
-        print(email , pwd )
+        # print(email , pwd )
 
         df = pd.read_sql_query( f'select name from user where email = "{email}" and password = "{pwd}" ; ', con)
 
         df_list = df.values.tolist()
-        name = df_list[0][0]
 
-        print(name)
 
         if len(df_list) >  0:
+            name = df_list[0][0]
+            print(name)
             data = { 'data': f"{name}" " 님 환영합니다." }
         else:
             data = {'data': "메일 또는 비밀번호를 다시 확인하세요."}
@@ -315,7 +331,7 @@ class home_process:
                     (email, name, pwd))
         con.commit()
         data = '정상적으로 가입 되었습니다. 로그인 하세요.'
-        print(data)
+        # print(data)
         return HttpResponse(json.dumps(data), content_type='application/json')
 
     def next_week_pred(request):
@@ -375,7 +391,6 @@ class home_process:
             item_dict['name'] = data_item
             item_dict['data'] = df_price_list
             item_dict['dashStyle'] = [random.choice(line_list) for i in range(1)][0]
-            item_dict['color'] = color[0]
 
 
             result_data.append(item_dict)
@@ -387,3 +402,51 @@ class home_process:
         result = { 'data': result_data , 'date' : df_list_final }
 
         return HttpResponse(json.dumps(result), content_type='application/json')
+
+
+    def recipe_recommend(request):
+
+        recipe_final = list()
+
+        df = pd.read_sql_query(f'select agricultural , title '
+                               f'from recipe_10000 '
+                               f'where agricultural in {item_4} '
+                               f'group by agricultural ' , con)
+
+        df.dropna(axis=0)
+        # print(df)
+
+        recipe_final = df.values.tolist()
+        recipe_title_list = df['title'].values.tolist()
+
+        print(recipe_title_list)
+
+        result = { 'title': recipe_title_list  }
+
+        return result;
+
+    def recipe_table(request):
+
+        recipe_final = list()
+
+        df = pd.read_sql_query(f'select a.agricultural , a.title , a.ingredients , '
+                               f' rcp1||rcp2||rcp3||rcp4||rcp5||rcp6||rcp7||rcp8||rcp9||rcp10|| '
+                               f' rcp11||rcp12||rcp13||rcp14||rcp15||rcp16||rcp17||rcp18||rcp19||rcp20|| '
+                               f' rcp21||rcp22||rcp23||rcp24||rcp25||rcp26||rcp27||rcp28||rcp29||rcp30 as method '
+                               f'from recipe_10000 a '
+                               f', recipe_10000_detail b '
+                               f'where a.title = b.title '
+                               f'and  a.agricultural in {item_all} '
+                               f' limit 5 ; ', con)
+        df.dropna(axis=0)
+        # print(df)
+
+        recipe_final = df.values.tolist()
+        recipe_title_list = df[['title','ingredients', 'method']].values.tolist()
+        recipe_ingredients_list = df['ingredients'].values.tolist()
+
+        # print(recipe_title_list)
+
+        result = { 'data': recipe_final , 'title': recipe_title_list , 'ingredients' : recipe_ingredients_list  }
+
+        return result;

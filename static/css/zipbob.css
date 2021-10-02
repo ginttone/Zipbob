@@ -9,7 +9,7 @@ body{backgroun-color:#fafafa;font-family: 'Merriweather', serif;}
 .main .content3 {min-height: 900px;padding:40px 0;margin:20px 0;background-color:#efebe9;margin-right: 10px;}
 .content2 h1, .content2 p,.content3 h1, .content3 p {display:flex;justify-content:space-around;}
 h1{font-size:60px;color:#260e04;}
-p{font-size: 30px;color: #5f4339;margin-top:30px;font-family:'Noto Serif KR', serif; }
+p{font-size: 30px;color: #5f4339;margin-top:10px;font-family:'Noto Serif KR', serif; }
 .footer {margin-top: 10px;background-color:#fdd835;}
 .mySlides , .answer{display:none;}
 .divider_body2{min-height: 400px;padding:40px 0; margin:40px 0;}
@@ -48,10 +48,10 @@ p{font-size: 30px;color: #5f4339;margin-top:30px;font-family:'Noto Serif KR', se
     .form form input{width:100%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:20px 16px;margin:20px auto;outline:none;}
     .signup-form.active, .login-form.active{top:50px;transition:.5s;visibility:visible;opacity:1;}
 
-    .form input[id*="reg"]{width:100%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
-    .form input[id*="login"]{width:100%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
-    .form input[id*="75"]{width:75%;height:10%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
-    .form input[id*="24"]{width:23%;height:10%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:10px auto;display:inline-block;}
+    .form input[id*="reg"]{width:100%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:1px auto;display:inline-block;}
+    .form input[id*="login"]{width:100%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:1px auto;display:inline-block;}
+    .form input[id*="75"]{width:75%;height:10%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:1px auto;display:inline-block;}
+    .form input[id*="24"]{width:23%;height:10%;height:10%;display:block;border:1px solid  #5f4339;border-radius:50px;padding:10px 16px;margin:1px auto;display:inline-block;}
 
     .containerf.active{filter:blur(20px);transition:.5s;pointer-events:none;}
     .containerf {height:900px;width:100%;background-image: url('/static/image/goodm.jpg');background-repeat : no-repeat;background-size : cover;overflow:hidden;}
@@ -71,8 +71,8 @@ p{font-size: 30px;color: #5f4339;margin-top:30px;font-family:'Noto Serif KR', se
     .reci{display:flex;justify-content:space-around;flex-wrap:wrap;width:300px;height:400px;font-family:'Noto Serif KR', serif;}
     .reci h1{font-size:40px;color: #d50000;margin-top:40px; }
     .reci h1:hover{font-size:30px;color: #1a237e;margin-top:40px;}
-    .reci h2{font-size:40px;color:#1a237e;margin-top:40px;}
-    .reci h2:hover{font-size:30px;color:#d50000;margin-top:40px;}
+    .reci h2{font-size:30px;color:#1a237e;margin-top:40px;}
+    .reci h2:hover{font-size:35px;color:#d50000;margin-top:40px;}
     .reci p{font-size:24px;color:#1a237e;margin:40px;}
     .round:hover{border-radius:40px;padding:4px;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%)}
     .round{border-radius:40px;box-shadow:6px 6px 14px 3px rgba(231,0,0,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
@@ -147,11 +147,14 @@ p{font-size: 30px;color: #5f4339;margin-top:30px;font-family:'Noto Serif KR', se
         th[role=columnheader]:not(.no-sort):hover:after {visibility: visible;opacity: 1;}
 
 
-/* 추천레시피 부분*/
+/* 추천레시피 부분
     .recipe-circle{width:1000px;height:600px;box-shadow:6px 6px 14px 3px rgba(190, 156, 145,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
     .mySlides{width:400px;height:400px;border:2px red;}
     .recipe-box {width:400px;height:400px;border-radius:100%;border:1px solid red;overflow:hidden;margin:0 auto;}
     .recipe-box img{width:100%;height:100%;object-fit:cover;}
+*/
+
+.divider_body5 #circle2 .reci{display:flex;justify-content:space-around;flex-wrap:wrap;width:300px;height:400px;font-family:'Noto Serif KR', serif;} .divider_body5 #circle2 .reci h3{font-size:30px;color:#8bc34a;margin-top:70px;} .divider_body5 #circle2 .reci h3:hover{font-size:40px;color:#ff9800;margin-top:70px;} .round3{border-radius:100%;border:8px solid transparent;background:linear-gradien(60deg,#EFA51A 10%,#ce00 100%);margin-top:70px;} .round3:hover{padding:4px;border-radius:100%;box-shadow:6px 6px 14px 3px rgba(231,0,0,.5),-6px -6px 14px 3px rgba(255,255,255,1);}
 
 /* 추천레시피 단어 레시피 그래프*/
 .recipe-gr{min-width:500px;max-width:1000px;margin:2em auto;border:2px solid #be9c91;box-shadow:6px 6px 14px 3px rgba(95,67,57,.5)}

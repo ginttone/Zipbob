@@ -1,3 +1,14 @@
+/* JDS */
+
+$.ajax({
+             url:'next_week_pred',
+             datatype:'JSON',
+             success:function(data){
+                    next_week_pred_graph(data)
+             }
+});
+
+
 //  챗봇 js시작
 var coll = document.getElementsByClassName('collapsible_j');
 
@@ -47,8 +58,11 @@ function firstBotMessage(){
 firstBotMessage();
 
 function getHardResponse(userText) {
-    let botResponse = getBotResponse(userText);
-    let botHTML = '<p class="botText"><span>' + botResponse + '</span></p>';
+    // botResponse = getBotResponse(userText);
+
+    // alert(botResponse);
+
+    let botHTML = '<p class="botText"><span>' + userText + '</span></p>';
     $ ("#chatbox").append(botHTML);
 
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
@@ -69,7 +83,7 @@ function getResponse() {
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
     setTimeout (() => {
-        getHardResponse(userText);
+        getBotResponse(userText);
     }, 1000)
 }
 
@@ -100,23 +114,20 @@ $("#textInput").keypress(function(e) {
 
 
 function getBotResponse(input) {
-    //간단한 응답
-    if (input == "안녕") {
-        console.log("만나서 반가워요");
-        return "만나서 반가워요!";
-    } else if (input == "잘 있어") {
-        console.log("즐거웠어요. 다음에 만나요!");
-        return "즐거웠어요. 다음에 만나요!";
-    } else if (input == "모각코") {
-        console.log("오늘도 즐겁게 공부해봐요. 파이팅!");
-        return "오늘도 즐겁게 공부해봐요. 파이팅!";
-    } else if (input == "날씨") {
-        console.log("요즘 너무 덥죠?");
-        return "요즘 너무 덥죠?";
-    } else {
-        console.log("잘 이해하지 못했어요. 다른 이야기를 해볼까요?");
-        return "잘 이해하지 못했어요. 다른 이야기를 해볼까요?";
-    }
+    var a = input;
+    var result;
+
+    $.ajax({
+        url:'chatbottest',
+        data:{a:a},
+        datatype:'JSON',
+        success:function(data){
+            getHardResponse(data);
+            // result = data;
+        }
+    });
+    //console.log(result);
+    // return result;
 }
 
 /* 추천레시피 슬라이드 */
@@ -166,17 +177,6 @@ new Tablesort(document.getElementById('my-table2'));
 
 /* JDS */
 
-$(document).ready(function(){
-
-    $.ajax({
-                 url:'next_week_pred',
-                 datatype:'JSON',
-                 success:function(data){
-                        next_week_pred_graph(data)
-                 }
-    });
-
-});
 
 
 function emailcheck(){
@@ -324,7 +324,7 @@ function login(){
                  datatype:'JSON',
                  success:function(data){
                     alert(data.data);
-                    window.open("{% url 'index' %}","_self");
+                    window.open("","_self");
                  }
         });
     }else if( login_email == '' ){

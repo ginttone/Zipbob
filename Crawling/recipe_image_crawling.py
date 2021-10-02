@@ -12,9 +12,12 @@ import time
 con = sqlite3.connect('../db.sqlite3')
 cur = con.cursor()
 df = pd.read_sql_query("select rcp_nm from recipe_api_info  ; " ,con )
+
 df_list = df.values.tolist()
 
 driver = webdriver.Chrome()
+
+df_list = ['감자','배']
 
 for df in df_list:
     driver.get("https://www.google.co.kr/imghp?hl=ko&tab=wi&ogbl")
@@ -26,7 +29,7 @@ for df in df_list:
     src = driver.find_element_by_xpath('//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[2]/div/a/img').get_attribute('src')
 
     try:
-        urllib.request.urlretrieve(src, f'./img/recipe/{df[0]}.jpg')
+        urllib.request.urlretrieve(src, f'../static/image/standard/{df[0]}.jpg')
     except HTTPError as e:
         err = e.read()
         code = e.getcode()

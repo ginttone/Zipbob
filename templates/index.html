@@ -35,8 +35,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/static/js/responses.js"></script>
-    <script src="/static/js/chat.js"></script>
 
 </head>
 
@@ -133,9 +131,9 @@
                     <h1>LogIn</h1>
                 </div>
                 <form action="#">
-                    <input type="email" placeholder="Email ID">
-                    <input type="password" placeholder="password">
-                    <input type="submit" value="Login" style="font-size:1rem;font-family: 'Merriweather';">
+                    <input id="login_email" type="email" placeholder="Email ID">
+                    <input id="login_password"type="password" placeholder="password">
+                    <input id="login_submit"type="button" value="Login" style="font-size:1rem;font-family: 'Merriweather';" onclick="login()">
                 </form>
             </div>
         </div><!--login-->
@@ -169,15 +167,21 @@
             <p>전체 품목 중에서 이번 주 등락률 상위 2위와 하위 2위를 확인합니다.</p>
             <div class="divider_body2">
 					<div class="content-th" id="circle">
-						<div class="reci">
-                            {% for row in this_week.item_4 %}
-                                <div class="reci" style="font-family: 'Merriweather', serif;">
-                                <h1>주중 가장 싼 상품</h1>
-                                <img src="/static/image/standard/{{row}}.jpg" class="round" width="270" height="270">
-                                <h1>{{row}}</h1>
-                                </div>
-                            {% endfor %}
-						</div>
+                        {% for row in this_week.high %}
+                            <div class="reci">
+                                <h2>가격 급락 상품</h2>
+                                <img src="/static/image/standard/{{row}}.jpg" class="round1" width="270" height="270" style="margin:40px;" onclick="window.open('https://front.homeplus.co.kr/search?entry=direct&keyword={{row}}')">
+                                <p>{{row}}</p>
+                            </div>
+                        {% endfor %}
+                        {% for row in this_week.low %}
+                            <div class="reci">
+                                <h2>가격 인상 예상 상품</h2>
+                                <img src="/static/image/standard/{{row}}.jpg" class="round" width="270" height="270" style="margin:40px;" onclick="window.open('http://www.ssg.com/search.ssg?target=all&query={{row}}')">
+                                <p>{{row}}</p>
+                            </div>
+                        {% endfor %}
+
                     </div><!--circle-->
 			</div><!--divider_b-->
         </div>
@@ -227,32 +231,14 @@
             <h1>Recipe</h1>
             <p>가격과 레시피의 댓글 분석 결과를 반영하여 농수산물을 활용할 수 있는 레시피를 추천합니다.</p>
 			<div class="divider_body5" >
-					<div class="recipe-circle">
-                        <div class="mySlides">
-                            <h1> 1 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/apple.jpg" width="100%" height="100%">
+					<div class="content-th" id="circle2">
+                        {% for row in recipe_recommend.title %}
+                            <div class="reci" style="font-family: 'Merriweather', serif;">
+                                <img src="/static/image/recipe/{{row}}.jpg" class="round3" width="300" height="300">
+                                <h3>{{row}}</h3>
                             </div>
-                        </div>
-                        <div class="mySlides">
-                            <h1> 2 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/potato.jpg" width="100%" height="100%">
-                            </div>
-                         </div>
-                        <div class="mySlides">
-                            <h1> 3 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/lotte.png" width="100%" height="100%">
-                            </div>
-                         </div>
-                        <div class="mySlides">
-                            <h1> 4 추천레시피</h1>
-                            <div class="recipe-box">
-                                <img src="/static/image/potato.jpg" width="100%" height="100%">
-                            </div>
-                         </div>
-					</div>
+                        {% endfor %}
+                    </div>
             </div><!--divider_-->
         </div>
 
@@ -280,83 +266,19 @@
 					<table id="my-table2">
 						<thead>
 							<tr>
-								<th>품목</th>
-								<th>날짜1</th>
-                                <th>날짜2</th>
-                                <th>날짜3</th>
-                                <th>날짜4</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
+                        {% for row in recipe_table.title %}
                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-                            <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-
-                             <tr>
-								<td>감자</td>
-								<td>날짜1 금액</td>
-                                <td>날짜2 금액</td>
-                                <td>날짜3 금액</td>
-                                <td>날짜4 금액</td>
-							</tr>
-
+							{% for r in row %}
+                                <td>{{r}}</td>
+                            {% endfor %}
+                            </tr>
+                        {% endfor %}
 						</tbody>
 					</table><!--my-table for문돌려야-->
-				</div><!--nw-table-->
+            </div><!--nw-table-->
         </div>
     </div>
 
