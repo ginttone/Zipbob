@@ -348,7 +348,6 @@ class home_process:
 
         df_list = df.values.tolist()
 
-
         if len(df_list) >  0:
             name = df_list[0][0]
             print(name)
