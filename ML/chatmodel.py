@@ -13,14 +13,15 @@ from tensorflow.python.framework import ops
 nltk.download('punkt')
 
 # 집밥 json 데이터를 data로 로드시키기
-# json 경로 설정하기
+# json 경로 설정하기 :
+# 전체 서버 실행시킬 때 ML/ 경로를 추가한다.
 with open('ML/Zipbob_chatbotdata.json', encoding='UTF8') as file:
     # with open('Zipbob_chatbotdata.json',  encoding='UTF8') as file:
     data = json.load(file)
 
-## -----------------------------------------------------
-## 시작 : pickle로 저장하여 실행 안 해도 되는 부분
-## -----------------------------------------------------
+# # -----------------------------------------------------
+# # 시작 : 실행 안 해도 되는 부분
+# # -----------------------------------------------------
 # try:
 #     with open("data.pickle", "rb") as f:
 #         words, labels, training, output = pickle.load(f)
@@ -74,13 +75,11 @@ with open('ML/Zipbob_chatbotdata.json', encoding='UTF8') as file:
 # net = tflearn.regression(net)
 #
 # model = tflearn.DNN(net)
-#
 # model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-#
 # model.save("model.tflearn")
-
-## 끝 : pickle로 저장하여 실행 안 해도 되는 부분
-## -----------------------------------------------------
+# # -----------------------------------------------------
+# # 끝 : pickle로 저장하여 실행 안 해도 되는 부분
+# # -----------------------------------------------------
 
 ## 피클 불러오기
 with open("ML/Zipbobchat.pickle", "rb") as f:
@@ -102,7 +101,8 @@ except:
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
     model.save("model.tflearn")
 
-
+# 전체 Zipbob 폴더 밑에 checkpoint, model.tflearn등 파일 있는 것 확인되면 정상
+# # -----------------------------------------------------
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
     s_words = nltk.word_tokenize(s)
