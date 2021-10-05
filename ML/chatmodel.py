@@ -102,7 +102,7 @@ except:
     model.save("model.tflearn")
 
 # 전체 Zipbob 폴더 밑에 checkpoint, model.tflearn등 파일 있는 것 확인되면 정상
-# # -----------------------------------------------------
+# # -------------------------------------------------------------
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
     s_words = nltk.word_tokenize(s)
