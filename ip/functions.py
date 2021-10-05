@@ -97,6 +97,19 @@ class home_process:
 
     item_4_df_list = item_4_df.values.tolist()
 
+    # print('len - ', len(item_4_df_list))
+
+    if len(item_4_df_list) == 0:
+        item_4_df = pd.read_sql_query(f' select itemnm , round(pred_price) as price , pred_date as regdate '
+                                      f' from kamis_price_pred '
+                                      f' where pred_date >= "{monday}" '
+                                      f' and pred_price != "-" '
+                                      f' and pred_price > 99 '
+                                      f' group by  pred_date , itemnm '
+                                      f' order by 1 ,3 ;', con)
+        item_4_df_list = item_4_df.values.tolist()
+
+    # print(item_4_df_list)
     list_4 = list()
 
     max_dict = {}
@@ -192,7 +205,6 @@ class home_process:
     item_all = '("' + item_all.replace(',', '","') + '")'
 
 
-
     def this_week(self):
 
         df = pd.read_sql_query(f' select itemnm , kindnm , price , regdate '
@@ -209,6 +221,27 @@ class home_process:
 
         df_list = df.values.tolist()
 
+        if len(df_list) == 0:
+
+            df = pd.read_sql_query(f' select a.itemnm , a.itemkind ,  round(pred_price) as price , pred_date as regdate '
+                                          f' from kamis_price_pred a , standard b '
+                                          f' where pred_date >= "{monday}" '
+                                          f' and pred_price != "-" '
+                                          f' and a.itemnm in {item_all} '
+                                          f' and pred_price > 99 '
+                                          f' and a.itemkind in ( select itemnm||"-"||kindnm '
+                                                               f'from kamis_price_api '
+                                                               f'where itemnm in {item_all} '
+                                                               f'and price > 100  and price != "-" '
+                                                               f'and regdate >= "{last_monday}"  '
+                                                               f'group by kindnm   '
+                                                               f' )  '
+                                          f' and a.itemkind = b.itemnm || "-" || b.breednm ||"(1kg)"  '
+                                          f' group by a.itemnm , itemkind , pred_price , pred_date '
+                                          f' order by 1 ,3 ;', con)
+            df_list = df.values.tolist()
+
+        # print(df_list)
         item_list = []
 
         for data in df_list:
@@ -234,6 +267,9 @@ class home_process:
             data_final.append(new_list)
 
         df_date_list = df['regdate'].values.tolist()
+
+        # print( df_date_list )
+
         df_list = list()
         df_list_final = list()
 
@@ -262,7 +298,8 @@ class home_process:
         datetime_list_final.insert(0,'품목')
         datetime_list_final.insert(1, '기준')
 
-        # print(item_4_final)
+        # print(datetime_list_final)
+        # print(data_final)
 
         result = { 'item_4': item_4_final , 'th':datetime_list_final ,'tr':data_final , 'high': item_high , 'low' : item_low }
 
@@ -348,6 +385,8 @@ class home_process:
         df_list = list()
         df_list_final = list()
 
+        print(df_list_final)
+
         for item in df_item_list:
 
             item_dict = {}
@@ -361,14 +400,15 @@ class home_process:
                                             f'and api.regdate >= "{last_monday}" '
                                             f'and api.itemnm = "{data_item}" '
                                             f'union '
-                                            f'select pred.itemnm  as itemnm , pred.pred_date as date , pred.pred_price as price '
+                                            f'select pred.itemnm  as itemnm , pred.pred_date as date , round(pred.pred_price) as price '
                                             f'from  kamis_price_pred pred '
                                             f'where pred.pred_date >= "{now}" '
                                             f'and pred.pred_date <= "{next_friday}" '
+                                            f'and pred_price != "-" '
+                                            f'and pred_price > 99 '
                                             f'and pred.itemnm = "{data_item}" '
                                             f') tot '
-                                   f'where tot.itemnm in {item_4} '
-                                   f'group by price ,date '
+                                   f'group by date '
                                    f'order by 2 ;', con)
 
             df.columns = ['price', 'date']
@@ -392,14 +432,32 @@ class home_process:
             item_dict['data'] = df_price_list
             item_dict['dashStyle'] = [random.choice(line_list) for i in range(1)][0]
 
-
             result_data.append(item_dict)
 
 
         # print(result_data)
-        # print(df_list_final)
 
-        result = { 'data': result_data , 'date' : df_list_final }
+        df_list_final = set(df_list_final)
+        df_list_final = list(df_list_final)
+
+        datetime_list = list()
+        datetime_list_final = list()
+
+        for j in df_list_final:
+
+            datetime_list.append(datetime.strptime(j,'%Y-%m-%d'))
+
+        datetime_list = sorted(datetime_list)
+
+        for k in datetime_list:
+            str_date = str(k)
+            datetime_list_final.append(str_date[0:10])
+
+        print(result_data)
+        print(datetime_list_final)
+
+
+        result = { 'data': result_data , 'date' : datetime_list_final }
 
         return HttpResponse(json.dumps(result), content_type='application/json')
 
