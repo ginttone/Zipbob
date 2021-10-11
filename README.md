@@ -4,7 +4,6 @@
 ## 농수산물 가격예측을 통한 레시피 추천 서비스
 
 
-
 ### :chart_with_upwards_trend: Project BASE 
 
 ```
@@ -84,7 +83,7 @@
    10/8 최종 프로젝트 발표/종강
    ```
 
-   
+[![SC2 Video](https://img.youtube.com/vi/ia2V0xFWCGY/0.jpg)](https://www.youtube.com/watch?v=ia2V0xFWCGY)
 
 ### :mortar_board: Educated
 
